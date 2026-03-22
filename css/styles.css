@@ -48,3 +48,11 @@ li {
 p {
   line-height: 1.6;
 }
+
+strong {
+  font-weight: 700;
+}
+
+section h3 {
+  margin-top: 0;
+}
