@@ -56,3 +56,27 @@ strong {
 section h3 {
   margin-top: 0;
 }
+.article-card {
+  border-top: 1px solid #dddddd;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.article-card h4 {
+  margin-bottom: 8px;
+}
+
+.article-card a {
+  text-decoration: none;
+  color: #004c99;
+}
+
+.article-card a:hover {
+  text-decoration: underline;
+}
+
+.article-meta {
+  font-size: 0.95rem;
+  color: #666666;
+  margin-bottom: 12px;
+}
