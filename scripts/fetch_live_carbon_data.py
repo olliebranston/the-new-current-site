@@ -6,13 +6,11 @@ import pandas as pd
 
 API_URL = "https://api.carbonintensity.org.uk/intensity/date"
 
-# Fetch live data from the API
 with urlopen(API_URL) as response:
     api_data = json.load(response)
 
 rows = api_data["data"]
 
-# Build a clean list of records
 records = []
 
 for row in rows:
@@ -21,7 +19,6 @@ for row in rows:
     actual = row["intensity"]["actual"]
     index_value = row["intensity"]["index"]
 
-    # Use actual where available, otherwise fall back to forecast
     chart_value = actual if actual is not None else forecast
 
     records.append(
@@ -34,7 +31,6 @@ for row in rows:
         }
     )
 
-# Save raw-ish API output as CSV
 with open("data/live-carbon-intensity.csv", "w", newline="", encoding="utf-8") as csv_file:
     writer = csv.DictWriter(
         csv_file,
@@ -43,24 +39,17 @@ with open("data/live-carbon-intensity.csv", "w", newline="", encoding="utf-8") a
     writer.writeheader()
     writer.writerows(records)
 
-# Load into pandas for transformation
 df = pd.DataFrame(records)
 
-# Convert timestamp to datetime
 df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
-
-# Create helper columns
 df["time"] = df["timestamp"].dt.strftime("%H:%M")
 df["date"] = df["timestamp"].dt.strftime("%Y-%m-%d")
 
-# Daily average based on chart_value
 daily_average = df.groupby("date")["chart_value"].mean().reset_index()
 
-# Save cleaned outputs
 df.to_csv("data/cleaned-live-carbon-intensity.csv", index=False)
 daily_average.to_csv("data/daily-average-live-carbon-intensity.csv", index=False)
 
-# Save JSON for the chart
 chart_data = {
     "labels": df["time"].tolist(),
     "values": df["chart_value"].tolist(),

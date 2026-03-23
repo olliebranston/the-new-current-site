@@ -2,6 +2,8 @@ name: Update carbon data
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
   push:
     paths:
       - "scripts/fetch_live_carbon_data.py"
