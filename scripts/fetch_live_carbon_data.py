@@ -51,6 +51,7 @@ df.to_csv("data/cleaned-live-carbon-intensity.csv", index=False)
 daily_average.to_csv("data/daily-average-live-carbon-intensity.csv", index=False)
 
 chart_data = {
+    "last_updated": pd.Timestamp.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
     "labels": df["time"].tolist(),
     "values": df["chart_value"].tolist(),
     "actual_values": [
