@@ -80,3 +80,19 @@ section h3 {
   color: #666666;
   margin-bottom: 12px;
 }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background: #f2f2f2;
+}
