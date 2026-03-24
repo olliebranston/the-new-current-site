@@ -1,6 +1,12 @@
 {
-  "last_updated": "2026-03-24 13:06 UTC",
+  "last_updated": "2026-03-24 13:14 UTC",
   "r_and_d": [
+    {
+      "headline": "All research and innovation news",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news_en",
+      "summary": "Recent EU research and innovation item selected for energy relevance."
+    },
     {
       "headline": "Industry Innovator Action Plan",
       "source": "Energy Innovation Centre",
@@ -56,6 +62,30 @@
       "source": "DESNZ",
       "link": "https://www.gov.uk/government/news/your-energy-bill-from-april-whats-changing",
       "summary": "Recent UK government energy-policy item."
+    },
+    {
+      "headline": "Commission calls on EU countries to start preparing for winter amid Middle East energy disruption",
+      "source": "European Commission Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-start-preparing-winter-amid-middle-east-energy-disruption-2026-03-23_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
+      "headline": "Renewable energy framework post-2030: Consultations launched",
+      "source": "European Commission Energy",
+      "link": "https://energy.ec.europa.eu/news/renewable-energy-framework-post-2030-consultations-launched-2026-03-20_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
+      "headline": "Post-2030 Energy Efficiency Framework - Public consultation launched",
+      "source": "European Commission Energy",
+      "link": "https://energy.ec.europa.eu/news/post-2030-energy-efficiency-framework-public-consultation-launched-2026-03-20_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
+      "headline": "Commission publishes updated guidance on REPowerEU Gas Regulation",
+      "source": "European Commission Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-publishes-updated-guidance-repowereu-gas-regulation-2026-03-18_en",
+      "summary": "Recent European Commission energy-policy item."
     }
   ]
 }
