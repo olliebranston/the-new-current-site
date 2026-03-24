@@ -4,12 +4,74 @@ from datetime import datetime, timezone
 import requests
 from bs4 import BeautifulSoup
 
+EIC_URL = "https://www.ukeic.com/"
 DG_ENERGY_NEWS_URL = "https://energy.ec.europa.eu/news_en"
 DESNZ_NEWS_URL = "https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; TheNewCurrentBot/1.0)"
 }
+
+
+def fetch_eic_r_and_d():
+    response = requests.get(EIC_URL, headers=HEADERS, timeout=30)
+    response.raise_for_status()
+
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    items = []
+    seen_links = set()
+
+    keywords = [
+        "innovation",
+        "innovator",
+        "battery",
+        "hydrogen",
+        "grid",
+        "storage",
+        "electricity",
+        "network",
+        "solar",
+        "wind",
+        "net zero",
+        "technology",
+    ]
+
+    for link in soup.find_all("a", href=True):
+        href = link["href"]
+        text = " ".join(link.stripped_strings).strip()
+
+        if not text:
+            continue
+
+        if href.startswith("http"):
+            full_link = href
+        else:
+            full_link = f"https://www.ukeic.com{href}"
+
+        if full_link in seen_links:
+            continue
+
+        text_lower = text.lower()
+
+        if not any(keyword in text_lower for keyword in keywords):
+            continue
+
+        seen_links.add(full_link)
+
+        items.append(
+            {
+                "headline": text,
+                "source": "Energy Innovation Centre",
+                "link": full_link,
+                "summary": "Recent innovation-related item from the Energy Innovation Centre."
+            }
+        )
+
+        if len(items) >= 4:
+            break
+
+    return items
 
 
 def fetch_dg_energy_policy():
@@ -128,7 +190,7 @@ def safe_fetch(fetch_function, label):
 
 news_radar = {
     "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
-    "r_and_d": [],
+    "r_and_d": safe_fetch(fetch_eic_r_and_d, "EIC R&D"),
     "policy": (
         safe_fetch(fetch_dg_energy_policy, "DG Energy Policy")
         + safe_fetch(fetch_desnz_policy, "DESNZ Policy")
