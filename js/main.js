@@ -15,13 +15,25 @@ if (chartCanvas) {
         data: {
           labels: chartData.labels,
           datasets: [
-            {
-              label: "Carbon intensity",
-              data: chartData.values,
-              borderWidth: 2,
-              tension: 0.2
-            }
-          ]
+  {
+    label: "Carbon intensity (displayed line)",
+    data: chartData.values,
+    borderWidth: 2,
+    tension: 0.2
+  },
+  {
+    label: "Actual",
+    data: chartData.actual_values,
+    borderWidth: 2,
+    tension: 0.2
+  },
+  {
+    label: "Forecast",
+    data: chartData.forecast_values,
+    borderWidth: 2,
+    tension: 0.2
+  }
+]
         },
         options: {
           responsive: true,
