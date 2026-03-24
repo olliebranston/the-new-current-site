@@ -1,0 +1,18 @@
+{
+  "r_and_d": [
+    {
+      "headline": "Placeholder R&D headline",
+      "source": "Source name",
+      "link": "https://example.com",
+      "summary": "A short summary of an R&D-related development in the energy transition."
+    }
+  ],
+  "policy": [
+    {
+      "headline": "Placeholder Policy headline",
+      "source": "Source name",
+      "link": "https://example.com",
+      "summary": "A short summary of a policy or regulatory development affecting the energy transition."
+    }
+  ]
+}

@@ -96,3 +96,32 @@ td {
 th {
   background: #f2f2f2;
 }
+.radar-item,
+.recommendation-card {
+  border-top: 1px solid #dddddd;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.radar-item h4,
+.recommendation-card h4 {
+  margin-bottom: 8px;
+}
+
+.radar-meta,
+.recommendation-meta {
+  font-size: 0.95rem;
+  color: #666666;
+  margin-bottom: 12px;
+}
+
+.radar-item a,
+.recommendation-card a {
+  text-decoration: none;
+  color: #004c99;
+}
+
+.radar-item a:hover,
+.recommendation-card a:hover {
+  text-decoration: underline;
+}

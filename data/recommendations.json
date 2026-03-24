@@ -1,0 +1,14 @@
+{
+  "recommended_read": {
+    "title": "Placeholder recommended read",
+    "source": "Source name",
+    "link": "https://example.com",
+    "description": "A short explanation of why this piece is worth reading."
+  },
+  "recommended_listen": {
+    "title": "Placeholder recommended listen",
+    "source": "Podcast or platform name",
+    "link": "https://example.com",
+    "description": "A short explanation of why this episode is worth listening to."
+  }
+}

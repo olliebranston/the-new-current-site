@@ -3,6 +3,10 @@ console.log("The New Current loaded successfully");
 const chartCanvas = document.getElementById("carbonChart");
 const lastUpdatedText = document.getElementById("lastUpdatedText");
 const dailyAverageTableBody = document.getElementById("dailyAverageTableBody");
+const radarRAndD = document.getElementById("radar-r-and-d");
+const radarPolicy = document.getElementById("radar-policy");
+const recommendedRead = document.getElementById("recommended-read");
+const recommendedListen = document.getElementById("recommended-listen");
 
 if (chartCanvas) {
   fetch("data/carbon-chart-data.json")
@@ -77,5 +81,63 @@ if (chartCanvas) {
     })
     .catch((error) => {
       console.error("Error loading chart data:", error);
+    });
+}
+function renderRadarItems(container, items) {
+  if (!container || !items || items.length === 0) {
+    return;
+  }
+
+  container.innerHTML = "";
+
+  items.forEach((item) => {
+    const wrapper = document.createElement("article");
+    wrapper.className = "radar-item";
+
+    wrapper.innerHTML = `
+      <h4><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.headline}</a></h4>
+      <p class="radar-meta">${item.source}</p>
+      <p>${item.summary}</p>
+    `;
+
+    container.appendChild(wrapper);
+  });
+}
+
+function renderRecommendation(container, item) {
+  if (!container || !item) {
+    return;
+  }
+
+  container.innerHTML = `
+    <article class="recommendation-card">
+      <h4><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h4>
+      <p class="recommendation-meta">${item.source}</p>
+      <p>${item.description}</p>
+    </article>
+  `;
+}
+
+if (radarRAndD || radarPolicy) {
+  fetch("data/news-radar.json")
+    .then((response) => response.json())
+    .then((newsData) => {
+      renderRadarItems(radarRAndD, newsData.r_and_d);
+      renderRadarItems(radarPolicy, newsData.policy);
+    })
+    .catch((error) => {
+      console.error("Error loading news radar data:", error);
+    });
+}
+
+if (recommendedRead || recommendedListen) {
+  fetch("data/recommendations.json")
+    .then((response) => response.json())
+    .then((recommendationData) => {
+      renderRecommendation(recommendedRead, recommendationData.recommended_read);
+      renderRecommendation(recommendedListen, recommendationData.recommended_listen);
+    })
+    .catch((error) => {
+      console.error("Error loading recommendations data:", error);
     });
 }
