@@ -7,6 +7,7 @@ const radarRAndD = document.getElementById("radar-r-and-d");
 const radarPolicy = document.getElementById("radar-policy");
 const recommendedRead = document.getElementById("recommended-read");
 const recommendedListen = document.getElementById("recommended-listen");
+const newsRadarLastUpdated = document.getElementById("newsRadarLastUpdated");
 
 if (chartCanvas) {
   fetch("data/carbon-chart-data.json")
@@ -127,6 +128,10 @@ if (radarRAndD || radarPolicy) {
   fetch("data/news-radar.json")
     .then((response) => response.json())
     .then((newsData) => {
+      if (newsRadarLastUpdated) {
+        newsRadarLastUpdated.textContent = `Last updated: ${newsData.last_updated || "not available"}`;
+      }
+
       renderRadarItems(radarRAndD, newsData.r_and_d);
       renderRadarItems(radarPolicy, newsData.policy);
     })
