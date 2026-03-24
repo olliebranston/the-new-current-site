@@ -1,0 +1,16 @@
+{
+  "notes": [
+    {
+      "title": "Placeholder note one",
+      "date": "2026-03-24",
+      "tag": "Market observation",
+      "content": "This is a short note placeholder. Over time, this section will hold quick observations, reactions, and unfinished ideas related to the energy transition."
+    },
+    {
+      "title": "Placeholder note two",
+      "date": "2026-03-23",
+      "tag": "Question",
+      "content": "This is another placeholder note. Later, each note can be a quick thought, a chart reaction, a policy reaction, or an open question to revisit."
+    }
+  ]
+}

@@ -8,6 +8,7 @@ const radarPolicy = document.getElementById("radar-policy");
 const recommendedRead = document.getElementById("recommended-read");
 const recommendedListen = document.getElementById("recommended-listen");
 const newsRadarLastUpdated = document.getElementById("newsRadarLastUpdated");
+const brainDumpsContainer = document.getElementById("brainDumpsContainer");
 
 if (chartCanvas) {
   fetch("data/carbon-chart-data.json")
@@ -149,5 +150,40 @@ if (recommendedRead || recommendedListen) {
     })
     .catch((error) => {
       console.error("Error loading recommendations data:", error);
+    });
+}
+function renderBrainDumps(container, notes) {
+  if (!container) {
+    return;
+  }
+
+  if (!notes || notes.length === 0) {
+    container.innerHTML = "<p>No notes available right now.</p>";
+    return;
+  }
+
+  container.innerHTML = "";
+
+  notes.forEach((note) => {
+    const wrapper = document.createElement("article");
+    wrapper.className = "brain-dump-card";
+
+    wrapper.innerHTML = `
+      <h4>${note.title}</h4>
+      <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
+      <p>${note.content}</p>
+    `;
+
+    container.appendChild(wrapper);
+  });
+}
+if (brainDumpsContainer) {
+  fetch("data/brain-dumps.json")
+    .then((response) => response.json())
+    .then((brainDumpData) => {
+      renderBrainDumps(brainDumpsContainer, brainDumpData.notes);
+    })
+    .catch((error) => {
+      console.error("Error loading brain dump data:", error);
     });
 }
