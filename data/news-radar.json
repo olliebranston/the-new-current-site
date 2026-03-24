@@ -1,18 +1,54 @@
 {
-  "r_and_d": [
-    {
-      "headline": "Placeholder R&D headline",
-      "source": "Source name",
-      "link": "https://example.com",
-      "summary": "A short summary of an R&D-related development in the energy transition."
-    }
-  ],
+  "last_updated": "2026-03-24 12:09 UTC",
+  "r_and_d": [],
   "policy": [
     {
-      "headline": "Placeholder Policy headline",
-      "source": "Source name",
-      "link": "https://example.com",
-      "summary": "A short summary of a policy or regulatory development affecting the energy transition."
+      "headline": "Commission calls on EU countries to start preparing for winter amid Middle East energy disruption",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-start-preparing-winter-amid-middle-east-energy-disruption-2026-03-23_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
+      "headline": "Renewable energy framework post-2030: Consultations launched",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/renewable-energy-framework-post-2030-consultations-launched-2026-03-20_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
+      "headline": "Post-2030 Energy Efficiency Framework - Public consultation launched",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/post-2030-energy-efficiency-framework-public-consultation-launched-2026-03-20_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
+      "headline": "Commission and EU countries discuss latest developments in the Middle East",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-and-eu-countries-discuss-latest-developments-middle-east-2026-03-19_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
+      "headline": "Iran, the Middle East and UK energy: factsheet",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "summary": "Recent UK government energy-policy item."
+    },
+    {
+      "headline": "Chancellor and Energy Secretary meet with fuel bosses in No11 as government order crackdown on pump prices",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/chancellor-and-energy-secretary-meet-with-fuel-bosses-in-no11-as-government-order-crackdown-on-pump-prices",
+      "summary": "Recent UK government energy-policy item."
+    },
+    {
+      "headline": "Government to go \"further and faster\" in becoming energy secure",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/government-to-go-further-and-faster-in-becoming-energy-secure",
+      "summary": "Recent UK government energy-policy item."
+    },
+    {
+      "headline": "Your energy bill from April: what\u2019s changing",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/your-energy-bill-from-april-whats-changing",
+      "summary": "Recent UK government energy-policy item."
     }
   ]
 }
