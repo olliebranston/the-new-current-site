@@ -16,20 +16,16 @@ if (chartCanvas) {
           labels: chartData.labels,
           datasets: [
   {
-    label: "Carbon intensity (displayed line)",
-    data: chartData.values,
-    borderWidth: 2,
-    tension: 0.2
-  },
-  {
     label: "Actual",
     data: chartData.actual_values,
     borderWidth: 2,
     tension: 0.2
   },
-  {
+{
     label: "Forecast",
-    data: chartData.forecast_values,
+    data: chartData.forecast_values.map((value, index) => {
+      return chartData.actual_values[index] !== null ? null : value;
+    }),
     borderWidth: 2,
     tension: 0.2
   }

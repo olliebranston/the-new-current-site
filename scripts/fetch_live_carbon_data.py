@@ -60,6 +60,7 @@ chart_data = {
     "forecast_values": [
         None if pd.isna(value) else value for value in df["forecast"].tolist()
     ],
+    "daily_average": daily_average.to_dict(orient="records")
 }
 
 with open("data/carbon-chart-data.json", "w", encoding="utf-8") as json_file:
