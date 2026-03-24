@@ -4,76 +4,12 @@ from datetime import datetime, timezone
 import requests
 from bs4 import BeautifulSoup
 
-IEA_NEWS_URL = "https://www.iea.org/news"
 DG_ENERGY_NEWS_URL = "https://energy.ec.europa.eu/news_en"
 DESNZ_NEWS_URL = "https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (compatible; TheNewCurrentBot/1.0)"
 }
-
-
-def fetch_iea_r_and_d():
-    response = requests.get(IEA_NEWS_URL, headers=HEADERS, timeout=30)
-    response.raise_for_status()
-
-    soup = BeautifulSoup(response.text, "html.parser")
-
-    items = []
-    seen_links = set()
-
-    keywords = [
-        "innovation",
-        "technology",
-        "battery",
-        "batteries",
-        "hydrogen",
-        "grid",
-        "storage",
-        "renewable",
-        "electricity",
-        "clean energy",
-        "solar",
-        "wind",
-        "ccus",
-        "critical minerals",
-    ]
-
-    for link in soup.find_all("a", href=True):
-        href = link["href"]
-        text = " ".join(link.stripped_strings).strip()
-
-        if not text:
-            continue
-
-        if not href.startswith("/news/"):
-            continue
-
-        full_link = f"https://www.iea.org{href}"
-
-        if full_link in seen_links:
-            continue
-
-        text_lower = text.lower()
-
-        if not any(keyword in text_lower for keyword in keywords):
-            continue
-
-        seen_links.add(full_link)
-
-        items.append(
-            {
-                "headline": text,
-                "source": "IEA",
-                "link": full_link,
-                "summary": "Recent IEA item selected for R&D relevance."
-            }
-        )
-
-        if len(items) >= 4:
-            break
-
-    return items
 
 
 def fetch_dg_energy_policy():
@@ -114,7 +50,7 @@ def fetch_dg_energy_policy():
             }
         )
 
-        if len(items) >= 3:
+        if len(items) >= 4:
             break
 
     return items
@@ -140,7 +76,7 @@ def fetch_desnz_policy():
         "nuclear",
         "hydrogen",
         "offshore",
-        "emissions trading",
+        "emissions",
     ]
 
     for link in soup.find_all("a", href=True):
@@ -174,19 +110,29 @@ def fetch_desnz_policy():
             }
         )
 
-        if len(items) >= 3:
+        if len(items) >= 4:
             break
 
     return items
 
 
-r_and_d_items = fetch_iea_r_and_d()
-policy_items = fetch_dg_energy_policy() + fetch_desnz_policy()
+def safe_fetch(fetch_function, label):
+    try:
+        items = fetch_function()
+        print(f"{label}: fetched {len(items)} items")
+        return items
+    except Exception as error:
+        print(f"{label}: failed with error: {error}")
+        return []
+
 
 news_radar = {
     "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
-    "r_and_d": r_and_d_items,
-    "policy": policy_items
+    "r_and_d": [],
+    "policy": (
+        safe_fetch(fetch_dg_energy_policy, "DG Energy Policy")
+        + safe_fetch(fetch_desnz_policy, "DESNZ Policy")
+    )
 }
 
 with open("data/news-radar.json", "w", encoding="utf-8") as file:

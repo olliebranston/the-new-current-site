@@ -84,7 +84,12 @@ if (chartCanvas) {
     });
 }
 function renderRadarItems(container, items) {
-  if (!container || !items || items.length === 0) {
+  if (!container) {
+    return;
+  }
+
+  if (!items || items.length === 0) {
+    container.innerHTML = "<p>No items available right now.</p>";
     return;
   }
 
