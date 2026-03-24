@@ -37,8 +37,8 @@
     </section>
 
     <section>
-      <h3>Sample daily average output</h3>
-      <p>This table shows the first simple transformed output from the carbon intensity workflow.</p>
+      <h3>Daily average carbon intensity</h3>
+      <p>This table shows the daily average carbon intensity.</p>
 
       <table>
         <thead>
@@ -47,18 +47,17 @@
             <th>Average Carbon Intensity</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>2026-03-01</td>
-            <td>132.0</td>
-          </tr>
-        </tbody>
+        <tbody id="dailyAverageTableBody">
+         <tr>
+          <td colspan="2">Loading daily average...</td>
+        </tr>
+       </tbody>
       </table>
     </section>
 
     <section>
   <h3>Live carbon intensity: actual vs forecast</h3>
-  <p>This chart shows live national GB carbon-intensity data from the official NESO Carbon Intensity API. Where actual values are not yet available, forecast values are used in the displayed line.</p>
+  <p>This chart shows live national GB carbon-intensity data from the official NESO Carbon Intensity API. Where actual values are not yet available, forecast values are used.</p>
   <p id="lastUpdatedText">Last updated: loading...</p>
   <canvas id="carbonChart"></canvas>
 </section>

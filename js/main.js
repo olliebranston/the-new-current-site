@@ -2,6 +2,7 @@ console.log("The New Current loaded successfully");
 
 const chartCanvas = document.getElementById("carbonChart");
 const lastUpdatedText = document.getElementById("lastUpdatedText");
+const dailyAverageTableBody = document.getElementById("dailyAverageTableBody");
 
 if (chartCanvas) {
   fetch("data/carbon-chart-data.json")
@@ -9,6 +10,24 @@ if (chartCanvas) {
     .then((chartData) => {
       if (lastUpdatedText) {
         lastUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
+      }
+            if (dailyAverageTableBody && chartData.daily_average) {
+        dailyAverageTableBody.innerHTML = "";
+
+        chartData.daily_average.forEach((row) => {
+          const tableRow = document.createElement("tr");
+
+          const dateCell = document.createElement("td");
+          dateCell.textContent = row.date;
+
+          const valueCell = document.createElement("td");
+          valueCell.textContent = Number(row.chart_value).toFixed(2);
+
+          tableRow.appendChild(dateCell);
+          tableRow.appendChild(valueCell);
+
+          dailyAverageTableBody.appendChild(tableRow);
+        });
       }
       new Chart(chartCanvas, {
         type: "line",
