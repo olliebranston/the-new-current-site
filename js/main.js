@@ -9,6 +9,8 @@ const recommendedRead = document.getElementById("recommended-read");
 const recommendedListen = document.getElementById("recommended-listen");
 const newsRadarLastUpdated = document.getElementById("newsRadarLastUpdated");
 const brainDumpsContainer = document.getElementById("brainDumpsContainer");
+const homepageBrainDumps = document.getElementById("homepageBrainDumps");
+const homepageReportingPreview = document.getElementById("homepageReportingPreview");
 
 if (chartCanvas) {
   fetch("data/carbon-chart-data.json")
@@ -177,13 +179,110 @@ function renderBrainDumps(container, notes) {
     container.appendChild(wrapper);
   });
 }
-if (brainDumpsContainer) {
+function renderHomepageBrainDumps(container, notes) {
+  if (!container) {
+    return;
+  }
+
+  if (!notes || notes.length === 0) {
+    container.innerHTML = "<p>No Brain Dumps available right now.</p>";
+    return;
+  }
+
+  container.innerHTML = "";
+
+  notes.slice(0, 3).forEach((note) => {
+    const wrapper = document.createElement("article");
+    wrapper.className = "brain-dump-preview-card";
+
+    wrapper.innerHTML = `
+      <p class="card-kicker">Preview</p>
+      <h4>${note.title}</h4>
+      <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
+      <p>${note.content}</p>
+    `;
+
+    container.appendChild(wrapper);
+  });
+}
+function renderHomepageReportingPreview(container, recommendations, newsData) {
+  if (!container) {
+    return;
+  }
+
+  const cards = [];
+
+  if (recommendations && recommendations.recommended_read) {
+    cards.push(`
+      <article class="reporting-preview-card">
+        <p class="card-kicker">Recommended</p>
+        <h4><a href="${recommendations.recommended_read.link}" target="_blank" rel="noopener noreferrer">Read</a></h4>
+        <p>${recommendations.recommended_read.title}</p>
+      </article>
+    `);
+  }
+
+  if (recommendations && recommendations.recommended_listen) {
+    cards.push(`
+      <article class="reporting-preview-card">
+        <p class="card-kicker">Recommended</p>
+        <h4><a href="${recommendations.recommended_listen.link}" target="_blank" rel="noopener noreferrer">Listen</a></h4>
+        <p>${recommendations.recommended_listen.title}</p>
+      </article>
+    `);
+  }
+
+  if (newsData && newsData.r_and_d && newsData.r_and_d.length > 0) {
+    cards.push(`
+      <article class="reporting-preview-card">
+        <p class="card-kicker">Latest</p>
+        <h4><a href="${newsData.r_and_d[0].link}" target="_blank" rel="noopener noreferrer">R&amp;D</a></h4>
+        <p>${newsData.r_and_d[0].headline}</p>
+      </article>
+    `);
+  }
+
+  if (newsData && newsData.policy && newsData.policy.length > 0) {
+    cards.push(`
+      <article class="reporting-preview-card">
+        <p class="card-kicker">Latest</p>
+        <h4><a href="${newsData.policy[0].link}" target="_blank" rel="noopener noreferrer">Policy</a></h4>
+        <p>${newsData.policy[0].headline}</p>
+      </article>
+    `);
+  }
+
+  if (cards.length === 0) {
+    container.innerHTML = "<p>No reporting preview available right now.</p>";
+    return;
+  }
+
+  container.innerHTML = cards.join("");
+}
+if (brainDumpsContainer || homepageBrainDumps) {
   fetch("data/brain-dumps.json")
     .then((response) => response.json())
     .then((brainDumpData) => {
       renderBrainDumps(brainDumpsContainer, brainDumpData.notes);
+      renderHomepageBrainDumps(homepageBrainDumps, brainDumpData.notes);
     })
     .catch((error) => {
       console.error("Error loading brain dump data:", error);
+    });
+}
+if (homepageReportingPreview) {
+  Promise.all([
+    fetch("data/recommendations.json").then((response) => response.json()),
+    fetch("data/news-radar.json").then((response) => response.json())
+  ])
+    .then(([recommendationData, newsData]) => {
+      renderHomepageReportingPreview(
+        homepageReportingPreview,
+        recommendationData,
+        newsData
+      );
+    })
+    .catch((error) => {
+      console.error("Error loading homepage reporting preview:", error);
     });
 }

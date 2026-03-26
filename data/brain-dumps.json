@@ -8,7 +8,13 @@
     },
     {
       "title": "Placeholder note two",
-      "date": "2026-03-23",
+      "date": "2026-03-25",
+      "tag": "Question",
+      "content": "This is another placeholder note. Later, each note can be a quick thought, a chart reaction, a policy reaction, or an open question to revisit."
+    }
+    {
+      "title": "Placeholder note three",
+      "date": "2026-03-26",
       "tag": "Question",
       "content": "This is another placeholder note. Later, each note can be a quick thought, a chart reaction, a policy reaction, or an open question to revisit."
     }

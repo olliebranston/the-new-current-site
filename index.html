@@ -7,68 +7,168 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header>
-    <h1>The New Current</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="thought-pieces.html">Thought Pieces</a>
-      <a href="brain-dumps.html">Brain Dumps</a>
-      <a href="data.html">Data</a>
-      <a href="reporting.html">Reporting</a>
-      <a href="about.html">About</a>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand">The New Current</a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="thought-pieces.html" class="nav-link">Thought Pieces</a>
+      <a href="brain-dumps.html" class="nav-link">Brain Dumps</a>
+      <a href="data.html" class="nav-link">Data</a>
+      <a href="reporting.html" class="nav-link">Reporting</a>
+      <a href="about.html" class="nav-link">About</a>
     </nav>
-  </header>
 
-  <main>
-    <section>
-      <h2>Energy transition writing, data, and reporting</h2>
-      <p>The New Current is a personal site focused on the energy transition, combining thought pieces, short-form notes, live data workflows, and curated reporting.</p>
-      <p>The site is built around two halves: ideas and writing, and live intelligence.</p>
-    </section>
+    <a href="mailto:ollie.branston123@gmail.com" class="contact-button">Contact</a>
+  </div>
+</header>
 
-    <section>
-      <h3>Explore the site</h3>
-      <div class="home-grid">
-        <article class="home-card">
-          <h4><a href="thought-pieces.html">Thought Pieces</a></h4>
-          <p>Longer-form essays and analysis on markets, policy, technology, and the wider energy transition.</p>
-        </article>
-
-        <article class="home-card">
-          <h4><a href="brain-dumps.html">Brain Dumps</a></h4>
-          <p>Shorter notes, reactions, questions, and unfinished ideas that are lighter and faster than full articles.</p>
-        </article>
-
-        <article class="home-card">
-          <h4><a href="data.html">Data</a></h4>
-          <p>Live carbon-intensity tracking, charting experiments, and future energy-transition dashboards.</p>
-        </article>
-
-        <article class="home-card">
-          <h4><a href="reporting.html">Reporting</a></h4>
-          <p>A selective news radar covering energy-transition developments, plus manually curated reads and listens.</p>
-        </article>
+<main class="homepage-main">
+  <section class="home-hero-card">
+    <div class="home-hero-text">
+      <p class="eyebrow">Energy transition intelligence</p>
+      <h1>The New Current</h1>
+      <p>
+        The New Current is a free website about the energy transition, built as a
+        real-world learning project in public. It combines writing, live data,
+        reporting, and structured experimentation in one place.
+      </p>
+      <p>
+        The site is organised around two halves: <strong>Ideas and Writing</strong>
+        and <strong>Live Intelligence</strong>.
+      </p>
       </div>
-    </section>
 
-    <section>
-      <h3>How the site is structured</h3>
-      <ul>
-        <li><strong>Ideas and Writing</strong> — Thought Pieces and Brain Dumps</li>
-        <li><strong>Live Intelligence</strong> — Data and Reporting</li>
-      </ul>
-    </section>
+    <div class="home-hero-media">
+      <img src="content/home-logo.jpg" alt="The New Current logo" class="home-hero-image">
+    </div>
+  </section>
 
-    <section>
-      <h3>Currently on the site</h3>
-      <ul>
-        <li>A live GB carbon-intensity workflow, including automated updates and charting</li>
-        <li>A selective Reporting page with automated policy/news radar elements</li>
-        <li>A Brain Dumps section that can be updated through structured note entries</li>
-        <li>The first content and navigation structure for a wider energy-transition publication</li>
-      </ul>
-    </section>
-  </main>
+  <section class="homepage-section">
+    <div class="homepage-section-heading">
+      <p class="eyebrow">Ideas and Writing</p>
+      <h2>Original Thoughts</h2>
+    </div>
+
+    <div class="homepage-subsection">
+      <div class="subsection-header">
+        <div>
+          <p class="subsection-label">Thought Leadership</p>
+        </div>
+        <a href="thought-pieces.html" class="subsection-link">View all Thought Pieces</a>
+      </div>
+
+      <div class="thoughts-grid">
+        <article class="featured-thought-card">
+          <div class="featured-thought-content">
+            <p class="card-kicker">Most recent article</p>
+            <h3><a href="articles/article-1.html">Article Title One</a></h3>
+            <p class="article-meta">Month Year · Topic</p>
+            <p>
+              A short summary of the article goes here. This should explain in one
+              or two sentences what the piece is about and why someone might want to read it.
+            </p>
+          </div>
+          <div class="featured-thought-image">
+            <img src="content/article-1.jpg" alt="Article cover image placeholder">
+          </div>
+        </article>
+
+        <div class="thought-list">
+          <article class="compact-thought-card">
+            <p class="card-kicker">Recent</p>
+            <h4><a href="articles/article-1.html">Article Title One</a></h4>
+            <p class="article-meta">Month Year · Topic</p>
+          </article>
+
+          <article class="compact-thought-card">
+            <p class="card-kicker">Recent</p>
+            <h4><a href="articles/article-2.html">Article Title Two</a></h4>
+            <p class="article-meta">Month Year · Topic</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="homepage-subsection">
+      <div class="subsection-header">
+        <div>
+          <p class="subsection-label">Brain Dumps</p>
+        </div>
+        <a href="brain-dumps.html" class="subsection-link">View all Brain Dumps</a>
+      </div>
+
+      <div id="homepageBrainDumps" class="brain-dump-preview-grid">
+        <p>Loading Brain Dumps preview...</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="homepage-section">
+    <div class="homepage-section-heading">
+      <p class="eyebrow">Live Intelligence</p>
+      <h2>What is moving now</h2>
+    </div>
+
+    <div class="homepage-subsection">
+      <div class="subsection-header">
+        <div>
+          <p class="subsection-label">Data</p>
+        </div>
+        <a href="data.html" class="subsection-link">Go to Data</a>
+      </div>
+
+      <article class="data-preview-card">
+        <div class="data-preview-copy">
+          <h3>GB carbon intensity</h3>
+          <p>
+            This section tracks live national GB carbon-intensity data, combining
+            actual and forecast values from the official source.
+          </p>
+          <p>
+            The wider Data page is where future experiments, trackers, and
+            dashboards on the energy transition will also sit.
+          </p>
+        </div>
+
+        <div class="data-preview-chart">
+          <p class="data-preview-placeholder">Carbon intensity chart preview will sit here.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="homepage-subsection">
+      <div class="subsection-header">
+        <div>
+          <p class="subsection-label">Reporting</p>
+        </div>
+        <a href="reporting.html" class="subsection-link">Go to Reporting</a>
+      </div>
+
+      <div id="homepageReportingPreview" class="reporting-preview-grid">
+        <p>Loading reporting preview...</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="homepage-section">
+    <div class="subsection-header">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Why this site exists</h2>
+      </div>
+      <a href="about.html" class="subsection-link">Go to About</a>
+    </div>
+
+    <article class="about-preview-card">
+      <p>
+        The New Current exists to think in public about the energy transition and
+        to combine commentary with evidence: longer writing, shorter notes, live
+        data, and selective reporting in one place.
+      </p>
+    </article>
+  </section>
+</main>
 
   <script src="js/main.js"></script>
 </body>
