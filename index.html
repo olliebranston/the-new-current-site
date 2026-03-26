@@ -30,7 +30,7 @@
       <h1>The New Current</h1>
       <p>
         The New Current is a free website about the energy transition, built as a
-        real-world learning project in public. It combines writing, live data,
+        real-world learning project in public. It brings together writing, live data,
         reporting, and structured experimentation in one place.
       </p>
       <p>
@@ -46,14 +46,14 @@
 
   <section class="homepage-section">
     <div class="homepage-section-heading">
-      <p class="eyebrow">Ideas and Writing</p>
-      <h2>Original Thoughts</h2>
+      <p class="eyebrow">Original Thoughts</p>
+      <h2>Thought Pieces and Brain Dumps</h2>
     </div>
 
     <div class="homepage-subsection">
       <div class="subsection-header">
         <div>
-          <p class="subsection-label">Thought Leadership</p>
+          <p class="subsection-label">Thought Pieces</p>
         </div>
         <a href="thought-pieces.html" class="subsection-link">View all Thought Pieces</a>
       </div>
@@ -61,7 +61,7 @@
       <div class="thoughts-grid">
         <article class="featured-thought-card">
           <div class="featured-thought-content">
-            <p class="card-kicker">Most recent article</p>
+            <p class="card-kicker">Featured article</p>
             <h3><a href="articles/article-1.html">Article Title One</a></h3>
             <p class="article-meta">Month Year · Topic</p>
             <p>
@@ -107,7 +107,7 @@
   <section class="homepage-section">
     <div class="homepage-section-heading">
       <p class="eyebrow">Live Intelligence</p>
-      <h2>What is moving now</h2>
+      <h2>Data and Reporting</h2>
     </div>
 
     <div class="homepage-subsection">
@@ -132,7 +132,8 @@
         </div>
 
         <div class="data-preview-chart">
-          <p class="data-preview-placeholder">Carbon intensity chart preview will sit here.</p>
+          <canvas id="homepageCarbonChart"></canvas>
+          <p id="homepageCarbonChartUpdated" class="data-preview-updated">Last updated: loading...</p>
         </div>
       </article>
     </div>
@@ -170,6 +171,7 @@
   </section>
 </main>
 
-  <script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

@@ -1,7 +1,9 @@
 console.log("The New Current loaded successfully");
 
 const chartCanvas = document.getElementById("carbonChart");
+const homepageChartCanvas = document.getElementById("homepageCarbonChart");
 const lastUpdatedText = document.getElementById("lastUpdatedText");
+const homepageChartUpdated = document.getElementById("homepageCarbonChartUpdated");
 const dailyAverageTableBody = document.getElementById("dailyAverageTableBody");
 const radarRAndD = document.getElementById("radar-r-and-d");
 const radarPolicy = document.getElementById("radar-policy");
@@ -12,14 +14,75 @@ const brainDumpsContainer = document.getElementById("brainDumpsContainer");
 const homepageBrainDumps = document.getElementById("homepageBrainDumps");
 const homepageReportingPreview = document.getElementById("homepageReportingPreview");
 
-if (chartCanvas) {
+function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
+  if (!canvas) {
+    return;
+  }
+
+  new Chart(canvas, {
+    type: "line",
+    data: {
+      labels: chartData.labels,
+      datasets: [
+        {
+          label: "Actual",
+          data: chartData.actual_values,
+          borderWidth: 2,
+          tension: 0.2
+        },
+        {
+          label: "Forecast",
+          data: chartData.forecast_values.map((value, index) => {
+            return chartData.actual_values[index] !== null ? null : value;
+          }),
+          borderWidth: 2,
+          tension: 0.2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: !isHomepagePreview,
+      plugins: {
+        legend: {
+          display: !isHomepagePreview
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          title: {
+            display: !isHomepagePreview,
+            text: "gCO2/kWh"
+          }
+        },
+        x: {
+          title: {
+            display: !isHomepagePreview,
+            text: "Time"
+          },
+          ticks: {
+            maxTicksLimit: isHomepagePreview ? 6 : 12
+          }
+        }
+      }
+    }
+  });
+}
+
+if (chartCanvas || homepageChartCanvas) {
   fetch("data/carbon-chart-data.json")
     .then((response) => response.json())
     .then((chartData) => {
       if (lastUpdatedText) {
         lastUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
       }
-            if (dailyAverageTableBody && chartData.daily_average) {
+
+      if (homepageChartUpdated) {
+        homepageChartUpdated.textContent = `Last updated: ${chartData.last_updated}`;
+      }
+
+      if (dailyAverageTableBody && chartData.daily_average) {
         dailyAverageTableBody.innerHTML = "";
 
         chartData.daily_average.forEach((row) => {
@@ -37,51 +100,9 @@ if (chartCanvas) {
           dailyAverageTableBody.appendChild(tableRow);
         });
       }
-      new Chart(chartCanvas, {
-        type: "line",
-        data: {
-          labels: chartData.labels,
-          datasets: [
-  {
-    label: "Actual",
-    data: chartData.actual_values,
-    borderWidth: 2,
-    tension: 0.2
-  },
-{
-    label: "Forecast",
-    data: chartData.forecast_values.map((value, index) => {
-      return chartData.actual_values[index] !== null ? null : value;
-    }),
-    borderWidth: 2,
-    tension: 0.2
-  }
-]
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              display: true
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: false,
-              title: {
-                display: true,
-                text: "gCO2/kWh"
-              }
-            },
-            x: {
-              title: {
-                display: true,
-                text: "Time"
-              }
-            }
-          }
-        }
-      });
+
+      buildCarbonChart(chartCanvas, chartData, false);
+      buildCarbonChart(homepageChartCanvas, chartData, true);
     })
     .catch((error) => {
       console.error("Error loading chart data:", error);
