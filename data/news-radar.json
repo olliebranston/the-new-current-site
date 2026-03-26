@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-26 05:50 UTC",
+  "last_updated": "2026-03-26 15:58 UTC",
   "r_and_d": [
     {
       "headline": "All research and innovation news",
@@ -16,6 +16,12 @@
   ],
   "policy": [
     {
+      "headline": "Gas coordination Group confirms readiness to prepare for the upcoming winter season",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/gas-coordination-group-confirms-readiness-prepare-upcoming-winter-season-2026-03-26_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
       "headline": "Commission calls on EU countries to start preparing for winter amid Middle East energy disruption",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-start-preparing-winter-amid-middle-east-energy-disruption-2026-03-23_en",
@@ -31,12 +37,6 @@
       "headline": "Post-2030 Energy Efficiency Framework - Public consultation launched",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/post-2030-energy-efficiency-framework-public-consultation-launched-2026-03-20_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
-      "headline": "Commission and EU countries discuss latest developments in the Middle East",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commission-and-eu-countries-discuss-latest-developments-middle-east-2026-03-19_en",
       "summary": "Recent European Commission energy-policy item."
     },
     {
