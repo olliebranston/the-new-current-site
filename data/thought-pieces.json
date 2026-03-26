@@ -1,0 +1,31 @@
+{
+  "articles": [
+    {
+      "title": "Article Title One",
+      "date": "2026-03-20",
+      "topic": "Topic",
+      "summary": "A short summary of the article goes here. This should explain in one or two sentences what the piece is about and why someone might want to read it.",
+      "link": "articles/article-1.html",
+      "image": "content/article-1.jpg",
+      "featured": true
+    },
+    {
+      "title": "Article Title Two",
+      "date": "2026-03-10",
+      "topic": "Topic",
+      "summary": "A short summary of the article goes here. This can later be replaced with the real description of your second piece.",
+      "link": "articles/article-2.html",
+      "image": "content/article-2.jpg",
+      "featured": false
+    },
+    {
+      "title": "Article Title Three",
+      "date": "2026-03-01",
+      "topic": "Topic",
+      "summary": "A short summary of the article goes here. This can later be replaced with the real description of your third piece.",
+      "link": "articles/article-3.html",
+      "image": "content/article-3.jpg",
+      "featured": false
+    }
+  ]
+}

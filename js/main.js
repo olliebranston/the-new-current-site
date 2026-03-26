@@ -13,6 +13,8 @@ const newsRadarLastUpdated = document.getElementById("newsRadarLastUpdated");
 const brainDumpsContainer = document.getElementById("brainDumpsContainer");
 const homepageBrainDumps = document.getElementById("homepageBrainDumps");
 const homepageReportingPreview = document.getElementById("homepageReportingPreview");
+const thoughtPiecesContainer = document.getElementById("thoughtPiecesContainer");
+const homepageThoughtPieces = document.getElementById("homepageThoughtPieces");
 
 function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
   if (!canvas) {
@@ -108,6 +110,9 @@ if (chartCanvas || homepageChartCanvas) {
       console.error("Error loading chart data:", error);
     });
 }
+function sortItemsByDate(items) {
+  return [...items].sort((a, b) => new Date(b.date) - new Date(a.date));
+}
 function renderRadarItems(container, items) {
   if (!container) {
     return;
@@ -185,9 +190,11 @@ function renderBrainDumps(container, notes) {
     return;
   }
 
+  const sortedNotes = sortItemsByDate(notes);
+
   container.innerHTML = "";
 
-  notes.forEach((note) => {
+  sortedNotes.forEach((note) => {
     const wrapper = document.createElement("article");
     wrapper.className = "brain-dump-card";
 
@@ -210,9 +217,11 @@ function renderHomepageBrainDumps(container, notes) {
     return;
   }
 
+  const sortedNotes = sortItemsByDate(notes);
+
   container.innerHTML = "";
 
-  notes.slice(0, 3).forEach((note) => {
+  sortedNotes.slice(0, 3).forEach((note) => {
     const wrapper = document.createElement("article");
     wrapper.className = "brain-dump-preview-card";
 
@@ -280,6 +289,73 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
 
   container.innerHTML = cards.join("");
 }
+
+function renderThoughtPieces(container, articles) {
+  if (!container) {
+    return;
+  }
+
+  if (!articles || articles.length === 0) {
+    container.innerHTML = "<p>No articles available right now.</p>";
+    return;
+  }
+
+  const sortedArticles = sortItemsByDate(articles);
+
+  container.innerHTML = "";
+
+  sortedArticles.forEach((article) => {
+    const wrapper = document.createElement("article");
+    wrapper.className = "article-card";
+
+    wrapper.innerHTML = `
+      <h4><a href="${article.link}">${article.title}</a></h4>
+      <p class="article-meta">${article.date} · ${article.topic}</p>
+      <p>${article.summary}</p>
+    `;
+
+    container.appendChild(wrapper);
+  });
+}
+
+function renderHomepageThoughtPieces(container, articles) {
+  if (!container) {
+    return;
+  }
+
+  if (!articles || articles.length === 0) {
+    container.innerHTML = "<p>No thought pieces available right now.</p>";
+    return;
+  }
+
+  const sortedArticles = sortItemsByDate(articles);
+  const featuredArticle = sortedArticles[0];
+  const secondaryArticles = sortedArticles.slice(1, 3);
+
+  container.innerHTML = `
+    <article class="featured-thought-card">
+      <div class="featured-thought-content">
+        <p class="card-kicker">Most recent article</p>
+        <h3><a href="${featuredArticle.link}">${featuredArticle.title}</a></h3>
+        <p class="article-meta">${featuredArticle.date} · ${featuredArticle.topic}</p>
+        <p>${featuredArticle.summary}</p>
+      </div>
+      <div class="featured-thought-image">
+        <img src="${featuredArticle.image}" alt="${featuredArticle.title}">
+      </div>
+    </article>
+
+    <div class="thought-list">
+      ${secondaryArticles.map((article) => `
+        <article class="compact-thought-card">
+          <p class="card-kicker">Recent</p>
+          <h4><a href="${article.link}">${article.title}</a></h4>
+          <p class="article-meta">${article.date} · ${article.topic}</p>
+        </article>
+      `).join("")}
+    </div>
+  `;
+}
 if (brainDumpsContainer || homepageBrainDumps) {
   fetch("data/brain-dumps.json")
     .then((response) => response.json())
@@ -305,5 +381,16 @@ if (homepageReportingPreview) {
     })
     .catch((error) => {
       console.error("Error loading homepage reporting preview:", error);
+    });
+}
+if (thoughtPiecesContainer || homepageThoughtPieces) {
+  fetch("data/thought-pieces.json")
+    .then((response) => response.json())
+    .then((thoughtPiecesData) => {
+      renderThoughtPieces(thoughtPiecesContainer, thoughtPiecesData.articles);
+      renderHomepageThoughtPieces(homepageThoughtPieces, thoughtPiecesData.articles);
+    })
+    .catch((error) => {
+      console.error("Error loading thought pieces data:", error);
     });
 }
