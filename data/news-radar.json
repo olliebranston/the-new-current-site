@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-26 15:58 UTC",
+  "last_updated": "2026-03-27 05:51 UTC",
   "r_and_d": [
     {
       "headline": "All research and innovation news",
@@ -28,15 +28,15 @@
       "summary": "Recent European Commission energy-policy item."
     },
     {
-      "headline": "Renewable energy framework post-2030: Consultations launched",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/renewable-energy-framework-post-2030-consultations-launched-2026-03-20_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
       "headline": "Post-2030 Energy Efficiency Framework - Public consultation launched",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/post-2030-energy-efficiency-framework-public-consultation-launched-2026-03-20_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
+      "headline": "Renewable energy framework post-2030: Consultations launched",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/renewable-energy-framework-post-2030-consultations-launched-2026-03-20_en",
       "summary": "Recent European Commission energy-policy item."
     },
     {
@@ -79,12 +79,6 @@
       "headline": "Post-2030 Energy Efficiency Framework - Public consultation launched",
       "source": "European Commission Energy",
       "link": "https://energy.ec.europa.eu/news/post-2030-energy-efficiency-framework-public-consultation-launched-2026-03-20_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
-      "headline": "Commission publishes updated guidance on REPowerEU Gas Regulation",
-      "source": "European Commission Energy",
-      "link": "https://energy.ec.europa.eu/news/commission-publishes-updated-guidance-repowereu-gas-regulation-2026-03-18_en",
       "summary": "Recent European Commission energy-policy item."
     }
   ]
