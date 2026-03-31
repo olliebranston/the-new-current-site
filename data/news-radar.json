@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-31 05:56 UTC",
+  "last_updated": "2026-03-31 15:53 UTC",
   "r_and_d": [
     {
       "headline": "All research and innovation news",
@@ -16,6 +16,12 @@
   ],
   "policy": [
     {
+      "headline": "Commission\u202fcalls on\u202fEU countries to coordinate measures to ensure oil security of supply amid Middle East energy disruption",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-coordinate-measures-ensure-oil-security-supply-amid-middle-east-energy-2026-03-31_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
       "headline": "Connecting classrooms with fusion research: Commission welcomes school teachers from across Europe to ITER",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/connecting-classrooms-fusion-research-commission-welcomes-school-teachers-across-europe-iter-2026-03-30_en",
@@ -31,12 +37,6 @@
       "headline": "Commission and EU countries discuss latest developments concerning energy security",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/commission-and-eu-countries-discuss-latest-developments-concerning-energy-security-2026-03-27_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
-      "headline": "Gas coordination Group confirms readiness to prepare for the upcoming winter season",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/gas-coordination-group-confirms-readiness-prepare-upcoming-winter-season-2026-03-26_en",
       "summary": "Recent European Commission energy-policy item."
     },
     {
@@ -64,6 +64,12 @@
       "summary": "Recent UK government energy-policy item."
     },
     {
+      "headline": "Commission\u202fcalls on\u202fEU countries to coordinate measures to ensure oil security of supply amid Middle East energy disruption",
+      "source": "European Commission Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-coordinate-measures-ensure-oil-security-supply-amid-middle-east-energy-2026-03-31_en",
+      "summary": "Recent European Commission energy-policy item."
+    },
+    {
       "headline": "Connecting classrooms with fusion research: Commission welcomes school teachers from across Europe to ITER",
       "source": "European Commission Energy",
       "link": "https://energy.ec.europa.eu/news/connecting-classrooms-fusion-research-commission-welcomes-school-teachers-across-europe-iter-2026-03-30_en",
@@ -73,12 +79,6 @@
       "headline": "Rating scheme for data centres in the EU \u2013 Commission launches call for feedback",
       "source": "European Commission Energy",
       "link": "https://energy.ec.europa.eu/news/rating-scheme-data-centres-eu-commission-launches-call-feedback-2026-03-27_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
-      "headline": "Commission and EU countries discuss latest developments concerning energy security",
-      "source": "European Commission Energy",
-      "link": "https://energy.ec.europa.eu/news/commission-and-eu-countries-discuss-latest-developments-concerning-energy-security-2026-03-27_en",
       "summary": "Recent European Commission energy-policy item."
     },
     {
