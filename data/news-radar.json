@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-01 06:12 UTC",
+  "last_updated": "2026-04-01 15:58 UTC",
   "r_and_d": [
     {
       "headline": "All research and innovation news",
@@ -11,6 +11,12 @@
       "headline": "Industry Innovator Action Plan",
       "source": "Energy Innovation Centre",
       "link": "https://www.ukeic.com/energy-innovator-support/action-plan/",
+      "summary": "Recent innovation-related item from the Energy Innovation Centre."
+    },
+    {
+      "headline": "SAFEGRID: Strategic Assessment for Flood Events Across the Grid",
+      "source": "Energy Innovation Centre",
+      "link": "https://www.ukeic.com/case-study/safegrid/",
       "summary": "Recent innovation-related item from the Energy Innovation Centre."
     }
   ],
