@@ -949,12 +949,12 @@ th {
 
 .recommendation-card h4 a {
   text-decoration: none;
-  color: var(--brand-blue);
+  color: var(--text-main);
 }
 
 .recommendation-card h4 a:hover {
-  color: var(--brand-blue-hover);
-  text-decoration: underline;
+  color: var(--brand-blue);
+  text-decoration: none;
 }
 
 #radar-r-and-d,
@@ -976,12 +976,12 @@ th {
 
 .radar-item h4 a {
   text-decoration: none;
-  color: var(--brand-blue);
+  color: var(--text-main);
 }
 
 .radar-item h4 a:hover {
-  color: var(--brand-blue-hover);
-  text-decoration: underline;
+  color: var(--brand-blue);
+  text-decoration: none;
 }
 
 .radar-meta {

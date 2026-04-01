@@ -164,13 +164,14 @@ function renderRadarItems(container, items) {
   });
 }
 
-function renderRecommendation(container, item) {
+function renderRecommendation(container, item, labelText) {
   if (!container || !item) {
     return;
   }
 
   container.innerHTML = `
     <article class="recommendation-card">
+      <p class="card-kicker">${labelText}</p>
       <h4><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h4>
       <p class="recommendation-meta">${item.source}</p>
       <p>${item.description}</p>
@@ -198,8 +199,8 @@ if (recommendedRead || recommendedListen) {
   fetch("data/recommendations.json")
     .then((response) => response.json())
     .then((recommendationData) => {
-      renderRecommendation(recommendedRead, recommendationData.recommended_read);
-      renderRecommendation(recommendedListen, recommendationData.recommended_listen);
+      renderRecommendation(recommendedRead, recommendationData.recommended_read, "Recommended read");
+      renderRecommendation(recommendedListen, recommendationData.recommended_listen, "Recommended listen");
     })
     .catch((error) => {
       console.error("Error loading recommendations data:", error);
