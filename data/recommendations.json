@@ -1,14 +1,14 @@
 {
   "recommended_read": {
-    "title": "Placeholder recommended read",
-    "source": "Source name",
-    "link": "https://example.com",
-    "description": "A short explanation of why this piece is worth reading."
+    "title": "Nat Bullard's Decarbonization deck 2026",
+    "source": "Nat Bullard",
+    "link": "https://www.nathanielbullard.com/presentations",
+    "description": "Easy to understand data visualisations of different areas of the energy transition."
   },
   "recommended_listen": {
-    "title": "Placeholder recommended listen",
-    "source": "Podcast or platform name",
-    "link": "https://example.com",
-    "description": "A short explanation of why this episode is worth listening to."
+    "title": "The brutal truth about net zero and how to vanquish climate populists, with Dieter Helm",
+    "source": "The Rest is Politics: Leading",
+    "link": "https://www.youtube.com/watch?v=2fTY9rr381c",
+    "description": "Building on his 2017 cost of energy review, Prof. Dieter Helm discusses the challenges of the UK's national energy strategy."
   }
 }

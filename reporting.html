@@ -24,15 +24,12 @@
   </div>
 </header>
 
-  <main>
-    <section>
-      <h2>Reporting</h2>
-      <p>This section tracks energy transition developments across R&amp;D and policy.</p>
-      <p>It combines a conservative, curated news radar with manually selected recommendations.</p>
-    </section>
+  <main class="reporting-page">
+    <section class="reporting-block">
+      <div class="reporting-block-heading">
+        <p class="eyebrow reporting-eyebrow">Recommended</p>
+      </div>
 
-    <section>
-      <h3>Recommended</h3>
       <div class="recommendations-grid">
         <div id="recommended-read">
           <p>Loading recommended read...</p>
@@ -44,23 +41,24 @@
       </div>
     </section>
 
-    <section>
-      <h3>News Radar</h3>
-      <p class="section-intro">The radar is designed to stay selective rather than exhaustive, focusing on smaller nets and higher-signal capture.</p>
-      <p id="newsRadarLastUpdated">Last updated: loading...</p>
-    </section>
-
-    <section>
-      <h3>R&amp;D</h3>
-      <div id="radar-r-and-d">
-        <p>Loading R&amp;D headlines...</p>
+    <section class="reporting-block">
+      <div class="reporting-block-heading">
+        <p class="eyebrow reporting-eyebrow">News Radar</p>
+        <p id="newsRadarLastUpdated">Last updated: loading...</p>
       </div>
-    </section>
 
-    <section>
-      <h3>Policy</h3>
-      <div id="radar-policy">
-        <p>Loading policy headlines...</p>
+      <div class="reporting-subsection">
+        <h4 class="reporting-subheading">R&amp;D</h4>
+        <div id="radar-r-and-d">
+          <p>Loading R&amp;D headlines...</p>
+        </div>
+      </div>
+
+      <div class="reporting-subsection">
+        <h4 class="reporting-subheading">Policy</h4>
+        <div id="radar-policy">
+          <p>Loading policy headlines...</p>
+        </div>
       </div>
     </section>
   </main>

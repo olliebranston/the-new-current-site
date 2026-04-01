@@ -1,97 +1,77 @@
 {
-  "last_updated": "2026-04-01 15:58 UTC",
+  "last_updated": "2026-04-01 23:34 UTC",
   "r_and_d": [
     {
-      "headline": "All research and innovation news",
+      "headline": "EU and Australia formally open negotiations on the association to Horizon Europe",
       "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news_en",
-      "summary": "Recent EU research and innovation item selected for energy relevance."
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-and-australia-formally-open-negotiations-association-horizon-europe-2026-03-31_en",
+      "published_at": "2026-03-31T12:59:23Z",
+      "display_date": "31 March 2026"
     },
     {
-      "headline": "Industry Innovator Action Plan",
-      "source": "Energy Innovation Centre",
-      "link": "https://www.ukeic.com/energy-innovator-support/action-plan/",
-      "summary": "Recent innovation-related item from the Energy Innovation Centre."
+      "headline": "New framework to measure knowledge valorisation",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/new-framework-measure-knowledge-valorisation-2026-03-30_en",
+      "published_at": "2026-03-30T08:24:34Z",
+      "display_date": "30 March 2026"
     },
     {
-      "headline": "SAFEGRID: Strategic Assessment for Flood Events Across the Grid",
-      "source": "Energy Innovation Centre",
-      "link": "https://www.ukeic.com/case-study/safegrid/",
-      "summary": "Recent innovation-related item from the Energy Innovation Centre."
+      "headline": "Fundamental Research",
+      "source": "CORDIS Energy",
+      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
+      "published_at": "2026-03-30T00:00:00Z",
+      "display_date": "30 March 2026"
+    },
+    {
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-03-30T00:00:00Z",
+      "display_date": "30 March 2026"
+    },
+    {
+      "headline": "2026 DOE Hydrogen Program AMR\u2014Rescheduled",
+      "source": "DOE Hydrogen & Fuel Cells",
+      "link": "https://www.energy.gov/cmei/fuels/articles/2026-doe-hydrogen-program-amr-rescheduled",
+      "published_at": "2026-02-04T21:00:00Z",
+      "display_date": "04 February 2026"
     }
   ],
   "policy": [
     {
-      "headline": "Commission\u202fcalls on\u202fEU countries to coordinate measures to ensure oil security of supply amid Middle East energy disruption",
+      "headline": "Electricity transmission price control 2026 to 2031 (RIIO-ET3) guidance",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/guidance/electricity-transmission-price-control-2026-2031-riio-et3-guidance",
+      "published_at": "2026-04-01T12:00:00Z",
+      "display_date": "01 April 2026"
+    },
+    {
+      "headline": "Gas distribution price control 2026 to 2031 (RIIO-GD3) guidance",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/guidance/gas-distribution-price-control-2026-2031-riio-gd3-guidance",
+      "published_at": "2026-04-01T12:00:00Z",
+      "display_date": "01 April 2026"
+    },
+    {
+      "headline": "Press remarks by Commissioner J\u00f8rgensen at the informal meeting of EU Energy Ministers",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-coordinate-measures-ensure-oil-security-supply-amid-middle-east-energy-2026-03-31_en",
-      "summary": "Recent European Commission energy-policy item."
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/SPEECH_26_767",
+      "published_at": "2026-04-01T07:12:39Z",
+      "display_date": "01 April 2026"
     },
     {
-      "headline": "Connecting classrooms with fusion research: Commission welcomes school teachers from across Europe to ITER",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/connecting-classrooms-fusion-research-commission-welcomes-school-teachers-across-europe-iter-2026-03-30_en",
-      "summary": "Recent European Commission energy-policy item."
+      "headline": "Codes Grid Code Development Forum (GCDF) - 1 April\u2026 1 April 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-1-april-2026",
+      "published_at": "2026-04-01T00:00:00Z",
+      "display_date": "01 April 2026"
     },
     {
-      "headline": "Rating scheme for data centres in the EU \u2013 Commission launches call for feedback",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/rating-scheme-data-centres-eu-commission-launches-call-feedback-2026-03-27_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
-      "headline": "Commission and EU countries discuss latest developments concerning energy security",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commission-and-eu-countries-discuss-latest-developments-concerning-energy-security-2026-03-27_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
-      "headline": "Iran, the Middle East and UK energy: factsheet",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
-      "summary": "Recent UK government energy-policy item."
-    },
-    {
-      "headline": "Chancellor and Energy Secretary meet with fuel bosses in No11 as government order crackdown on pump prices",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/chancellor-and-energy-secretary-meet-with-fuel-bosses-in-no11-as-government-order-crackdown-on-pump-prices",
-      "summary": "Recent UK government energy-policy item."
-    },
-    {
-      "headline": "Government to go \"further and faster\" in becoming energy secure",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/government-to-go-further-and-faster-in-becoming-energy-secure",
-      "summary": "Recent UK government energy-policy item."
-    },
-    {
-      "headline": "Your energy bill from April: what\u2019s changing",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/your-energy-bill-from-april-whats-changing",
-      "summary": "Recent UK government energy-policy item."
-    },
-    {
-      "headline": "Commission\u202fcalls on\u202fEU countries to coordinate measures to ensure oil security of supply amid Middle East energy disruption",
-      "source": "European Commission Energy",
-      "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-coordinate-measures-ensure-oil-security-supply-amid-middle-east-energy-2026-03-31_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
-      "headline": "Connecting classrooms with fusion research: Commission welcomes school teachers from across Europe to ITER",
-      "source": "European Commission Energy",
-      "link": "https://energy.ec.europa.eu/news/connecting-classrooms-fusion-research-commission-welcomes-school-teachers-across-europe-iter-2026-03-30_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
-      "headline": "Rating scheme for data centres in the EU \u2013 Commission launches call for feedback",
-      "source": "European Commission Energy",
-      "link": "https://energy.ec.europa.eu/news/rating-scheme-data-centres-eu-commission-launches-call-feedback-2026-03-27_en",
-      "summary": "Recent European Commission energy-policy item."
-    },
-    {
-      "headline": "Renewable energy framework post-2030: Consultations launched",
-      "source": "European Commission Energy",
-      "link": "https://energy.ec.europa.eu/news/renewable-energy-framework-post-2030-consultations-launched-2026-03-20_en",
-      "summary": "Recent European Commission energy-policy item."
+      "headline": "Systems operation Operational Transparency Forum 1 Apr 2026 1 April 2026 11am to 12pm Our weekly Operational Transparency Forum (OTF) is where experts from the NESO review the previous week\u2019s activities, provide an update\u2026 Events",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/operational-transparency-forum-1-apr-2026",
+      "published_at": "2026-04-01T00:00:00Z",
+      "display_date": "01 April 2026"
     }
   ]
 }

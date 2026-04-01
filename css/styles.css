@@ -206,6 +206,11 @@ th {
   background: var(--bg-surface);
 }
 
+.recommendation-card {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .radar-item h4,
 .recommendation-card h4 {
   margin-bottom: 8px;
@@ -238,6 +243,7 @@ th {
 
 .recommendations-grid {
   grid-template-columns: 1fr 1fr;
+  align-items: stretch;
 }
 
 .section-intro {
@@ -866,6 +872,131 @@ th {
   .about-content-block,
   .about-me-card,
   .about-mini-card {
+    padding: 20px;
+  }
+}
+
+.reporting-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reporting-page,
+.reporting-block,
+.recommendations-grid,
+.reporting-subsection,
+#radar-r-and-d,
+#radar-policy {
+  width: 100%;
+}
+
+.reporting-intro {
+  max-width: 760px;
+}
+
+.reporting-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.reporting-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.reporting-block-heading {
+  padding-top: 8px;
+  border-top: 1px solid var(--border-light);
+}
+
+.reporting-eyebrow {
+  margin-bottom: 0;
+}
+
+.reporting-block-heading #newsRadarLastUpdated {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.reporting-subsection + .reporting-subsection {
+  margin-top: 16px;
+}
+
+.reporting-subheading {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.recommendations-grid {
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+
+.recommendation-card {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-surface);
+}
+
+.recommendation-card h4 {
+  margin-bottom: 8px;
+}
+
+.recommendation-card h4 a {
+  text-decoration: none;
+  color: var(--brand-blue);
+}
+
+.recommendation-card h4 a:hover {
+  color: var(--brand-blue-hover);
+  text-decoration: underline;
+}
+
+#radar-r-and-d,
+#radar-policy {
+  display: grid;
+  gap: 16px;
+}
+
+.radar-item {
+  padding: 20px;
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  background: var(--bg-surface);
+}
+
+.radar-item h4 {
+  margin-bottom: 8px;
+}
+
+.radar-item h4 a {
+  text-decoration: none;
+  color: var(--brand-blue);
+}
+
+.radar-item h4 a:hover {
+  color: var(--brand-blue-hover);
+  text-decoration: underline;
+}
+
+.radar-meta {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recommendation-card,
+  .radar-item {
     padding: 20px;
   }
 }

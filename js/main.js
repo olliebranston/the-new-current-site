@@ -113,6 +113,30 @@ if (chartCanvas || homepageChartCanvas) {
 function sortItemsByDate(items) {
   return [...items].sort((a, b) => new Date(b.date) - new Date(a.date));
 }
+function sortItemsByPublishedDate(items) {
+  return [...items].sort((a, b) => {
+    const dateA = a.published_at ? new Date(a.published_at) : new Date(0);
+    const dateB = b.published_at ? new Date(b.published_at) : new Date(0);
+    return dateB - dateA;
+  });
+}
+
+function formatRadarMeta(item) {
+  if (item.source && item.display_date) {
+    return `${item.source} · ${item.display_date}`;
+  }
+
+  if (item.source) {
+    return item.source;
+  }
+
+  if (item.display_date) {
+    return item.display_date;
+  }
+
+  return "";
+}
+
 function renderRadarItems(container, items) {
   if (!container) {
     return;
@@ -123,16 +147,17 @@ function renderRadarItems(container, items) {
     return;
   }
 
+  const sortedItems = sortItemsByPublishedDate(items).slice(0, 5);
+
   container.innerHTML = "";
 
-  items.forEach((item) => {
+  sortedItems.forEach((item) => {
     const wrapper = document.createElement("article");
     wrapper.className = "radar-item";
 
     wrapper.innerHTML = `
       <h4><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.headline}</a></h4>
-      <p class="radar-meta">${item.source}</p>
-      <p>${item.summary}</p>
+      <p class="radar-meta">${formatRadarMeta(item)}</p>
     `;
 
     container.appendChild(wrapper);
