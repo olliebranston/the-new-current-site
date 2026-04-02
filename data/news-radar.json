@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-02 05:50 UTC",
+  "last_updated": "2026-04-02 15:38 UTC",
   "r_and_d": [
     {
       "headline": "EU and Australia formally open negotiations on the association to Horizon Europe",
@@ -39,6 +39,20 @@
   ],
   "policy": [
     {
+      "headline": "Renewables Obligation: guidance for suppliers",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/guidance/renewables-obligation-guidance-suppliers",
+      "published_at": "2026-04-02T12:00:00Z",
+      "display_date": "02 April 2026"
+    },
+    {
+      "headline": "Energy code reform phase 1: transitional measures and code changes",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/energy-code-reform-phase-1-transitional-measures-and-code-changes",
+      "published_at": "2026-04-02T12:00:00Z",
+      "display_date": "02 April 2026"
+    },
+    {
       "headline": "Codes Transmission Charging Methodologies Forum \u2026 2 April 2026 10am to 12:30pm Transmission Charging Methodologies Forum (TCMF) established under the&nbsp;Connection and Use of System Code (CUSC) to provide a\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-2-april-2026",
@@ -51,20 +65,6 @@
       "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-08-april-2026",
       "published_at": "2026-04-02T00:00:00Z",
       "display_date": "02 April 2026"
-    },
-    {
-      "headline": "Electricity transmission price control 2026 to 2031 (RIIO-ET3) guidance",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/electricity-transmission-price-control-2026-2031-riio-et3-guidance",
-      "published_at": "2026-04-01T12:00:00Z",
-      "display_date": "01 April 2026"
-    },
-    {
-      "headline": "Gas distribution price control 2026 to 2031 (RIIO-GD3) guidance",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/gas-distribution-price-control-2026-2031-riio-gd3-guidance",
-      "published_at": "2026-04-01T12:00:00Z",
-      "display_date": "01 April 2026"
     },
     {
       "headline": "Press remarks by Commissioner J\u00f8rgensen at the informal meeting of EU Energy Ministers",
