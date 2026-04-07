@@ -1,30 +1,124 @@
 {
   "articles": [
     {
-      "title": "Article Title One",
-      "date": "2026-03-20",
-      "topic": "Topic",
-      "summary": "A short summary of the article goes here. This should explain in one or two sentences what the piece is about and why someone might want to read it.",
+      "title": "Piyush Patel on Europe’s role in global battery supply chains",
+      "author": "Oliver Branston with Piyush Patel",
+      "date": "2025-09-01",
+      "topic": "Batteries",
+      "summary": "A discussion of Europe’s battery supply chain options, from joint ventures and midstream diversification to distressed asset acquisition and the future of sodium-ion technologies.",
       "link": "articles/article-1.html",
       "image": "content/article-1.jpg",
-      "featured": true
-    },
-    {
-      "title": "Article Title Two",
-      "date": "2026-03-10",
-      "topic": "Topic",
-      "summary": "A short summary of the article goes here. This can later be replaced with the real description of your second piece.",
-      "link": "articles/article-2.html",
-      "image": "content/article-2.jpg",
+      "section": "series-one",
       "featured": false
     },
     {
-      "title": "Article Title Three",
-      "date": "2026-03-01",
-      "topic": "Topic",
-      "summary": "A short summary of the article goes here. This can later be replaced with the real description of your third piece.",
+      "title": "Benjamin Collie on Gas in Britain’s Power Transition",
+      "author": "Oliver Branston with Benjamin Collie",
+      "date": "2025-09-15",
+      "topic": "Power and gas",
+      "summary": "An overview of gas’s changing role in Britain’s electricity system, and how gas plant operators may adapt through flexibility, hydrogen, CCUS and new commercial models.",
+      "link": "articles/article-2.html",
+      "image": "content/article-2.jpg",
+      "section": "series-one",
+      "featured": false
+    },
+    {
+      "title": "Meera Kotak on unlocking opportunities and addressing challenges for modular reactors",
+      "author": "Oliver Branston with Meera Kotak",
+      "date": "2025-09-22",
+      "topic": "Nuclear",
+      "summary": "A look at how modular reactors could move nuclear from one-off megaprojects to repeatable product models, and what must happen on fuel, licensing and supply chains to make that possible.",
       "link": "articles/article-3.html",
       "image": "content/article-3.jpg",
+      "section": "series-one",
+      "featured": false
+    },
+    {
+      "title": "Asif Sheikh on the case for CCUS",
+      "author": "Oliver Branston with Asif Sheikh",
+      "date": "2025-10-01",
+      "topic": "CCUS",
+      "summary": "An explanation of why CCUS is technologically ready but still economically difficult, and how different policy playbooks are trying to create viable markets.",
+      "link": "articles/article-4.html",
+      "image": "content/article-4.jpg",
+      "section": "series-one",
+      "featured": true
+    },
+    {
+      "title": "Declan O’Donahue on the changing role of energy system operators",
+      "author": "Oliver Branston with Declan O’Donahue",
+      "date": "2025-10-08",
+      "topic": "Grid and system operation",
+      "summary": "A guide to GB’s evolving system operator model, the grid connection backlog, and the importance of better data, flexibility and process reform.",
+      "link": "articles/article-5.html",
+      "image": "content/article-5.jpg",
+      "section": "series-one",
+      "featured": false
+    },
+    {
+      "title": "Samuel Pachoud on market-led vs planned energy systems",
+      "author": "Oliver Branston with Samuel Pachoud",
+      "date": "2025-10-15",
+      "topic": "Power systems",
+      "summary": "A comparison of market-led and planned energy systems, drawing lessons from Britain, the US, Australia, France and China on how to deliver faster clean power build-out.",
+      "link": "articles/article-6.html",
+      "image": "content/article-6.jpg",
+      "section": "series-one",
+      "featured": false
+    },
+    {
+      "title": "Alwyn Hopkins on the EU Carbon Border Adjustment Mechanism (CBAM)",
+      "author": "Oliver Branston with Alwyn Hopkins",
+      "date": "2025-10-22",
+      "topic": "Carbon pricing and trade",
+      "summary": "A practical explanation of CBAM, from carbon leakage and reporting rules to importer strategy, embedded emissions and geopolitical implications.",
+      "link": "articles/article-7.html",
+      "image": "content/article-7.jpg",
+      "section": "series-one",
+      "featured": false
+    },
+    {
+      "title": "Anthony Byrne on agentic AI for grid operators",
+      "author": "Oliver Branston with Anthony Byrne",
+      "date": "2025-10-29",
+      "topic": "AI and grid operations",
+      "summary": "A case for agent-driven workflows in grid operations, focused on governed data layers, operational productivity, resilience and the barriers of data, people and cyber risk.",
+      "link": "articles/article-8.html",
+      "image": "content/article-8.jpg",
+      "section": "series-one",
+      "featured": false
+    },
+    {
+      "title": "Environmental Effect of Crypto",
+      "author": "Oliver Branston",
+      "date": "2021-07-01",
+      "topic": "Archive",
+      "summary": "An archive thought piece exploring whether cryptocurrency’s energy use has been overstated and whether mining could, under some conditions, support renewable energy growth.",
+      "link": "articles/archive-article-1.html",
+      "image": null,
+      "section": "archive",
+      "featured": false
+    },
+    {
+      "title": "A New Age of Greenwashing in the Car Industry Thought Piece",
+      "author": "Oliver Branston",
+      "date": "2021-06-01",
+      "topic": "Archive",
+      "summary": "An archive piece on electric vehicles, asking whether they are as sustainable as they appear once manufacturing, mining, electricity production and recycling are all considered.",
+      "link": "articles/archive-article-2.html",
+      "image": "content/archive-article-2.jpg",
+      "section": "archive",
+      "featured": false
+    },
+    {
+      "title": "UN Gender Bond Thought Piece",
+      "author": "Oliver Branston",
+      "date": "2021-02-06",
+      "topic": "Archive",
+      "summary": "An archive article examining sovereign gender bonds, microfinance and the limits of sustainable finance as a tool for delivering meaningful change for women.",
+      "link": "articles/archive-article-3.html",
+      "image": null,
+      "section": "archive",
       "featured": false
     }
   ]

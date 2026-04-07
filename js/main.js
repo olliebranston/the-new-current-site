@@ -316,6 +316,41 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
   container.innerHTML = cards.join("");
 }
 
+function formatArticleDate(dateString) {
+  const date = new Date(dateString);
+
+  return date.toLocaleDateString("en-GB", {
+    year: "numeric",
+    month: "long"
+  });
+}
+
+function buildThoughtPieceCard(article) {
+  const imageMarkup = article.image
+    ? `
+      <div class="thought-piece-card-image">
+        <img src="${article.image}" alt="${article.title}">
+      </div>
+    `
+    : `
+      <div class="thought-piece-card-image thought-piece-card-image-placeholder">
+        <span>No image</span>
+      </div>
+    `;
+
+  return `
+    <article class="thought-piece-card">
+      <div class="thought-piece-card-text">
+        <p class="card-kicker">${article.author || "Oliver Branston"}</p>
+        <h3><a href="${article.link}">${article.title}</a></h3>
+        <p class="article-meta">${formatArticleDate(article.date)}</p>
+        <p>${article.summary}</p>
+      </div>
+      ${imageMarkup}
+    </article>
+  `;
+}
+
 function renderThoughtPieces(container, articles) {
   if (!container) {
     return;
@@ -328,20 +363,38 @@ function renderThoughtPieces(container, articles) {
 
   const sortedArticles = sortItemsByDate(articles);
 
-  container.innerHTML = "";
+  const seriesOneArticles = sortedArticles.filter((article) => article.section === "series-one");
+  const archiveArticles = sortedArticles.filter((article) => article.section === "archive");
 
-  sortedArticles.forEach((article) => {
-    const wrapper = document.createElement("article");
-    wrapper.className = "article-card";
+  container.innerHTML = `
+    <section class="thought-piece-section">
+      <div class="thought-piece-section-heading">
+        <p class="eyebrow">Series Two</p>
+        <h3>Coming soon</h3>
+        <p>The next set of Thought Pieces will appear here.</p>
+      </div>
+    </section>
 
-    wrapper.innerHTML = `
-      <h4><a href="${article.link}">${article.title}</a></h4>
-      <p class="article-meta">${article.date} · ${article.topic}</p>
-      <p>${article.summary}</p>
-    `;
+    <section class="thought-piece-section">
+      <div class="thought-piece-section-heading">
+        <p class="eyebrow">Series One</p>
+        <h3>Conversations and essays</h3>
+      </div>
+      <div class="thought-piece-card-list">
+        ${seriesOneArticles.map(buildThoughtPieceCard).join("")}
+      </div>
+    </section>
 
-    container.appendChild(wrapper);
-  });
+    <section class="thought-piece-section">
+      <div class="thought-piece-section-heading">
+        <p class="eyebrow">Archive</p>
+        <h3>Earlier writing</h3>
+      </div>
+      <div class="thought-piece-card-list">
+        ${archiveArticles.map(buildThoughtPieceCard).join("")}
+      </div>
+    </section>
+  `;
 }
 
 function renderHomepageThoughtPieces(container, articles) {
@@ -363,7 +416,7 @@ function renderHomepageThoughtPieces(container, articles) {
       <div class="featured-thought-content">
         <p class="card-kicker">Most recent article</p>
         <h3><a href="${featuredArticle.link}">${featuredArticle.title}</a></h3>
-        <p class="article-meta">${featuredArticle.date} · ${featuredArticle.topic}</p>
+        <p class="article-meta">${formatArticleDate(featuredArticle.date)} · ${featuredArticle.author || "Oliver Branston"}</p>
         <p>${featuredArticle.summary}</p>
       </div>
       <div class="featured-thought-image">
@@ -376,7 +429,7 @@ function renderHomepageThoughtPieces(container, articles) {
         <article class="compact-thought-card">
           <p class="card-kicker">Recent</p>
           <h4><a href="${article.link}">${article.title}</a></h4>
-          <p class="article-meta">${article.date} · ${article.topic}</p>
+          <p class="article-meta">${formatArticleDate(article.date)} · ${article.author || "Oliver Branston"}</p>
         </article>
       `).join("")}
     </div>
