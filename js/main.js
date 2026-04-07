@@ -332,14 +332,12 @@ function buildThoughtPieceCard(article) {
         <img src="${article.image}" alt="${article.title}">
       </div>
     `
-    : `
-      <div class="thought-piece-card-image thought-piece-card-image-placeholder">
-        <span>No image</span>
-      </div>
-    `;
+    : "";
+
+  const noImageClass = article.image ? "" : " thought-piece-card-no-image";
 
   return `
-    <article class="thought-piece-card">
+    <article class="thought-piece-card${noImageClass}">
       <div class="thought-piece-card-text">
         <p class="card-kicker">${article.author || "Oliver Branston"}</p>
         <h3><a href="${article.link}">${article.title}</a></h3>
@@ -367,34 +365,31 @@ function renderThoughtPieces(container, articles) {
   const archiveArticles = sortedArticles.filter((article) => article.section === "archive");
 
   container.innerHTML = `
-    <section class="thought-piece-section">
-      <div class="thought-piece-section-heading">
-        <p class="eyebrow">Series Two</p>
-        <h3>Coming soon</h3>
-        <p>The next set of Thought Pieces will appear here.</p>
-      </div>
-    </section>
+  <section class="thought-piece-section">
+    <div class="thought-piece-section-heading">
+      <p class="eyebrow">Series Two</p>
+      <p>Coming soon</p>
+    </div>
+  </section>
 
-    <section class="thought-piece-section">
-      <div class="thought-piece-section-heading">
-        <p class="eyebrow">Series One</p>
-        <h3>Conversations and essays</h3>
-      </div>
-      <div class="thought-piece-card-list">
-        ${seriesOneArticles.map(buildThoughtPieceCard).join("")}
-      </div>
-    </section>
+  <section class="thought-piece-section">
+    <div class="thought-piece-section-heading">
+      <p class="eyebrow">Series One</p>
+    </div>
+    <div class="thought-piece-card-list">
+      ${seriesOneArticles.map(buildThoughtPieceCard).join("")}
+    </div>
+  </section>
 
-    <section class="thought-piece-section">
-      <div class="thought-piece-section-heading">
-        <p class="eyebrow">Archive</p>
-        <h3>Earlier writing</h3>
-      </div>
-      <div class="thought-piece-card-list">
-        ${archiveArticles.map(buildThoughtPieceCard).join("")}
-      </div>
-    </section>
-  `;
+  <section class="thought-piece-section">
+    <div class="thought-piece-section-heading">
+      <p class="eyebrow">Archive</p>
+    </div>
+    <div class="thought-piece-card-list">
+      ${archiveArticles.map(buildThoughtPieceCard).join("")}
+    </div>
+  </section>
+`;
 }
 
 function renderHomepageThoughtPieces(container, articles) {

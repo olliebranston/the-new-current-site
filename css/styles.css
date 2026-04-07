@@ -1126,20 +1126,6 @@ th {
   line-height: 1.75;
 }
 
-.thought-pieces-page {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.thought-pieces-intro {
-  max-width: 760px;
-}
-
-.thought-pieces-intro h2 {
-  margin-bottom: 16px;
-}
-
 .thought-piece-section {
   display: flex;
   flex-direction: column;
@@ -1246,5 +1232,62 @@ th {
 
   .thought-piece-card-text h3 {
     font-size: 1.4rem;
+  }
+}
+
+.section-landing-page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.page-hero {
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #000000;
+}
+
+.page-hero-image {
+  width: 100%;
+  height: 420px;
+  display: block;
+  object-fit: cover;
+}
+
+.page-hero-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 36px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.10));
+}
+
+.page-hero-overlay h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 4.8rem;
+  line-height: 1.02;
+}
+
+@media (max-width: 700px) {
+  .page-hero {
+    min-height: 280px;
+    border-radius: 20px;
+  }
+
+  .page-hero-image {
+    height: 280px;
+  }
+
+  .page-hero-overlay {
+    padding: 20px;
+  }
+
+  .page-hero-overlay h1 {
+    font-size: 3rem;
   }
 }
