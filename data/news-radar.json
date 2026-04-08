@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-07 16:15 UTC",
+  "last_updated": "2026-04-08 06:00 UTC",
   "r_and_d": [
     {
       "headline": "EU and Australia formally open negotiations on the association to Horizon Europe",
@@ -39,6 +39,13 @@
   ],
   "policy": [
     {
+      "headline": "OFTO projects and cap and floor interconnectors: Interest During Construction (IDC) rates for 2026 to 2027",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/decision/ofto-projects-and-cap-and-floor-interconnectors-interest-during-construction-idc-rates-2026-2027",
+      "published_at": "2026-04-08T12:00:00Z",
+      "display_date": "08 April 2026"
+    },
+    {
       "headline": "Codes Grid Code - New Modification Proposal\u2026 8 April 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-08-april-2026",
@@ -65,13 +72,6 @@
       "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-coordinate-measures-ensure-oil-security-supply-amid-middle-east-energy-2026-03-31_en",
       "published_at": "2026-03-31T10:39:22Z",
       "display_date": "31 March 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-03-25T00:00:00Z",
-      "display_date": "25 March 2026"
     }
   ]
 }
