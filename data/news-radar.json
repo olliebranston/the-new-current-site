@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-08 06:00 UTC",
+  "last_updated": "2026-04-08 16:20 UTC",
   "r_and_d": [
     {
       "headline": "EU and Australia formally open negotiations on the association to Horizon Europe",
@@ -39,6 +39,13 @@
   ],
   "policy": [
     {
+      "headline": "Commission, EU countries and industry meet to assess the oil market situation",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-eu-countries-and-industry-meet-assess-oil-market-situation-2026-04-08_en",
+      "published_at": "2026-04-08T15:50:46Z",
+      "display_date": "08 April 2026"
+    },
+    {
       "headline": "OFTO projects and cap and floor interconnectors: Interest During Construction (IDC) rates for 2026 to 2027",
       "source": "Ofgem",
       "link": "https://www.ofgem.gov.uk/decision/ofto-projects-and-cap-and-floor-interconnectors-interest-during-construction-idc-rates-2026-2027",
@@ -65,13 +72,6 @@
       "link": "https://ec.europa.eu/commission/presscorner/detail/en/SPEECH_26_767",
       "published_at": "2026-04-01T07:12:39Z",
       "display_date": "01 April 2026"
-    },
-    {
-      "headline": "Commission calls on EU countries to coordinate measures to ensure oil security of supply amid Middle East energy disruption",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-coordinate-measures-ensure-oil-security-supply-amid-middle-east-energy-2026-03-31_en",
-      "published_at": "2026-03-31T10:39:22Z",
-      "display_date": "31 March 2026"
     }
   ]
 }
