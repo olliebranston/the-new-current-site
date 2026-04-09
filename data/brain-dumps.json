@@ -1,22 +1,37 @@
 {
   "notes": [
     {
-      "title": "Placeholder note one",
-      "date": "2026-03-24",
-      "tag": "Market observation",
-      "content": "This is a short note placeholder. Over time, this section will hold quick observations, reactions, and unfinished ideas related to the energy transition."
+      "title": "Keiretsu and Chrysler - an opportunity for CCUS",
+      "date": "2026-04-09",
+      "tag": "CCUS",
+      "content": [
+        "Keiretsu refers to a system of corporate co-ordination established in post-war Japan. Large manufacturers, banks, trading houses and key suppliers were tied together through cross-shareholding, reciprocal commercial dependence and patient finance. This reduced uncertainty, stabilised investment horizons and supported collective problem-solving. Suppliers and financiers were incentiviesed to think beyond short-term contract margins and support end-to-end growth across the value chain.",
+        "Chrysler adopted keiretsu-like principles through closer, longer-term supplier partnerships in the 1980s and 90s. Including earlier supplier development and mutual dependence in product development improved co-ordination and could generate gains in cost, speed and quality because suppliers were treated less as bidders and more as invested partners. This model was somewhat fragile within a weaker institutional alignment between capital and industry.",
+        "For UK CCUS clusters, challenges must be overcome as risk is managed across the value chain in the face of significant commercial uncertainty. Cluster-level commitment mechanisms between emitters, infrastructure providers, financiers and strategic suppliers could adopt keiretsu principles. Just as in Japan keiretsu helped solve problems like high upfront capital costs, interdependence across multiple firms, and investment risk, in the UK it could support building long-duration commercial relationships, co-ordinated financing structures and stronger incentives for participants to invest in the success of the cluster as a whole."
+      ]
     },
     {
-      "title": "Placeholder note two",
-      "date": "2026-03-25",
-      "tag": "Question",
-      "content": "This is another placeholder note. Later, each note can be a quick thought, a chart reaction, a policy reaction, or an open question to revisit."
+      "title": "A few fun North Sea gas facts - effects on bills, security and climate",
+      "date": "2026-04-02",
+      "tag": "Gas",
+      "content": [
+        "Additional North Sea drilling is very unlikely to materially reduce UK gas prices, because the UK buys gas at internationally traded market prices rather than at a domestic rate.",
+        "On a production-and-transport basis, UK North Sea gas is materially less emissions-intensive than imported LNG (although that advantage narrows once the gas is actually burned).",
+        "Choosing not to produce North Sea gas would not materially reduce the combusition emissions associated with UK gas use if the same demand were simply met by imports instead.",
+        "In a more volatlie geopolitical environment, domestic gas supply has greater strategic value because it can modestly reduce exposure to imported LNG and external disruptions (even if it cannot insulate the UK from global markets).",
+        "So long as gas demand persists, producing more of it domestically can support jobs and tax revenues while being less emissions intensive than some import substitutes - but material emissions reduction ultimately depends on lowering gas demand itself."
+      ]
     },
     {
-      "title": "Placeholder note three",
+      "title": "Data centres' AI monetisation assumption",
       "date": "2026-03-26",
-      "tag": "Question",
-      "content": "This is another placeholder note. Later, each note can be a quick thought, a chart reaction, a policy reaction, or an open question to revisit."
+      "tag": "Data centres and AI",
+      "content": [
+        "The AI infrastructure boom makes an assumption on future monetisation at very large scale. The bet is not merely that AI usage will grow, but that it will be monetised at a scale large enough to pay back the fixed investment.",
+        "There is clearly real demand already, and hyperscalers are not spending blindly. However, the ecosystem must generate enough revenue and margin to justify the build-out. There is a meaningful open question over how much value will be captured by frontier labs, cloud providers, enterprise software firms, or AI-enabled customer themselves. This uncertainty matters because pricing models are still developing: seat-based software pricing may fit less well in an agentic world, whilst usage-based models are harder to budget for and difficult to manage in a competitive arms race.",
+        "This is not to say that the build-out is irrational - clearly, the investors developing these assets are comfortable with revenue projections. However, taking this another step further presents a risk to customers - if large parts of the AI stack carry very high revenue expectations, firms that become deeply reliant on those systems may also be increasing their future exposure to pricing power, taking on future vendor-power risk at exactly the moment the sector is under pressure to prove returns."
+      ]
     }
+
   ]
 }

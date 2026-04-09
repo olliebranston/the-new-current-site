@@ -224,10 +224,19 @@ function renderBrainDumps(container, notes) {
     const wrapper = document.createElement("article");
     wrapper.className = "brain-dump-card";
 
+    const paragraphs = Array.isArray(note.content)
+      ? note.content.map((paragraph) => `<p>${paragraph}</p>`).join("")
+      : `<p>${note.content}</p>`;
+
     wrapper.innerHTML = `
-      <h4>${note.title}</h4>
-      <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
-      <p>${note.content}</p>
+      <div class="brain-dump-card-inner">
+        <p class="card-kicker">Brain Dump</p>
+        <h3>${note.title}</h3>
+        <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
+        <div class="brain-dump-content">
+          ${paragraphs}
+        </div>
+      </div>
     `;
 
     container.appendChild(wrapper);
@@ -251,12 +260,16 @@ function renderHomepageBrainDumps(container, notes) {
     const wrapper = document.createElement("article");
     wrapper.className = "brain-dump-preview-card";
 
+    const previewText = Array.isArray(note.content)
+      ? note.content[0]
+      : note.content;
+
     wrapper.innerHTML = `
-      <p class="card-kicker">Preview</p>
-      <h4>${note.title}</h4>
-      <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
-      <p>${note.content}</p>
-    `;
+  <p class="card-kicker">Preview</p>
+  <h4>${note.title}</h4>
+  <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
+  <p class="brain-dump-preview-text">${previewText}</p>
+`;
 
     container.appendChild(wrapper);
   });
@@ -273,7 +286,7 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
       <article class="reporting-preview-card">
         <p class="card-kicker">Recommended</p>
         <h4><a href="${recommendations.recommended_read.link}" target="_blank" rel="noopener noreferrer">Read</a></h4>
-        <p>${recommendations.recommended_read.title}</p>
+        <p class="reporting-preview-text">${recommendations.recommended_read.title}</p>
       </article>
     `);
   }
@@ -283,7 +296,7 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
       <article class="reporting-preview-card">
         <p class="card-kicker">Recommended</p>
         <h4><a href="${recommendations.recommended_listen.link}" target="_blank" rel="noopener noreferrer">Listen</a></h4>
-        <p>${recommendations.recommended_listen.title}</p>
+        <p class="reporting-preview-text">${recommendations.recommended_listen.title}</p>
       </article>
     `);
   }
@@ -293,7 +306,7 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
       <article class="reporting-preview-card">
         <p class="card-kicker">Latest</p>
         <h4><a href="${newsData.r_and_d[0].link}" target="_blank" rel="noopener noreferrer">R&amp;D</a></h4>
-        <p>${newsData.r_and_d[0].headline}</p>
+        <p class="reporting-preview-text">${newsData.r_and_d[0].headline}</p>
       </article>
     `);
   }
@@ -303,7 +316,7 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
       <article class="reporting-preview-card">
         <p class="card-kicker">Latest</p>
         <h4><a href="${newsData.policy[0].link}" target="_blank" rel="noopener noreferrer">Policy</a></h4>
-        <p>${newsData.policy[0].headline}</p>
+        <p class="reporting-preview-text">${newsData.policy[0].headline}</p>
       </article>
     `);
   }
