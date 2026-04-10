@@ -26,59 +26,102 @@
 
 <main class="section-landing-page">
   <section class="page-hero">
-    <img src="content/data.jpg" alt="Data section image" class="page-hero-image">
+    <img src="content/data.jpg" alt="Data section image" class="page-hero-image" />
     <div class="page-hero-overlay">
       <h1>Data</h1>
     </div>
   </section>
 
-    <section>
-      <h3>Current data experiments</h3>
-      <ul>
-        <li>Sample carbon intensity dataset loaded from CSV</li>
-        <li>Timestamps converted into datetime format</li>
-        <li>Helper columns created for hour and date</li>
-        <li>Daily average carbon intensity calculated in pandas</li>
-      </ul>
-    </section>
+  <section>
+    <h3>Current data experiments</h3>
+    <ul>
+      <li>Sample carbon intensity dataset loaded from CSV</li>
+      <li>Timestamps converted into datetime format</li>
+      <li>Helper columns created for hour and date</li>
+      <li>Daily average carbon intensity calculated in pandas</li>
+    </ul>
+  </section>
 
-    <section>
-      <h3>Daily average carbon intensity</h3>
-      <p>This table shows the daily average carbon intensity.</p>
+  <section>
+    <h3>Daily average carbon intensity</h3>
+    <p>This table shows the daily average carbon intensity.</p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Average Carbon Intensity</th>
-          </tr>
-        </thead>
-        <tbody id="dailyAverageTableBody">
-         <tr>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Average Carbon Intensity</th>
+        </tr>
+      </thead>
+      <tbody id="dailyAverageTableBody">
+        <tr>
           <td colspan="2">Loading daily average...</td>
         </tr>
-       </tbody>
-      </table>
-    </section>
+      </tbody>
+    </table>
+  </section>
 
-    <section>
-  <h3>Live carbon intensity: actual vs forecast</h3>
-  <p>This chart shows live national GB carbon-intensity data from the official NESO Carbon Intensity API. Where actual values are not yet available, forecast values are used.</p>
-  <p id="lastUpdatedText">Last updated: loading...</p>
-  <canvas id="carbonChart"></canvas>
-</section>
+  <section>
+    <h3>Live carbon intensity: actual vs forecast</h3>
+    <p>
+      This chart shows live national GB carbon-intensity data from the official
+      NESO Carbon Intensity API. Where actual values are not yet available,
+      forecast values are used.
+    </p>
+    <p id="lastUpdatedText">Last updated: loading...</p>
+    <canvas id="carbonChart"></canvas>
+  </section>
 
-    <section>
-      <h3>Planned dashboards</h3>
-      <ul>
-        <li>Power price monitor</li>
-        <li>Renewable generation tracker</li>
-        <li>Carbon intensity of the GB grid</li>
-      </ul>
-    </section>
-  </main>
+  <section>
+    <h3>Planned dashboards</h3>
+    <ul>
+      <li>Power price monitor</li>
+      <li>Renewable generation tracker</li>
+      <li>Carbon intensity of the GB grid</li>
+    </ul>
+  </section>
+</main>
 
- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>The New Current</h3>
+        <p>
+          A free website about the energy transition, combining original thoughts,
+          live intelligence, reporting, and learning in public.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="thought-pieces.html">Thought Pieces</a></li>
+          <li><a href="brain-dumps.html">Brain Dumps</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="reporting.html">Reporting</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/oliverbranston/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://substack.com/@olliebranston" target="_blank" rel="noopener noreferrer">Substack</a></li>
+          <li><a href="mailto:ollie.branston123@gmail.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Built by Ollie Branston.</p>
+      <p>Original Thoughts and Live Intelligence.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
