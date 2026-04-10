@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-10 06:18 UTC",
+  "last_updated": "2026-04-10 14:40 UTC",
   "r_and_d": [
     {
       "headline": "EU and Australia formally open negotiations on the association to Horizon Europe",
@@ -39,6 +39,20 @@
   ],
   "policy": [
     {
+      "headline": "Evaluation of the EU Agency for the Coordination of Energy Regulators",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/evaluation-eu-agency-coordination-energy-regulators-2026-04-10_en",
+      "published_at": "2026-04-10T13:52:50Z",
+      "display_date": "10 April 2026"
+    },
+    {
+      "headline": "Capacity Market Rules: change proposals 2026",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/capacity-market-rules-change-proposals-2026",
+      "published_at": "2026-04-10T12:00:00Z",
+      "display_date": "10 April 2026"
+    },
+    {
       "headline": "Codes Grid Code - Panel Papers Published to\u2026 15 April 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-15-april-2026",
@@ -57,20 +71,6 @@
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/gas-coordination-group-confirms-eu-preparedness-upcoming-summer-season-2026-04-09_en",
       "published_at": "2026-04-09T16:13:43Z",
-      "display_date": "09 April 2026"
-    },
-    {
-      "headline": "Heat networks: how to prepare for data reporting",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/heat-networks-how-prepare-data-reporting",
-      "published_at": "2026-04-09T12:00:00Z",
-      "display_date": "09 April 2026"
-    },
-    {
-      "headline": "Heat networks: help and support",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/heat-networks-help-and-support",
-      "published_at": "2026-04-09T12:00:00Z",
       "display_date": "09 April 2026"
     }
   ]
