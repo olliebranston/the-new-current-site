@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-11 14:06 UTC",
+  "last_updated": "2026-04-12 06:09 UTC",
   "r_and_d": [
     {
       "headline": "EU and Australia formally open negotiations on the association to Horizon Europe",
@@ -67,11 +67,11 @@
       "display_date": "10 April 2026"
     },
     {
-      "headline": "Iran, the Middle East and UK energy: factsheet",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
-      "published_at": null,
-      "display_date": null
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-03-25T00:00:00Z",
+      "display_date": "25 March 2026"
     }
   ]
 }
