@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-04-13 07:26 UTC",
+  "last_updated": "2026-04-13 16:21 UTC",
   "r_and_d": [
+    {
+      "headline": "Fourth EU-Albania Horizon Europe Joint Research and Innovation Committee meeting",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/fourth-eu-albania-horizon-europe-joint-research-and-innovation-committee-meeting-2026-04-13_en",
+      "published_at": "2026-04-13T13:23:50Z",
+      "display_date": "13 April 2026"
+    },
     {
       "headline": "EU and Australia formally open negotiations on the association to Horizon Europe",
       "source": "EU Research & Innovation",
@@ -23,13 +30,6 @@
       "display_date": "02 April 2026"
     },
     {
-      "headline": "New framework to measure knowledge valorisation",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/new-framework-measure-knowledge-valorisation-2026-03-30_en",
-      "published_at": "2026-03-30T08:24:34Z",
-      "display_date": "30 March 2026"
-    },
-    {
       "headline": "2026 DOE Hydrogen Program AMR\u2014Rescheduled",
       "source": "DOE Hydrogen & Fuel Cells",
       "link": "https://www.energy.gov/cmei/fuels/articles/2026-doe-hydrogen-program-amr-rescheduled",
@@ -38,6 +38,20 @@
     }
   ],
   "policy": [
+    {
+      "headline": "Europe\u2019s Coal Regions in Transition shape the future of clean energy",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/europes-coal-regions-transition-shape-future-clean-energy-2026-04-13_en",
+      "published_at": "2026-04-13T14:06:55Z",
+      "display_date": "13 April 2026"
+    },
+    {
+      "headline": "Capacity Market Disputes: final determinations 2025 to 2026",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/decision/capacity-market-disputes-final-determinations-2025-2026",
+      "published_at": "2026-04-13T12:00:00Z",
+      "display_date": "13 April 2026"
+    },
     {
       "headline": "Codes Grid Code - Panel Papers Published to\u2026 15 April 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
@@ -58,20 +72,6 @@
       "link": "https://energy.ec.europa.eu/news/energy-union-task-force-calls-enhanced-eu-wide-coordination-safeguard-energy-security-2026-04-10_en",
       "published_at": "2026-04-10T17:05:15Z",
       "display_date": "10 April 2026"
-    },
-    {
-      "headline": "Evaluation of the EU Agency for the Coordination of Energy Regulators",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/evaluation-eu-agency-coordination-energy-regulators-2026-04-10_en",
-      "published_at": "2026-04-10T13:52:50Z",
-      "display_date": "10 April 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-03-25T00:00:00Z",
-      "display_date": "25 March 2026"
     }
   ]
 }
