@@ -1,12 +1,19 @@
 {
-  "last_updated": "2026-04-15 06:21 UTC",
+  "last_updated": "2026-04-15 15:54 UTC",
   "r_and_d": [
     {
-      "headline": "Fourth EU-Albania Horizon Europe Joint Research and Innovation Committee meeting",
+      "headline": "EU joins the International Energy Agency (IEA) Cities and Energy Storage Technology Collaboration Programmes",
       "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/fourth-eu-albania-horizon-europe-joint-research-and-innovation-committee-meeting-2026-04-13_en",
-      "published_at": "2026-04-13T13:23:50Z",
-      "display_date": "13 April 2026"
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-joins-international-energy-agency-iea-cities-and-energy-storage-technology-collaboration-2026-04-15_en",
+      "published_at": "2026-04-15T12:57:53Z",
+      "display_date": "15 April 2026"
+    },
+    {
+      "headline": "The All-Atlantic Ocean Research and Innovation Alliance 2026 annual forum starts today in Salvador, Brazil",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/all-atlantic-ocean-research-and-innovation-alliance-2026-annual-forum-starts-today-salvador-brazil-2026-04-15_en",
+      "published_at": "2026-04-15T06:40:08Z",
+      "display_date": "15 April 2026"
     },
     {
       "headline": "Fundamental Research",
@@ -23,13 +30,6 @@
       "display_date": "09 April 2026"
     },
     {
-      "headline": "EU and Australia formally open negotiations on the association to Horizon Europe",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-and-australia-formally-open-negotiations-association-horizon-europe-2026-03-31_en",
-      "published_at": "2026-04-07T13:14:16Z",
-      "display_date": "07 April 2026"
-    },
-    {
       "headline": "2026 DOE Hydrogen Program AMR\u2014Rescheduled",
       "source": "DOE Hydrogen & Fuel Cells",
       "link": "https://www.energy.gov/cmei/fuels/articles/2026-doe-hydrogen-program-amr-rescheduled",
@@ -39,17 +39,24 @@
   ],
   "policy": [
     {
+      "headline": "Approval of NESO's CSNP Methodology",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/decision/approval-nesos-csnp-methodology",
+      "published_at": "2026-04-15T12:00:00Z",
+      "display_date": "15 April 2026"
+    },
+    {
+      "headline": "Direction to NESO on CSNP publication timing",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/decision/direction-neso-csnp-publication-timing",
+      "published_at": "2026-04-15T12:00:00Z",
+      "display_date": "15 April 2026"
+    },
+    {
       "headline": "New implementing rules to reduce the switching electricity suppliers process to 24 hours by the end of 2026",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/new-implementing-rules-reduce-switching-electricity-suppliers-process-24-hours-end-2026-2026-04-14_en",
       "published_at": "2026-04-14T15:59:52Z",
-      "display_date": "14 April 2026"
-    },
-    {
-      "headline": "Renewable Electricity Register Letter of Authorisation",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/transparency-document/renewable-electricity-register-letter-authorisation",
-      "published_at": "2026-04-14T12:00:00Z",
       "display_date": "14 April 2026"
     },
     {
@@ -63,13 +70,6 @@
       "headline": "Codes Grid Code - Panel Papers Published to\u2026 15 April 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-15-april-2026",
-      "published_at": "2026-04-13T00:00:00Z",
-      "display_date": "13 April 2026"
-    },
-    {
-      "headline": "Strategic planning Strategic Spatial Energy Planning (SSEP)\u2026 15 April 2026 10am to 3:30pm This in-person session will provide an update on the latest progress of the SSEP, including pathway development and modelling insights\u2026 Events",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/strategic-spatial-energy-planning-ssep-developer-workshop",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
     }
