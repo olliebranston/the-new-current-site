@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-15 15:54 UTC",
+  "last_updated": "2026-04-16 06:22 UTC",
   "r_and_d": [
     {
       "headline": "EU joins the International Energy Agency (IEA) Cities and Energy Storage Technology Collaboration Programmes",
@@ -39,20 +39,6 @@
   ],
   "policy": [
     {
-      "headline": "Approval of NESO's CSNP Methodology",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/approval-nesos-csnp-methodology",
-      "published_at": "2026-04-15T12:00:00Z",
-      "display_date": "15 April 2026"
-    },
-    {
-      "headline": "Direction to NESO on CSNP publication timing",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/direction-neso-csnp-publication-timing",
-      "published_at": "2026-04-15T12:00:00Z",
-      "display_date": "15 April 2026"
-    },
-    {
       "headline": "New implementing rules to reduce the switching electricity suppliers process to 24 hours by the end of 2026",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/new-implementing-rules-reduce-switching-electricity-suppliers-process-24-hours-end-2026-2026-04-14_en",
@@ -67,11 +53,25 @@
       "display_date": "14 April 2026"
     },
     {
-      "headline": "Codes Grid Code - Panel Papers Published to\u2026 15 April 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "headline": "Connections Connections Reform Customer Call 16 April 2026 2pm to 3pm A supporting webinar will be held about advancement on 16 April 2026 with representatives from TOs and NESO.Registering isn't required\u2026 Events",
       "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-15-april-2026",
+      "link": "https://www.neso.energy/calendar/connections-reform-customer-call",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
+    },
+    {
+      "headline": "Strategic planning Strategic Spatial Energy Planning (SSEP)\u2026 17 April 2026 9:30am to 12pm Alongside our in person SSEP Developers Workshop on 15 April, we are also holding an online version. This online event brings together\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/strategic-spatial-energy-planning-ssep-developer-workshop-online",
+      "published_at": "2026-04-13T00:00:00Z",
+      "display_date": "13 April 2026"
+    },
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-03-25T00:00:00Z",
+      "display_date": "25 March 2026"
     }
   ]
 }
