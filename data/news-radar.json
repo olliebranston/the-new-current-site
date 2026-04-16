@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-04-16 06:22 UTC",
+  "last_updated": "2026-04-16 16:55 UTC",
   "r_and_d": [
+    {
+      "headline": "The All-Atlantic Ocean Research and Innovation Alliance 2026 annual forum starts today in Salvador, Brazil",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/all-atlantic-ocean-research-and-innovation-alliance-2026-annual-forum-starts-today-salvador-brazil-2026-04-15_en",
+      "published_at": "2026-04-16T11:25:41Z",
+      "display_date": "16 April 2026"
+    },
     {
       "headline": "EU joins the International Energy Agency (IEA) Cities and Energy Storage Technology Collaboration Programmes",
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-joins-international-energy-agency-iea-cities-and-energy-storage-technology-collaboration-2026-04-15_en",
       "published_at": "2026-04-15T12:57:53Z",
-      "display_date": "15 April 2026"
-    },
-    {
-      "headline": "The All-Atlantic Ocean Research and Innovation Alliance 2026 annual forum starts today in Salvador, Brazil",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/all-atlantic-ocean-research-and-innovation-alliance-2026-annual-forum-starts-today-salvador-brazil-2026-04-15_en",
-      "published_at": "2026-04-15T06:40:08Z",
       "display_date": "15 April 2026"
     },
     {
@@ -39,17 +39,31 @@
   ],
   "policy": [
     {
+      "headline": "System Management Principles Statement 2026 approval",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/publications/system-management-principles-statement-2026-approval",
+      "published_at": "2026-04-16T12:00:00Z",
+      "display_date": "16 April 2026"
+    },
+    {
+      "headline": "Proposed modifications to Last Mile Gas connection charging methodology",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/decision/proposed-modifications-last-mile-gas-connection-charging-methodology",
+      "published_at": "2026-04-16T12:00:00Z",
+      "display_date": "16 April 2026"
+    },
+    {
+      "headline": "Commission approves Bulgarian, German and Slovenian State aid schemes providing temporary electricity price relief for energy-intensive companies",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_815",
+      "published_at": "2026-04-16T10:31:31Z",
+      "display_date": "16 April 2026"
+    },
+    {
       "headline": "New implementing rules to reduce the switching electricity suppliers process to 24 hours by the end of 2026",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/new-implementing-rules-reduce-switching-electricity-suppliers-process-24-hours-end-2026-2026-04-14_en",
       "published_at": "2026-04-14T15:59:52Z",
-      "display_date": "14 April 2026"
-    },
-    {
-      "headline": "European Sustainable Energy Week 2026 opens for registration",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/european-sustainable-energy-week-2026-opens-registration-2026-04-14_en",
-      "published_at": "2026-04-14T10:35:41Z",
       "display_date": "14 April 2026"
     },
     {
@@ -58,20 +72,6 @@
       "link": "https://www.neso.energy/calendar/connections-reform-customer-call",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
-    },
-    {
-      "headline": "Strategic planning Strategic Spatial Energy Planning (SSEP)\u2026 17 April 2026 9:30am to 12pm Alongside our in person SSEP Developers Workshop on 15 April, we are also holding an online version. This online event brings together\u2026 Meetings",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/strategic-spatial-energy-planning-ssep-developer-workshop-online",
-      "published_at": "2026-04-13T00:00:00Z",
-      "display_date": "13 April 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-03-25T00:00:00Z",
-      "display_date": "25 March 2026"
     }
   ]
 }
