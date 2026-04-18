@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-04-17 15:40 UTC",
+  "last_updated": "2026-04-18 05:51 UTC",
   "r_and_d": [
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation-0",
+      "published_at": "2026-04-17T00:00:00Z",
+      "display_date": "17 April 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy-0",
+      "published_at": "2026-04-17T00:00:00Z",
+      "display_date": "17 April 2026"
+    },
     {
       "headline": "Apply Now: 2026 Waste to Energy and Materials Technical Assistance for State, Local, and Tribal Governments",
       "source": "DOE Hydrogen & Fuel Cells",
@@ -20,20 +34,6 @@
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-joins-international-energy-agency-iea-cities-and-energy-storage-technology-collaboration-2026-04-15_en",
       "published_at": "2026-04-15T12:57:53Z",
-      "display_date": "15 April 2026"
-    },
-    {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/unleash-american-energy-innovation",
-      "published_at": "2026-04-15T00:00:00Z",
-      "display_date": "15 April 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/unleash-commercial-nuclear-power-united-states",
-      "published_at": "2026-04-15T00:00:00Z",
       "display_date": "15 April 2026"
     }
   ],
@@ -67,9 +67,9 @@
       "display_date": "16 April 2026"
     },
     {
-      "headline": "Strategic planning Strategic Spatial Energy Planning (SSEP)\u2026 17 April 2026 9:30am to 12pm Alongside our in person SSEP Developers Workshop on 15 April, we are also holding an online version. This online event brings together\u2026 Meetings",
+      "headline": "Systems operation Operational Transparency Forum 22 Apr 2026 22 April 2026 11am to 12pm Our weekly Operational Transparency Forum (OTF) is where experts from the NESO review the previous week\u2019s activities, provide an update\u2026 Events",
       "source": "NESO",
-      "link": "https://www.neso.energy/calendar/strategic-spatial-energy-planning-ssep-developer-workshop-online",
+      "link": "https://www.neso.energy/calendar/operational-transparency-forum-22-apr-2026",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
     }
