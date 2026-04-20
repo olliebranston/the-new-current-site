@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-19 14:11 UTC",
+  "last_updated": "2026-04-20 07:28 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -46,20 +46,6 @@
       "display_date": "17 April 2026"
     },
     {
-      "headline": "RIIO-2 Regulatory Instructions and Guidance and Regulatory Reporting Packs",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/riio-2-regulatory-instructions-and-guidance-and-regulatory-reporting-packs",
-      "published_at": "2026-04-17T12:00:00Z",
-      "display_date": "17 April 2026"
-    },
-    {
-      "headline": "Market Stabilisation Charge licence condition",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/market-stabilisation-charge-licence-condition",
-      "published_at": "2026-04-17T12:00:00Z",
-      "display_date": "17 April 2026"
-    },
-    {
       "headline": "Commission approves Bulgarian, German and Slovenian State aid schemes providing temporary electricity price relief for energy-intensive companies",
       "source": "DG Energy",
       "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_815",
@@ -67,11 +53,25 @@
       "display_date": "16 April 2026"
     },
     {
-      "headline": "Systems operation Operational Transparency Forum 22 Apr 2026 22 April 2026 11am to 12pm Our weekly Operational Transparency Forum (OTF) is where experts from the NESO review the previous week\u2019s activities, provide an update\u2026 Events",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/operational-transparency-forum-22-apr-2026",
-      "published_at": "2026-04-13T00:00:00Z",
-      "display_date": "13 April 2026"
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-03-25T00:00:00Z",
+      "display_date": "25 March 2026"
+    },
+    {
+      "headline": "About Electricity",
+      "source": "ACER",
+      "link": "https://acer.europa.eu/electricity/about-electricity",
+      "published_at": "2026-03-25T00:00:00Z",
+      "display_date": "25 March 2026"
+    },
+    {
+      "headline": "Iran, the Middle East and UK energy: factsheet",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
