@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-20 15:59 UTC",
+  "last_updated": "2026-04-21 06:23 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,13 +39,6 @@
   ],
   "policy": [
     {
-      "headline": "GC0173 Grid Code (GC) proposed changes",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/publications/gc0173-grid-code-gc-proposed-changes",
-      "published_at": "2026-04-20T12:00:00Z",
-      "display_date": "20 April 2026"
-    },
-    {
       "headline": "In focus: EU energy security explained",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/focus-eu-energy-security-explained-2026-04-20_en",
@@ -72,6 +65,13 @@
       "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-23-april-2026",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
+    },
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-03-25T00:00:00Z",
+      "display_date": "25 March 2026"
     }
   ]
 }
