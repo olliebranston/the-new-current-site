@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-04-22 06:23 UTC",
+  "last_updated": "2026-04-22 12:53 UTC",
   "r_and_d": [
+    {
+      "headline": "Third EU-North Macedonia Horizon Europe Joint Research and Innovation Committee meeting",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/third-eu-north-macedonia-horizon-europe-joint-research-and-innovation-committee-meeting-2026-04-22_en",
+      "published_at": "2026-04-22T12:39:37Z",
+      "display_date": "22 April 2026"
+    },
     {
       "headline": "Experts call for EU policies on advanced materials to prioritise autonomy, safety, sustainability, and prosperity",
       "source": "EU Research & Innovation",
@@ -28,43 +35,22 @@
       "link": "https://www.energy.gov/cmei/fuels/articles/apply-now-2026-waste-energy-and-materials-technical-assistance-state-local-and",
       "published_at": "2026-04-16T13:00:00Z",
       "display_date": "16 April 2026"
-    },
-    {
-      "headline": "The All-Atlantic Ocean Research and Innovation Alliance 2026 annual forum starts today in Salvador, Brazil",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/all-atlantic-ocean-research-and-innovation-alliance-2026-annual-forum-starts-today-salvador-brazil-2026-04-15_en",
-      "published_at": "2026-04-16T11:25:41Z",
-      "display_date": "16 April 2026"
     }
   ],
   "policy": [
     {
-      "headline": "Introducing the 2026 cohort of Young Energy Ambassadors",
+      "headline": "Commissioner J\u00f8rgensen in Spain to discuss ways to tackle the energy and housing crises",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/introducing-2026-cohort-young-energy-ambassadors-2026-04-21_en",
-      "published_at": "2026-04-21T14:16:39Z",
-      "display_date": "21 April 2026"
+      "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-spain-discuss-ways-tackle-energy-and-housing-crises-2026-04-17_en",
+      "published_at": "2026-04-22T11:37:47Z",
+      "display_date": "22 April 2026"
     },
     {
-      "headline": "Electricity distribution price control ED2",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/electricity-distribution-price-control-ed2",
-      "published_at": "2026-04-21T12:00:00Z",
-      "display_date": "21 April 2026"
-    },
-    {
-      "headline": "Strategic energy planning and connections reform in 2026: putting plans into action",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/blog/strategic-energy-planning-and-connections-reform-2026-putting-plans-action",
-      "published_at": "2026-04-21T12:00:00Z",
-      "display_date": "21 April 2026"
-    },
-    {
-      "headline": "In focus: EU energy security explained",
+      "headline": "Commission recommendation to facilitate Power Purchase Agreement take-up",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/focus-eu-energy-security-explained-2026-04-20_en",
-      "published_at": "2026-04-20T11:38:32Z",
-      "display_date": "20 April 2026"
+      "link": "https://energy.ec.europa.eu/news/commission-recommendation-facilitate-power-purchase-agreement-take-2026-04-22_en",
+      "published_at": "2026-04-22T11:17:31Z",
+      "display_date": "22 April 2026"
     },
     {
       "headline": "Systems operation Operational Transparency Forum 22 Apr 2026 22 April 2026 11am to 12pm Our weekly Operational Transparency Forum (OTF) is where experts from the NESO review the previous week\u2019s activities, provide an update\u2026 Events",
@@ -72,6 +58,20 @@
       "link": "https://www.neso.energy/calendar/operational-transparency-forum-22-apr-2026",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
+    },
+    {
+      "headline": "Codes Grid Code Review Panel Meeting - 23 April\u2026 23 April 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-23-april-2026",
+      "published_at": "2026-04-13T00:00:00Z",
+      "display_date": "13 April 2026"
+    },
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-03-25T00:00:00Z",
+      "display_date": "25 March 2026"
     }
   ]
 }
