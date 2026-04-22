@@ -10,7 +10,7 @@ GENERATION_MIX_URL = "https://api.carbonintensity.org.uk/generation"
 ELEXON_API_BASE = "https://data.elexon.co.uk/bmrs/api/v1"
 ELEXON_MARKET_PRICE_URL = f"{ELEXON_API_BASE}/balancing/pricing/market-index"
 ELEXON_DEMAND_URL = f"{ELEXON_API_BASE}/demand/actual/total"
-ELEXON_MARKET_INDEX_PROVIDER = "EPEX SPOT"
+ELEXON_MARKET_INDEX_PROVIDER = "N2EXMIDP"
 
 # NESO open data resources used for the snapshot.
 NESO_SQL_API = "https://api.neso.energy/api/3/action/datastore_search_sql?sql="
