@@ -133,7 +133,7 @@ function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: !isHomepagePreview,
+      maintainAspectRatio: false,
       layout: {
         padding: {
           top: isHomepagePreview ? 0 : 8
