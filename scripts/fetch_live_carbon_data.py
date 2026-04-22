@@ -12,7 +12,7 @@ CLEANED_CSV_PATH = REPO_ROOT / "data" / "cleaned-live-carbon-intensity.csv"
 DAILY_AVERAGE_CSV_PATH = REPO_ROOT / "data" / "daily-average-live-carbon-intensity.csv"
 CHART_JSON_PATH = REPO_ROOT / "data" / "carbon-chart-data.json"
 
-from_time = pd.Timestamp.utcnow().strftime("%Y-%m-%dT%H:%MZ")
+from_time = (pd.Timestamp.utcnow() - pd.Timedelta(minutes=30)).strftime("%Y-%m-%dT%H:%MZ")
 api_url = API_URL_TEMPLATE.format(from_time=from_time)
 
 with urlopen(api_url) as response:
@@ -49,6 +49,7 @@ with open(LIVE_CSV_PATH, "w", newline="", encoding="utf-8") as csv_file:
     writer.writerows(records)
 
 df = pd.DataFrame(records)
+df = df[df["actual"].notna()].reset_index(drop=True)
 
 df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
 df["time"] = df["timestamp"].dt.strftime("%H:%M")
