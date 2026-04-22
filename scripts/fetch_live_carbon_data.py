@@ -1,12 +1,21 @@
 import json
 import csv
+from pathlib import Path
 from urllib.request import urlopen
 
 import pandas as pd
 
-API_URL = "https://api.carbonintensity.org.uk/intensity/date"
+API_URL_TEMPLATE = "https://api.carbonintensity.org.uk/intensity/{from_time}/pt24h"
+REPO_ROOT = Path(__file__).resolve().parent.parent
+LIVE_CSV_PATH = REPO_ROOT / "data" / "live-carbon-intensity.csv"
+CLEANED_CSV_PATH = REPO_ROOT / "data" / "cleaned-live-carbon-intensity.csv"
+DAILY_AVERAGE_CSV_PATH = REPO_ROOT / "data" / "daily-average-live-carbon-intensity.csv"
+CHART_JSON_PATH = REPO_ROOT / "data" / "carbon-chart-data.json"
 
-with urlopen(API_URL) as response:
+from_time = pd.Timestamp.utcnow().strftime("%Y-%m-%dT%H:%MZ")
+api_url = API_URL_TEMPLATE.format(from_time=from_time)
+
+with urlopen(api_url) as response:
     api_data = json.load(response)
 
 rows = api_data["data"]
@@ -31,7 +40,7 @@ for row in rows:
         }
     )
 
-with open("data/live-carbon-intensity.csv", "w", newline="", encoding="utf-8") as csv_file:
+with open(LIVE_CSV_PATH, "w", newline="", encoding="utf-8") as csv_file:
     writer = csv.DictWriter(
         csv_file,
         fieldnames=["timestamp", "forecast", "actual", "index", "chart_value"],
@@ -47,8 +56,8 @@ df["date"] = df["timestamp"].dt.strftime("%Y-%m-%d")
 
 daily_average = df.groupby("date")["chart_value"].mean().reset_index()
 
-df.to_csv("data/cleaned-live-carbon-intensity.csv", index=False)
-daily_average.to_csv("data/daily-average-live-carbon-intensity.csv", index=False)
+df.to_csv(CLEANED_CSV_PATH, index=False)
+daily_average.to_csv(DAILY_AVERAGE_CSV_PATH, index=False)
 
 chart_data = {
     "last_updated": pd.Timestamp.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
@@ -57,13 +66,11 @@ chart_data = {
     "actual_values": [
         None if pd.isna(value) else value for value in df["actual"].tolist()
     ],
-    "forecast_values": [
-        None if pd.isna(value) else value for value in df["forecast"].tolist()
-    ],
+    "forecast_values": [None for _ in df["actual"].tolist()],
     "daily_average": daily_average.to_dict(orient="records")
 }
 
-with open("data/carbon-chart-data.json", "w", encoding="utf-8") as json_file:
+with open(CHART_JSON_PATH, "w", encoding="utf-8") as json_file:
     json.dump(chart_data, json_file, indent=2)
 
 print("Fetched live data successfully.")

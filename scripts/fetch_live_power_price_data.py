@@ -46,7 +46,7 @@ def extract_rows(payload):
 
 def build_market_price_url():
     now = datetime.now(timezone.utc)
-    start = now - timedelta(days=2)
+    start = now - timedelta(days=1)
 
     query = urlencode(
         {

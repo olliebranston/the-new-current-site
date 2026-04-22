@@ -92,36 +92,44 @@ function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
     return;
   }
 
+  const hasForecastSeries = Array.isArray(chartData.forecast_values)
+    && chartData.forecast_values.some((value) => value !== null && value !== undefined);
+
+  const datasets = [
+    {
+      label: "Actual",
+      data: chartData.actual_values,
+      borderColor: chartActualSeriesColour,
+      backgroundColor: chartActualSeriesColour,
+      pointRadius: isHomepagePreview ? 0 : 2.5,
+      pointHoverRadius: isHomepagePreview ? 4 : 6,
+      pointHitRadius: isHomepagePreview ? 10 : 14,
+      borderWidth: 2,
+      tension: 0.2
+    }
+  ];
+
+  if (hasForecastSeries) {
+    datasets.push({
+      label: "Forecast",
+      data: chartData.forecast_values.map((value, index) => {
+        return chartData.actual_values[index] !== null ? null : value;
+      }),
+      borderColor: chartForecastSeriesColour,
+      backgroundColor: chartForecastSeriesColour,
+      pointRadius: isHomepagePreview ? 0 : 2.5,
+      pointHoverRadius: isHomepagePreview ? 4 : 6,
+      pointHitRadius: isHomepagePreview ? 10 : 14,
+      borderWidth: 2,
+      tension: 0.2
+    });
+  }
+
   new Chart(canvas, {
     type: "line",
     data: {
       labels: chartData.labels,
-      datasets: [
-        {
-          label: "Actual",
-          data: chartData.actual_values,
-          borderColor: chartActualSeriesColour,
-          backgroundColor: chartActualSeriesColour,
-          pointRadius: isHomepagePreview ? 0 : 2.5,
-          pointHoverRadius: isHomepagePreview ? 4 : 6,
-          pointHitRadius: isHomepagePreview ? 10 : 14,
-          borderWidth: 2,
-          tension: 0.2
-        },
-        {
-          label: "Forecast",
-          data: chartData.forecast_values.map((value, index) => {
-            return chartData.actual_values[index] !== null ? null : value;
-          }),
-          borderColor: chartForecastSeriesColour,
-          backgroundColor: chartForecastSeriesColour,
-          pointRadius: isHomepagePreview ? 0 : 2.5,
-          pointHoverRadius: isHomepagePreview ? 4 : 6,
-          pointHitRadius: isHomepagePreview ? 10 : 14,
-          borderWidth: 2,
-          tension: 0.2
-        }
-      ]
+      datasets
     },
     options: {
       responsive: true,
@@ -321,7 +329,9 @@ function buildGenerationMixOverTimeChart(canvas, chartData) {
     return;
   }
 
-  const datasets = (chartData.datasets || []).map((dataset) => ({
+  const visibleDatasets = (chartData.datasets || []).filter(isVisibleGenerationMixDataset);
+
+  const datasets = visibleDatasets.map((dataset) => ({
     label: dataset.label,
     data: dataset.values,
     borderColor: getGenerationMixColour({ key: dataset.key }),
@@ -456,21 +466,12 @@ function getCarbonMetricFromChartData(chartData) {
 
   if (slotIndex >= 0) {
     const actualValue = chartData.actual_values?.[slotIndex];
-    const forecastValue = chartData.forecast_values?.[slotIndex];
 
     if (actualValue !== null && actualValue !== undefined) {
       return {
         value: actualValue,
         unit: "gCO2/kWh",
         display: `${Math.round(actualValue)} gCO2/kWh`
-      };
-    }
-
-    if (forecastValue !== null && forecastValue !== undefined) {
-      return {
-        value: forecastValue,
-        unit: "gCO2/kWh",
-        display: `${Math.round(forecastValue)} gCO2/kWh (forecast)`
       };
     }
   }
@@ -600,6 +601,25 @@ function sortGenerationMixSegments(segments) {
   return [...lowCarbonSegments, ...nonLowCarbonSegments];
 }
 
+function isVisibleGenerationMixSegment(segment) {
+  return Boolean(
+    segment
+    && segment.key
+    && generationMixColours[segment.key]
+    && Number(segment.percentage) > 0
+  );
+}
+
+function isVisibleGenerationMixDataset(dataset) {
+  return Boolean(
+    dataset
+    && dataset.key
+    && generationMixColours[dataset.key]
+    && Array.isArray(dataset.values)
+    && dataset.values.some((value) => value !== null && value !== undefined && Number(value) > 0)
+  );
+}
+
 function updateSnapshotMetric(valueElement, unitElement, metric) {
   if (!valueElement) {
     return;
@@ -639,7 +659,14 @@ function renderGenerationMix(snapshotData) {
     return;
   }
 
-  const sortedSegments = sortGenerationMixSegments(mixData.segments);
+  const sortedSegments = sortGenerationMixSegments(
+    mixData.segments.filter(isVisibleGenerationMixSegment)
+  );
+
+  if (sortedSegments.length === 0) {
+    generationMixVisual.textContent = "Generation mix unavailable right now.";
+    return;
+  }
 
   generationMixVisual.classList.remove("loading-placeholder");
   generationMixVisual.innerHTML = `
