@@ -213,30 +213,28 @@ def fetch_generation_total():
 
 
 def fetch_power_price():
-    now = datetime.now(timezone.utc)
-    settlement_dates = [
-        now.strftime("%Y-%m-%d"),
-        (now - timedelta(days=1)).strftime("%Y-%m-%d"),
-    ]
-
     try:
-        # MID data is organised by settlement date, so query one provider's
-        # settlement-day rows directly instead of using a generic time range.
-        rows = []
-
-        for settlement_date in settlement_dates:
-            market_price_params = {
-                "settlementDate": settlement_date,
-                "marketIndexDataProvider": ELEXON_MARKET_INDEX_PROVIDER,
-                "format": "json",
-            }
-            url = f"{ELEXON_MARKET_PRICE_URL}?{urlencode(market_price_params)}"
-            payload = fetch_json(url)
-            rows.extend(extract_rows(payload))
-
+        # This endpoint appears to behave like a time-series query, so request
+        # a recent range for one provider and then inspect the returned rows.
+        market_price_params = {
+            "from": (datetime.now(timezone.utc) - timedelta(days=2)).strftime("%Y-%m-%dT%H:%MZ"),
+            "to": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"),
+            "marketIndexDataProvider": ELEXON_MARKET_INDEX_PROVIDER,
+            "format": "json",
+        }
+        url = f"{ELEXON_MARKET_PRICE_URL}?{urlencode(market_price_params)}"
+        payload = fetch_json(url)
+        rows = extract_rows(payload)
     except Exception as error:
         print(f"Power price fetch failed: {error}")
         return {"value": None, "unit": "GBP/MWh", "display": "Price unavailable"}
+
+    top_level_keys = list(payload.keys()) if isinstance(payload, dict) else []
+    print(f"Power price response keys: {top_level_keys}")
+    print(f"Power price rows found: {len(rows)}")
+
+    if rows:
+        print(f"Power price first row keys: {list(rows[0].keys())}")
 
     # Use the most recent market price row with a usable marketIndexPrice value.
     for row in sorted(rows, key=latest_settlement_first, reverse=True):
@@ -260,7 +258,7 @@ def fetch_power_price():
 
     print(
         "Power price unavailable: no usable marketIndexPrice found "
-        f"for provider {ELEXON_MARKET_INDEX_PROVIDER} on settlement dates {settlement_dates}"
+        f"for provider {ELEXON_MARKET_INDEX_PROVIDER} in the requested time range"
     )
     return {"value": None, "unit": "GBP/MWh", "display": "Price unavailable"}
 
