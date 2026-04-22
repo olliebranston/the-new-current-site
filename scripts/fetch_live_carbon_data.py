@@ -69,10 +69,12 @@ df = (
     .reset_index()
 )
 
-if "index" in df.columns:
-    df = df.rename(columns={"index": "timestamp"})
-elif "level_0" in df.columns:
-    df = df.rename(columns={"level_0": "timestamp"})
+if "level_0" in df.columns:
+    df["timestamp"] = df["level_0"]
+    df = df.drop(columns=["level_0"])
+elif "index" in df.columns:
+    df["timestamp"] = df["index"]
+    df = df.drop(columns=["index"])
 
 df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True, errors="coerce")
 df["time"] = df["timestamp"].dt.strftime("%H:%M")
