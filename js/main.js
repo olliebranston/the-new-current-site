@@ -2,9 +2,11 @@ console.log("The New Current loaded successfully");
 
 const chartCanvas = document.getElementById("carbonChart");
 const powerPriceChartCanvas = document.getElementById("powerPriceChart");
+const generationMixOverTimeChartCanvas = document.getElementById("generationMixOverTimeChart");
 const homepageChartCanvas = document.getElementById("homepageCarbonChart");
 const lastUpdatedText = document.getElementById("lastUpdatedText");
 const powerPriceUpdatedText = document.getElementById("powerPriceUpdatedText");
+const generationMixOverTimeUpdatedText = document.getElementById("generationMixOverTimeUpdatedText");
 const homepageChartUpdated = document.getElementById("homepageCarbonChartUpdated");
 const dailyAverageTableBody = document.getElementById("dailyAverageTableBody");
 const radarRAndD = document.getElementById("radar-r-and-d");
@@ -47,6 +49,8 @@ const chartTextColour = "#3b4758";
 const chartTitleColour = "#0f1724";
 const chartGridColour = "rgba(198, 208, 221, 0.55)";
 const chartFontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+const chartActualSeriesColour = "#36a2eb";
+const chartForecastSeriesColour = "#ff6384";
 
 const generationMixLabelsPlugin = {
   id: "generationMixLabels",
@@ -96,6 +100,8 @@ function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
         {
           label: "Actual",
           data: chartData.actual_values,
+          borderColor: chartActualSeriesColour,
+          backgroundColor: chartActualSeriesColour,
           pointRadius: isHomepagePreview ? 0 : 2.5,
           pointHoverRadius: isHomepagePreview ? 4 : 6,
           pointHitRadius: isHomepagePreview ? 10 : 14,
@@ -107,6 +113,8 @@ function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
           data: chartData.forecast_values.map((value, index) => {
             return chartData.actual_values[index] !== null ? null : value;
           }),
+          borderColor: chartForecastSeriesColour,
+          backgroundColor: chartForecastSeriesColour,
           pointRadius: isHomepagePreview ? 0 : 2.5,
           pointHoverRadius: isHomepagePreview ? 4 : 6,
           pointHitRadius: isHomepagePreview ? 10 : 14,
@@ -196,34 +204,42 @@ function buildPowerPriceChart(canvas, chartData) {
     return;
   }
 
+  const hasForecastSeries = Array.isArray(chartData.forecast_values)
+    && chartData.forecast_values.some((value) => value !== null && value !== undefined);
+
+  const datasets = [
+    {
+      label: "Actual",
+      data: chartData.actual_values,
+      borderColor: chartActualSeriesColour,
+      backgroundColor: chartActualSeriesColour,
+      pointRadius: 2.5,
+      pointHoverRadius: 6,
+      pointHitRadius: 14,
+      borderWidth: 2,
+      tension: 0.2
+    }
+  ];
+
+  if (hasForecastSeries) {
+    datasets.push({
+      label: "Forecast",
+      data: chartData.forecast_values,
+      borderColor: chartForecastSeriesColour,
+      backgroundColor: chartForecastSeriesColour,
+      pointRadius: 2.5,
+      pointHoverRadius: 6,
+      pointHitRadius: 14,
+      borderWidth: 2,
+      tension: 0.2
+    });
+  }
+
   new Chart(canvas, {
     type: "line",
     data: {
       labels: chartData.labels,
-      datasets: [
-        {
-          label: "Actual",
-          data: chartData.actual_values,
-          borderColor: "#2457ff",
-          backgroundColor: "#2457ff",
-          pointRadius: 2.5,
-          pointHoverRadius: 6,
-          pointHitRadius: 14,
-          borderWidth: 2,
-          tension: 0.2
-        },
-        {
-          label: "Forecast",
-          data: chartData.forecast_values,
-          borderColor: "#d14343",
-          backgroundColor: "#d14343",
-          pointRadius: 2.5,
-          pointHoverRadius: 6,
-          pointHitRadius: 14,
-          borderWidth: 2,
-          tension: 0.2
-        }
-      ]
+      datasets
     },
     options: {
       responsive: true,
@@ -273,6 +289,123 @@ function buildPowerPriceChart(canvas, chartData) {
           }
         },
         x: {
+          grid: {
+            color: chartGridColour
+          },
+          title: {
+            display: true,
+            text: "Time",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          },
+          ticks: {
+            maxTicksLimit: 12,
+            color: chartTextColour,
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+function buildGenerationMixOverTimeChart(canvas, chartData) {
+  if (!canvas) {
+    return;
+  }
+
+  const datasets = (chartData.datasets || []).map((dataset) => ({
+    label: dataset.label,
+    data: dataset.values,
+    borderColor: getGenerationMixColour({ key: dataset.key }),
+    backgroundColor: getGenerationMixColour({ key: dataset.key }),
+    fill: true,
+    stack: "generation-mix",
+    borderWidth: 1.5,
+    pointRadius: 0,
+    pointHoverRadius: 4,
+    pointHitRadius: 10,
+    tension: 0.2
+  }));
+
+  new Chart(canvas, {
+    type: "line",
+    data: {
+      labels: chartData.labels,
+      datasets
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        mode: "index",
+        intersect: false
+      },
+      layout: {
+        padding: {
+          top: 8
+        }
+      },
+      plugins: {
+        legend: {
+          position: "top",
+          align: "center",
+          labels: {
+            color: chartTextColour,
+            padding: 18,
+            font: {
+              family: chartFontFamily,
+              size: 13,
+              weight: "400"
+            }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label(context) {
+              return `${context.dataset.label}: ${context.raw.toFixed(1)}%`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          stacked: true,
+          min: 0,
+          max: 100,
+          grid: {
+            color: chartGridColour
+          },
+          ticks: {
+            color: chartTextColour,
+            callback(value) {
+              return `${value}%`;
+            },
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
+          },
+          title: {
+            display: true,
+            text: "Share of generation (%)",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          }
+        },
+        x: {
+          stacked: true,
           grid: {
             color: chartGridColour
           },
@@ -358,6 +491,49 @@ function getCarbonMetricFromChartData(chartData) {
     value: null,
     unit: "gCO2/kWh",
     display: "Carbon intensity unavailable"
+  };
+}
+
+function getPowerPriceMetricFromChartData(chartData) {
+  if (!chartData || !Array.isArray(chartData.labels)) {
+    return null;
+  }
+
+  const currentLabel = getCurrentHalfHourLabel();
+  let slotIndex = chartData.labels.lastIndexOf(currentLabel);
+
+  if (slotIndex === -1) {
+    slotIndex = chartData.labels.length - 1;
+  }
+
+  if (slotIndex >= 0) {
+    const actualValue = chartData.actual_values?.[slotIndex];
+
+    if (actualValue !== null && actualValue !== undefined) {
+      return {
+        value: actualValue,
+        unit: "GBP/MWh",
+        display: `${Math.round(actualValue)} GBP/MWh`
+      };
+    }
+  }
+
+  for (let index = Math.min(slotIndex, chartData.labels.length - 1); index >= 0; index -= 1) {
+    const actualValue = chartData.actual_values?.[index];
+
+    if (actualValue !== null && actualValue !== undefined) {
+      return {
+        value: actualValue,
+        unit: "GBP/MWh",
+        display: `${Math.round(actualValue)} GBP/MWh`
+      };
+    }
+  }
+
+  return {
+    value: null,
+    unit: "GBP/MWh",
+    display: "Price unavailable"
   };
 }
 
@@ -553,9 +729,30 @@ if (powerPriceChartCanvas) {
       }
 
       buildPowerPriceChart(powerPriceChartCanvas, chartData);
+
+      if (snapshotPowerPrice) {
+        const powerPriceMetric = getPowerPriceMetricFromChartData(chartData);
+        updateSnapshotMetric(snapshotPowerPrice, snapshotPowerPriceUnit, powerPriceMetric);
+      }
     })
     .catch((error) => {
       console.error("Error loading power price chart data:", error);
+    });
+}
+
+if (generationMixOverTimeChartCanvas) {
+  fetch("data/generation-mix-chart-data.json")
+    .then((response) => response.json())
+    .then((chartData) => {
+      if (generationMixOverTimeUpdatedText) {
+        generationMixOverTimeUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
+        generationMixOverTimeUpdatedText.classList.remove("loading-placeholder");
+      }
+
+      buildGenerationMixOverTimeChart(generationMixOverTimeChartCanvas, chartData);
+    })
+    .catch((error) => {
+      console.error("Error loading generation mix chart data:", error);
     });
 }
 
@@ -575,7 +772,6 @@ if (
         gridSnapshotUpdated.classList.remove("loading-placeholder");
       }
 
-      updateSnapshotMetric(snapshotPowerPrice, snapshotPowerPriceUnit, snapshotData.power_price);
       updateSnapshotMetric(snapshotDemand, snapshotDemandUnit, snapshotData.demand);
       updateSnapshotMetric(snapshotGeneration, snapshotGenerationUnit, snapshotData.generation);
       renderGenerationMix(snapshotData);

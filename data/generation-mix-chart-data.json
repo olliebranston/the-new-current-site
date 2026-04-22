@@ -1,0 +1,56 @@
+{
+  "last_updated": "Loading...",
+  "labels": [],
+  "datasets": [
+    {
+      "key": "wind",
+      "label": "Wind",
+      "values": []
+    },
+    {
+      "key": "solar",
+      "label": "Solar",
+      "values": []
+    },
+    {
+      "key": "hydro",
+      "label": "Hydro",
+      "values": []
+    },
+    {
+      "key": "nuclear",
+      "label": "Nuclear",
+      "values": []
+    },
+    {
+      "key": "biomass",
+      "label": "Biomass",
+      "values": []
+    },
+    {
+      "key": "storage",
+      "label": "Storage",
+      "values": []
+    },
+    {
+      "key": "gas",
+      "label": "Gas",
+      "values": []
+    },
+    {
+      "key": "imports",
+      "label": "Imports",
+      "values": []
+    },
+    {
+      "key": "coal",
+      "label": "Coal",
+      "values": []
+    },
+    {
+      "key": "other",
+      "label": "Other",
+      "values": []
+    }
+  ]
+}
