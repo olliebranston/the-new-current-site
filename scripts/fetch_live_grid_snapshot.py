@@ -213,19 +213,29 @@ def fetch_generation_total():
 
 
 def fetch_power_price():
+    now = datetime.now(timezone.utc)
+    settlement_dates = [
+        now.strftime("%Y-%m-%d"),
+        (now - timedelta(days=1)).strftime("%Y-%m-%d"),
+    ]
+
     try:
-        # MID data is published per provider, so request one provider's price
-        # series directly instead of asking for every provider at once.
-        market_price_params = {
-            "from": (datetime.now(timezone.utc) - timedelta(days=2)).strftime("%Y-%m-%dT%H:%MZ"),
-            "to": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"),
-            "marketIndexDataProvider": ELEXON_MARKET_INDEX_PROVIDER,
-            "format": "json",
-        }
-        url = f"{ELEXON_MARKET_PRICE_URL}?{urlencode(market_price_params)}"
-        payload = fetch_json(url)
-        rows = extract_rows(payload)
-    except Exception:
+        # MID data is organised by settlement date, so query one provider's
+        # settlement-day rows directly instead of using a generic time range.
+        rows = []
+
+        for settlement_date in settlement_dates:
+            market_price_params = {
+                "settlementDate": settlement_date,
+                "marketIndexDataProvider": ELEXON_MARKET_INDEX_PROVIDER,
+                "format": "json",
+            }
+            url = f"{ELEXON_MARKET_PRICE_URL}?{urlencode(market_price_params)}"
+            payload = fetch_json(url)
+            rows.extend(extract_rows(payload))
+
+    except Exception as error:
+        print(f"Power price fetch failed: {error}")
         return {"value": None, "unit": "GBP/MWh", "display": "Price unavailable"}
 
     # Use the most recent market price row with a usable marketIndexPrice value.
@@ -248,6 +258,10 @@ def fetch_power_price():
             "display": f"{rounded_value} GBP/MWh",
         }
 
+    print(
+        "Power price unavailable: no usable marketIndexPrice found "
+        f"for provider {ELEXON_MARKET_INDEX_PROVIDER} on settlement dates {settlement_dates}"
+    )
     return {"value": None, "unit": "GBP/MWh", "display": "Price unavailable"}
 
 
