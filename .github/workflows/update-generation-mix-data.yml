@@ -2,8 +2,6 @@ name: Update generation mix data
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 */6 * * *"
   push:
     paths:
       - "scripts/fetch_generation_mix_over_time.py"

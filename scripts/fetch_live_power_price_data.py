@@ -156,7 +156,9 @@ def main():
             "last_updated": pd.Timestamp.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
             "provider": ELEXON_MARKET_INDEX_PROVIDER,
             "labels": df["time"].tolist(),
-            "values": df["actual_price"].tolist(),
+            "values": [
+                None if pd.isna(value) else value for value in df["actual_price"].tolist()
+            ],
             "actual_values": [
                 None if pd.isna(value) else value for value in df["actual_price"].tolist()
             ],
