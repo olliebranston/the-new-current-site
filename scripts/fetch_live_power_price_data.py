@@ -137,6 +137,17 @@ def main():
     else:
         df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
         df = df.sort_values("timestamp").reset_index(drop=True)
+        latest_complete_slot = pd.Timestamp.utcnow().floor("30min") - pd.Timedelta(minutes=30)
+        expected_index = pd.date_range(end=latest_complete_slot, periods=48, freq="30min", tz="UTC")
+
+        df = (
+            df.drop_duplicates(subset=["timestamp"])
+            .set_index("timestamp")
+            .reindex(expected_index)
+            .reset_index()
+            .rename(columns={"index": "timestamp"})
+        )
+        df["provider"] = df["provider"].fillna(ELEXON_MARKET_INDEX_PROVIDER)
         df["time"] = df["timestamp"].dt.strftime("%H:%M")
 
         df.to_csv(CLEANED_CSV_PATH, index=False)
