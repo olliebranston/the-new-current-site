@@ -583,6 +583,70 @@ li {
   gap: 24px;
 }
 
+.data-page-updated {
+  align-self: flex-start;
+  margin: -12px 0 4px;
+}
+
+.data-gateway-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.data-gateway-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.data-gateway-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 560px;
+  padding: 28px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(198, 208, 221, 0.72);
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  transition:
+    transform var(--transition-medium),
+    box-shadow var(--transition-medium),
+    border-color var(--transition-medium);
+}
+
+.data-gateway-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--border-strong);
+}
+
+.data-gateway-card h3 {
+  margin-bottom: 16px;
+}
+
+.data-gateway-card p:last-child {
+  margin-bottom: 0;
+}
+
+.data-gateway-visual {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6px 0 20px;
+  border: 1px dashed rgba(198, 208, 221, 0.9);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(247, 250, 255, 0.95), rgba(241, 246, 255, 0.92));
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  font-weight: 600;
+  text-align: center;
+}
+
 .data-chart-section-heading {
   max-width: 760px;
 }
@@ -673,6 +737,28 @@ li {
   width: 100%;
   text-align: center;
   font-size: 1rem;
+}
+
+.data-section-subtitle {
+  max-width: 760px;
+  padding-top: 8px;
+}
+
+.data-section-subtitle h3 {
+  margin-bottom: 10px;
+}
+
+.data-section-subtitle p:last-child {
+  margin-bottom: 0;
+}
+
+.data-future-grid .data-gateway-card {
+  min-height: 420px;
+}
+
+.data-future-grid .data-gateway-visual {
+  min-height: 170px;
+  margin-top: auto;
 }
 
 .grid-snapshot-section {
@@ -1567,6 +1653,7 @@ th {
   .data-preview-card,
   .data-chart-row,
   .grid-dashboard-layout,
+  .data-gateway-grid,
   .thoughts-grid,
   .about-hero-card,
   .about-me-card,
@@ -1687,8 +1774,17 @@ th {
   .grid-dashboard-layout,
   .brain-dump-preview-grid,
   .reporting-preview-grid,
+  .data-gateway-grid,
   .recommendations-grid {
     grid-template-columns: 1fr;
+  }
+
+  .data-gateway-card {
+    min-height: 420px;
+  }
+
+  .data-gateway-visual {
+    min-height: 200px;
   }
 
   .subsection-header,

@@ -4,6 +4,7 @@ const chartCanvas = document.getElementById("carbonChart");
 const powerPriceChartCanvas = document.getElementById("powerPriceChart");
 const generationMixOverTimeChartCanvas = document.getElementById("generationMixOverTimeChart");
 const homepageChartCanvas = document.getElementById("homepageCarbonChart");
+const pageDataUpdated = document.getElementById("pageDataUpdated");
 const lastUpdatedText = document.getElementById("lastUpdatedText");
 const powerPriceUpdatedText = document.getElementById("powerPriceUpdatedText");
 const generationMixOverTimeUpdatedText = document.getElementById("generationMixOverTimeUpdatedText");
@@ -500,26 +501,7 @@ function getPowerPriceMetricFromChartData(chartData) {
     return null;
   }
 
-  const currentLabel = getCurrentHalfHourLabel();
-  let slotIndex = chartData.labels.lastIndexOf(currentLabel);
-
-  if (slotIndex === -1) {
-    slotIndex = chartData.labels.length - 1;
-  }
-
-  if (slotIndex >= 0) {
-    const actualValue = chartData.actual_values?.[slotIndex];
-
-    if (actualValue !== null && actualValue !== undefined) {
-      return {
-        value: actualValue,
-        unit: "GBP/MWh",
-        display: `${Math.round(actualValue)} GBP/MWh`
-      };
-    }
-  }
-
-  for (let index = Math.min(slotIndex, chartData.labels.length - 1); index >= 0; index -= 1) {
+  for (let index = chartData.labels.length - 1; index >= 0; index -= 1) {
     const actualValue = chartData.actual_values?.[index];
 
     if (actualValue !== null && actualValue !== undefined) {
@@ -725,6 +707,11 @@ if (chartCanvas || homepageChartCanvas) {
   fetch("data/carbon-chart-data.json")
     .then((response) => response.json())
     .then((chartData) => {
+      if (pageDataUpdated) {
+        pageDataUpdated.textContent = `Last updated: ${chartData.last_updated}`;
+        pageDataUpdated.classList.remove("loading-placeholder");
+      }
+
       if (lastUpdatedText) {
         lastUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
       }

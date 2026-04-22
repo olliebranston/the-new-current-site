@@ -71,13 +71,117 @@
     </div>
   </section>
 
-  <section class="grid-snapshot-section">
+  <p id="pageDataUpdated" class="grid-snapshot-updated data-page-updated loading-placeholder">Last updated: loading...</p>
+
+  <section class="data-gateway-section">
+    <div class="homepage-section-heading">
+      <p class="eyebrow">Explore</p>
+      <h2>Three ways into the data</h2>
+      <p>
+        Start with a theme below, then move into the fuller sections further down
+        the page.
+      </p>
+    </div>
+
+    <div class="data-gateway-grid">
+      <a href="#consumption-production" class="data-gateway-card">
+        <p class="eyebrow">System balance</p>
+        <h3>Consumption versus production</h3>
+        <div class="data-gateway-visual">Mini graph template</div>
+        <p>
+          A future section for comparing how electricity demand and available
+          generation move against each other across the system.
+        </p>
+      </a>
+
+      <a href="#live-gb-dashboard" class="data-gateway-card">
+        <p class="eyebrow">Live monitoring</p>
+        <h3>Live GB dashboard</h3>
+        <div class="data-gateway-visual">Mini graph template</div>
+        <p>
+          A live, top-level dashboard view of key GB electricity system metrics
+          including price, carbon intensity, demand, generation, and mix.
+        </p>
+      </a>
+
+      <a href="#carbon-price-relationship" class="data-gateway-card">
+        <p class="eyebrow">Market signals</p>
+        <h3>Carbon / price relationship</h3>
+        <div class="data-gateway-visual">Mini graph template</div>
+        <p>
+          A section for comparing how GB carbon intensity, wholesale price, and
+          generation mix move together over the same time window.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <section id="consumption-production" class="data-chart-section">
+    <div class="data-chart-section-heading">
+      <p class="eyebrow">Section One</p>
+      <h2>Consumption versus production</h2>
+      <p>
+        This section will focus on how electricity demand and generation relate
+        to each other across the system. For now, these cards act as placeholders
+        for the next set of comparison charts.
+      </p>
+    </div>
+
+    <div class="data-chart-row-list">
+      <article class="data-chart-row">
+        <div class="data-chart-card-header">
+          <p class="eyebrow">Template one</p>
+          <h3>Consumption versus production</h3>
+          <p>
+            This chart will compare system-level consumption and production over
+            time and show where the two begin to diverge.
+          </p>
+        </div>
+
+        <div class="data-chart-frame">
+          <div class="data-chart-placeholder">Graph placeholder</div>
+        </div>
+      </article>
+
+      <article class="data-chart-row">
+        <div class="data-chart-card-header">
+          <p class="eyebrow">Template two</p>
+          <h3>Demand by period</h3>
+          <p>
+            A future chart for exploring how demand changes over the day and how
+            those changes compare with available generation.
+          </p>
+        </div>
+
+        <div class="data-chart-frame">
+          <div class="data-chart-placeholder">Graph placeholder</div>
+        </div>
+      </article>
+
+      <article class="data-chart-row">
+        <div class="data-chart-card-header">
+          <p class="eyebrow">Template three</p>
+          <h3>Production by period</h3>
+          <p>
+            A future chart for exploring how production responds across the same
+            periods and how that links back to system balancing.
+          </p>
+        </div>
+
+        <div class="data-chart-frame">
+          <div class="data-chart-placeholder">Graph placeholder</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="live-gb-dashboard" class="grid-snapshot-section">
     <div class="grid-snapshot-header">
-      <p class="eyebrow">Live Grid Snapshot</p>
-      <h2>Live GB grid dashboard</h2>
+      <p class="eyebrow">Section Two</p>
+      <h2>Live GB dashboard</h2>
       <p>
         A simple live view of key GB electricity system metrics, designed as a quick
-        top-level read before the deeper charts and tables below.
+        top-level read before the deeper charts and comparisons below.
       </p>
       <p id="gridSnapshotUpdated" class="grid-snapshot-updated loading-placeholder">Last updated: loading...</p>
     </div>
@@ -123,20 +227,10 @@
     </div>
   </section>
 
-  <section>
-    <h3>Current data experiments</h3>
-    <ul>
-      <li>Sample carbon intensity dataset loaded from CSV</li>
-      <li>Timestamps converted into datetime format</li>
-      <li>Helper columns created for hour and date</li>
-      <li>Daily average carbon intensity calculated in pandas</li>
-    </ul>
-  </section>
-
-  <section class="data-chart-section">
+  <section id="carbon-price-relationship" class="data-chart-section">
     <div class="data-chart-section-heading">
-      <p class="eyebrow">Time Series</p>
-      <h2>Carbon intensity and power price</h2>
+      <p class="eyebrow">Section Three</p>
+      <h2>Carbon / price relationship</h2>
       <p>
         These charts will extend the live dashboard above, showing how carbon
         intensity and wholesale power price move over time using the same
@@ -200,15 +294,60 @@
         </div>
       </article>
     </div>
-  </section>
 
-  <section>
-    <h3>Planned dashboards</h3>
-    <ul>
-      <li>Power price monitor</li>
-      <li>Renewable generation tracker</li>
-      <li>Carbon intensity of the GB grid</li>
-    </ul>
+    <div class="data-section-subtitle">
+      <h3>However...</h3>
+      <p>
+        Beyond the live sections above, this page can also hold slower-moving,
+        more reflective comparisons about how the UK system is changing over
+        time and how those changes are being felt by households.
+      </p>
+    </div>
+
+    <div class="data-chart-row-list">
+      <article class="data-chart-row">
+        <div class="data-chart-card-header">
+          <h3>UK generation year on year</h3>
+          <p>
+            A future section for comparing how the UK generation stack changes
+            year on year across major technologies.
+          </p>
+        </div>
+
+        <div class="data-chart-frame">
+          <div class="data-chart-placeholder">Graph placeholder</div>
+        </div>
+      </article>
+
+      <article class="data-chart-row">
+        <div class="data-chart-card-header">
+          <h3>Average bill cost year on year</h3>
+          <p>
+            A future section for tracking how average household bill costs move
+            over time and how those shifts relate back to the wider system.
+          </p>
+        </div>
+
+        <div class="data-chart-frame">
+          <div class="data-chart-placeholder">Graph placeholder</div>
+        </div>
+      </article>
+
+      <article class="data-chart-row">
+        <div class="data-chart-card-header">
+          <h3>Why this matters</h3>
+          <p>
+            This final card can become a more text-led space for notes,
+            observations, or framing about what these slower-moving data views
+            mean in practice.
+          </p>
+        </div>
+
+        <div class="data-chart-frame">
+          <div class="data-chart-placeholder">Text or visual placeholder</div>
+        </div>
+      </article>
+    </div>
   </section>
 </main>
 
