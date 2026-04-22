@@ -1,0 +1,38 @@
+name: Update live grid snapshot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 * * * *"
+  push:
+    paths:
+      - "scripts/fetch_live_grid_snapshot.py"
+      - ".github/workflows/update-live-grid-snapshot.yml"
+
+jobs:
+  update-live-grid-snapshot:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run live grid snapshot script
+        run: python scripts/fetch_live_grid_snapshot.py
+
+      - name: Commit updated live grid snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/live-grid-snapshot.json
+          git diff --cached --quiet || git commit -m "Update live grid snapshot"
+          git pull --rebase origin main
+          git push origin main

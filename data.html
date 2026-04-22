@@ -71,6 +71,59 @@
     </div>
   </section>
 
+  <section class="grid-snapshot-section">
+    <div class="grid-snapshot-header">
+      <p class="eyebrow">Live Grid Snapshot</p>
+      <h2>Live GB grid snapshot</h2>
+      <p>
+        A simple live view of key GB electricity system metrics, designed as a quick
+        top-level read before the deeper charts and tables below.
+      </p>
+      <p id="gridSnapshotUpdated" class="grid-snapshot-updated loading-placeholder">Last updated: loading...</p>
+    </div>
+
+    <div class="grid-snapshot-metrics">
+      <article class="grid-metric-card">
+        <p class="grid-metric-label">Power price</p>
+        <p id="snapshotPowerPrice" class="grid-metric-value loading-placeholder">Loading...</p>
+        <p class="grid-metric-detail">Latest available wholesale price</p>
+      </article>
+
+      <article class="grid-metric-card">
+        <p class="grid-metric-label">Carbon intensity</p>
+        <p id="snapshotCarbonIntensity" class="grid-metric-value loading-placeholder">Loading...</p>
+        <p class="grid-metric-detail">Actual national GB carbon intensity</p>
+      </article>
+
+      <article class="grid-metric-card">
+        <p class="grid-metric-label">Demand</p>
+        <p id="snapshotDemand" class="grid-metric-value loading-placeholder">Loading...</p>
+        <p class="grid-metric-detail">Current electricity demand</p>
+      </article>
+
+      <article class="grid-metric-card">
+        <p class="grid-metric-label">Generation</p>
+        <p id="snapshotGeneration" class="grid-metric-value loading-placeholder">Loading...</p>
+        <p class="grid-metric-detail">Current total generation</p>
+      </article>
+    </div>
+
+    <article class="generation-mix-panel">
+      <div class="generation-mix-header">
+        <p class="grid-metric-label">Generation mix</p>
+        <h3>Generation mix right now</h3>
+      </div>
+
+      <div id="generationMixVisual" class="generation-mix-visual loading-placeholder">
+        Loading generation mix...
+      </div>
+
+      <div id="generationMixLegend" class="generation-mix-legend">
+        <p class="loading-placeholder">Loading generation mix details...</p>
+      </div>
+    </article>
+  </section>
+
   <section>
     <h3>Current data experiments</h3>
     <ul>

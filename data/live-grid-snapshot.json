@@ -1,0 +1,27 @@
+{
+  "last_updated": "Loading...",
+  "power_price": {
+    "value": null,
+    "unit": "GBP/MWh",
+    "display": "Coming soon"
+  },
+  "carbon_intensity": {
+    "value": null,
+    "unit": "gCO2/kWh",
+    "display": "Unavailable"
+  },
+  "demand": {
+    "value": null,
+    "unit": "MW",
+    "display": "Unavailable"
+  },
+  "generation": {
+    "value": null,
+    "unit": "MW",
+    "display": "Unavailable"
+  },
+  "generation_mix": {
+    "low_carbon_percentage": 0,
+    "segments": []
+  }
+}

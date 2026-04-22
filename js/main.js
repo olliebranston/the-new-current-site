@@ -15,6 +15,15 @@ const homepageBrainDumps = document.getElementById("homepageBrainDumps");
 const homepageReportingPreview = document.getElementById("homepageReportingPreview");
 const thoughtPiecesContainer = document.getElementById("thoughtPiecesContainer");
 const homepageThoughtPieces = document.getElementById("homepageThoughtPieces");
+const gridSnapshotUpdated = document.getElementById("gridSnapshotUpdated");
+const snapshotPowerPrice = document.getElementById("snapshotPowerPrice");
+const snapshotCarbonIntensity = document.getElementById("snapshotCarbonIntensity");
+const snapshotDemand = document.getElementById("snapshotDemand");
+const snapshotGeneration = document.getElementById("snapshotGeneration");
+const generationMixVisual = document.getElementById("generationMixVisual");
+const generationMixLegend = document.getElementById("generationMixLegend");
+
+let generationMixChart;
 
 function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
   if (!canvas) {
@@ -72,6 +81,113 @@ function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
   });
 }
 
+function formatSnapshotMetric(metric) {
+  if (!metric) {
+    return "Unavailable";
+  }
+
+  if (metric.display) {
+    return metric.display;
+  }
+
+  if (metric.value === null || metric.value === undefined) {
+    return "Unavailable";
+  }
+
+  if (metric.unit) {
+    return `${metric.value} ${metric.unit}`;
+  }
+
+  return String(metric.value);
+}
+
+function updateSnapshotMetric(element, metric) {
+  if (!element) {
+    return;
+  }
+
+  element.textContent = formatSnapshotMetric(metric);
+  element.classList.remove("loading-placeholder");
+}
+
+function renderGenerationMix(snapshotData) {
+  if (!generationMixVisual) {
+    return;
+  }
+
+  const mixData = snapshotData.generation_mix;
+
+  if (!mixData || !Array.isArray(mixData.segments) || mixData.segments.length === 0) {
+    generationMixVisual.textContent = "Generation mix unavailable right now.";
+
+    if (generationMixLegend) {
+      generationMixLegend.innerHTML = "<p class=\"loading-placeholder\">No generation mix breakdown available.</p>";
+    }
+
+    return;
+  }
+
+  generationMixVisual.classList.remove("loading-placeholder");
+  generationMixVisual.innerHTML = `
+    <div class="generation-mix-chart-wrap">
+      <canvas id="generationMixChart" class="generation-mix-canvas"></canvas>
+      <div class="generation-mix-center">
+        <p class="generation-mix-percentage">${mixData.low_carbon_percentage}%</p>
+        <p class="generation-mix-caption">Low carbon</p>
+      </div>
+    </div>
+  `;
+
+  const chartCanvas = document.getElementById("generationMixChart");
+
+  if (generationMixChart) {
+    generationMixChart.destroy();
+  }
+
+  generationMixChart = new Chart(chartCanvas, {
+    type: "doughnut",
+    data: {
+      labels: mixData.segments.map((segment) => segment.label),
+      datasets: [
+        {
+          data: mixData.segments.map((segment) => segment.percentage),
+          backgroundColor: mixData.segments.map((segment) => segment.color),
+          borderColor: "#ffffff",
+          borderWidth: 4,
+          hoverOffset: 6,
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: "70%",
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          callbacks: {
+            label(context) {
+              return `${context.label}: ${context.raw}%`;
+            }
+          }
+        }
+      }
+    }
+  });
+
+  if (generationMixLegend) {
+    generationMixLegend.innerHTML = mixData.segments.map((segment) => `
+      <div class="generation-mix-legend-item">
+        <span class="generation-mix-swatch" style="background:${segment.color};"></span>
+        <span class="generation-mix-legend-label">${segment.label}</span>
+        <span class="generation-mix-legend-value">${segment.percentage}%</span>
+      </div>
+    `).join("");
+  }
+}
+
 if (chartCanvas || homepageChartCanvas) {
   fetch("data/carbon-chart-data.json")
     .then((response) => response.json())
@@ -108,6 +224,33 @@ if (chartCanvas || homepageChartCanvas) {
     })
     .catch((error) => {
       console.error("Error loading chart data:", error);
+    });
+}
+
+if (
+  gridSnapshotUpdated ||
+  snapshotPowerPrice ||
+  snapshotCarbonIntensity ||
+  snapshotDemand ||
+  snapshotGeneration ||
+  generationMixVisual
+) {
+  fetch("data/live-grid-snapshot.json")
+    .then((response) => response.json())
+    .then((snapshotData) => {
+      if (gridSnapshotUpdated) {
+        gridSnapshotUpdated.textContent = `Last updated: ${snapshotData.last_updated || "not available"}`;
+        gridSnapshotUpdated.classList.remove("loading-placeholder");
+      }
+
+      updateSnapshotMetric(snapshotPowerPrice, snapshotData.power_price);
+      updateSnapshotMetric(snapshotCarbonIntensity, snapshotData.carbon_intensity);
+      updateSnapshotMetric(snapshotDemand, snapshotData.demand);
+      updateSnapshotMetric(snapshotGeneration, snapshotData.generation);
+      renderGenerationMix(snapshotData);
+    })
+    .catch((error) => {
+      console.error("Error loading live grid snapshot data:", error);
     });
 }
 function sortItemsByDate(items) {
