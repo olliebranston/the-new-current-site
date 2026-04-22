@@ -64,13 +64,19 @@ def main():
     payload = fetch_json(build_market_price_url())
     rows = extract_rows(payload)
 
-    records = []
+    records_by_timestamp = {}
 
     for row in rows:
         start_time = row.get("startTime")
         price = row.get("price")
+        provider = row.get("dataProvider", ELEXON_MARKET_INDEX_PROVIDER)
 
         if not start_time or price in (None, ""):
+            continue
+
+        # The endpoint can still return multiple MID providers, so keep only
+        # the one provider we want to chart for a clean single price series.
+        if provider != ELEXON_MARKET_INDEX_PROVIDER:
             continue
 
         try:
@@ -78,19 +84,28 @@ def main():
         except (TypeError, ValueError):
             continue
 
-        records.append(
-            {
-                "timestamp": start_time,
-                "actual_price": numeric_price,
-                # Keep the same chart shape as carbon so we can add a real
-                # forecast series later without changing the frontend format.
-                "forecast_price": None,
-                "provider": row.get("dataProvider", ELEXON_MARKET_INDEX_PROVIDER),
-                "settlement_date": row.get("settlementDate"),
-                "settlement_period": row.get("settlementPeriod"),
-                "volume": row.get("volume"),
-            }
-        )
+        record = {
+            "timestamp": start_time,
+            "actual_price": numeric_price,
+            # Keep the same chart shape as carbon so we can add a real
+            # forecast series later without changing the frontend format.
+            "forecast_price": None,
+            "provider": provider,
+            "settlement_date": row.get("settlementDate"),
+            "settlement_period": row.get("settlementPeriod"),
+            "volume": row.get("volume"),
+        }
+
+        # If the API ever returns more than one row for the same timestamp and
+        # provider, keep the latest usable version for that half-hour slot.
+        existing_record = records_by_timestamp.get(start_time)
+        if (
+            existing_record is None
+            or (record.get("settlement_period") or 0) >= (existing_record.get("settlement_period") or 0)
+        ):
+            records_by_timestamp[start_time] = record
+
+    records = sorted(records_by_timestamp.values(), key=lambda item: item["timestamp"])
 
     with open(LIVE_CSV_PATH, "w", newline="", encoding="utf-8") as csv_file:
         writer = csv.DictWriter(
