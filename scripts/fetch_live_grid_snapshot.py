@@ -48,17 +48,28 @@ def fetch_carbon_intensity():
     payload = fetch_json(CARBON_INTENSITY_URL)
     row = payload["data"][0]
     intensity = row["intensity"]
-    value = intensity.get("actual")
+    actual_value = intensity.get("actual")
+    forecast_value = intensity.get("forecast")
 
-    # Keep the snapshot honest: if the API has no actual value yet, leave it blank.
-    if value is None:
-        return {"value": None, "unit": "gCO2/kWh", "display": "Awaiting actual"}
+    # Prefer the actual reading, but fall back to the forecast if the API
+    # has not published an actual value for the current time window yet.
+    if actual_value is not None:
+        rounded_value = round(actual_value)
+        return {
+            "value": actual_value,
+            "unit": "gCO2/kWh",
+            "display": f"{rounded_value} gCO2/kWh (actual)",
+        }
 
-    return {
-        "value": value,
-        "unit": "gCO2/kWh",
-        "display": f"{round(value)} gCO2/kWh",
-    }
+    if forecast_value is not None:
+        rounded_value = round(forecast_value)
+        return {
+            "value": forecast_value,
+            "unit": "gCO2/kWh",
+            "display": f"{rounded_value} gCO2/kWh (forecast)",
+        }
+
+    return {"value": None, "unit": "gCO2/kWh", "display": "Carbon intensity unavailable"}
 
 
 def fetch_generation_mix():
@@ -145,17 +156,35 @@ def fetch_demand():
     )
 
     if not record:
-        return {"value": None, "unit": "MW", "display": "Unavailable"}
+        return {"value": None, "unit": "MW", "display": "Demand unavailable"}
 
-    value = record.get("ND")
-    if value is None:
-        return {"value": None, "unit": "MW", "display": "Unavailable"}
+    # NESO demand datasets can vary a little in field names, so try a few
+    # sensible options and ignore blank or zero-like values that would mislead.
+    possible_fields = ["ND", "DEMAND", "demand", "national_demand"]
 
-    return {
-        "value": round(float(value)),
-        "unit": "MW",
-        "display": f"{round(float(value)):,} MW",
-    }
+    for field_name in possible_fields:
+        raw_value = record.get(field_name)
+
+        if raw_value in (None, ""):
+            continue
+
+        try:
+            numeric_value = float(raw_value)
+        except (TypeError, ValueError):
+            continue
+
+        if numeric_value <= 0:
+            continue
+
+        rounded_value = round(numeric_value)
+
+        return {
+            "value": rounded_value,
+            "unit": "MW",
+            "display": f"{rounded_value:,} MW",
+        }
+
+    return {"value": None, "unit": "MW", "display": "Demand unavailable"}
 
 
 def build_snapshot():
