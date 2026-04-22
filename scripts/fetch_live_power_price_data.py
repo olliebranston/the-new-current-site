@@ -137,7 +137,7 @@ def main():
     else:
         df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
         df = df.sort_values("timestamp").reset_index(drop=True)
-        latest_complete_slot = pd.Timestamp.utcnow().floor("30min") - pd.Timedelta(minutes=60)
+        latest_complete_slot = pd.Timestamp.utcnow().floor("30min") - pd.Timedelta(minutes=30)
         expected_index = pd.date_range(end=latest_complete_slot, periods=48, freq="30min", tz="UTC")
 
         df = (

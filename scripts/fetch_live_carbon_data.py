@@ -12,7 +12,7 @@ CLEANED_CSV_PATH = REPO_ROOT / "data" / "cleaned-live-carbon-intensity.csv"
 DAILY_AVERAGE_CSV_PATH = REPO_ROOT / "data" / "daily-average-live-carbon-intensity.csv"
 CHART_JSON_PATH = REPO_ROOT / "data" / "carbon-chart-data.json"
 
-from_time = (pd.Timestamp.utcnow() - pd.Timedelta(minutes=30)).strftime("%Y-%m-%dT%H:%MZ")
+from_time = pd.Timestamp.utcnow().strftime("%Y-%m-%dT%H:%MZ")
 api_url = API_URL_TEMPLATE.format(from_time=from_time)
 
 with urlopen(api_url) as response:
@@ -52,6 +52,15 @@ df = pd.DataFrame(records)
 df = df[df["actual"].notna()].reset_index(drop=True)
 
 df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
+latest_complete_slot = pd.Timestamp.utcnow().floor("30min") - pd.Timedelta(minutes=30)
+expected_index = pd.date_range(end=latest_complete_slot, periods=48, freq="30min", tz="UTC")
+df = (
+    df.drop_duplicates(subset=["timestamp"])
+    .set_index("timestamp")
+    .reindex(expected_index)
+    .reset_index()
+    .rename(columns={"index": "timestamp"})
+)
 df["time"] = df["timestamp"].dt.strftime("%H:%M")
 df["date"] = df["timestamp"].dt.strftime("%Y-%m-%d")
 

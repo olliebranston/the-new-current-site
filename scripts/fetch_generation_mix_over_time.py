@@ -121,7 +121,7 @@ def main():
             .fillna(0)
             .sort_values("timestamp")
         )
-        latest_complete_slot = pd.Timestamp.utcnow().floor("30min") - pd.Timedelta(minutes=60)
+        latest_complete_slot = pd.Timestamp.utcnow().floor("30min") - pd.Timedelta(minutes=30)
         expected_index = pd.date_range(end=latest_complete_slot, periods=48, freq="30min", tz="UTC")
         pivot_df = (
             pivot_df.reindex(expected_index)
