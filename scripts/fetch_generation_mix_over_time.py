@@ -119,8 +119,15 @@ def main():
             )
             .reindex(columns=FUEL_ORDER, fill_value=0)
             .fillna(0)
-            .reset_index()
             .sort_values("timestamp")
+        )
+        latest_complete_slot = pd.Timestamp.utcnow().floor("30min") - pd.Timedelta(minutes=60)
+        expected_index = pd.date_range(end=latest_complete_slot, periods=48, freq="30min", tz="UTC")
+        pivot_df = (
+            pivot_df.reindex(expected_index)
+            .fillna(0)
+            .reset_index()
+            .rename(columns={"index": "timestamp"})
         )
         pivot_df["time"] = pivot_df["timestamp"].dt.strftime("%H:%M")
         cleaned_df = pivot_df[["timestamp", "time", *FUEL_ORDER]]
