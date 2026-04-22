@@ -1,8 +1,10 @@
 console.log("The New Current loaded successfully");
 
 const chartCanvas = document.getElementById("carbonChart");
+const powerPriceChartCanvas = document.getElementById("powerPriceChart");
 const homepageChartCanvas = document.getElementById("homepageCarbonChart");
 const lastUpdatedText = document.getElementById("lastUpdatedText");
+const powerPriceUpdatedText = document.getElementById("powerPriceUpdatedText");
 const homepageChartUpdated = document.getElementById("homepageCarbonChartUpdated");
 const dailyAverageTableBody = document.getElementById("dailyAverageTableBody");
 const radarRAndD = document.getElementById("radar-r-and-d");
@@ -25,7 +27,6 @@ const snapshotDemandUnit = document.getElementById("snapshotDemandUnit");
 const snapshotGeneration = document.getElementById("snapshotGeneration");
 const snapshotGenerationUnit = document.getElementById("snapshotGenerationUnit");
 const generationMixVisual = document.getElementById("generationMixVisual");
-const generationMixLegend = document.getElementById("generationMixLegend");
 
 let generationMixChart;
 
@@ -42,6 +43,46 @@ const generationMixColours = {
   other: "#cbd5e1"
 };
 
+const chartTextColour = "#3b4758";
+const chartTitleColour = "#0f1724";
+const chartGridColour = "rgba(198, 208, 221, 0.55)";
+const chartFontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
+
+const generationMixLabelsPlugin = {
+  id: "generationMixLabels",
+  afterDatasetsDraw(chart) {
+    const dataset = chart.data.datasets[0];
+    const meta = chart.getDatasetMeta(0);
+    const labelLayer = chart.canvas.parentNode.querySelector(".generation-mix-label-layer");
+
+    if (!dataset || !meta || !meta.data || !labelLayer) {
+      return;
+    }
+
+    labelLayer.innerHTML = "";
+
+    meta.data.forEach((arc, index) => {
+      const value = dataset.data[index];
+
+      if (!value || value < 2) {
+        return;
+      }
+
+      const label = chart.data.labels[index];
+      const angle = (arc.startAngle + arc.endAngle) / 2;
+      const x = arc.x + Math.cos(angle) * (arc.outerRadius + 16);
+      const y = arc.y + Math.sin(angle) * (arc.outerRadius + 16);
+      const isRightSide = Math.cos(angle) >= 0;
+      const labelNode = document.createElement("div");
+      labelNode.className = `generation-mix-chart-label ${isRightSide ? "generation-mix-chart-label-right" : "generation-mix-chart-label-left"}`;
+      labelNode.style.left = `${x}px`;
+      labelNode.style.top = `${y}px`;
+      labelNode.textContent = label;
+      labelLayer.appendChild(labelNode);
+    });
+  }
+};
+
 function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
   if (!canvas) {
     return;
@@ -55,6 +96,9 @@ function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
         {
           label: "Actual",
           data: chartData.actual_values,
+          pointRadius: isHomepagePreview ? 0 : 2.5,
+          pointHoverRadius: isHomepagePreview ? 4 : 6,
+          pointHitRadius: isHomepagePreview ? 10 : 14,
           borderWidth: 2,
           tension: 0.2
         },
@@ -63,6 +107,9 @@ function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
           data: chartData.forecast_values.map((value, index) => {
             return chartData.actual_values[index] !== null ? null : value;
           }),
+          pointRadius: isHomepagePreview ? 0 : 2.5,
+          pointHoverRadius: isHomepagePreview ? 4 : 6,
+          pointHitRadius: isHomepagePreview ? 10 : 14,
           borderWidth: 2,
           tension: 0.2
         }
@@ -71,31 +118,247 @@ function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
     options: {
       responsive: true,
       maintainAspectRatio: !isHomepagePreview,
+      layout: {
+        padding: {
+          top: isHomepagePreview ? 0 : 8
+        }
+      },
       plugins: {
         legend: {
-          display: !isHomepagePreview
+          display: !isHomepagePreview,
+          position: "top",
+          align: "center",
+          labels: {
+            color: chartTextColour,
+            padding: 18,
+            font: {
+              family: chartFontFamily,
+              size: 13,
+              weight: "400"
+            }
+          }
         }
       },
       scales: {
         y: {
           beginAtZero: false,
+          grid: {
+            color: chartGridColour
+          },
+          ticks: {
+            color: chartTextColour,
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
+          },
           title: {
             display: !isHomepagePreview,
-            text: "gCO2/kWh"
+            text: "gCO2/kWh",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
           }
         },
         x: {
+          grid: {
+            color: chartGridColour
+          },
           title: {
             display: !isHomepagePreview,
-            text: "Time"
+            text: "Time",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
           },
           ticks: {
-            maxTicksLimit: isHomepagePreview ? 6 : 12
+            maxTicksLimit: isHomepagePreview ? 6 : 12,
+            color: chartTextColour,
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
           }
         }
       }
     }
   });
+}
+
+function buildPowerPriceChart(canvas, chartData) {
+  if (!canvas) {
+    return;
+  }
+
+  new Chart(canvas, {
+    type: "line",
+    data: {
+      labels: chartData.labels,
+      datasets: [
+        {
+          label: "Actual",
+          data: chartData.actual_values,
+          borderColor: "#2457ff",
+          backgroundColor: "#2457ff",
+          pointRadius: 2.5,
+          pointHoverRadius: 6,
+          pointHitRadius: 14,
+          borderWidth: 2,
+          tension: 0.2
+        },
+        {
+          label: "Forecast",
+          data: chartData.forecast_values,
+          borderColor: "#d14343",
+          backgroundColor: "#d14343",
+          pointRadius: 2.5,
+          pointHoverRadius: 6,
+          pointHitRadius: 14,
+          borderWidth: 2,
+          tension: 0.2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          top: 8
+        }
+      },
+      plugins: {
+        legend: {
+          position: "top",
+          align: "center",
+          labels: {
+            color: chartTextColour,
+            padding: 18,
+            font: {
+              family: chartFontFamily,
+              size: 13,
+              weight: "400"
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          grid: {
+            color: chartGridColour
+          },
+          ticks: {
+            color: chartTextColour,
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
+          },
+          title: {
+            display: true,
+            text: "GBP/MWh",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          }
+        },
+        x: {
+          grid: {
+            color: chartGridColour
+          },
+          title: {
+            display: true,
+            text: "Time",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          },
+          ticks: {
+            maxTicksLimit: 12,
+            color: chartTextColour,
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+function getCurrentHalfHourLabel() {
+  const now = new Date();
+  const utcHours = now.getUTCHours().toString().padStart(2, "0");
+  const utcMinutes = now.getUTCMinutes();
+  const roundedMinutes = utcMinutes < 30 ? "00" : "30";
+
+  return `${utcHours}:${roundedMinutes}`;
+}
+
+function getCarbonMetricFromChartData(chartData) {
+  if (!chartData || !Array.isArray(chartData.labels)) {
+    return null;
+  }
+
+  const currentLabel = getCurrentHalfHourLabel();
+  let slotIndex = chartData.labels.lastIndexOf(currentLabel);
+
+  if (slotIndex === -1) {
+    slotIndex = chartData.labels.length - 1;
+  }
+
+  if (slotIndex >= 0) {
+    const actualValue = chartData.actual_values?.[slotIndex];
+    const forecastValue = chartData.forecast_values?.[slotIndex];
+
+    if (actualValue !== null && actualValue !== undefined) {
+      return {
+        value: actualValue,
+        unit: "gCO2/kWh",
+        display: `${Math.round(actualValue)} gCO2/kWh`
+      };
+    }
+
+    if (forecastValue !== null && forecastValue !== undefined) {
+      return {
+        value: forecastValue,
+        unit: "gCO2/kWh",
+        display: `${Math.round(forecastValue)} gCO2/kWh (forecast)`
+      };
+    }
+  }
+
+  for (let index = Math.min(slotIndex, chartData.labels.length - 1); index >= 0; index -= 1) {
+    const actualValue = chartData.actual_values?.[index];
+
+    if (actualValue !== null && actualValue !== undefined) {
+      return {
+        value: actualValue,
+        unit: "gCO2/kWh",
+        display: `${Math.round(actualValue)} gCO2/kWh`
+      };
+    }
+  }
+
+  return {
+    value: null,
+    unit: "gCO2/kWh",
+    display: "Carbon intensity unavailable"
+  };
 }
 
 function getSnapshotMetricState(metric) {
@@ -161,22 +424,6 @@ function sortGenerationMixSegments(segments) {
   return [...lowCarbonSegments, ...nonLowCarbonSegments];
 }
 
-function updateCarbonIntensityKicker(metric) {
-  const card = snapshotCarbonIntensity ? snapshotCarbonIntensity.closest(".grid-metric-card") : null;
-  const kicker = card ? card.querySelector(".grid-metric-kicker") : null;
-
-  if (!kicker) {
-    return;
-  }
-
-  if (metric && metric.display && metric.display.toLowerCase().includes("(forecast)")) {
-    kicker.textContent = "Forecast national GB carbon intensity";
-    return;
-  }
-
-  kicker.textContent = "Actual national GB carbon intensity";
-}
-
 function updateSnapshotMetric(valueElement, unitElement, metric) {
   if (!valueElement) {
     return;
@@ -190,8 +437,6 @@ function updateSnapshotMetric(valueElement, unitElement, metric) {
 
     if (!metricState.hasNumericValue) {
       card.classList.add("grid-metric-card-fallback");
-    } else if (metricState.isForecast) {
-      card.classList.add("grid-metric-card-forecast");
     }
   }
 
@@ -215,11 +460,6 @@ function renderGenerationMix(snapshotData) {
 
   if (!mixData || !Array.isArray(mixData.segments) || mixData.segments.length === 0) {
     generationMixVisual.textContent = "Generation mix unavailable right now.";
-
-    if (generationMixLegend) {
-      generationMixLegend.innerHTML = "<p class=\"loading-placeholder\">No generation mix breakdown available.</p>";
-    }
-
     return;
   }
 
@@ -229,6 +469,7 @@ function renderGenerationMix(snapshotData) {
   generationMixVisual.innerHTML = `
     <div class="generation-mix-chart-wrap">
       <canvas id="generationMixChart" class="generation-mix-canvas"></canvas>
+      <div class="generation-mix-label-layer"></div>
       <div class="generation-mix-center">
         <p class="generation-mix-percentage">${mixData.low_carbon_percentage}%</p>
         <p class="generation-mix-caption">Low carbon</p>
@@ -272,18 +513,9 @@ function renderGenerationMix(snapshotData) {
           }
         }
       }
-    }
+    },
+    plugins: [generationMixLabelsPlugin]
   });
-
-  if (generationMixLegend) {
-    generationMixLegend.innerHTML = sortedSegments.map((segment) => `
-      <div class="generation-mix-legend-item">
-        <span class="generation-mix-swatch" style="background:${getGenerationMixColour(segment)};"></span>
-        <span class="generation-mix-legend-label">${segment.label}</span>
-        <span class="generation-mix-legend-value">${segment.percentage}%</span>
-      </div>
-    `).join("");
-  }
 }
 
 if (chartCanvas || homepageChartCanvas) {
@@ -298,30 +530,32 @@ if (chartCanvas || homepageChartCanvas) {
         homepageChartUpdated.textContent = `Last updated: ${chartData.last_updated}`;
       }
 
-      if (dailyAverageTableBody && chartData.daily_average) {
-        dailyAverageTableBody.innerHTML = "";
-
-        chartData.daily_average.forEach((row) => {
-          const tableRow = document.createElement("tr");
-
-          const dateCell = document.createElement("td");
-          dateCell.textContent = row.date;
-
-          const valueCell = document.createElement("td");
-          valueCell.textContent = Number(row.chart_value).toFixed(2);
-
-          tableRow.appendChild(dateCell);
-          tableRow.appendChild(valueCell);
-
-          dailyAverageTableBody.appendChild(tableRow);
-        });
-      }
-
       buildCarbonChart(chartCanvas, chartData, false);
       buildCarbonChart(homepageChartCanvas, chartData, true);
+
+      if (snapshotCarbonIntensity) {
+        const carbonMetric = getCarbonMetricFromChartData(chartData);
+        updateSnapshotMetric(snapshotCarbonIntensity, snapshotCarbonIntensityUnit, carbonMetric);
+      }
     })
     .catch((error) => {
       console.error("Error loading chart data:", error);
+    });
+}
+
+if (powerPriceChartCanvas) {
+  fetch("data/power-price-chart-data.json")
+    .then((response) => response.json())
+    .then((chartData) => {
+      if (powerPriceUpdatedText) {
+        powerPriceUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
+        powerPriceUpdatedText.classList.remove("loading-placeholder");
+      }
+
+      buildPowerPriceChart(powerPriceChartCanvas, chartData);
+    })
+    .catch((error) => {
+      console.error("Error loading power price chart data:", error);
     });
 }
 
@@ -342,10 +576,8 @@ if (
       }
 
       updateSnapshotMetric(snapshotPowerPrice, snapshotPowerPriceUnit, snapshotData.power_price);
-      updateSnapshotMetric(snapshotCarbonIntensity, snapshotCarbonIntensityUnit, snapshotData.carbon_intensity);
       updateSnapshotMetric(snapshotDemand, snapshotDemandUnit, snapshotData.demand);
       updateSnapshotMetric(snapshotGeneration, snapshotGenerationUnit, snapshotData.generation);
-      updateCarbonIntensityKicker(snapshotData.carbon_intensity);
       renderGenerationMix(snapshotData);
     })
     .catch((error) => {

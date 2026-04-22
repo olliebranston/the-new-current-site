@@ -74,7 +74,7 @@
   <section class="grid-snapshot-section">
     <div class="grid-snapshot-header">
       <p class="eyebrow">Live Grid Snapshot</p>
-      <h2>Live GB grid snapshot</h2>
+      <h2>Live GB grid dashboard</h2>
       <p>
         A simple live view of key GB electricity system metrics, designed as a quick
         top-level read before the deeper charts and tables below.
@@ -82,46 +82,45 @@
       <p id="gridSnapshotUpdated" class="grid-snapshot-updated loading-placeholder">Last updated: loading...</p>
     </div>
 
-    <div class="grid-snapshot-metrics">
-      <article class="grid-metric-card">
-        <p class="eyebrow grid-metric-kicker">Latest available wholesale price</p>
-        <p id="snapshotPowerPrice" class="grid-metric-value loading-placeholder">Loading...</p>
-        <p id="snapshotPowerPriceUnit" class="grid-metric-unit loading-placeholder">--</p>
+    <div class="grid-dashboard-layout">
+      <div class="grid-dashboard-column">
+        <article class="grid-metric-card">
+          <p class="eyebrow grid-metric-kicker">Wholesale price</p>
+          <p id="snapshotPowerPrice" class="grid-metric-value loading-placeholder">Loading...</p>
+          <p id="snapshotPowerPriceUnit" class="grid-metric-unit loading-placeholder">--</p>
+        </article>
+
+        <article class="grid-metric-card">
+          <p class="eyebrow grid-metric-kicker">GB carbon intensity</p>
+          <p id="snapshotCarbonIntensity" class="grid-metric-value loading-placeholder">Loading...</p>
+          <p id="snapshotCarbonIntensityUnit" class="grid-metric-unit loading-placeholder">--</p>
+        </article>
+      </div>
+
+      <article class="generation-mix-panel generation-mix-panel-featured">
+        <div class="generation-mix-header">
+          <p class="eyebrow">Generation mix</p>
+        </div>
+
+        <div id="generationMixVisual" class="generation-mix-visual loading-placeholder">
+          Loading generation mix...
+        </div>
       </article>
 
-      <article class="grid-metric-card">
-        <p class="eyebrow grid-metric-kicker">Actual national GB carbon intensity</p>
-        <p id="snapshotCarbonIntensity" class="grid-metric-value loading-placeholder">Loading...</p>
-        <p id="snapshotCarbonIntensityUnit" class="grid-metric-unit loading-placeholder">--</p>
-      </article>
+      <div class="grid-dashboard-column">
+        <article class="grid-metric-card">
+          <p class="eyebrow grid-metric-kicker">Current electricity demand</p>
+          <p id="snapshotDemand" class="grid-metric-value loading-placeholder">Loading...</p>
+          <p id="snapshotDemandUnit" class="grid-metric-unit loading-placeholder">--</p>
+        </article>
 
-      <article class="grid-metric-card">
-        <p class="eyebrow grid-metric-kicker">Current electricity demand</p>
-        <p id="snapshotDemand" class="grid-metric-value loading-placeholder">Loading...</p>
-        <p id="snapshotDemandUnit" class="grid-metric-unit loading-placeholder">--</p>
-      </article>
-
-      <article class="grid-metric-card">
-        <p class="eyebrow grid-metric-kicker">Current total generation</p>
-        <p id="snapshotGeneration" class="grid-metric-value loading-placeholder">Loading...</p>
-        <p id="snapshotGenerationUnit" class="grid-metric-unit loading-placeholder">--</p>
-      </article>
+        <article class="grid-metric-card">
+          <p class="eyebrow grid-metric-kicker">Current total generation</p>
+          <p id="snapshotGeneration" class="grid-metric-value loading-placeholder">Loading...</p>
+          <p id="snapshotGenerationUnit" class="grid-metric-unit loading-placeholder">--</p>
+        </article>
+      </div>
     </div>
-
-    <article class="generation-mix-panel">
-      <div class="generation-mix-header">
-        <p class="eyebrow">Generation mix</p>
-        <h3>Generation mix right now</h3>
-      </div>
-
-      <div id="generationMixVisual" class="generation-mix-visual loading-placeholder">
-        Loading generation mix...
-      </div>
-
-      <div id="generationMixLegend" class="generation-mix-legend">
-        <p class="loading-placeholder">Loading generation mix details...</p>
-      </div>
-    </article>
   </section>
 
   <section>
@@ -134,34 +133,74 @@
     </ul>
   </section>
 
-  <section>
-    <h3>Daily average carbon intensity</h3>
-    <p>This table shows the daily average carbon intensity.</p>
+  <section class="data-chart-section">
+    <div class="data-chart-section-heading">
+      <p class="eyebrow">Time Series</p>
+      <h2>Carbon intensity and power price</h2>
+      <p>
+        These charts will extend the live dashboard above, showing how carbon
+        intensity and wholesale power price move over time using the same
+        underlying data sources.
+      </p>
+    </div>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Date</th>
-          <th>Average Carbon Intensity</th>
-        </tr>
-      </thead>
-      <tbody id="dailyAverageTableBody">
-        <tr>
-          <td colspan="2">Loading daily average...</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    <div class="data-chart-row-list">
+      <article class="data-chart-row">
+        <div class="data-chart-card-header">
+          <p class="eyebrow">Carbon intensity</p>
+          <h3>GB carbon intensity over time</h3>
+          <p>
+            This chart shows live national GB carbon-intensity data from the
+            official NESO Carbon Intensity API. Where actual values are not yet
+            available, forecast values are used.
+          </p>
+          <p id="lastUpdatedText" class="data-chart-updated">Last updated: loading...</p>
+        </div>
 
-  <section>
-    <h3>Live carbon intensity: actual vs forecast</h3>
-    <p>
-      This chart shows live national GB carbon-intensity data from the official
-      NESO Carbon Intensity API. Where actual values are not yet available,
-      forecast values are used.
-    </p>
-    <p id="lastUpdatedText">Last updated: loading...</p>
-    <canvas id="carbonChart"></canvas>
+        <div class="data-chart-frame">
+          <div class="data-chart-canvas-wrap">
+            <canvas id="carbonChart"></canvas>
+          </div>
+        </div>
+      </article>
+
+      <article class="data-chart-row">
+        <div class="data-chart-card-header">
+          <p class="eyebrow">Wholesale price</p>
+          <h3>GB power price over time</h3>
+          <p>
+            This chart will track recent wholesale electricity prices using the
+            same Elexon market price data as the live dashboard above.
+          </p>
+          <p id="powerPriceUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
+        </div>
+
+        <div class="data-chart-frame">
+          <div class="data-chart-canvas-wrap">
+            <canvas id="powerPriceChart"></canvas>
+          </div>
+        </div>
+      </article>
+
+      <article class="data-chart-row">
+        <div class="data-chart-card-header">
+          <p class="eyebrow">Generation mix</p>
+          <h3>GB generation mix over time</h3>
+          <p>
+            This chart will show how the GB electricity mix changes over time,
+            using the same generation mix source that powers the live dashboard
+            above.
+          </p>
+          <p id="generationMixOverTimeUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
+        </div>
+
+        <div class="data-chart-frame">
+          <div id="generationMixChartPlaceholder" class="data-chart-placeholder loading-placeholder">
+            Generation mix chart coming soon...
+          </div>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section>
