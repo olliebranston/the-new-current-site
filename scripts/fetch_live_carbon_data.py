@@ -51,26 +51,17 @@ with open(LIVE_CSV_PATH, "w", newline="", encoding="utf-8") as csv_file:
 df = pd.DataFrame(records)
 df = df[df["actual"].notna()].reset_index(drop=True)
 
-df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
-latest_complete_slot = pd.Timestamp.utcnow().floor("30min") - pd.Timedelta(minutes=30)
-expected_index = pd.date_range(end=latest_complete_slot, periods=48, freq="30min", tz="UTC")
-df = (
-    df.drop_duplicates(subset=["timestamp"])
-    .set_index("timestamp")
-    .reindex(expected_index)
-    .reset_index()
-    .rename(columns={"index": "timestamp"})
-)
-df["time"] = df["timestamp"].dt.strftime("%H:%M")
-df["date"] = df["timestamp"].dt.strftime("%Y-%m-%d")
-
-daily_average = df.groupby("date")["chart_value"].mean().reset_index()
-
-df.to_csv(CLEANED_CSV_PATH, index=False)
-daily_average.to_csv(DAILY_AVERAGE_CSV_PATH, index=False)
+df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True, errors="coerce")
+df = df.dropna(subset=["timestamp"]).copy()
 
 latest_complete_slot = pd.Timestamp.now("UTC").floor("30min") - pd.Timedelta(minutes=30)
-expected_index = pd.date_range(end=latest_complete_slot, periods=48, freq="30min", tz="UTC")
+expected_index = pd.date_range(
+    end=latest_complete_slot,
+    periods=48,
+    freq="30min",
+    tz="UTC",
+)
+
 df = (
     df.drop_duplicates(subset=["timestamp"])
     .set_index("timestamp")
@@ -78,11 +69,12 @@ df = (
     .reset_index()
     .rename(columns={"index": "timestamp"})
 )
-df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True)
+
+df["timestamp"] = pd.to_datetime(df["timestamp"], utc=True, errors="coerce")
 df["time"] = df["timestamp"].dt.strftime("%H:%M")
 df["date"] = df["timestamp"].dt.strftime("%Y-%m-%d")
 
-daily_average = df.groupby("date")["chart_value"].mean().reset_index()
+daily_average = df.groupby("date", dropna=True)["chart_value"].mean().reset_index()
 
 df.to_csv(CLEANED_CSV_PATH, index=False)
 daily_average.to_csv(DAILY_AVERAGE_CSV_PATH, index=False)
@@ -97,7 +89,7 @@ chart_data = {
         None if pd.isna(value) else value for value in df["actual"].tolist()
     ],
     "forecast_values": [None for _ in df["actual"].tolist()],
-    "daily_average": daily_average.to_dict(orient="records")
+    "daily_average": daily_average.to_dict(orient="records"),
 }
 
 with open(CHART_JSON_PATH, "w", encoding="utf-8") as json_file:
