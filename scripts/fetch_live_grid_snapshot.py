@@ -63,13 +63,36 @@ def fetch_carbon_intensity():
 
 def fetch_generation_mix():
     carbon_mix_payload = fetch_json(GENERATION_MIX_URL)
-    mix_row = carbon_mix_payload["data"][0]
+
+    # The live API returns "data" as a single object here, not a list.
+    # This fallback handling keeps the script from crashing if that shape changes.
+    data = carbon_mix_payload.get("data")
+
+    if isinstance(data, list):
+        mix_row = data[0] if data else {}
+    elif isinstance(data, dict):
+        mix_row = data
+    else:
+        return {
+            "low_carbon_percentage": 0,
+            "segments": [],
+        }
+
     mix_items = mix_row.get("generationmix", [])
+
+    if not isinstance(mix_items, list):
+        return {
+            "low_carbon_percentage": 0,
+            "segments": [],
+        }
 
     segments = []
     low_carbon_total = 0
 
     for item in mix_items:
+        if not isinstance(item, dict):
+            continue
+
         fuel = item.get("fuel", "").lower()
         percentage = float(item.get("perc", 0))
 
