@@ -10,6 +10,7 @@ GENERATION_MIX_URL = "https://api.carbonintensity.org.uk/generation"
 ELEXON_API_BASE = "https://data.elexon.co.uk/bmrs/api/v1"
 ELEXON_MARKET_PRICE_URL = f"{ELEXON_API_BASE}/balancing/pricing/market-index"
 ELEXON_DEMAND_URL = f"{ELEXON_API_BASE}/demand/actual/total"
+ELEXON_MARKET_INDEX_PROVIDER = "EPEX SPOT"
 
 # NESO open data resources used for the snapshot.
 NESO_SQL_API = "https://api.neso.energy/api/3/action/datastore_search_sql?sql="
@@ -213,7 +214,15 @@ def fetch_generation_total():
 
 def fetch_power_price():
     try:
-        url = f"{ELEXON_MARKET_PRICE_URL}?{build_elexon_range_params()}"
+        # MID data is published per provider, so request one provider's price
+        # series directly instead of asking for every provider at once.
+        market_price_params = {
+            "from": (datetime.now(timezone.utc) - timedelta(days=2)).strftime("%Y-%m-%dT%H:%MZ"),
+            "to": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"),
+            "marketIndexDataProvider": ELEXON_MARKET_INDEX_PROVIDER,
+            "format": "json",
+        }
+        url = f"{ELEXON_MARKET_PRICE_URL}?{urlencode(market_price_params)}"
         payload = fetch_json(url)
         rows = extract_rows(payload)
     except Exception:
