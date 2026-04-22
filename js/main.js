@@ -17,13 +17,30 @@ const thoughtPiecesContainer = document.getElementById("thoughtPiecesContainer")
 const homepageThoughtPieces = document.getElementById("homepageThoughtPieces");
 const gridSnapshotUpdated = document.getElementById("gridSnapshotUpdated");
 const snapshotPowerPrice = document.getElementById("snapshotPowerPrice");
+const snapshotPowerPriceUnit = document.getElementById("snapshotPowerPriceUnit");
 const snapshotCarbonIntensity = document.getElementById("snapshotCarbonIntensity");
+const snapshotCarbonIntensityUnit = document.getElementById("snapshotCarbonIntensityUnit");
 const snapshotDemand = document.getElementById("snapshotDemand");
+const snapshotDemandUnit = document.getElementById("snapshotDemandUnit");
 const snapshotGeneration = document.getElementById("snapshotGeneration");
+const snapshotGenerationUnit = document.getElementById("snapshotGenerationUnit");
 const generationMixVisual = document.getElementById("generationMixVisual");
 const generationMixLegend = document.getElementById("generationMixLegend");
 
 let generationMixChart;
+
+const generationMixColours = {
+  wind: "#0f766e",
+  solar: "#f5b700",
+  hydro: "#0ea5e9",
+  nuclear: "#16a34a",
+  biomass: "#65a30d",
+  storage: "#14b8a6",
+  gas: "#111827",
+  imports: "#6b7280",
+  coal: "#374151",
+  other: "#cbd5e1"
+};
 
 function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
   if (!canvas) {
@@ -81,33 +98,112 @@ function buildCarbonChart(canvas, chartData, isHomepagePreview = false) {
   });
 }
 
-function formatSnapshotMetric(metric) {
+function getSnapshotMetricState(metric) {
   if (!metric) {
-    return "Unavailable";
+    return {
+      valueText: "Unavailable",
+      unitText: "",
+      hasNumericValue: false,
+      isForecast: false
+    };
   }
 
-  if (metric.display) {
-    return metric.display;
+  const metricDisplay = metric.display || "";
+  const isForecast = metricDisplay.toLowerCase().includes("(forecast)");
+  const hasNumericValue = metric.value !== null && metric.value !== undefined && !Number.isNaN(Number(metric.value));
+
+  if (!hasNumericValue) {
+    return {
+      valueText: metricDisplay || "Unavailable",
+      unitText: "",
+      hasNumericValue: false,
+      isForecast
+    };
   }
 
-  if (metric.value === null || metric.value === undefined) {
-    return "Unavailable";
+  const numericValue = Number(metric.value);
+  let valueText = `${numericValue}`;
+
+  if (metric.unit === "MW" || metric.unit === "GBP/MWh") {
+    valueText = `${Math.round(numericValue).toLocaleString("en-GB")}`;
+  } else if (metric.unit === "gCO2/kWh") {
+    valueText = `${Math.round(numericValue)}`;
   }
 
-  if (metric.unit) {
-    return `${metric.value} ${metric.unit}`;
-  }
-
-  return String(metric.value);
+  return {
+    valueText,
+    unitText: isForecast && metric.unit ? `${metric.unit} (forecast)` : (metric.unit || ""),
+    hasNumericValue: true,
+    isForecast
+  };
 }
 
-function updateSnapshotMetric(element, metric) {
-  if (!element) {
+function getGenerationMixColour(segment) {
+  if (segment && segment.key && generationMixColours[segment.key]) {
+    return generationMixColours[segment.key];
+  }
+
+  return segment.color || "#cbd5e1";
+}
+
+function sortGenerationMixSegments(segments) {
+  const safeSegments = Array.isArray(segments) ? [...segments] : [];
+  const sortBySize = (a, b) => b.percentage - a.percentage;
+
+  const lowCarbonSegments = safeSegments
+    .filter((segment) => segment.is_low_carbon)
+    .sort(sortBySize);
+
+  const nonLowCarbonSegments = safeSegments
+    .filter((segment) => !segment.is_low_carbon)
+    .sort(sortBySize);
+
+  return [...lowCarbonSegments, ...nonLowCarbonSegments];
+}
+
+function updateCarbonIntensityKicker(metric) {
+  const card = snapshotCarbonIntensity ? snapshotCarbonIntensity.closest(".grid-metric-card") : null;
+  const kicker = card ? card.querySelector(".grid-metric-kicker") : null;
+
+  if (!kicker) {
     return;
   }
 
-  element.textContent = formatSnapshotMetric(metric);
-  element.classList.remove("loading-placeholder");
+  if (metric && metric.display && metric.display.toLowerCase().includes("(forecast)")) {
+    kicker.textContent = "Forecast national GB carbon intensity";
+    return;
+  }
+
+  kicker.textContent = "Actual national GB carbon intensity";
+}
+
+function updateSnapshotMetric(valueElement, unitElement, metric) {
+  if (!valueElement) {
+    return;
+  }
+
+  const card = valueElement.closest(".grid-metric-card");
+  const metricState = getSnapshotMetricState(metric);
+
+  if (card) {
+    card.classList.remove("grid-metric-card-fallback", "grid-metric-card-forecast");
+
+    if (!metricState.hasNumericValue) {
+      card.classList.add("grid-metric-card-fallback");
+    } else if (metricState.isForecast) {
+      card.classList.add("grid-metric-card-forecast");
+    }
+  }
+
+  valueElement.textContent = metricState.valueText;
+  valueElement.classList.remove("loading-placeholder");
+  valueElement.classList.toggle("grid-metric-value-fallback", !metricState.hasNumericValue);
+
+  if (unitElement) {
+    unitElement.textContent = metricState.unitText || "\u00A0";
+    unitElement.classList.remove("loading-placeholder");
+    unitElement.classList.toggle("grid-metric-unit-empty", !metricState.unitText);
+  }
 }
 
 function renderGenerationMix(snapshotData) {
@@ -126,6 +222,8 @@ function renderGenerationMix(snapshotData) {
 
     return;
   }
+
+  const sortedSegments = sortGenerationMixSegments(mixData.segments);
 
   generationMixVisual.classList.remove("loading-placeholder");
   generationMixVisual.innerHTML = `
@@ -147,11 +245,11 @@ function renderGenerationMix(snapshotData) {
   generationMixChart = new Chart(chartCanvas, {
     type: "doughnut",
     data: {
-      labels: mixData.segments.map((segment) => segment.label),
+      labels: sortedSegments.map((segment) => segment.label),
       datasets: [
         {
-          data: mixData.segments.map((segment) => segment.percentage),
-          backgroundColor: mixData.segments.map((segment) => segment.color),
+          data: sortedSegments.map((segment) => segment.percentage),
+          backgroundColor: sortedSegments.map((segment) => getGenerationMixColour(segment)),
           borderColor: "#ffffff",
           borderWidth: 4,
           hoverOffset: 6,
@@ -161,7 +259,7 @@ function renderGenerationMix(snapshotData) {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: "70%",
+      cutout: "84%",
       plugins: {
         legend: {
           display: false
@@ -178,9 +276,9 @@ function renderGenerationMix(snapshotData) {
   });
 
   if (generationMixLegend) {
-    generationMixLegend.innerHTML = mixData.segments.map((segment) => `
+    generationMixLegend.innerHTML = sortedSegments.map((segment) => `
       <div class="generation-mix-legend-item">
-        <span class="generation-mix-swatch" style="background:${segment.color};"></span>
+        <span class="generation-mix-swatch" style="background:${getGenerationMixColour(segment)};"></span>
         <span class="generation-mix-legend-label">${segment.label}</span>
         <span class="generation-mix-legend-value">${segment.percentage}%</span>
       </div>
@@ -243,10 +341,11 @@ if (
         gridSnapshotUpdated.classList.remove("loading-placeholder");
       }
 
-      updateSnapshotMetric(snapshotPowerPrice, snapshotData.power_price);
-      updateSnapshotMetric(snapshotCarbonIntensity, snapshotData.carbon_intensity);
-      updateSnapshotMetric(snapshotDemand, snapshotData.demand);
-      updateSnapshotMetric(snapshotGeneration, snapshotData.generation);
+      updateSnapshotMetric(snapshotPowerPrice, snapshotPowerPriceUnit, snapshotData.power_price);
+      updateSnapshotMetric(snapshotCarbonIntensity, snapshotCarbonIntensityUnit, snapshotData.carbon_intensity);
+      updateSnapshotMetric(snapshotDemand, snapshotDemandUnit, snapshotData.demand);
+      updateSnapshotMetric(snapshotGeneration, snapshotGenerationUnit, snapshotData.generation);
+      updateCarbonIntensityKicker(snapshotData.carbon_intensity);
       renderGenerationMix(snapshotData);
     })
     .catch((error) => {

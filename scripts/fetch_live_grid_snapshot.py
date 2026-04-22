@@ -1,12 +1,15 @@
 import json
 from pathlib import Path
-from datetime import datetime, timezone
-from urllib.parse import quote
+from datetime import datetime, timedelta, timezone
+from urllib.parse import quote, urlencode
 from urllib.request import urlopen
 
 
 CARBON_INTENSITY_URL = "https://api.carbonintensity.org.uk/intensity"
 GENERATION_MIX_URL = "https://api.carbonintensity.org.uk/generation"
+ELEXON_API_BASE = "https://data.elexon.co.uk/bmrs/api/v1"
+ELEXON_MARKET_PRICE_URL = f"{ELEXON_API_BASE}/balancing/pricing/market-index"
+ELEXON_DEMAND_URL = f"{ELEXON_API_BASE}/demand/actual/total"
 
 # NESO open data resources used for the snapshot.
 NESO_SQL_API = "https://api.neso.energy/api/3/action/datastore_search_sql?sql="
@@ -42,6 +45,65 @@ def fetch_neso_latest_record(resource_id, order_by_fields):
     payload = fetch_json(url)
     records = payload["result"]["records"]
     return records[0] if records else None
+
+
+def extract_rows(payload):
+    if isinstance(payload, list):
+        return [item for item in payload if isinstance(item, dict)]
+
+    if isinstance(payload, dict):
+        data = payload.get("data")
+        if isinstance(data, list):
+            return [item for item in data if isinstance(item, dict)]
+
+        records = payload.get("records")
+        if isinstance(records, list):
+            return [item for item in records if isinstance(item, dict)]
+
+        if isinstance(data, dict):
+            nested_rows = extract_rows(data)
+            if nested_rows:
+                return nested_rows
+
+    return []
+
+
+def build_elexon_range_params():
+    now = datetime.now(timezone.utc)
+    start = now - timedelta(days=2)
+
+    return urlencode(
+        {
+            "from": start.strftime("%Y-%m-%dT%H:%MZ"),
+            "to": now.strftime("%Y-%m-%dT%H:%MZ"),
+            "format": "json",
+        }
+    )
+
+
+def latest_settlement_first(row):
+    settlement_date = str(
+        row.get("settlementDate")
+        or row.get("settlement_date")
+        or row.get("date")
+        or ""
+    )
+    settlement_period = int(
+        row.get("settlementPeriod")
+        or row.get("settlement_period")
+        or row.get("settlementPeriodNumber")
+        or 0
+    )
+    publish_time = str(
+        row.get("publishTime")
+        or row.get("publishDatetime")
+        or row.get("publishDateTime")
+        or row.get("startTime")
+        or row.get("start_time")
+        or ""
+    )
+
+    return (settlement_date, settlement_period, publish_time)
 
 
 def fetch_carbon_intensity():
@@ -149,21 +211,49 @@ def fetch_generation_total():
     }
 
 
-def fetch_demand():
-    record = fetch_neso_latest_record(
-        NESO_DEMAND_RESOURCE_ID,
-        '"SETTLEMENT_DATE" DESC, "SETTLEMENT_PERIOD" DESC'
-    )
+def fetch_power_price():
+    try:
+        url = f"{ELEXON_MARKET_PRICE_URL}?{build_elexon_range_params()}"
+        payload = fetch_json(url)
+        rows = extract_rows(payload)
+    except Exception:
+        return {"value": None, "unit": "GBP/MWh", "display": "Price unavailable"}
 
-    if not record:
+    # Use the most recent market price row with a usable marketIndexPrice value.
+    for row in sorted(rows, key=latest_settlement_first, reverse=True):
+        raw_value = row.get("marketIndexPrice")
+
+        if raw_value in (None, ""):
+            continue
+
+        try:
+            numeric_value = float(raw_value)
+        except (TypeError, ValueError):
+            continue
+
+        rounded_value = round(numeric_value)
+
+        return {
+            "value": numeric_value,
+            "unit": "GBP/MWh",
+            "display": f"{rounded_value} GBP/MWh",
+        }
+
+    return {"value": None, "unit": "GBP/MWh", "display": "Price unavailable"}
+
+
+def fetch_demand():
+    try:
+        url = f"{ELEXON_DEMAND_URL}?{build_elexon_range_params()}"
+        payload = fetch_json(url)
+        rows = extract_rows(payload)
+    except Exception:
         return {"value": None, "unit": "MW", "display": "Demand unavailable"}
 
-    # NESO demand datasets can vary a little in field names, so try a few
-    # sensible options and ignore blank or zero-like values that would mislead.
-    possible_fields = ["ND", "DEMAND", "demand", "national_demand"]
-
-    for field_name in possible_fields:
-        raw_value = record.get(field_name)
+    # Read the documented actual total load rows and take the latest usable
+    # quantity value, rather than guessing between several field names.
+    for row in sorted(rows, key=latest_settlement_first, reverse=True):
+        raw_value = row.get("quantity")
 
         if raw_value in (None, ""):
             continue
@@ -192,11 +282,7 @@ def build_snapshot():
     # public source is chosen and added to the pipeline.
     snapshot = {
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
-        "power_price": {
-            "value": None,
-            "unit": "GBP/MWh",
-            "display": "Coming soon",
-        },
+        "power_price": fetch_power_price(),
         "carbon_intensity": fetch_carbon_intensity(),
         "demand": fetch_demand(),
         "generation": fetch_generation_total(),
