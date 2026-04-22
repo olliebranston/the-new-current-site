@@ -236,9 +236,9 @@ def fetch_power_price():
     if rows:
         print(f"Power price first row keys: {list(rows[0].keys())}")
 
-    # Use the most recent market price row with a usable marketIndexPrice value.
+    # Use the most recent market price row with a usable price value.
     for row in sorted(rows, key=latest_settlement_first, reverse=True):
-        raw_value = row.get("marketIndexPrice")
+        raw_value = row.get("price")
 
         if raw_value in (None, ""):
             continue
@@ -257,7 +257,7 @@ def fetch_power_price():
         }
 
     print(
-        "Power price unavailable: no usable marketIndexPrice found "
+        "Power price unavailable: no usable price found "
         f"for provider {ELEXON_MARKET_INDEX_PROVIDER} in the requested time range"
     )
     return {"value": None, "unit": "GBP/MWh", "display": "Price unavailable"}
