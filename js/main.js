@@ -3,11 +3,19 @@ console.log("The New Current loaded successfully");
 const chartCanvas = document.getElementById("carbonChart");
 const powerPriceChartCanvas = document.getElementById("powerPriceChart");
 const generationMixOverTimeChartCanvas = document.getElementById("generationMixOverTimeChart");
+const territorialEmissionsChartCanvas = document.getElementById("territorialEmissionsChart");
+const consumptionEmissionsChartCanvas = document.getElementById("consumptionEmissionsChart");
+const consumptionPerPersonChartCanvas = document.getElementById("consumptionPerPersonChart");
+const gatewayConsumptionPerPersonChartCanvas = document.getElementById("gatewayConsumptionPerPersonChart");
+const gatewayPowerPriceChartCanvas = document.getElementById("gatewayPowerPriceChart");
 const homepageChartCanvas = document.getElementById("homepageCarbonChart");
 const pageDataUpdated = document.getElementById("pageDataUpdated");
 const lastUpdatedText = document.getElementById("lastUpdatedText");
 const powerPriceUpdatedText = document.getElementById("powerPriceUpdatedText");
 const generationMixOverTimeUpdatedText = document.getElementById("generationMixOverTimeUpdatedText");
+const territorialEmissionsUpdatedText = document.getElementById("territorialEmissionsUpdatedText");
+const consumptionEmissionsUpdatedText = document.getElementById("consumptionEmissionsUpdatedText");
+const consumptionPerPersonUpdatedText = document.getElementById("consumptionPerPersonUpdatedText");
 const homepageChartUpdated = document.getElementById("homepageCarbonChartUpdated");
 const dailyAverageTableBody = document.getElementById("dailyAverageTableBody");
 const radarRAndD = document.getElementById("radar-r-and-d");
@@ -30,8 +38,10 @@ const snapshotDemandUnit = document.getElementById("snapshotDemandUnit");
 const snapshotGeneration = document.getElementById("snapshotGeneration");
 const snapshotGenerationUnit = document.getElementById("snapshotGenerationUnit");
 const generationMixVisual = document.getElementById("generationMixVisual");
+const gatewayGenerationMixVisual = document.getElementById("gatewayGenerationMixVisual");
 
 let generationMixChart;
+let gatewayGenerationMixChart;
 
 const generationMixColours = {
   wind: "#0f766e",
@@ -50,7 +60,7 @@ const chartTextColour = "#3b4758";
 const chartTitleColour = "#0f1724";
 const chartGridColour = "rgba(198, 208, 221, 0.55)";
 const chartFontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif';
-const chartActualSeriesColour = "#36a2eb";
+const chartActualSeriesColour = "#2457ff";
 const chartForecastSeriesColour = "#ff6384";
 
 const generationMixLabelsPlugin = {
@@ -444,6 +454,205 @@ function buildGenerationMixOverTimeChart(canvas, chartData) {
   });
 }
 
+function buildAnnualSeriesChart(canvas, labels, values, options) {
+  if (!canvas) {
+    return;
+  }
+
+  new Chart(canvas, {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: options.label,
+          data: values,
+          borderColor: options.colour,
+          backgroundColor: options.colour,
+          pointRadius: 2.5,
+          pointHoverRadius: 6,
+          pointHitRadius: 14,
+          borderWidth: 2,
+          tension: 0.2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      layout: {
+        padding: {
+          top: 8
+        }
+      },
+      plugins: {
+        legend: {
+          position: "top",
+          align: "center",
+          labels: {
+            color: chartTextColour,
+            padding: 18,
+            font: {
+              family: chartFontFamily,
+              size: 13,
+              weight: "400"
+            }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label(context) {
+              const rawValue = Number(context.raw);
+              const formattedValue = options.decimals === 0
+                ? rawValue.toFixed(0)
+                : rawValue.toFixed(options.decimals || 1);
+
+              return `${context.dataset.label}: ${formattedValue} ${options.unit}`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: options.beginAtZero ?? false,
+          min: options.min,
+          max: options.max,
+          grid: {
+            color: chartGridColour
+          },
+          ticks: {
+            color: chartTextColour,
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
+          },
+          title: {
+            display: true,
+            text: options.axisTitle,
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          }
+        },
+        x: {
+          grid: {
+            color: chartGridColour
+          },
+          title: {
+            display: true,
+            text: "Year",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          },
+          ticks: {
+            maxTicksLimit: 10,
+            color: chartTextColour,
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+function buildGatewayLineChart(canvas, labels, values, options) {
+  if (!canvas) {
+    return;
+  }
+
+  new Chart(canvas, {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          data: values,
+          borderColor: options.colour,
+          backgroundColor: options.colour,
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          pointHitRadius: 8,
+          borderWidth: 2.25,
+          tension: 0.22
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          enabled: false
+        }
+      },
+      scales: {
+        y: {
+          display: false,
+          beginAtZero: options.beginAtZero ?? false,
+          min: options.min,
+          max: options.max,
+          grid: {
+            display: false
+          },
+          border: {
+            display: false
+          }
+        },
+        x: {
+          display: false,
+          grid: {
+            display: false
+          },
+          border: {
+            display: false
+          }
+        }
+      },
+      elements: {
+        line: {
+          capBezierPoints: true
+        }
+      }
+    }
+  });
+}
+
+function getSharedAnnualAxisBounds(seriesList) {
+  const numericValues = seriesList
+    .flat()
+    .filter((value) => value !== null && value !== undefined && !Number.isNaN(Number(value)))
+    .map((value) => Number(value));
+
+  if (numericValues.length === 0) {
+    return {};
+  }
+
+  const minValue = Math.min(...numericValues);
+  const maxValue = Math.max(...numericValues);
+  const range = maxValue - minValue;
+  const padding = Math.max(range * 0.08, 20);
+
+  return {
+    min: Math.max(0, Math.floor((minValue - padding) / 10) * 10),
+    max: Math.ceil((maxValue + padding) / 10) * 10
+  };
+}
+
 function getCurrentHalfHourLabel() {
   const now = new Date();
   const utcHours = now.getUTCHours().toString().padStart(2, "0");
@@ -703,6 +912,75 @@ function renderGenerationMix(snapshotData) {
   });
 }
 
+function renderGatewayGenerationMix(snapshotData) {
+  if (!gatewayGenerationMixVisual) {
+    return;
+  }
+
+  const mixData = snapshotData.generation_mix;
+
+  if (!mixData || !Array.isArray(mixData.segments) || mixData.segments.length === 0) {
+    gatewayGenerationMixVisual.textContent = "Generation mix unavailable right now.";
+    return;
+  }
+
+  const sortedSegments = sortGenerationMixSegments(
+    mixData.segments.filter(isVisibleGenerationMixSegment)
+  );
+
+  if (sortedSegments.length === 0) {
+    gatewayGenerationMixVisual.textContent = "Generation mix unavailable right now.";
+    return;
+  }
+
+  gatewayGenerationMixVisual.classList.remove("loading-placeholder");
+  gatewayGenerationMixVisual.innerHTML = `
+    <div class="gateway-generation-mix-chart-wrap">
+      <canvas id="gatewayGenerationMixChart" class="gateway-generation-mix-canvas"></canvas>
+      <div class="gateway-generation-mix-center">
+        <p class="gateway-generation-mix-percentage">${mixData.low_carbon_percentage}%</p>
+        <p class="gateway-generation-mix-caption">Low carbon</p>
+      </div>
+    </div>
+  `;
+
+  const chartCanvas = document.getElementById("gatewayGenerationMixChart");
+
+  if (gatewayGenerationMixChart) {
+    gatewayGenerationMixChart.destroy();
+  }
+
+  gatewayGenerationMixChart = new Chart(chartCanvas, {
+    type: "doughnut",
+    data: {
+      labels: sortedSegments.map((segment) => segment.label),
+      datasets: [
+        {
+          data: sortedSegments.map((segment) => segment.percentage),
+          backgroundColor: sortedSegments.map((segment) => getGenerationMixColour(segment)),
+          borderColor: "#ffffff",
+          borderWidth: 3,
+          hoverOffset: 0
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      cutout: "78%",
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          enabled: false
+        }
+      }
+    }
+  });
+}
+
 if (chartCanvas || homepageChartCanvas) {
   fetch("data/carbon-chart-data.json")
     .then((response) => response.json())
@@ -743,6 +1021,14 @@ if (powerPriceChartCanvas) {
       }
 
       buildPowerPriceChart(powerPriceChartCanvas, chartData);
+      buildGatewayLineChart(
+        gatewayPowerPriceChartCanvas,
+        chartData.labels,
+        chartData.actual_values,
+        {
+          colour: "#2457ff"
+        }
+      );
 
       if (snapshotPowerPrice) {
         const powerPriceMetric = getPowerPriceMetricFromChartData(chartData);
@@ -771,6 +1057,91 @@ if (generationMixOverTimeChartCanvas) {
 }
 
 if (
+  territorialEmissionsChartCanvas
+  || consumptionEmissionsChartCanvas
+  || consumptionPerPersonChartCanvas
+) {
+  fetch("data/uk-carbon-accounting-chart-data.json")
+    .then((response) => response.json())
+    .then((chartData) => {
+      const sharedEmissionsAxisBounds = getSharedAnnualAxisBounds([
+        chartData.territorial_emissions_mtco2e,
+        chartData.consumption_emissions_mtco2e
+      ]);
+
+      if (territorialEmissionsUpdatedText) {
+        territorialEmissionsUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
+        territorialEmissionsUpdatedText.classList.remove("loading-placeholder");
+      }
+
+      if (consumptionEmissionsUpdatedText) {
+        consumptionEmissionsUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
+        consumptionEmissionsUpdatedText.classList.remove("loading-placeholder");
+      }
+
+      if (consumptionPerPersonUpdatedText) {
+        consumptionPerPersonUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
+        consumptionPerPersonUpdatedText.classList.remove("loading-placeholder");
+      }
+
+      buildAnnualSeriesChart(
+        territorialEmissionsChartCanvas,
+        chartData.labels,
+        chartData.territorial_emissions_mtco2e,
+        {
+          label: "Territorial emissions",
+          colour: "#2457ff",
+          unit: "MtCO2e",
+          axisTitle: "MtCO2e",
+          decimals: 1,
+          beginAtZero: true,
+          ...sharedEmissionsAxisBounds
+        }
+      );
+
+      buildAnnualSeriesChart(
+        consumptionEmissionsChartCanvas,
+        chartData.labels,
+        chartData.consumption_emissions_mtco2e,
+        {
+          label: "Consumption-based emissions",
+          colour: "#2457ff",
+          unit: "MtCO2e",
+          axisTitle: "MtCO2e",
+          decimals: 1,
+          beginAtZero: true,
+          ...sharedEmissionsAxisBounds
+        }
+      );
+
+      buildAnnualSeriesChart(
+        consumptionPerPersonChartCanvas,
+        chartData.labels,
+        chartData.consumption_per_person_tco2e,
+        {
+          label: "Consumption emissions per person",
+          colour: "#2457ff",
+          unit: "tCO2e per person",
+          axisTitle: "tCO2e per person",
+          decimals: 2
+        }
+      );
+
+      buildGatewayLineChart(
+        gatewayConsumptionPerPersonChartCanvas,
+        chartData.labels,
+        chartData.consumption_per_person_tco2e,
+        {
+          colour: "#2457ff"
+        }
+      );
+    })
+    .catch((error) => {
+      console.error("Error loading UK carbon accounting chart data:", error);
+    });
+}
+
+if (
   gridSnapshotUpdated ||
   snapshotPowerPrice ||
   snapshotCarbonIntensity ||
@@ -789,6 +1160,7 @@ if (
       updateSnapshotMetric(snapshotDemand, snapshotDemandUnit, snapshotData.demand);
       updateSnapshotMetric(snapshotGeneration, snapshotGenerationUnit, snapshotData.generation);
       renderGenerationMix(snapshotData);
+      renderGatewayGenerationMix(snapshotData);
     })
     .catch((error) => {
       console.error("Error loading live grid snapshot data:", error);

@@ -85,19 +85,24 @@
 
     <div class="data-gateway-grid">
       <a href="#consumption-production" class="data-gateway-card">
-        <p class="eyebrow">System balance</p>
-        <h3>Consumption versus production</h3>
-        <div class="data-gateway-visual">Mini graph template</div>
+        <p class="eyebrow">Carbon accounting</p>
+        <h3>Territorial versus consumption emissions</h3>
+        <div class="data-gateway-visual">
+          <canvas id="gatewayConsumptionPerPersonChart"></canvas>
+        </div>
         <p>
-          A future section for comparing how electricity demand and available
-          generation move against each other across the system.
+          A comparison of three different ways of looking at UK emissions:
+          territorial totals, consumption-based totals, and consumption-based
+          emissions per person.
         </p>
       </a>
 
       <a href="#live-gb-dashboard" class="data-gateway-card">
         <p class="eyebrow">Live monitoring</p>
         <h3>Live GB dashboard</h3>
-        <div class="data-gateway-visual">Mini graph template</div>
+        <div id="gatewayGenerationMixVisual" class="data-gateway-visual loading-placeholder">
+          Loading generation mix...
+        </div>
         <p>
           A live, top-level dashboard view of key GB electricity system metrics
           including price, carbon intensity, demand, generation, and mix.
@@ -107,7 +112,9 @@
       <a href="#carbon-price-relationship" class="data-gateway-card">
         <p class="eyebrow">Market signals</p>
         <h3>Carbon / price relationship</h3>
-        <div class="data-gateway-visual">Mini graph template</div>
+        <div class="data-gateway-visual">
+          <canvas id="gatewayPowerPriceChart"></canvas>
+        </div>
         <p>
           A section for comparing how GB carbon intensity, wholesale price, and
           generation mix move together over the same time window.
@@ -119,57 +126,76 @@
   <section id="consumption-production" class="data-chart-section">
     <div class="data-chart-section-heading">
       <p class="eyebrow">Section One</p>
-      <h2>Consumption versus production</h2>
+      <h2>Territorial versus consumption emissions</h2>
       <p>
-        This section will focus on how electricity demand and generation relate
-        to each other across the system. For now, these cards act as placeholders
-        for the next set of comparison charts.
+        These charts compare different ways of counting UK emissions over the
+        same 1996 to 2022 period. That matters because "UK emissions" can mean
+        different things depending on whether you count emissions on a territorial
+        basis, on a consumption basis, or on a per-person basis.
       </p>
     </div>
 
     <div class="data-chart-row-list">
       <article class="data-chart-row">
         <div class="data-chart-card-header">
-          <p class="eyebrow">Template one</p>
-          <h3>Consumption versus production</h3>
+          <p class="eyebrow">Territorial basis</p>
+          <h3>UK territorial emissions</h3>
           <p>
-            This chart will compare system-level consumption and production over
-            time and show where the two begin to diverge.
+            This chart tracks UK territorial greenhouse gas emissions, using the
+            DESNZ territorial dataset and summing the published sector totals for
+            each year. It is not the same thing as a consumption-based measure:
+            it reflects emissions produced within the UK accounting boundary,
+            rather than the emissions associated with everything the UK consumes.
           </p>
+          <p id="territorialEmissionsUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
-          <div class="data-chart-placeholder">Graph placeholder</div>
+          <div class="data-chart-canvas-wrap">
+            <canvas id="territorialEmissionsChart"></canvas>
+          </div>
         </div>
       </article>
 
       <article class="data-chart-row">
         <div class="data-chart-card-header">
-          <p class="eyebrow">Template two</p>
-          <h3>Demand by period</h3>
+          <p class="eyebrow">Consumption basis</p>
+          <h3>UK consumption-based emissions</h3>
           <p>
-            A future chart for exploring how demand changes over the day and how
-            those changes compare with available generation.
+            This chart tracks the UK's consumption-based emissions, often described
+            as the UK's carbon footprint. It combines emissions from UK-produced
+            goods and services consumed domestically, emissions embedded in imports,
+            and the direct household heating and transport emissions included in
+            the Defra series.
           </p>
+          <p id="consumptionEmissionsUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
-          <div class="data-chart-placeholder">Graph placeholder</div>
+          <div class="data-chart-canvas-wrap">
+            <canvas id="consumptionEmissionsChart"></canvas>
+          </div>
         </div>
       </article>
 
       <article class="data-chart-row">
         <div class="data-chart-card-header">
-          <p class="eyebrow">Template three</p>
-          <h3>Production by period</h3>
+          <p class="eyebrow">Per person</p>
+          <h3>UK consumption emissions per person</h3>
           <p>
-            A future chart for exploring how production responds across the same
-            periods and how that links back to system balancing.
+            This chart takes the same consumption-based series shown to the left
+            and divides it by the UK's mid-year population estimate for each year.
+            It is a derived measure rather than a standalone official release, but
+            it helps show how the average footprint has changed as both emissions
+            and population have shifted over time.
           </p>
+          <p id="consumptionPerPersonUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
-          <div class="data-chart-placeholder">Graph placeholder</div>
+          <div class="data-chart-canvas-wrap">
+            <canvas id="consumptionPerPersonChart"></canvas>
+          </div>
         </div>
       </article>
     </div>
