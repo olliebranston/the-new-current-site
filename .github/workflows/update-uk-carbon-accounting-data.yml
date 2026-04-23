@@ -1,0 +1,56 @@
+name: Update UK carbon accounting data
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/fetch_uk_carbon_accounting_data.py"
+      - ".github/workflows/update-uk-carbon-accounting-data.yml"
+      - "data/Figure_1__Top_emitting_national_communication_sectors_on_a_territorial_basis__UK_1990_to_2024_(provisional).csv"
+      - "data/Figure_3__UK_consumption_footprint_over_time__UK,_1996_to_2022.csv"
+      - "data/Historic UK Population.csv"
+
+concurrency:
+  group: update-uk-carbon-accounting-data-main
+  cancel-in-progress: false
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync with latest main
+        run: |
+          git checkout main
+          git pull --ff-only origin main
+
+      - name: Install dependencies
+        run: python -m pip install pandas
+
+      - name: Run UK carbon accounting data script
+        run: python scripts/fetch_uk_carbon_accounting_data.py
+
+      - name: Commit updated UK carbon accounting data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/uk-carbon-accounting-data.csv
+          git add data/uk-carbon-accounting-chart-data.json
+          git diff --cached --quiet || git commit -m "Update UK carbon accounting data"
+          git push origin HEAD:main
