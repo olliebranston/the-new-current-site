@@ -3,7 +3,7 @@ name: Update news radar
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "23 */12 * * *"
   push:
     paths:
       - "scripts/fetch_news_radar.py"

@@ -3,7 +3,7 @@ name: Update green generation and bill data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 7 5 * *"
+    - cron: "17 7 5 * *"
   push:
     paths:
       - "scripts/fetch_green_generation_bills_data.py"

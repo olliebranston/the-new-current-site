@@ -241,6 +241,8 @@ def build_generation_mix_dataframe():
     ).fillna(0).astype(int)
 
     dataframe = dataframe.sort_values("year").reset_index(drop=True)
+    latest_complete_year = datetime.now(timezone.utc).year - 1
+    dataframe = dataframe.loc[dataframe["year"] <= latest_complete_year].copy()
     validate_generation_mix(dataframe)
 
     return dataframe[["year", *GENERATION_COLUMNS, "interval_count"]]
@@ -727,11 +729,13 @@ def build_aligned_chart_data(generation_df, bills_df, source_metadata):
             ),
             "generation_transform": (
                 "Annual mean percentages from NESO Historic GB Generation Mix fields "
-                "RENEWABLE_perc, LOW_CARBON_perc, ZERO_CARBON_perc, and FOSSIL_perc."
+                "RENEWABLE_perc, LOW_CARBON_perc, ZERO_CARBON_perc, and FOSSIL_perc. "
+                "Only completed calendar years are included."
             ),
             "bill_transform": (
-                "Nominal GBP annual domestic standard electricity bill from DESNZ QEP 2.2.1. "
-                "The parser prefers the Overall / all-consumer UK cash-terms series."
+                "Nominal GBP annual domestic standard electricity bill from DESNZ QEP 2.2.1, "
+                "based on fixed consumption of 3,400 kWh/year. The parser prefers the "
+                "Overall / all-consumer UK cash-terms series."
             ),
             "inflation_adjustment": "None. Values are nominal GBP.",
             "sources": source_metadata,

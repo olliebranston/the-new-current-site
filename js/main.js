@@ -608,10 +608,32 @@ function getAlignedAnnualTickOptions(labels) {
   };
 }
 
+function getAnnualGenerationStackData(chartData) {
+  const renewableValues = chartData.generation_mix.renewable_percentage || [];
+  const lowCarbonValues = chartData.generation_mix.low_carbon_percentage || [];
+  const fossilValues = chartData.generation_mix.fossil_percentage || [];
+
+  return {
+    renewable: renewableValues.map((value) => Number(value) || 0),
+    otherLowCarbon: lowCarbonValues.map((value, index) => {
+      return Math.max((Number(value) || 0) - (Number(renewableValues[index]) || 0), 0);
+    }),
+    fossil: fossilValues.map((value) => Number(value) || 0),
+    other: lowCarbonValues.map((value, index) => {
+      const lowCarbonValue = Number(value) || 0;
+      const fossilValue = Number(fossilValues[index]) || 0;
+
+      return Math.max(100 - lowCarbonValue - fossilValue, 0);
+    })
+  };
+}
+
 function buildHistoricalGenerationMixChart(canvas, chartData) {
   if (!canvas) {
     return;
   }
+
+  const stackData = getAnnualGenerationStackData(chartData);
 
   new Chart(canvas, {
     type: "line",
@@ -620,35 +642,54 @@ function buildHistoricalGenerationMixChart(canvas, chartData) {
       datasets: [
         {
           label: "Renewable",
-          data: chartData.generation_mix.renewable_percentage,
+          data: stackData.renewable,
           borderColor: "#16a34a",
           backgroundColor: "#16a34a",
-          pointRadius: 2.5,
-          pointHoverRadius: 6,
+          fill: true,
+          stack: "annual-generation-mix",
+          pointRadius: 0,
+          pointHoverRadius: 4,
           pointHitRadius: 14,
-          borderWidth: 2,
+          borderWidth: 1.5,
           tension: 0.2
         },
         {
-          label: "Low-carbon",
-          data: chartData.generation_mix.low_carbon_percentage,
+          label: "Other low-carbon",
+          data: stackData.otherLowCarbon,
           borderColor: "#2457ff",
           backgroundColor: "#2457ff",
-          pointRadius: 2.5,
-          pointHoverRadius: 6,
+          fill: true,
+          stack: "annual-generation-mix",
+          pointRadius: 0,
+          pointHoverRadius: 4,
           pointHitRadius: 14,
-          borderWidth: 2,
+          borderWidth: 1.5,
           tension: 0.2
         },
         {
           label: "Fossil",
-          data: chartData.generation_mix.fossil_percentage,
-          borderColor: "#f97316",
-          backgroundColor: "#f97316",
-          pointRadius: 2.5,
-          pointHoverRadius: 6,
+          data: stackData.fossil,
+          borderColor: "#374151",
+          backgroundColor: "#374151",
+          fill: true,
+          stack: "annual-generation-mix",
+          pointRadius: 0,
+          pointHoverRadius: 4,
           pointHitRadius: 14,
-          borderWidth: 2,
+          borderWidth: 1.5,
+          tension: 0.2
+        },
+        {
+          label: "Other",
+          data: stackData.other,
+          borderColor: "#cbd5e1",
+          backgroundColor: "#cbd5e1",
+          fill: true,
+          stack: "annual-generation-mix",
+          pointRadius: 0,
+          pointHoverRadius: 4,
+          pointHitRadius: 14,
+          borderWidth: 1.5,
           tension: 0.2
         }
       ]
@@ -699,6 +740,7 @@ function buildHistoricalGenerationMixChart(canvas, chartData) {
       },
       scales: {
         y: {
+          stacked: true,
           min: 0,
           max: 100,
           grid: {
@@ -726,6 +768,7 @@ function buildHistoricalGenerationMixChart(canvas, chartData) {
           }
         },
         x: {
+          stacked: true,
           grid: {
             color: chartGridColour
           },
@@ -757,10 +800,10 @@ function buildDomesticElectricityBillChart(canvas, chartData) {
       labels: chartData.labels,
       datasets: [
         {
-          label: "Electricity bill (nominal GBP)",
+          label: "Standard electricity bill (nominal GBP)",
           data: chartData.domestic_electricity_bill.bill_gbp_nominal,
-          borderColor: "#7c3aed",
-          backgroundColor: "#7c3aed",
+          borderColor: chartActualSeriesColour,
+          backgroundColor: chartActualSeriesColour,
           pointRadius: 2.5,
           pointHoverRadius: 6,
           pointHitRadius: 14,
@@ -784,7 +827,7 @@ function buildDomesticElectricityBillChart(canvas, chartData) {
       plugins: {
         title: {
           display: true,
-          text: "Average annual domestic electricity bill",
+          text: "Standard annual domestic electricity bill",
           color: chartTitleColour,
           font: {
             family: chartFontFamily,

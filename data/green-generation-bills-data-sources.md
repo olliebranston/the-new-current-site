@@ -13,14 +13,14 @@ Generation mix source:
 - NESO Data Portal, Historic GB Generation Mix
 - Page: https://www.neso.energy/data-portal/historic-generation-mix/historic_gb_generation_mix
 - Direct CSV: https://api.neso.energy/dataset/88313ae5-94e4-4ddc-a790-593554d8c6b9/resource/f93d1835-75bc-43e5-84ad-12472b180a98/download/df_fuel_ckan.csv
-- Transform: annual mean percentages for `RENEWABLE_perc`, `LOW_CARBON_perc`, `ZERO_CARBON_perc`, and `FOSSIL_perc`.
+- Transform: annual mean percentages for `RENEWABLE_perc`, `LOW_CARBON_perc`, `ZERO_CARBON_perc`, and `FOSSIL_perc`. Only completed calendar years are included.
 
 Domestic electricity bill source:
 
 - DESNZ/GOV.UK, Annual domestic energy bills
 - Page: https://www.gov.uk/government/statistical-data-sets/annual-domestic-energy-price-statistics
 - Table: Average annual domestic electricity bills by payment type, QEP 2.2.1
-- Transform: nominal GBP annual domestic standard electricity bill. The parser prefers the representative overall UK cash-terms / all-consumer series where available.
+- Transform: nominal GBP annual domestic standard electricity bill based on fixed consumption of `3,400 kWh/year`. The parser prefers the representative overall UK cash-terms / all-consumer series where available.
 
 Alignment:
 
