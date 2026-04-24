@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-24 01:17 UTC",
+  "last_updated": "2026-04-24 12:51 UTC",
   "r_and_d": [
     {
       "headline": "New Candidate EOSC Nodes strengthen the EOSC Federation and support the European Research Area",
@@ -46,20 +46,6 @@
       "display_date": "23 April 2026"
     },
     {
-      "headline": "P495 Balancing and Settlement Code (BSC) proposed changes",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/publications/p495-balancing-and-settlement-code-bsc-proposed-changes",
-      "published_at": "2026-04-23T12:00:00Z",
-      "display_date": "23 April 2026"
-    },
-    {
-      "headline": "Modifying the standard conditions of the electricity interconnector licence",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/modifying-standard-conditions-electricity-interconnector-licence",
-      "published_at": "2026-04-23T12:00:00Z",
-      "display_date": "23 April 2026"
-    },
-    {
       "headline": "Commissioner J\u00f8rgensen in Spain to discuss ways to tackle the energy and housing crises",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-spain-discuss-ways-tackle-energy-and-housing-crises-2026-04-17_en",
@@ -67,11 +53,25 @@
       "display_date": "22 April 2026"
     },
     {
-      "headline": "Codes Grid Code Review Panel Meeting - 23 April\u2026 23 April 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
+      "headline": "Energy Markets Markets Forum - April 2026 28 April 2026 3pm to 5pm Join us for all the latest updates across Markets at NESO. There will also be a Q&A session at the end. Registration for the event\u2026 Events",
       "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-23-april-2026",
+      "link": "https://www.neso.energy/calendar/markets-forum-april-2026",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
+    },
+    {
+      "headline": "Systems operation Operational Transparency Forum 29 Apr 2026 29 April 2026 11am to 12pm Our weekly Operational Transparency Forum (OTF) is where experts from the NESO review the previous week\u2019s activities, provide an update\u2026 Events",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/operational-transparency-forum-29-apr-2026",
+      "published_at": "2026-04-13T00:00:00Z",
+      "display_date": "13 April 2026"
+    },
+    {
+      "headline": "Iran, the Middle East and UK energy: factsheet",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
