@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-24 14:45 UTC",
+  "last_updated": "2026-04-24 15:08 UTC",
   "labels": [
     "2014",
     "2015",
@@ -93,7 +93,7 @@
     ]
   },
   "metadata": {
-    "generated_at": "2026-04-24 14:45 UTC",
+    "generated_at": "2026-04-24 15:08 UTC",
     "x_axis": "Both charts use the same overlapping annual year range and the same year labels.",
     "generation_transform": "Annual mean percentages from NESO Historic GB Generation Mix fields RENEWABLE_perc, LOW_CARBON_perc, ZERO_CARBON_perc, and FOSSIL_perc. Only completed calendar years are included.",
     "bill_transform": "Nominal GBP annual domestic standard electricity bill from DESNZ QEP 2.2.1, based on fixed consumption of 3,400 kWh/year. The parser prefers the Overall / all-consumer UK cash-terms series.",
@@ -104,13 +104,13 @@
         "page_url": "https://www.neso.energy/data-portal/historic-generation-mix/historic_gb_generation_mix",
         "direct_csv_url": "https://api.neso.energy/dataset/88313ae5-94e4-4ddc-a790-593554d8c6b9/resource/f93d1835-75bc-43e5-84ad-12472b180a98/download/df_fuel_ckan.csv",
         "resource_id": "f93d1835-75bc-43e5-84ad-12472b180a98",
-        "date_accessed": "2026-04-24 14:45 UTC"
+        "date_accessed": "2026-04-24 15:08 UTC"
       },
       "domestic_electricity_bills": {
         "name": "DESNZ/GOV.UK - Annual domestic energy bills, QEP 2.2.1",
         "page_url": "https://www.gov.uk/government/statistical-data-sets/annual-domestic-energy-price-statistics",
         "workbook_url": "https://assets.publishing.service.gov.uk/media/69ca3804b66ff902f45443ce/table_221.xlsx",
-        "date_accessed": "2026-04-24 14:45 UTC",
+        "date_accessed": "2026-04-24 15:08 UTC",
         "sheet_name": "2.2.1",
         "selected_column_header": "Average annual domestic Standard Electricity bills in cash terms for fixed and variable tariffs based on consumption of 3,400kWh/year, United Kingdom Figures in cash terms.",
         "selected_column_score": 21,
