@@ -9,6 +9,7 @@ from urllib.parse import urlencode, urljoin
 from urllib.request import Request, urlopen
 
 import pandas as pd
+from openpyxl import load_workbook
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -33,6 +34,8 @@ DESNZ_QEP_221_FALLBACK_URL = (
     "https://assets.publishing.service.gov.uk/media/69ca3804b66ff902f45443ce/"
     "table_221.xlsx"
 )
+DESNZ_MAIN_SHEET_NAME = "2.2.1"
+DESNZ_PAYMENT_METHODS_SHEET_NAME = "2.2.1 (Payment Methods)"
 OFGEM_DATA_PORTAL_URL = "https://www.ofgem.gov.uk/news-and-insight/data/data-portal"
 
 GENERATION_MIX_CSV_PATH = DATA_DIR / "gb-generation-mix-annual-data.csv"
@@ -45,6 +48,9 @@ GENERATION_COLUMNS = [
     "zero_carbon_percentage",
     "fossil_percentage",
 ]
+MIN_ANNUAL_ROWS = 8
+MIN_OVERLAP_YEARS = 8
+EXPECTED_GENERATION_START_YEAR = 2009
 
 USER_AGENT = "The New Current data updater (https://olliebranston.github.io/the-new-current-site/)"
 
@@ -98,6 +104,35 @@ def normalise_year(value):
         return None
 
     return year
+
+
+def get_years(dataframe):
+    if dataframe is None or dataframe.empty or "year" not in dataframe.columns:
+        return []
+
+    return sorted(
+        {
+            int(year)
+            for year in pd.to_numeric(dataframe["year"], errors="coerce").dropna().tolist()
+        }
+    )
+
+
+def format_year_summary(dataframe):
+    years = get_years(dataframe)
+
+    if not years:
+        return "rows=0, years=none"
+
+    return f"rows={len(dataframe)}, years={years[0]}-{years[-1]}"
+
+
+def print_year_summary(label, dataframe):
+    print(f"{label}: {format_year_summary(dataframe)}")
+
+
+def normalise_sheet_name(sheet_name):
+    return re.sub(r"\s+", " ", str(sheet_name).strip()).lower()
 
 
 def fetch_generation_mix_via_sql():
@@ -180,10 +215,19 @@ def fetch_generation_mix_via_csv():
 
 def build_generation_mix_dataframe():
     try:
-        dataframe = fetch_generation_mix_via_sql()
-    except Exception as error:
-        print(f"NESO SQL aggregation failed, falling back to direct CSV: {error}")
         dataframe = fetch_generation_mix_via_csv()
+        print("NESO generation source selected: direct CSV")
+    except Exception as csv_error:
+        print(f"NESO direct CSV failed, falling back to SQL API: {csv_error}")
+
+        try:
+            dataframe = fetch_generation_mix_via_sql()
+            print("NESO generation source selected: SQL API")
+        except Exception as sql_error:
+            raise RuntimeError(
+                "Could not fetch NESO Historic GB Generation Mix from either source. "
+                f"Direct CSV error: {csv_error}. SQL API error: {sql_error}"
+            ) from sql_error
 
     dataframe = dataframe.copy()
     dataframe["year"] = dataframe["year"].astype(int)
@@ -314,7 +358,31 @@ def header_label_for_column(dataframe, column, data_start_row):
 
 def score_bill_column(label):
     normalised = label.lower().replace("-", " ")
+    excluded_terms = [
+        "real terms",
+        "unit cost",
+        "fixed cost",
+        "standing charge",
+        "% change",
+        "percentage change",
+        "financial year",
+        "economy 7",
+        "fixed consumption",
+    ]
+
+    if any(term in normalised for term in excluded_terms):
+        return -100
+
     score = 0
+
+    if "standard electricity" in normalised:
+        score += 10
+
+    if "electricity" in normalised:
+        score += 4
+
+    if "annual" in normalised or "bill" in normalised:
+        score += 2
 
     if "overall" in normalised:
         score += 12
@@ -334,15 +402,6 @@ def score_bill_column(label):
     if "credit" in normalised or "prepayment" in normalised:
         score -= 3
 
-    if (
-        "real terms" in normalised
-        or "unit cost" in normalised
-        or "fixed cost" in normalised
-        or "standing charge" in normalised
-        or "% change" in normalised
-    ):
-        score -= 20
-
     return score
 
 
@@ -352,6 +411,12 @@ def find_cash_terms_data_rows(dataframe):
         for row_index in range(len(dataframe))
         if row_contains(dataframe, row_index, r"\bcash terms\b|\bcurrent prices?\b")
     ]
+
+    if not cash_terms_rows:
+        raise ValueError(
+            "Could not find a cash-terms/current-prices section in the DESNZ sheet."
+        )
+
     real_terms_rows = [
         row_index
         for row_index in range(len(dataframe))
@@ -370,36 +435,88 @@ def find_cash_terms_data_rows(dataframe):
     ]
 
     if len(data_rows) < 5:
-        all_rows = list(range(len(dataframe)))
-        year_column = choose_year_column(dataframe, all_rows)
-        data_rows = [
-            row_index
-            for row_index in all_rows
-            if normalise_year(dataframe.at[row_index, year_column]) is not None
-        ]
-
-    if len(data_rows) < 5:
-        raise ValueError("DESNZ QEP 2.2.1 workbook did not contain enough annual bill rows.")
+        raise ValueError(
+            "DESNZ QEP 2.2.1 cash-terms/current-prices section did not contain "
+            f"enough annual bill rows. Search rows: {start_search_row}-{end_search_row}."
+        )
 
     return data_rows, year_column
 
 
-def parse_electricity_bill_workbook(workbook_bytes):
-    sheets = pd.read_excel(BytesIO(workbook_bytes), sheet_name=None, header=None, engine="openpyxl")
-    candidate_sheets = []
+def get_desnz_workbook_sheet_metadata(workbook_bytes):
+    workbook = load_workbook(
+        BytesIO(workbook_bytes),
+        read_only=True,
+        data_only=True,
+    )
+    visible_sheets = []
+    hidden_sheets = []
 
-    for sheet_name, dataframe in sheets.items():
-        sheet_text = " ".join(dataframe.fillna("").astype(str).head(30).values.flatten()).lower()
-
-        if "2.2.1" in str(sheet_name).lower() or "2.2.1" in sheet_text:
-            candidate_sheets.insert(0, (sheet_name, dataframe))
+    for worksheet in workbook.worksheets:
+        if worksheet.sheet_state == "visible":
+            visible_sheets.append(worksheet.title)
         else:
-            candidate_sheets.append((sheet_name, dataframe))
+            hidden_sheets.append(worksheet.title)
 
+    workbook.close()
+    return visible_sheets, hidden_sheets
+
+
+def build_desnz_candidate_sheet_names(visible_sheets):
+    candidates = []
+    normalised_lookup = {
+        normalise_sheet_name(sheet_name): sheet_name
+        for sheet_name in visible_sheets
+    }
+
+    for preferred_sheet_name in [
+        DESNZ_MAIN_SHEET_NAME,
+        DESNZ_PAYMENT_METHODS_SHEET_NAME,
+    ]:
+        matched_sheet_name = normalised_lookup.get(normalise_sheet_name(preferred_sheet_name))
+
+        if matched_sheet_name:
+            candidates.append(matched_sheet_name)
+
+    if not candidates:
+        qep_221_sheets = [
+            sheet_name
+            for sheet_name in visible_sheets
+            if "2.2.1" in normalise_sheet_name(sheet_name)
+        ]
+        raise ValueError(
+            "Could not find the exact visible DESNZ QEP 2.2.1 sheet names. "
+            f"Expected '{DESNZ_MAIN_SHEET_NAME}' or '{DESNZ_PAYMENT_METHODS_SHEET_NAME}'. "
+            f"Visible QEP 2.2.1-like sheets: {qep_221_sheets}. "
+            f"All visible sheets: {visible_sheets}"
+        )
+
+    return candidates
+
+
+def parse_electricity_bill_workbook(workbook_bytes):
+    visible_sheets, hidden_sheets = get_desnz_workbook_sheet_metadata(workbook_bytes)
+    candidate_sheet_names = build_desnz_candidate_sheet_names(visible_sheets)
     parse_errors = []
 
-    for sheet_name, dataframe in candidate_sheets:
+    print(f"DESNZ visible QEP 2.2.1 candidate sheets: {candidate_sheet_names}")
+    hidden_qep_sheets = [
+        sheet_name
+        for sheet_name in hidden_sheets
+        if "2.2.1" in normalise_sheet_name(sheet_name)
+    ]
+
+    if hidden_qep_sheets:
+        print(f"DESNZ hidden QEP 2.2.1 sheets ignored: {hidden_qep_sheets}")
+
+    for sheet_name in candidate_sheet_names:
         try:
+            dataframe = pd.read_excel(
+                BytesIO(workbook_bytes),
+                sheet_name=sheet_name,
+                header=None,
+                engine="openpyxl",
+            )
             data_rows, year_column = find_cash_terms_data_rows(dataframe)
             data_start_row = min(data_rows)
             bill_columns = []
@@ -424,18 +541,20 @@ def parse_electricity_bill_workbook(workbook_bytes):
                     }
                 )
 
-            if not bill_columns:
-                raise ValueError("No numeric bill columns found.")
+            eligible_bill_columns = [
+                column
+                for column in bill_columns
+                if column["score"] > 0
+            ]
 
-            selected_column = max(bill_columns, key=lambda item: item["score"])
-
-            if selected_column["score"] <= 0:
+            if not eligible_bill_columns:
                 labels = "; ".join(item["label"] for item in bill_columns[:8])
                 raise ValueError(
-                    "Could not identify the representative all-payment-types bill column. "
+                    "Could not identify a representative nominal GBP electricity bill column. "
                     f"Candidate headers: {labels}"
                 )
 
+            selected_column = max(eligible_bill_columns, key=lambda item: item["score"])
             records = []
 
             for row_index, bill_value in zip(data_rows, selected_column["values"]):
@@ -455,19 +574,28 @@ def parse_electricity_bill_workbook(workbook_bytes):
             bills_df = bills_df.sort_values("year").reset_index(drop=True)
             validate_bills(bills_df)
 
-            return bills_df, {
+            parse_metadata = {
                 "sheet_name": str(sheet_name),
                 "selected_column_header": selected_column["label"],
+                "selected_column_score": selected_column["score"],
+                "year_column": str(year_column),
                 "selection_note": (
-                    "Selected the highest-scoring representative column from QEP 2.2.1, "
-                    "preferring Overall / all-consumer UK cash-terms bills."
+                    "Selected the highest-scoring eligible column from the visible QEP 2.2.1 "
+                    "cash-terms/current-prices section, preferring overall/all-consumer "
+                    "UK nominal standard electricity bills."
                 ),
             }
+
+            print(f"DESNZ selected sheet: {parse_metadata['sheet_name']}")
+            print(f"DESNZ selected column/header: {parse_metadata['selected_column_header']}")
+            print(f"DESNZ selected column score: {parse_metadata['selected_column_score']}")
+
+            return bills_df, parse_metadata
         except Exception as error:
             parse_errors.append(f"{sheet_name}: {error}")
 
     raise ValueError(
-        "Could not parse DESNZ QEP 2.2.1 electricity bill workbook. "
+        "Could not parse the preferred DESNZ QEP 2.2.1 electricity bill sheets. "
         + " | ".join(parse_errors)
     )
 
@@ -475,6 +603,7 @@ def parse_electricity_bill_workbook(workbook_bytes):
 def build_electricity_bill_dataframe():
     page_html = fetch_text(DESNZ_ANNUAL_BILLS_PAGE_URL)
     workbook_url = find_desnz_qep_221_workbook_url(page_html)
+    print(f"DESNZ QEP 2.2.1 workbook URL: {workbook_url}")
     workbook_bytes = fetch_bytes(workbook_url)
     bills_df, parse_metadata = parse_electricity_bill_workbook(workbook_bytes)
 
@@ -487,8 +616,17 @@ def validate_generation_mix(dataframe):
     if missing_columns:
         raise ValueError(f"Generation mix data is missing columns: {missing_columns}")
 
-    if len(dataframe) < 8:
+    if len(dataframe) < MIN_ANNUAL_ROWS:
         raise ValueError("Generation mix data has too few annual rows to chart.")
+
+    generation_years = get_years(dataframe)
+
+    if generation_years and generation_years[0] > EXPECTED_GENERATION_START_YEAR + 1:
+        raise ValueError(
+            "Generation mix data starts later than expected for NESO Historic GB Generation Mix. "
+            f"Expected coverage around {EXPECTED_GENERATION_START_YEAR}; "
+            f"found {generation_years[0]}-{generation_years[-1]}."
+        )
 
     for column in GENERATION_COLUMNS:
         if dataframe[column].isna().any():
@@ -509,7 +647,7 @@ def validate_bills(dataframe):
     if "year" not in dataframe.columns or "bill_gbp_nominal" not in dataframe.columns:
         raise ValueError("Electricity bill data must contain year and bill_gbp_nominal columns.")
 
-    if len(dataframe) < 8:
+    if len(dataframe) < MIN_ANNUAL_ROWS:
         raise ValueError("Electricity bill data has too few annual rows to chart.")
 
     if dataframe["bill_gbp_nominal"].isna().any():
@@ -520,11 +658,37 @@ def validate_bills(dataframe):
 
 
 def build_aligned_chart_data(generation_df, bills_df, source_metadata):
+    generation_years = get_years(generation_df)
+    bill_years = get_years(bills_df)
+    overlap_years = sorted(set(generation_years) & set(bill_years))
+    bill_source_metadata = source_metadata.get("domestic_electricity_bills", {})
+
+    print_year_summary("Generation dataframe", generation_df)
+    print_year_summary("Electricity bills dataframe", bills_df)
+
+    if overlap_years:
+        print(
+            "Overlap years: "
+            f"rows={len(overlap_years)}, years={overlap_years[0]}-{overlap_years[-1]}, "
+            f"values={overlap_years}"
+        )
+    else:
+        print("Overlap years: rows=0, years=none, values=[]")
+
     merged = generation_df.merge(bills_df, on="year", how="inner").sort_values("year")
 
-    if len(merged) < 8:
+    if len(merged) < MIN_OVERLAP_YEARS:
         raise ValueError(
-            "Overlapping generation mix and electricity bill period has too few years to chart."
+            "Overlapping generation mix and electricity bill period has too few years to chart. "
+            f"Required at least {MIN_OVERLAP_YEARS}; found {len(merged)}. "
+            f"Generation years: {generation_years[0] if generation_years else 'none'}-"
+            f"{generation_years[-1] if generation_years else 'none'}. "
+            f"Bill years: {bill_years[0] if bill_years else 'none'}-"
+            f"{bill_years[-1] if bill_years else 'none'}. "
+            f"Overlapping years found: {overlap_years}. "
+            f"DESNZ selected sheet: {bill_source_metadata.get('sheet_name', 'unknown')}. "
+            "DESNZ selected column/header: "
+            f"{bill_source_metadata.get('selected_column_header', 'unknown')}."
         )
 
     expected_years = list(range(int(merged["year"].min()), int(merged["year"].max()) + 1))
@@ -587,6 +751,8 @@ def write_csv(path, dataframe):
 def main():
     generation_df = build_generation_mix_dataframe()
     bills_df, desnz_workbook_url, bill_parse_metadata = build_electricity_bill_dataframe()
+    print_year_summary("Generation dataframe before alignment", generation_df)
+    print_year_summary("Electricity bills dataframe before alignment", bills_df)
 
     source_metadata = {
         "generation_mix": {
@@ -605,10 +771,12 @@ def main():
         },
     }
 
-    chart_data = build_aligned_chart_data(generation_df, bills_df, source_metadata)
-
     write_csv(GENERATION_MIX_CSV_PATH, generation_df)
     write_csv(ELECTRICITY_BILLS_CSV_PATH, bills_df)
+    print(f"Saved {GENERATION_MIX_CSV_PATH.name}")
+    print(f"Saved {ELECTRICITY_BILLS_CSV_PATH.name}")
+
+    chart_data = build_aligned_chart_data(generation_df, bills_df, source_metadata)
 
     with open(CHART_JSON_PATH, "w", encoding="utf-8") as json_file:
         json.dump(chart_data, json_file, indent=2)
@@ -620,8 +788,6 @@ def main():
         "Aligned range: "
         f"{chart_data['year_range']['start']}-{chart_data['year_range']['end']}"
     )
-    print(f"Saved {GENERATION_MIX_CSV_PATH.name}")
-    print(f"Saved {ELECTRICITY_BILLS_CSV_PATH.name}")
     print(f"Saved {CHART_JSON_PATH.name}")
 
 
