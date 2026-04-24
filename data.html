@@ -333,29 +333,39 @@
     <div class="data-chart-row-list">
       <article class="data-chart-row">
         <div class="data-chart-card-header">
-          <h3>UK generation year on year</h3>
+          <p class="eyebrow">Annual system mix</p>
+          <h3>Greening of GB electricity generation mix</h3>
           <p>
-            A future section for comparing how the UK generation stack changes
-            year on year across major technologies.
+            Annual mean generation shares from NESO's Historic GB Generation Mix,
+            showing renewable, low-carbon, and fossil generation on the same
+            year range as the bill chart below.
           </p>
+          <p id="historicalGenerationMixUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
-          <div class="data-chart-placeholder">Graph placeholder</div>
+          <div class="data-chart-canvas-wrap">
+            <canvas id="historicalGenerationMixChart"></canvas>
+          </div>
         </div>
       </article>
 
       <article class="data-chart-row">
         <div class="data-chart-card-header">
-          <h3>Average bill cost year on year</h3>
+          <p class="eyebrow">Consumer cost</p>
+          <h3>Average annual domestic electricity bill</h3>
           <p>
-            A future section for tracking how average household bill costs move
-            over time and how those shifts relate back to the wider system.
+            Nominal annual domestic standard electricity bill from DESNZ QEP 2.2.1,
+            using the representative overall UK cash-terms series where available.
+            The x-axis is aligned exactly with the generation mix chart above.
           </p>
+          <p id="domesticElectricityBillUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
-          <div class="data-chart-placeholder">Graph placeholder</div>
+          <div class="data-chart-canvas-wrap">
+            <canvas id="domesticElectricityBillChart"></canvas>
+          </div>
         </div>
       </article>
 

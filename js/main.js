@@ -6,6 +6,8 @@ const generationMixOverTimeChartCanvas = document.getElementById("generationMixO
 const territorialEmissionsChartCanvas = document.getElementById("territorialEmissionsChart");
 const consumptionEmissionsChartCanvas = document.getElementById("consumptionEmissionsChart");
 const consumptionPerPersonChartCanvas = document.getElementById("consumptionPerPersonChart");
+const historicalGenerationMixChartCanvas = document.getElementById("historicalGenerationMixChart");
+const domesticElectricityBillChartCanvas = document.getElementById("domesticElectricityBillChart");
 const gatewayConsumptionPerPersonChartCanvas = document.getElementById("gatewayConsumptionPerPersonChart");
 const gatewayPowerPriceChartCanvas = document.getElementById("gatewayPowerPriceChart");
 const homepageChartCanvas = document.getElementById("homepageCarbonChart");
@@ -16,6 +18,8 @@ const generationMixOverTimeUpdatedText = document.getElementById("generationMixO
 const territorialEmissionsUpdatedText = document.getElementById("territorialEmissionsUpdatedText");
 const consumptionEmissionsUpdatedText = document.getElementById("consumptionEmissionsUpdatedText");
 const consumptionPerPersonUpdatedText = document.getElementById("consumptionPerPersonUpdatedText");
+const historicalGenerationMixUpdatedText = document.getElementById("historicalGenerationMixUpdatedText");
+const domesticElectricityBillUpdatedText = document.getElementById("domesticElectricityBillUpdatedText");
 const homepageChartUpdated = document.getElementById("homepageCarbonChartUpdated");
 const dailyAverageTableBody = document.getElementById("dailyAverageTableBody");
 const radarRAndD = document.getElementById("radar-r-and-d");
@@ -560,6 +564,301 @@ function buildAnnualSeriesChart(canvas, labels, values, options) {
               size: 12
             }
           }
+        }
+      }
+    }
+  });
+}
+
+function getAlignedAnnualTickOptions(labels) {
+  const years = (labels || [])
+    .map((label) => Number(label))
+    .filter((year) => Number.isFinite(year));
+
+  if (years.length === 0) {
+    return {};
+  }
+
+  const firstYear = years[0];
+  const lastYear = years[years.length - 1];
+  const range = lastYear - firstYear;
+  const interval = range > 28 ? 5 : (range > 14 ? 3 : 2);
+
+  return {
+    maxRotation: 0,
+    autoSkip: false,
+    color: chartTextColour,
+    callback(value, index) {
+      const year = Number(labels[index]);
+
+      if (
+        index === 0
+        || index === labels.length - 1
+        || (Number.isFinite(year) && year % interval === 0)
+      ) {
+        return labels[index];
+      }
+
+      return "";
+    },
+    font: {
+      family: chartFontFamily,
+      size: 12
+    }
+  };
+}
+
+function buildHistoricalGenerationMixChart(canvas, chartData) {
+  if (!canvas) {
+    return;
+  }
+
+  new Chart(canvas, {
+    type: "line",
+    data: {
+      labels: chartData.labels,
+      datasets: [
+        {
+          label: "Renewable",
+          data: chartData.generation_mix.renewable_percentage,
+          borderColor: "#16a34a",
+          backgroundColor: "#16a34a",
+          pointRadius: 2.5,
+          pointHoverRadius: 6,
+          pointHitRadius: 14,
+          borderWidth: 2,
+          tension: 0.2
+        },
+        {
+          label: "Low-carbon",
+          data: chartData.generation_mix.low_carbon_percentage,
+          borderColor: "#2457ff",
+          backgroundColor: "#2457ff",
+          pointRadius: 2.5,
+          pointHoverRadius: 6,
+          pointHitRadius: 14,
+          borderWidth: 2,
+          tension: 0.2
+        },
+        {
+          label: "Fossil",
+          data: chartData.generation_mix.fossil_percentage,
+          borderColor: "#f97316",
+          backgroundColor: "#f97316",
+          pointRadius: 2.5,
+          pointHoverRadius: 6,
+          pointHitRadius: 14,
+          borderWidth: 2,
+          tension: 0.2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        mode: "index",
+        intersect: false
+      },
+      layout: {
+        padding: {
+          top: 8
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: "GB electricity generation mix",
+          color: chartTitleColour,
+          font: {
+            family: chartFontFamily,
+            size: 14,
+            weight: "700"
+          }
+        },
+        legend: {
+          position: "top",
+          align: "center",
+          labels: {
+            color: chartTextColour,
+            padding: 18,
+            font: {
+              family: chartFontFamily,
+              size: 13,
+              weight: "400"
+            }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label(context) {
+              return `${context.dataset.label}: ${Number(context.raw).toFixed(1)}%`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          min: 0,
+          max: 100,
+          grid: {
+            color: chartGridColour
+          },
+          ticks: {
+            color: chartTextColour,
+            callback(value) {
+              return `${value}%`;
+            },
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
+          },
+          title: {
+            display: true,
+            text: "Share of generation (%)",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          }
+        },
+        x: {
+          grid: {
+            color: chartGridColour
+          },
+          title: {
+            display: true,
+            text: "Year",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          },
+          ticks: getAlignedAnnualTickOptions(chartData.labels)
+        }
+      }
+    }
+  });
+}
+
+function buildDomesticElectricityBillChart(canvas, chartData) {
+  if (!canvas) {
+    return;
+  }
+
+  new Chart(canvas, {
+    type: "line",
+    data: {
+      labels: chartData.labels,
+      datasets: [
+        {
+          label: "Electricity bill (nominal GBP)",
+          data: chartData.domestic_electricity_bill.bill_gbp_nominal,
+          borderColor: "#7c3aed",
+          backgroundColor: "#7c3aed",
+          pointRadius: 2.5,
+          pointHoverRadius: 6,
+          pointHitRadius: 14,
+          borderWidth: 2,
+          tension: 0.2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        mode: "index",
+        intersect: false
+      },
+      layout: {
+        padding: {
+          top: 8
+        }
+      },
+      plugins: {
+        title: {
+          display: true,
+          text: "Average annual domestic electricity bill",
+          color: chartTitleColour,
+          font: {
+            family: chartFontFamily,
+            size: 14,
+            weight: "700"
+          }
+        },
+        legend: {
+          position: "top",
+          align: "center",
+          labels: {
+            color: chartTextColour,
+            padding: 18,
+            font: {
+              family: chartFontFamily,
+              size: 13,
+              weight: "400"
+            }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label(context) {
+              const value = Number(context.raw).toLocaleString("en-GB", {
+                maximumFractionDigits: 0
+              });
+
+              return `${context.dataset.label}: GBP ${value}`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: false,
+          grid: {
+            color: chartGridColour
+          },
+          ticks: {
+            color: chartTextColour,
+            callback(value) {
+              return `GBP ${Number(value).toLocaleString("en-GB")}`;
+            },
+            font: {
+              family: chartFontFamily,
+              size: 12
+            }
+          },
+          title: {
+            display: true,
+            text: "Nominal GBP per year",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          }
+        },
+        x: {
+          grid: {
+            color: chartGridColour
+          },
+          title: {
+            display: true,
+            text: "Year",
+            color: chartTitleColour,
+            font: {
+              family: chartFontFamily,
+              size: 12,
+              weight: "400"
+            }
+          },
+          ticks: getAlignedAnnualTickOptions(chartData.labels)
         }
       }
     }
@@ -1138,6 +1437,38 @@ if (
     })
     .catch((error) => {
       console.error("Error loading UK carbon accounting chart data:", error);
+    });
+}
+
+if (historicalGenerationMixChartCanvas || domesticElectricityBillChartCanvas) {
+  fetch("data/green-generation-bills-chart-data.json")
+    .then((response) => response.json())
+    .then((chartData) => {
+      if (historicalGenerationMixUpdatedText) {
+        historicalGenerationMixUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
+        historicalGenerationMixUpdatedText.classList.remove("loading-placeholder");
+      }
+
+      if (domesticElectricityBillUpdatedText) {
+        domesticElectricityBillUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
+        domesticElectricityBillUpdatedText.classList.remove("loading-placeholder");
+      }
+
+      buildHistoricalGenerationMixChart(historicalGenerationMixChartCanvas, chartData);
+      buildDomesticElectricityBillChart(domesticElectricityBillChartCanvas, chartData);
+    })
+    .catch((error) => {
+      console.error("Error loading green generation and bill chart data:", error);
+
+      if (historicalGenerationMixUpdatedText) {
+        historicalGenerationMixUpdatedText.textContent = "Last updated: data unavailable";
+        historicalGenerationMixUpdatedText.classList.remove("loading-placeholder");
+      }
+
+      if (domesticElectricityBillUpdatedText) {
+        domesticElectricityBillUpdatedText.textContent = "Last updated: data unavailable";
+        domesticElectricityBillUpdatedText.classList.remove("loading-placeholder");
+      }
     });
 }
 
