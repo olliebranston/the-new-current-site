@@ -1,6 +1,4 @@
 timestamp,forecast,actual,index,chart_value
-2026-04-24T20:00Z,211,196,high,196
-2026-04-24T20:30Z,214,196,high,196
 2026-04-24T21:00Z,210,195,high,195
 2026-04-24T21:30Z,200,186,high,186
 2026-04-24T22:00Z,200,179,high,179
@@ -47,3 +45,5 @@ timestamp,forecast,actual,index,chart_value
 2026-04-25T18:30Z,156,161,moderate,161
 2026-04-25T19:00Z,168,164,moderate,164
 2026-04-25T19:30Z,169,164,moderate,164
+2026-04-25T20:00Z,166,162,moderate,162
+2026-04-25T20:30Z,165,165,moderate,165
