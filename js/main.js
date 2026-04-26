@@ -10,17 +10,7 @@ const historicalGenerationMixChartCanvas = document.getElementById("historicalGe
 const domesticElectricityBillChartCanvas = document.getElementById("domesticElectricityBillChart");
 const gatewayConsumptionPerPersonChartCanvas = document.getElementById("gatewayConsumptionPerPersonChart");
 const gatewayPowerPriceChartCanvas = document.getElementById("gatewayPowerPriceChart");
-const homepageChartCanvas = document.getElementById("homepageCarbonChart");
 const pageDataUpdated = document.getElementById("pageDataUpdated");
-const lastUpdatedText = document.getElementById("lastUpdatedText");
-const powerPriceUpdatedText = document.getElementById("powerPriceUpdatedText");
-const generationMixOverTimeUpdatedText = document.getElementById("generationMixOverTimeUpdatedText");
-const territorialEmissionsUpdatedText = document.getElementById("territorialEmissionsUpdatedText");
-const consumptionEmissionsUpdatedText = document.getElementById("consumptionEmissionsUpdatedText");
-const consumptionPerPersonUpdatedText = document.getElementById("consumptionPerPersonUpdatedText");
-const historicalGenerationMixUpdatedText = document.getElementById("historicalGenerationMixUpdatedText");
-const domesticElectricityBillUpdatedText = document.getElementById("domesticElectricityBillUpdatedText");
-const homepageChartUpdated = document.getElementById("homepageCarbonChartUpdated");
 const dailyAverageTableBody = document.getElementById("dailyAverageTableBody");
 const radarRAndD = document.getElementById("radar-r-and-d");
 const radarPolicy = document.getElementById("radar-policy");
@@ -32,7 +22,6 @@ const homepageBrainDumps = document.getElementById("homepageBrainDumps");
 const homepageReportingPreview = document.getElementById("homepageReportingPreview");
 const thoughtPiecesContainer = document.getElementById("thoughtPiecesContainer");
 const homepageThoughtPieces = document.getElementById("homepageThoughtPieces");
-const gridSnapshotUpdated = document.getElementById("gridSnapshotUpdated");
 const snapshotPowerPrice = document.getElementById("snapshotPowerPrice");
 const snapshotPowerPriceUnit = document.getElementById("snapshotPowerPriceUnit");
 const snapshotCarbonIntensity = document.getElementById("snapshotCarbonIntensity");
@@ -707,16 +696,6 @@ function buildHistoricalGenerationMixChart(canvas, chartData) {
         }
       },
       plugins: {
-        title: {
-          display: true,
-          text: "GB electricity generation mix",
-          color: chartTitleColour,
-          font: {
-            family: chartFontFamily,
-            size: 14,
-            weight: "700"
-          }
-        },
         legend: {
           position: "top",
           align: "center",
@@ -825,16 +804,6 @@ function buildDomesticElectricityBillChart(canvas, chartData) {
         }
       },
       plugins: {
-        title: {
-          display: true,
-          text: "Standard annual domestic electricity bill",
-          color: chartTitleColour,
-          font: {
-            family: chartFontFamily,
-            size: 14,
-            weight: "700"
-          }
-        },
         legend: {
           position: "top",
           align: "center",
@@ -1254,16 +1223,16 @@ function renderGenerationMix(snapshotData) {
   });
 }
 
-function renderGatewayGenerationMix(snapshotData) {
-  if (!gatewayGenerationMixVisual) {
-    return;
+function renderCompactGenerationMix(visualElement, snapshotData, currentChart, chartId) {
+  if (!visualElement) {
+    return currentChart;
   }
 
   const mixData = snapshotData.generation_mix;
 
   if (!mixData || !Array.isArray(mixData.segments) || mixData.segments.length === 0) {
-    gatewayGenerationMixVisual.textContent = "Generation mix unavailable right now.";
-    return;
+    visualElement.textContent = "Generation mix unavailable right now.";
+    return currentChart;
   }
 
   const sortedSegments = sortGenerationMixSegments(
@@ -1271,14 +1240,14 @@ function renderGatewayGenerationMix(snapshotData) {
   );
 
   if (sortedSegments.length === 0) {
-    gatewayGenerationMixVisual.textContent = "Generation mix unavailable right now.";
-    return;
+    visualElement.textContent = "Generation mix unavailable right now.";
+    return currentChart;
   }
 
-  gatewayGenerationMixVisual.classList.remove("loading-placeholder");
-  gatewayGenerationMixVisual.innerHTML = `
+  visualElement.classList.remove("loading-placeholder");
+  visualElement.innerHTML = `
     <div class="gateway-generation-mix-chart-wrap">
-      <canvas id="gatewayGenerationMixChart" class="gateway-generation-mix-canvas"></canvas>
+      <canvas id="${chartId}" class="gateway-generation-mix-canvas"></canvas>
       <div class="gateway-generation-mix-center">
         <p class="gateway-generation-mix-percentage">${mixData.low_carbon_percentage}%</p>
         <p class="gateway-generation-mix-caption">Low carbon</p>
@@ -1286,13 +1255,13 @@ function renderGatewayGenerationMix(snapshotData) {
     </div>
   `;
 
-  const chartCanvas = document.getElementById("gatewayGenerationMixChart");
+  const chartCanvas = document.getElementById(chartId);
 
-  if (gatewayGenerationMixChart) {
-    gatewayGenerationMixChart.destroy();
+  if (currentChart) {
+    currentChart.destroy();
   }
 
-  gatewayGenerationMixChart = new Chart(chartCanvas, {
+  return new Chart(chartCanvas, {
     type: "doughnut",
     data: {
       labels: sortedSegments.map((segment) => segment.label),
@@ -1323,7 +1292,16 @@ function renderGatewayGenerationMix(snapshotData) {
   });
 }
 
-if (chartCanvas || homepageChartCanvas) {
+function renderGatewayGenerationMix(snapshotData) {
+  gatewayGenerationMixChart = renderCompactGenerationMix(
+    gatewayGenerationMixVisual,
+    snapshotData,
+    gatewayGenerationMixChart,
+    "gatewayGenerationMixChart"
+  );
+}
+
+if (chartCanvas) {
   fetch("data/carbon-chart-data.json")
     .then((response) => response.json())
     .then((chartData) => {
@@ -1332,16 +1310,7 @@ if (chartCanvas || homepageChartCanvas) {
         pageDataUpdated.classList.remove("loading-placeholder");
       }
 
-      if (lastUpdatedText) {
-        lastUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
-      }
-
-      if (homepageChartUpdated) {
-        homepageChartUpdated.textContent = `Last updated: ${chartData.last_updated}`;
-      }
-
       buildCarbonChart(chartCanvas, chartData, false);
-      buildCarbonChart(homepageChartCanvas, chartData, true);
 
       if (snapshotCarbonIntensity) {
         const carbonMetric = getCarbonMetricFromChartData(chartData);
@@ -1353,15 +1322,10 @@ if (chartCanvas || homepageChartCanvas) {
     });
 }
 
-if (powerPriceChartCanvas) {
+if (powerPriceChartCanvas || gatewayPowerPriceChartCanvas) {
   fetch("data/power-price-chart-data.json")
     .then((response) => response.json())
     .then((chartData) => {
-      if (powerPriceUpdatedText) {
-        powerPriceUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
-        powerPriceUpdatedText.classList.remove("loading-placeholder");
-      }
-
       buildPowerPriceChart(powerPriceChartCanvas, chartData);
       buildGatewayLineChart(
         gatewayPowerPriceChartCanvas,
@@ -1386,11 +1350,6 @@ if (generationMixOverTimeChartCanvas) {
   fetch("data/generation-mix-chart-data.json")
     .then((response) => response.json())
     .then((chartData) => {
-      if (generationMixOverTimeUpdatedText) {
-        generationMixOverTimeUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
-        generationMixOverTimeUpdatedText.classList.remove("loading-placeholder");
-      }
-
       buildGenerationMixOverTimeChart(generationMixOverTimeChartCanvas, chartData);
     })
     .catch((error) => {
@@ -1402,6 +1361,7 @@ if (
   territorialEmissionsChartCanvas
   || consumptionEmissionsChartCanvas
   || consumptionPerPersonChartCanvas
+  || gatewayConsumptionPerPersonChartCanvas
 ) {
   fetch("data/uk-carbon-accounting-chart-data.json")
     .then((response) => response.json())
@@ -1410,21 +1370,6 @@ if (
         chartData.territorial_emissions_mtco2e,
         chartData.consumption_emissions_mtco2e
       ]);
-
-      if (territorialEmissionsUpdatedText) {
-        territorialEmissionsUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
-        territorialEmissionsUpdatedText.classList.remove("loading-placeholder");
-      }
-
-      if (consumptionEmissionsUpdatedText) {
-        consumptionEmissionsUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
-        consumptionEmissionsUpdatedText.classList.remove("loading-placeholder");
-      }
-
-      if (consumptionPerPersonUpdatedText) {
-        consumptionPerPersonUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
-        consumptionPerPersonUpdatedText.classList.remove("loading-placeholder");
-      }
 
       buildAnnualSeriesChart(
         territorialEmissionsChartCanvas,
@@ -1487,50 +1432,25 @@ if (historicalGenerationMixChartCanvas || domesticElectricityBillChartCanvas) {
   fetch("data/green-generation-bills-chart-data.json")
     .then((response) => response.json())
     .then((chartData) => {
-      if (historicalGenerationMixUpdatedText) {
-        historicalGenerationMixUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
-        historicalGenerationMixUpdatedText.classList.remove("loading-placeholder");
-      }
-
-      if (domesticElectricityBillUpdatedText) {
-        domesticElectricityBillUpdatedText.textContent = `Last updated: ${chartData.last_updated}`;
-        domesticElectricityBillUpdatedText.classList.remove("loading-placeholder");
-      }
-
       buildHistoricalGenerationMixChart(historicalGenerationMixChartCanvas, chartData);
       buildDomesticElectricityBillChart(domesticElectricityBillChartCanvas, chartData);
     })
     .catch((error) => {
       console.error("Error loading green generation and bill chart data:", error);
-
-      if (historicalGenerationMixUpdatedText) {
-        historicalGenerationMixUpdatedText.textContent = "Last updated: data unavailable";
-        historicalGenerationMixUpdatedText.classList.remove("loading-placeholder");
-      }
-
-      if (domesticElectricityBillUpdatedText) {
-        domesticElectricityBillUpdatedText.textContent = "Last updated: data unavailable";
-        domesticElectricityBillUpdatedText.classList.remove("loading-placeholder");
-      }
     });
 }
 
 if (
-  gridSnapshotUpdated ||
   snapshotPowerPrice ||
   snapshotCarbonIntensity ||
   snapshotDemand ||
   snapshotGeneration ||
-  generationMixVisual
+  generationMixVisual ||
+  gatewayGenerationMixVisual
 ) {
   fetch("data/live-grid-snapshot.json")
     .then((response) => response.json())
     .then((snapshotData) => {
-      if (gridSnapshotUpdated) {
-        gridSnapshotUpdated.textContent = `Last updated: ${snapshotData.last_updated || "not available"}`;
-        gridSnapshotUpdated.classList.remove("loading-placeholder");
-      }
-
       updateSnapshotMetric(snapshotDemand, snapshotDemandUnit, snapshotData.demand);
       updateSnapshotMetric(snapshotGeneration, snapshotGenerationUnit, snapshotData.generation);
       renderGenerationMix(snapshotData);
@@ -1601,10 +1521,10 @@ function renderRecommendation(container, item, labelText) {
 
   container.innerHTML = `
     <article class="recommendation-card">
-      <p class="card-kicker">${labelText}</p>
-      <h4><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h4>
-      <p class="recommendation-meta">${item.source}</p>
-      <p>${item.description}</p>
+      <p class="card-kicker recommendation-card-kicker">${labelText}</p>
+      <h4 class="recommendation-card-title"><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h4>
+      <p class="recommendation-meta recommendation-card-source">${item.source}</p>
+      <p class="recommendation-card-description">${item.description}</p>
     </article>
   `;
 }
@@ -1615,6 +1535,7 @@ if (radarRAndD || radarPolicy) {
     .then((newsData) => {
       if (newsRadarLastUpdated) {
         newsRadarLastUpdated.textContent = `Last updated: ${newsData.last_updated || "not available"}`;
+        newsRadarLastUpdated.classList.remove("loading-placeholder");
       }
 
       renderRadarItems(radarRAndD, newsData.r_and_d);

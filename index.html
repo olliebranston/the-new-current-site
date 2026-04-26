@@ -145,24 +145,43 @@
         <a href="data.html" class="subsection-link">Go to Data</a>
       </div>
 
-      <article class="data-preview-card">
-        <div class="data-preview-copy">
-          <h3>GB carbon intensity</h3>
+      <div class="data-gateway-grid">
+        <a href="data.html#consumption-production" class="data-gateway-card">
+          <p class="eyebrow">Carbon accounting</p>
+          <h3>The UK’s hidden carbon footprint</h3>
+          <div class="data-gateway-visual">
+            <canvas id="gatewayConsumptionPerPersonChart"></canvas>
+          </div>
           <p>
-            This section tracks live national GB carbon-intensity data, combining
-            actual and forecast values from the official source.
+            The UK’s production emissions have fallen sharply over recent decades,
+            but consumption-based emissions tell a less positive story.
           </p>
-          <p>
-            The wider Data page is where future experiments, trackers, and
-            dashboards on the energy transition will also sit.
-          </p>
-        </div>
+        </a>
 
-        <div class="data-preview-chart">
-          <canvas id="homepageCarbonChart"></canvas>
-          <p id="homepageCarbonChartUpdated" class="data-preview-updated">Last updated: loading...</p>
-        </div>
-      </article>
+        <a href="data.html#live-gb-dashboard" class="data-gateway-card">
+          <p class="eyebrow">Live monitoring</p>
+          <h3>Live GB dashboard</h3>
+          <div id="gatewayGenerationMixVisual" class="data-gateway-visual loading-placeholder">
+            Loading generation mix...
+          </div>
+          <p>
+            A live, high-level dashboard view of key GB electricity metrics
+            including price, carbon intensity, demand, generation, and mix.
+          </p>
+        </a>
+
+        <a href="data.html#carbon-price-relationship" class="data-gateway-card">
+          <p class="eyebrow">Market signals</p>
+          <h3>Clean power, complex bills</h3>
+          <div class="data-gateway-visual">
+            <canvas id="gatewayPowerPriceChart"></canvas>
+          </div>
+          <p>
+            Low-carbon generation can cut wholesale prices, but the cost of running a
+            cleaner, more flexible grid still shows up in consumer bills.
+          </p>
+        </a>
+      </div>
     </div>
 
     <div class="homepage-subsection">

@@ -71,29 +71,30 @@
     </div>
   </section>
 
-  <p id="pageDataUpdated" class="grid-snapshot-updated data-page-updated loading-placeholder">Last updated: loading...</p>
-
   <section class="data-gateway-section">
-    <div class="homepage-section-heading">
-      <p class="eyebrow">Explore</p>
-      <h2>Three ways into the data</h2>
-      <p>
-        Start with a theme below, then move into the fuller sections further down
-        the page.
-      </p>
+    <div class="data-gateway-heading-row">
+      <div class="homepage-section-heading">
+        <p class="eyebrow">Explore</p>
+        <h2>Three ways into the data</h2>
+        <p>
+          Start with a theme below, then move into the fuller sections further down
+          the page.
+        </p>
+      </div>
+
+      <p id="pageDataUpdated" class="data-page-updated loading-placeholder">Last updated: loading...</p>
     </div>
 
     <div class="data-gateway-grid">
       <a href="#consumption-production" class="data-gateway-card">
         <p class="eyebrow">Carbon accounting</p>
-        <h3>Territorial versus consumption emissions</h3>
+        <h3>The UK’s hidden carbon footprint</h3>
         <div class="data-gateway-visual">
           <canvas id="gatewayConsumptionPerPersonChart"></canvas>
         </div>
         <p>
-          A comparison of three different ways of looking at UK emissions:
-          territorial totals, consumption-based totals, and consumption-based
-          emissions per person.
+          The UK’s production emissions have fallen sharply over recent decades,
+          but consumption-based emissions tell a less positive story.
         </p>
       </a>
 
@@ -104,20 +105,20 @@
           Loading generation mix...
         </div>
         <p>
-          A live, top-level dashboard view of key GB electricity system metrics
+          A live, high-level dashboard view of key GB electricity metrics
           including price, carbon intensity, demand, generation, and mix.
         </p>
       </a>
 
       <a href="#carbon-price-relationship" class="data-gateway-card">
         <p class="eyebrow">Market signals</p>
-        <h3>Carbon / price relationship</h3>
+        <h3>Clean power, complex bills</h3>
         <div class="data-gateway-visual">
           <canvas id="gatewayPowerPriceChart"></canvas>
         </div>
         <p>
-          A section for comparing how GB carbon intensity, wholesale price, and
-          generation mix move together over the same time window.
+          Low-carbon generation can cut wholesale prices, but the cost of running a
+          cleaner, more flexible grid still shows up in consumer bills.
         </p>
       </a>
     </div>
@@ -125,29 +126,25 @@
 
   <section id="consumption-production" class="data-chart-section">
     <div class="data-chart-section-heading">
-      <p class="eyebrow">Section One</p>
-      <h2>Territorial versus consumption emissions</h2>
+      <p class="eyebrow">Carbon accounting</p>
+      <h2>The UK’s hidden carbon footprint</h2>
       <p>
-        These charts compare different ways of counting UK emissions over the
-        same 1996 to 2022 period. That matters because "UK emissions" can mean
-        different things depending on whether you count emissions on a territorial
-        basis, on a consumption basis, or on a per-person basis.
+        The UK’s domestic emissions keep falling, but the picture looks less
+        positive when we include the carbon embedded in what we consume.
+        Per-person emissions are improving, but not by enough.
       </p>
     </div>
 
     <div class="data-chart-row-list">
       <article class="data-chart-row">
         <div class="data-chart-card-header">
-          <p class="eyebrow">Territorial basis</p>
-          <h3>UK territorial emissions</h3>
+          <p class="eyebrow">Territorial emissions</p>
+          <h3>The UK’s domestic emissions are falling</h3>
           <p>
-            This chart tracks UK territorial greenhouse gas emissions, using the
-            DESNZ territorial dataset and summing the published sector totals for
-            each year. It is not the same thing as a consumption-based measure:
-            it reflects emissions produced within the UK accounting boundary,
-            rather than the emissions associated with everything the UK consumes.
+            On a territorial basis, the UK’s emissions have fallen significantly
+            over time. This is the positive headline: less carbon is being
+            produced within the UK economy.
           </p>
-          <p id="territorialEmissionsUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
@@ -159,16 +156,13 @@
 
       <article class="data-chart-row">
         <div class="data-chart-card-header">
-          <p class="eyebrow">Consumption basis</p>
-          <h3>UK consumption-based emissions</h3>
+          <p class="eyebrow">Consumption emissions</p>
+          <h3>The consumption story is less positive</h3>
           <p>
-            This chart tracks the UK's consumption-based emissions, often described
-            as the UK's carbon footprint. It combines emissions from UK-produced
-            goods and services consumed domestically, emissions embedded in imports,
-            and the direct household heating and transport emissions included in
-            the Defra series.
+            When emissions are counted by what the UK consumes, rather than what
+            it produces, progress looks much weaker. Some of the UK’s carbon
+            footprint has effectively been shifted offshore through imports.
           </p>
-          <p id="consumptionEmissionsUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
@@ -180,16 +174,13 @@
 
       <article class="data-chart-row">
         <div class="data-chart-card-header">
-          <p class="eyebrow">Per person</p>
-          <h3>UK consumption emissions per person</h3>
+          <p class="eyebrow">Per-person emissions</p>
+          <h3>Per-person emissions are improving, but not enough</h3>
           <p>
-            This chart takes the same consumption-based series shown to the left
-            and divides it by the UK's mid-year population estimate for each year.
-            It is a derived measure rather than a standalone official release, but
-            it helps show how the average footprint has changed as both emissions
-            and population have shifted over time.
+            Adjusting for population growth makes the picture slightly better:
+            consumption emissions per person have come down. But there is still
+            work to do for the UK to become a truly net-zero economy.
           </p>
-          <p id="consumptionPerPersonUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
@@ -203,13 +194,12 @@
 
   <section id="live-gb-dashboard" class="grid-snapshot-section">
     <div class="grid-snapshot-header">
-      <p class="eyebrow">Section Two</p>
+      <p class="eyebrow">Live monitoring</p>
       <h2>Live GB dashboard</h2>
       <p>
-        A simple live view of key GB electricity system metrics, designed as a quick
-        top-level read before the deeper charts and comparisons below.
+        A simple live view of key GB electricity system metrics, designed as a
+        quick top-level read of what is happening on the grid right now.
       </p>
-      <p id="gridSnapshotUpdated" class="grid-snapshot-updated loading-placeholder">Last updated: loading...</p>
     </div>
 
     <div class="grid-dashboard-layout">
@@ -229,7 +219,7 @@
 
       <article class="generation-mix-panel generation-mix-panel-featured">
         <div class="generation-mix-header">
-          <p class="eyebrow">Generation mix</p>
+          <p class="eyebrow grid-metric-kicker">Current generation mix</p>
         </div>
 
         <div id="generationMixVisual" class="generation-mix-visual loading-placeholder">
@@ -255,12 +245,12 @@
 
   <section id="carbon-price-relationship" class="data-chart-section">
     <div class="data-chart-section-heading">
-      <p class="eyebrow">Section Three</p>
-      <h2>Carbon / price relationship</h2>
+      <p class="eyebrow">Market signals</p>
+      <h2>Clean power, complex bills</h2>
       <p>
-        These charts will extend the live dashboard above, showing how carbon
-        intensity and wholesale power price move over time using the same
-        underlying data sources.
+        Wind and solar can undercut fossil generation because they do not need to buy
+        fuel to produce power. That means cleaner periods often bring lower wholesale
+        prices, although demand and system conditions still shape the final price.
       </p>
     </div>
 
@@ -268,13 +258,13 @@
       <article class="data-chart-row">
         <div class="data-chart-card-header">
           <p class="eyebrow">Carbon intensity</p>
-          <h3>GB carbon intensity over time</h3>
+          <h3>Cleaner periods come and go through the day</h3>
           <p>
-            This chart shows the last 24 hours of actual national GB carbon
-            intensity data from the official NESO Carbon Intensity API, aligned
-            to the same rolling half-hour window as the charts below.
+            Carbon intensity moves through the day as weather, demand, and system
+            conditions change. Windy, sunny, and lower-demand periods usually mean
+            cleaner electricity, while tighter periods tend to rely more on
+            higher-carbon generation.
           </p>
-          <p id="lastUpdatedText" class="data-chart-updated">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
@@ -287,12 +277,13 @@
       <article class="data-chart-row">
         <div class="data-chart-card-header">
           <p class="eyebrow">Wholesale price</p>
-          <h3>GB power price over time</h3>
+          <h3>More clean supply can mean cheaper power</h3>
           <p>
-            This chart shows the last 24 hours of wholesale electricity prices
-            using the same Elexon market price data as the live dashboard above.
+            When low-carbon supply is high, wholesale prices often fall because more
+            zero-fuel-cost generation is available. But demand still matters: prices
+            can stay high during busy periods or fall overnight even when carbon
+            intensity is less favourable.
           </p>
-          <p id="powerPriceUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
@@ -305,12 +296,13 @@
       <article class="data-chart-row">
         <div class="data-chart-card-header">
           <p class="eyebrow">Generation mix</p>
-          <h3>GB generation mix over time</h3>
+          <h3>The mix explains the price signal</h3>
           <p>
-            This chart shows the last 24 hours of GB generation mix, using the
-            same generation mix source that powers the live dashboard above.
+            The generation stack shows what is driving the system at each point in
+            the day. More wind, solar, nuclear, and interconnector output can reduce
+            the need for fossil generation, helping explain both lower carbon
+            intensity and lower prices.
           </p>
-          <p id="generationMixOverTimeUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
@@ -324,9 +316,9 @@
     <div class="data-section-subtitle">
       <h3>However...</h3>
       <p>
-        Beyond the live sections above, this page can also hold slower-moving,
-        more reflective comparisons about how the UK system is changing over
-        time and how those changes are being felt by households.
+        Lower wholesale prices are only part of the story. As the grid becomes
+        cleaner, more intermittent, and more constrained, the cost of keeping the
+        system reliable becomes more important.
       </p>
     </div>
 
@@ -334,13 +326,12 @@
       <article class="data-chart-row">
         <div class="data-chart-card-header">
           <p class="eyebrow">Annual system mix</p>
-          <h3>Greening of GB electricity generation mix</h3>
+          <h3>The grid is getting cleaner</h3>
           <p>
-            Annual mean generation shares from NESO's Historic GB Generation Mix,
-            shown as a 100% stacked view of renewable, other low-carbon, fossil,
-            and other generation on the same year range as the bill chart below.
+            GB electricity generation has shifted away from fossil fuels and towards
+            renewables and other low-carbon sources. The long-run direction is clear:
+            the power mix is greener than it used to be.
           </p>
-          <p id="historicalGenerationMixUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
@@ -353,14 +344,12 @@
       <article class="data-chart-row">
         <div class="data-chart-card-header">
           <p class="eyebrow">Consumer cost</p>
-          <h3>Standard annual domestic electricity bill</h3>
+          <h3>But household bills have kept rising</h3>
           <p>
-            Nominal annual domestic standard electricity bill from DESNZ QEP 2.2.1,
-            based on a fixed consumption level of 3,400 kWh/year for the United
-            Kingdom. The x-axis is aligned exactly with the generation mix chart
-            above.
+            On a fixed-consumption basis, the standard annual domestic electricity
+            bill has moved higher. Cleaner generation has not translated neatly into
+            cheaper bills for households.
           </p>
-          <p id="domesticElectricityBillUpdatedText" class="data-chart-updated loading-placeholder">Last updated: loading...</p>
         </div>
 
         <div class="data-chart-frame">
@@ -370,18 +359,36 @@
         </div>
       </article>
 
-      <article class="data-chart-row">
-        <div class="data-chart-card-header">
-          <h3>Why this matters</h3>
+      <article class="data-chart-row data-chart-row-takeaway">
+        <div class="data-chart-card-header data-chart-card-header-takeaway">
+          <div class="data-takeaway-heading">
+            <div>
+              <p class="eyebrow">Final takeaway</p>
+              <h3>Cheap power is not the same as a cheap system</h3>
+            </div>
+          </div>
           <p>
-            This final card can become a more text-led space for notes,
-            observations, or framing about what these slower-moving data views
-            mean in practice.
+            Renewables can reduce the cost of producing electricity when the weather
+            is favourable. The next challenge is making sure the wider system costs
+            of a cleaner, more variable grid are managed fairly and efficiently.
           </p>
-        </div>
-
-        <div class="data-chart-frame">
-          <div class="data-chart-placeholder">Text or visual placeholder</div>
+          <p>
+            The transition is not just about replacing fossil fuel with clean
+            generation. It is also about building the tools that keep a cleaner,
+            more variable grid reliable: flexibility, storage, networks, balancing,
+            and long-term investment support.
+          </p>
+          <p>
+            As electricity demand grows, these non-energy costs will matter more.
+            The policy challenge is to reduce them over time through better grid
+            planning, smarter flexibility markets, faster connections, and investment
+            models that lower risk without overloading consumer bills.
+          </p>
+          <p>
+            In other words, the goal is not just cheaper clean power. It is a cleaner
+            electricity system that is reliable, investable, and affordable for
+            consumers.
+          </p>
         </div>
       </article>
     </div>
