@@ -1,12 +1,19 @@
 {
-  "last_updated": "2026-04-27 04:03 UTC",
+  "last_updated": "2026-04-27 14:32 UTC",
   "r_and_d": [
     {
-      "headline": "New Candidate EOSC Nodes strengthen the EOSC Federation and support the European Research Area",
+      "headline": "Third EU-North Macedonia Horizon Europe Joint Research and Innovation Committee meeting",
       "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/new-candidate-eosc-nodes-strengthen-eosc-federation-and-support-european-research-area-2026-04-23_en",
-      "published_at": "2026-04-23T07:55:14Z",
-      "display_date": "23 April 2026"
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/third-eu-north-macedonia-horizon-europe-joint-research-and-innovation-committee-meeting-2026-04-22_en",
+      "published_at": "2026-04-27T08:16:50Z",
+      "display_date": "27 April 2026"
+    },
+    {
+      "headline": "EU to strengthen regional dimension of research and innovation",
+      "source": "EU Research & Innovation",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_873",
+      "published_at": "2026-04-27T06:45:01Z",
+      "display_date": "27 April 2026"
     },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -23,13 +30,6 @@
       "display_date": "23 April 2026"
     },
     {
-      "headline": "Third EU-North Macedonia Horizon Europe Joint Research and Innovation Committee meeting",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/third-eu-north-macedonia-horizon-europe-joint-research-and-innovation-committee-meeting-2026-04-22_en",
-      "published_at": "2026-04-22T12:39:37Z",
-      "display_date": "22 April 2026"
-    },
-    {
       "headline": "Apply Now: 2026 Waste to Energy and Materials Technical Assistance for State, Local, and Tribal Governments",
       "source": "DOE Hydrogen & Fuel Cells",
       "link": "https://www.energy.gov/cmei/fuels/articles/apply-now-2026-waste-energy-and-materials-technical-assistance-state-local-and",
@@ -39,18 +39,25 @@
   ],
   "policy": [
     {
+      "headline": "RIIO-3 Network Innovation Allowance (NIA) governance",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/guidance/riio-3-network-innovation-allowance-nia-governance",
+      "published_at": "2026-04-27T12:00:00Z",
+      "display_date": "27 April 2026"
+    },
+    {
+      "headline": "Statement by the Commission and the High Representative ahead of the 40 years since the Chornobyl disaster",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_889",
+      "published_at": "2026-04-27T06:53:33Z",
+      "display_date": "27 April 2026"
+    },
+    {
       "headline": "Gas and Oil Coordination Groups take stock of situation on gas and oil markets",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/gas-and-oil-coordination-groups-take-stock-situation-gas-and-oil-markets-2026-04-24_en",
       "published_at": "2026-04-24T16:37:21Z",
       "display_date": "24 April 2026"
-    },
-    {
-      "headline": "LIFE Calls for proposals 2026: \u20ac601.5 million for a greener, more competitive Europe",
-      "source": "DG Energy",
-      "link": "https://cinea.ec.europa.eu/news-events/news/life-calls-proposals-2026-eu6015-million-greener-more-competitive-europe-2026-04-22_en",
-      "published_at": "2026-04-23T12:01:53Z",
-      "display_date": "23 April 2026"
     },
     {
       "headline": "Energy Markets Markets Forum - April 2026 28 April 2026 3pm to 5pm Join us for all the latest updates across Markets at NESO. There will also be a Q&A session at the end. Registration for the event\u2026 Events",
@@ -65,13 +72,6 @@
       "link": "https://www.neso.energy/calendar/operational-transparency-forum-29-apr-2026",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-03-25T00:00:00Z",
-      "display_date": "25 March 2026"
     }
   ]
 }
