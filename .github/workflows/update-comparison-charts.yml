@@ -10,6 +10,8 @@ on:
       - "scripts/fetch_live_power_price_data.py"
       - "scripts/fetch_generation_mix_over_time.py"
       - "scripts/fetch_live_grid_snapshot.py"
+      - "scripts/validate_site.py"
+      - "requirements.txt"
       - ".github/workflows/update-comparison-charts.yml"
 
 jobs:
@@ -28,8 +30,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install pandas
-        run: python -m pip install pandas
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
 
       - name: Run carbon intensity script
         run: python scripts/fetch_live_carbon_data.py
@@ -42,6 +44,9 @@ jobs:
 
       - name: Run live grid snapshot script
         run: python scripts/fetch_live_grid_snapshot.py
+
+      - name: Validate site data
+        run: python scripts/validate_site.py
 
       - name: Commit updated comparison chart data
         run: |

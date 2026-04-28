@@ -5,6 +5,8 @@ on:
   push:
     paths:
       - "scripts/fetch_generation_mix_over_time.py"
+      - "scripts/validate_site.py"
+      - "requirements.txt"
       - ".github/workflows/update-generation-mix-data.yml"
 
 jobs:
@@ -23,11 +25,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install pandas
-        run: python -m pip install pandas
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
 
       - name: Run generation mix data script
         run: python scripts/fetch_generation_mix_over_time.py
+
+      - name: Validate site data
+        run: python scripts/validate_site.py
 
       - name: Commit updated data files
         run: |

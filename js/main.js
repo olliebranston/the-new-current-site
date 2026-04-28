@@ -1487,29 +1487,69 @@ function formatRadarMeta(item) {
   return "";
 }
 
+function isSafeExternalUrl(url) {
+  if (!url || typeof url !== "string") {
+    return false;
+  }
+
+  try {
+    const parsedUrl = new URL(url);
+    return parsedUrl.protocol === "https:" || parsedUrl.protocol === "http:";
+  } catch (error) {
+    return false;
+  }
+}
+
+function createTextElement(tagName, className, text) {
+  const element = document.createElement(tagName);
+
+  if (className) {
+    element.className = className;
+  }
+
+  element.textContent = text || "";
+  return element;
+}
+
+function createSafeExternalLink(url, text) {
+  if (!isSafeExternalUrl(url)) {
+    return document.createTextNode(text || "");
+  }
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = text || "";
+  return link;
+}
+
+function renderEmptyMessage(container, message) {
+  container.replaceChildren(createTextElement("p", "", message));
+}
+
 function renderRadarItems(container, items) {
   if (!container) {
     return;
   }
 
   if (!items || items.length === 0) {
-    container.innerHTML = "<p>No items available right now.</p>";
+    renderEmptyMessage(container, "No items available right now.");
     return;
   }
 
   const sortedItems = sortItemsByPublishedDate(items).slice(0, 5);
 
-  container.innerHTML = "";
+  container.replaceChildren();
 
   sortedItems.forEach((item) => {
     const wrapper = document.createElement("article");
     wrapper.className = "radar-item";
+    const title = document.createElement("h4");
+    const meta = createTextElement("p", "radar-meta", formatRadarMeta(item));
 
-    wrapper.innerHTML = `
-      <h4><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.headline}</a></h4>
-      <p class="radar-meta">${formatRadarMeta(item)}</p>
-    `;
-
+    title.appendChild(createSafeExternalLink(item.link, item.headline));
+    wrapper.append(title, meta);
     container.appendChild(wrapper);
   });
 }
@@ -1519,14 +1559,18 @@ function renderRecommendation(container, item, labelText) {
     return;
   }
 
-  container.innerHTML = `
-    <article class="recommendation-card">
-      <p class="card-kicker recommendation-card-kicker">${labelText}</p>
-      <h4 class="recommendation-card-title"><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h4>
-      <p class="recommendation-meta recommendation-card-source">${item.source}</p>
-      <p class="recommendation-card-description">${item.description}</p>
-    </article>
-  `;
+  const card = document.createElement("article");
+  card.className = "recommendation-card";
+
+  const kicker = createTextElement("p", "card-kicker recommendation-card-kicker", labelText);
+  const title = document.createElement("h4");
+  title.className = "recommendation-card-title";
+  title.appendChild(createSafeExternalLink(item.link, item.title));
+  const source = createTextElement("p", "recommendation-meta recommendation-card-source", item.source);
+  const description = createTextElement("p", "recommendation-card-description", item.description);
+
+  card.append(kicker, title, source, description);
+  container.replaceChildren(card);
 }
 
 if (radarRAndD || radarPolicy) {
@@ -1633,51 +1677,60 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
   const cards = [];
 
   if (recommendations && recommendations.recommended_read) {
-    cards.push(`
-      <article class="reporting-preview-card">
-        <p class="card-kicker">Recommended</p>
-        <h4><a href="${recommendations.recommended_read.link}" target="_blank" rel="noopener noreferrer">Read</a></h4>
-        <p class="reporting-preview-text">${recommendations.recommended_read.title}</p>
-      </article>
-    `);
+    cards.push({
+      kicker: "Recommended",
+      title: "Read",
+      link: recommendations.recommended_read.link,
+      text: recommendations.recommended_read.title
+    });
   }
 
   if (recommendations && recommendations.recommended_listen) {
-    cards.push(`
-      <article class="reporting-preview-card">
-        <p class="card-kicker">Recommended</p>
-        <h4><a href="${recommendations.recommended_listen.link}" target="_blank" rel="noopener noreferrer">Listen</a></h4>
-        <p class="reporting-preview-text">${recommendations.recommended_listen.title}</p>
-      </article>
-    `);
+    cards.push({
+      kicker: "Recommended",
+      title: "Listen",
+      link: recommendations.recommended_listen.link,
+      text: recommendations.recommended_listen.title
+    });
   }
 
   if (newsData && newsData.r_and_d && newsData.r_and_d.length > 0) {
-    cards.push(`
-      <article class="reporting-preview-card">
-        <p class="card-kicker">Latest</p>
-        <h4><a href="${newsData.r_and_d[0].link}" target="_blank" rel="noopener noreferrer">R&amp;D</a></h4>
-        <p class="reporting-preview-text">${newsData.r_and_d[0].headline}</p>
-      </article>
-    `);
+    cards.push({
+      kicker: "Latest",
+      title: "R&D",
+      link: newsData.r_and_d[0].link,
+      text: newsData.r_and_d[0].headline
+    });
   }
 
   if (newsData && newsData.policy && newsData.policy.length > 0) {
-    cards.push(`
-      <article class="reporting-preview-card">
-        <p class="card-kicker">Latest</p>
-        <h4><a href="${newsData.policy[0].link}" target="_blank" rel="noopener noreferrer">Policy</a></h4>
-        <p class="reporting-preview-text">${newsData.policy[0].headline}</p>
-      </article>
-    `);
+    cards.push({
+      kicker: "Latest",
+      title: "Policy",
+      link: newsData.policy[0].link,
+      text: newsData.policy[0].headline
+    });
   }
 
   if (cards.length === 0) {
-    container.innerHTML = "<p>No reporting preview available right now.</p>";
+    renderEmptyMessage(container, "No reporting preview available right now.");
     return;
   }
 
-  container.innerHTML = cards.join("");
+  container.replaceChildren();
+
+  cards.forEach((cardData) => {
+    const card = document.createElement("article");
+    card.className = "reporting-preview-card";
+
+    const kicker = createTextElement("p", "card-kicker", cardData.kicker);
+    const title = document.createElement("h4");
+    title.appendChild(createSafeExternalLink(cardData.link, cardData.title));
+    const text = createTextElement("p", "reporting-preview-text", cardData.text);
+
+    card.append(kicker, title, text);
+    container.appendChild(card);
+  });
 }
 
 function formatArticleDate(dateString) {

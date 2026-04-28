@@ -59,7 +59,8 @@
 </script>
 </head>
 <body>
- <header class="site-header">
+<!-- site-header:start -->
+<header class="site-header">
   <div class="site-header-inner">
     <a href="../index.html" class="site-brand">The New Current</a>
 
@@ -74,6 +75,7 @@
     <a href="mailto:ollie.branston123@gmail.com" class="contact-button">Contact</a>
   </div>
 </header>
+<!-- site-header:end -->
 
   <main class="article-page">
     <article class="article-content">
@@ -234,9 +236,31 @@
           </em>
         </p>
       </section>
-    </article>
+      <!-- article-navigation:start -->
+<nav class="article-navigation" aria-label="Article navigation">
+  <a class="article-navigation-back" href="../thought-pieces.html">Back to Thought Pieces</a>
+  <div class="article-navigation-grid">
+      <a class="article-navigation-card" href="article-4.html">
+        <span class="article-navigation-label">Previous</span>
+        <span>Asif Sheikh on the case for CCUS</span>
+      </a>
+      <a class="article-navigation-card" href="article-6.html">
+        <span class="article-navigation-label">Next</span>
+        <span>Samuel Pachoud on market-led vs planned energy systems</span>
+      </a>
+  </div>
+  <div class="article-navigation-related">
+    <p class="article-navigation-label">Related</p>
+    <ul>
+        <li><a href="article-6.html">Samuel Pachoud on market-led vs planned energy systems</a></li>
+        <li><a href="article-4.html">Asif Sheikh on the case for CCUS</a></li>
+    </ul>
+  </div>
+</nav>
+      <!-- article-navigation:end -->
+</article>
   </main>
-
+<!-- site-footer:start -->
 <footer class="site-footer">
   <div class="site-footer-inner">
     <div class="footer-top">
@@ -275,6 +299,7 @@
     </div>
   </div>
 </footer>
+<!-- site-footer:end -->
   <script src="../js/main.js"></script>
 </body>
 </html>

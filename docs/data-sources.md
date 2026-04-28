@@ -1,0 +1,30 @@
+# Data Sources
+
+This inventory documents the source URLs currently used by the data scripts. It is informational only; source URL constants remain in the scripts for now.
+
+| Source | URL | Owning script | Output | Workflow |
+| --- | --- | --- | --- | --- |
+| Carbon Intensity API - intensity | `https://api.carbonintensity.org.uk/intensity/{from_time}/pt24h` | `scripts/fetch_live_carbon_data.py` | `data/carbon-chart-data.json`, live/cleaned carbon CSVs | `update-comparison-charts.yml`, `update-carbon-data.yml` |
+| Carbon Intensity API - generation mix | `https://api.carbonintensity.org.uk/generation/{from_time}/pt24h` | `scripts/fetch_generation_mix_over_time.py` | `data/generation-mix-chart-data.json`, live/cleaned generation mix CSVs | `update-comparison-charts.yml`, `update-generation-mix-data.yml` |
+| Carbon Intensity API - current intensity | `https://api.carbonintensity.org.uk/intensity` | `scripts/fetch_live_grid_snapshot.py` | `data/live-grid-snapshot.json` | `update-comparison-charts.yml`, `update-live-grid-snapshot.yml` |
+| Carbon Intensity API - current generation | `https://api.carbonintensity.org.uk/generation` | `scripts/fetch_live_grid_snapshot.py` | `data/live-grid-snapshot.json` | `update-comparison-charts.yml`, `update-live-grid-snapshot.yml` |
+| Elexon BMRS API | `https://data.elexon.co.uk/bmrs/api/v1` | `scripts/fetch_live_power_price_data.py`, `scripts/fetch_live_grid_snapshot.py` | `data/power-price-chart-data.json`, `data/live-grid-snapshot.json`, power price CSVs | `update-comparison-charts.yml`, `update-power-price-data.yml`, `update-live-grid-snapshot.yml` |
+| NESO historic generation mix page | `https://www.neso.energy/data-portal/historic-generation-mix/historic_gb_generation_mix` | `scripts/fetch_green_generation_bills_data.py` | `data/green-generation-bills-chart-data.json`, `data/gb-generation-mix-annual-data.csv` | `update-green-generation-bills-data.yml` |
+| NESO historic generation mix CSV | `https://api.neso.energy/dataset/88313ae5-94e4-4ddc-a790-593554d8c6b9/resource/f93d1835-75bc-43e5-84ad-12472b180a98/download/df_fuel_ckan.csv` | `scripts/fetch_green_generation_bills_data.py` | `data/green-generation-bills-chart-data.json`, `data/gb-generation-mix-annual-data.csv` | `update-green-generation-bills-data.yml` |
+| NESO SQL API | `https://api.neso.energy/api/3/action/datastore_search_sql` | `scripts/fetch_green_generation_bills_data.py`, `scripts/fetch_live_grid_snapshot.py` | `data/green-generation-bills-chart-data.json`, `data/live-grid-snapshot.json` | `update-green-generation-bills-data.yml`, `update-comparison-charts.yml` |
+| DESNZ annual domestic energy price statistics | `https://www.gov.uk/government/statistical-data-sets/annual-domestic-energy-price-statistics` | `scripts/fetch_green_generation_bills_data.py` | `data/green-generation-bills-chart-data.json`, `data/uk-domestic-electricity-bills-annual-data.csv` | `update-green-generation-bills-data.yml` |
+| DESNZ QEP 2.2.1 workbook fallback | `https://assets.publishing.service.gov.uk/media/69ca3804b66ff902f45443ce/table_221.xlsx` | `scripts/fetch_green_generation_bills_data.py` | `data/green-generation-bills-chart-data.json`, `data/uk-domestic-electricity-bills-annual-data.csv` | `update-green-generation-bills-data.yml` |
+| Ofgem data portal note | `https://www.ofgem.gov.uk/news-and-insight/data/data-portal` | `scripts/fetch_green_generation_bills_data.py` | Metadata hook only in `data/green-generation-bills-chart-data.json` | `update-green-generation-bills-data.yml` |
+| EU Research & Innovation RSS | `https://research-and-innovation.ec.europa.eu/node/2/rss_en` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| DOE Hydrogen & Fuel Cells RSS | `https://www.energy.gov/rss/eere-fuelcells/904691` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| Hydrogen Program news | `https://www.energy.gov/eere/fuelcells/listings/hydrogen-and-fuel-cell-news` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| JRC SES news | `https://ses.jrc.ec.europa.eu/news-events` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| CORDIS energy page | `https://cordis.europa.eu/domain-of-application/energy` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| DG Energy RSS | `https://energy.ec.europa.eu/node/2/rss_en` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| DESNZ news page | `https://www.gov.uk/government/organisations/department-for-energy-security-and-net-zero` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| Ofgem RSS | `https://www.ofgem.gov.uk/rss.xml` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| ACER news | `https://acer.europa.eu/news-and-events/news` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| NESO news and events | `https://www.neso.energy/news-and-events` | `scripts/fetch_news_radar.py` | `data/news-radar.json` | `update-news-radar.yml` |
+| ONS greenhouse gas emissions source | `https://download.ons.gov.uk/downloads/datasets/uk-environmental-accounts-atmospheric-emissions-greenhouse-gas-emissions-by-economic-sector-and-gas/editions/current/versions/30.xlsx` | `scripts/inspect_uk_carbon_accounting_sources.py` | `data/uk-carbon-accounting-source-inspection.json` | `inspect-uk-carbon-accounting-sources.yml` |
+| Defra UK consumption footprint source | `https://assets.publishing.service.gov.uk/media/68220f6dd9c9bb76078f7f5f/Defra22_results_UK.ods` | `scripts/inspect_uk_carbon_accounting_sources.py` | `data/uk-carbon-accounting-source-inspection.json` | `inspect-uk-carbon-accounting-sources.yml` |
+| ONS population estimates source | `https://download.ons.gov.uk/downloads/datasets/population-estimates-timeseries-dataset/editions/time-series/versions/70.xlsx` | `scripts/inspect_uk_carbon_accounting_sources.py` | `data/uk-carbon-accounting-source-inspection.json` | `inspect-uk-carbon-accounting-sources.yml` |

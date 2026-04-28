@@ -1,0 +1,59 @@
+name: Site quality
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "*.html"
+      - "articles/*.html"
+      - "content/**"
+      - "css/**"
+      - "data/**"
+      - "docs/**"
+      - "js/**"
+      - "scripts/**"
+      - "templates/**"
+      - ".github/workflows/**"
+      - "requirements.txt"
+      - "robots.txt"
+      - "sitemap.xml"
+  pull_request:
+    paths:
+      - "*.html"
+      - "articles/*.html"
+      - "content/**"
+      - "css/**"
+      - "data/**"
+      - "docs/**"
+      - "js/**"
+      - "scripts/**"
+      - "templates/**"
+      - ".github/workflows/**"
+      - "requirements.txt"
+      - "robots.txt"
+      - "sitemap.xml"
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Validate static site
+        run: python scripts/validate_site.py
+
+      - name: Smoke test local static site
+        run: python scripts/smoke_test_site.py
+
+      - name: Report image sizes
+        run: python scripts/image_size_report.py
