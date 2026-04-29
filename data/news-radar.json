@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-29 04:07 UTC",
+  "last_updated": "2026-04-29 14:35 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,18 +39,25 @@
   ],
   "policy": [
     {
-      "headline": "In focus: EU energy security explained",
+      "headline": "Successful first round of the EU Hydrogen Mechanism to support market development, providing value added to the industry",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/focus-eu-energy-security-explained-2026-04-20_en",
-      "published_at": "2026-04-27T16:35:33Z",
-      "display_date": "27 April 2026"
+      "link": "https://energy.ec.europa.eu/news/successful-first-round-eu-hydrogen-mechanism-support-market-development-providing-value-added-2026-04-29_en",
+      "published_at": "2026-04-29T13:40:20Z",
+      "display_date": "29 April 2026"
     },
     {
-      "headline": "Statement by the Commission and the High Representative ahead of the 40 years since the Chornobyl disaster",
+      "headline": "Speech by President von der Leyen at the European Parliament plenary debate on the EU strategy in response to the ongoing Middle East crisis",
       "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_889",
-      "published_at": "2026-04-27T06:53:33Z",
-      "display_date": "27 April 2026"
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/SPEECH_26_923",
+      "published_at": "2026-04-29T12:39:27Z",
+      "display_date": "29 April 2026"
+    },
+    {
+      "headline": "Green Gas Support Scheme Quarterly Report Issue 18",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/transparency-document/green-gas-support-scheme-quarterly-report-issue-18",
+      "published_at": "2026-04-29T12:00:00Z",
+      "display_date": "29 April 2026"
     },
     {
       "headline": "Systems operation Operational Transparency Forum 29 Apr 2026 29 April 2026 11am to 12pm Our weekly Operational Transparency Forum (OTF) is where experts from the NESO review the previous week\u2019s activities, provide an update\u2026 Events",
@@ -65,13 +72,6 @@
       "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-30-april-2026",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-03-25T00:00:00Z",
-      "display_date": "25 March 2026"
     }
   ]
 }
