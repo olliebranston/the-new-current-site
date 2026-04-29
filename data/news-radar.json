@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-04-28 18:09 UTC",
+  "last_updated": "2026-04-29 04:07 UTC",
   "r_and_d": [
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation-0",
+      "published_at": "2026-04-28T00:00:00Z",
+      "display_date": "28 April 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy-0",
+      "published_at": "2026-04-28T00:00:00Z",
+      "display_date": "28 April 2026"
+    },
     {
       "headline": "Third EU-North Macedonia Horizon Europe Joint Research and Innovation Committee meeting",
       "source": "EU Research & Innovation",
@@ -16,20 +30,6 @@
       "display_date": "27 April 2026"
     },
     {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation-0",
-      "published_at": "2026-04-23T00:00:00Z",
-      "display_date": "23 April 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy-0",
-      "published_at": "2026-04-23T00:00:00Z",
-      "display_date": "23 April 2026"
-    },
-    {
       "headline": "Apply Now: 2026 Waste to Energy and Materials Technical Assistance for State, Local, and Tribal Governments",
       "source": "DOE Hydrogen & Fuel Cells",
       "link": "https://www.energy.gov/cmei/fuels/articles/apply-now-2026-waste-energy-and-materials-technical-assistance-state-local-and",
@@ -38,20 +38,6 @@
     }
   ],
   "policy": [
-    {
-      "headline": "A service shaped by users: our heat networks digital service is open for registration",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/blog/service-shaped-users-our-heat-networks-digital-service-open-registration",
-      "published_at": "2026-04-28T12:00:00Z",
-      "display_date": "28 April 2026"
-    },
-    {
-      "headline": "Understand your energy costs if you are not protected by the energy price cap",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/news/understand-your-energy-costs-if-you-are-not-protected-energy-price-cap",
-      "published_at": "2026-04-28T12:00:00Z",
-      "display_date": "28 April 2026"
-    },
     {
       "headline": "In focus: EU energy security explained",
       "source": "DG Energy",
@@ -67,11 +53,25 @@
       "display_date": "27 April 2026"
     },
     {
-      "headline": "Energy Markets Markets Forum - April 2026 28 April 2026 3pm to 5pm Join us for all the latest updates across Markets at NESO. There will also be a Q&A session at the end. Registration for the event\u2026 Events",
+      "headline": "Systems operation Operational Transparency Forum 29 Apr 2026 29 April 2026 11am to 12pm Our weekly Operational Transparency Forum (OTF) is where experts from the NESO review the previous week\u2019s activities, provide an update\u2026 Events",
       "source": "NESO",
-      "link": "https://www.neso.energy/calendar/markets-forum-april-2026",
+      "link": "https://www.neso.energy/calendar/operational-transparency-forum-29-apr-2026",
       "published_at": "2026-04-13T00:00:00Z",
       "display_date": "13 April 2026"
+    },
+    {
+      "headline": "Codes Transmission Charging Methodologies Forum \u2026 30 April 2026 10am to 12:30pm Transmission Charging Methodologies Forum (TCMF) established under the Connection and Use of System Code (CUSC) to provide a\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-30-april-2026",
+      "published_at": "2026-04-13T00:00:00Z",
+      "display_date": "13 April 2026"
+    },
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-03-25T00:00:00Z",
+      "display_date": "25 March 2026"
     }
   ]
 }
