@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-04-29 14:35 UTC",
+  "last_updated": "2026-04-30 04:09 UTC",
   "r_and_d": [
+    {
+      "headline": "Fundamental Research",
+      "source": "CORDIS Energy",
+      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
+      "published_at": "2026-04-29T00:00:00Z",
+      "display_date": "29 April 2026"
+    },
+    {
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-04-29T00:00:00Z",
+      "display_date": "29 April 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
@@ -21,35 +35,21 @@
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/third-eu-north-macedonia-horizon-europe-joint-research-and-innovation-committee-meeting-2026-04-22_en",
       "published_at": "2026-04-27T08:16:50Z",
       "display_date": "27 April 2026"
-    },
-    {
-      "headline": "EU to strengthen regional dimension of research and innovation",
-      "source": "EU Research & Innovation",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_873",
-      "published_at": "2026-04-27T06:45:01Z",
-      "display_date": "27 April 2026"
-    },
-    {
-      "headline": "Apply Now: 2026 Waste to Energy and Materials Technical Assistance for State, Local, and Tribal Governments",
-      "source": "DOE Hydrogen & Fuel Cells",
-      "link": "https://www.energy.gov/cmei/fuels/articles/apply-now-2026-waste-energy-and-materials-technical-assistance-state-local-and",
-      "published_at": "2026-04-16T13:00:00Z",
-      "display_date": "16 April 2026"
     }
   ],
   "policy": [
+    {
+      "headline": "President von der Leyen at the European Parliament on the EU strategy in response to the ongoing Middle East crisis, including its implications on energy prices",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/SPEECH_26_923",
+      "published_at": "2026-04-29T15:01:57Z",
+      "display_date": "29 April 2026"
+    },
     {
       "headline": "Successful first round of the EU Hydrogen Mechanism to support market development, providing value added to the industry",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/successful-first-round-eu-hydrogen-mechanism-support-market-development-providing-value-added-2026-04-29_en",
       "published_at": "2026-04-29T13:40:20Z",
-      "display_date": "29 April 2026"
-    },
-    {
-      "headline": "Speech by President von der Leyen at the European Parliament plenary debate on the EU strategy in response to the ongoing Middle East crisis",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/SPEECH_26_923",
-      "published_at": "2026-04-29T12:39:27Z",
       "display_date": "29 April 2026"
     },
     {
