@@ -69,10 +69,16 @@ const generationMixLabelsPlugin = {
 
     labelLayer.innerHTML = "";
 
-    meta.data.forEach((arc, index) => {
-      const value = dataset.data[index];
+    const labelsBySide = {
+      left: [],
+      right: []
+    };
+    const minimumLabelGap = 18;
 
-      if (!value || value < 2) {
+    meta.data.forEach((arc, index) => {
+      const value = Number(dataset.data[index]);
+
+      if (!Number.isFinite(value) || value <= 0) {
         return;
       }
 
@@ -81,12 +87,31 @@ const generationMixLabelsPlugin = {
       const x = arc.x + Math.cos(angle) * (arc.outerRadius + 16);
       const y = arc.y + Math.sin(angle) * (arc.outerRadius + 16);
       const isRightSide = Math.cos(angle) >= 0;
-      const labelNode = document.createElement("div");
-      labelNode.className = `generation-mix-chart-label ${isRightSide ? "generation-mix-chart-label-right" : "generation-mix-chart-label-left"}`;
-      labelNode.style.left = `${x}px`;
-      labelNode.style.top = `${y}px`;
-      labelNode.textContent = label;
-      labelLayer.appendChild(labelNode);
+
+      labelsBySide[isRightSide ? "right" : "left"].push({
+        label,
+        x,
+        y,
+        isRightSide
+      });
+    });
+
+    Object.values(labelsBySide).forEach((labels) => {
+      labels
+        .sort((a, b) => a.y - b.y)
+        .forEach((labelPosition, index) => {
+          if (index > 0) {
+            const previousLabel = labels[index - 1];
+            labelPosition.y = Math.max(labelPosition.y, previousLabel.y + minimumLabelGap);
+          }
+
+          const labelNode = document.createElement("div");
+          labelNode.className = `generation-mix-chart-label ${labelPosition.isRightSide ? "generation-mix-chart-label-right" : "generation-mix-chart-label-left"}`;
+          labelNode.style.left = `${labelPosition.x}px`;
+          labelNode.style.top = `${labelPosition.y}px`;
+          labelNode.textContent = labelPosition.label;
+          labelLayer.appendChild(labelNode);
+        });
     });
   }
 };
