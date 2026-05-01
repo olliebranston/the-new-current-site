@@ -1,6 +1,27 @@
 {
-  "last_updated": "2026-04-30 04:09 UTC",
+  "last_updated": "2026-05-01 18:41 UTC",
   "r_and_d": [
+    {
+      "headline": "Boosting knowledge circulation: new study on economic impact of possible measures",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/boosting-knowledge-circulation-new-study-economic-impact-possible-measures-2026-04-30_en",
+      "published_at": "2026-04-30T09:41:58Z",
+      "display_date": "30 April 2026"
+    },
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation",
+      "published_at": "2026-04-30T00:00:00Z",
+      "display_date": "30 April 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy",
+      "published_at": "2026-04-30T00:00:00Z",
+      "display_date": "30 April 2026"
+    },
     {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
@@ -14,64 +35,43 @@
       "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
       "published_at": "2026-04-29T00:00:00Z",
       "display_date": "29 April 2026"
-    },
-    {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation-0",
-      "published_at": "2026-04-28T00:00:00Z",
-      "display_date": "28 April 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy-0",
-      "published_at": "2026-04-28T00:00:00Z",
-      "display_date": "28 April 2026"
-    },
-    {
-      "headline": "Third EU-North Macedonia Horizon Europe Joint Research and Innovation Committee meeting",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/third-eu-north-macedonia-horizon-europe-joint-research-and-innovation-committee-meeting-2026-04-22_en",
-      "published_at": "2026-04-27T08:16:50Z",
-      "display_date": "27 April 2026"
     }
   ],
   "policy": [
     {
-      "headline": "President von der Leyen at the European Parliament on the EU strategy in response to the ongoing Middle East crisis, including its implications on energy prices",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/SPEECH_26_923",
-      "published_at": "2026-04-29T15:01:57Z",
-      "display_date": "29 April 2026"
-    },
-    {
-      "headline": "Successful first round of the EU Hydrogen Mechanism to support market development, providing value added to the industry",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/successful-first-round-eu-hydrogen-mechanism-support-market-development-providing-value-added-2026-04-29_en",
-      "published_at": "2026-04-29T13:40:20Z",
-      "display_date": "29 April 2026"
-    },
-    {
-      "headline": "Green Gas Support Scheme Quarterly Report Issue 18",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/transparency-document/green-gas-support-scheme-quarterly-report-issue-18",
-      "published_at": "2026-04-29T12:00:00Z",
-      "display_date": "29 April 2026"
-    },
-    {
-      "headline": "Systems operation Operational Transparency Forum 29 Apr 2026 29 April 2026 11am to 12pm Our weekly Operational Transparency Forum (OTF) is where experts from the NESO review the previous week\u2019s activities, provide an update\u2026 Events",
+      "headline": "Strategic planning Developing the SSEP together: transparency, collaboration\u2026 1 May 2026 - 3 minute read We brought energy developers together for the latest Strategic Spatial Energy Plan (SSEP) workshops\u2026",
       "source": "NESO",
-      "link": "https://www.neso.energy/calendar/operational-transparency-forum-29-apr-2026",
-      "published_at": "2026-04-13T00:00:00Z",
-      "display_date": "13 April 2026"
+      "link": "https://www.neso.energy/news/developing-ssep-together-transparency-collaboration-and-engagement",
+      "published_at": "2026-05-01T00:00:00Z",
+      "display_date": "01 May 2026"
     },
     {
-      "headline": "Codes Transmission Charging Methodologies Forum \u2026 30 April 2026 10am to 12:30pm Transmission Charging Methodologies Forum (TCMF) established under the Connection and Use of System Code (CUSC) to provide a\u2026 Meetings",
+      "headline": "Security of Supply Strengthening energy security through international\u2026 30 Apr 2026 - 3 minute read On 20 and 21 April, NESO hosted its first International Security Roundtable in London. We brought\u2026",
       "source": "NESO",
-      "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-30-april-2026",
-      "published_at": "2026-04-13T00:00:00Z",
-      "display_date": "13 April 2026"
+      "link": "https://www.neso.energy/news/strengthening-energy-security-through-international-partnership",
+      "published_at": "2026-05-01T00:00:00Z",
+      "display_date": "01 May 2026"
+    },
+    {
+      "headline": "Commission assesses with EU countries the security of oil and gas supply as the conflict in the Middle East continues",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-assesses-eu-countries-security-oil-and-gas-supply-conflict-middle-east-continues-2026-04-30_en",
+      "published_at": "2026-04-30T15:22:58Z",
+      "display_date": "30 April 2026"
+    },
+    {
+      "headline": "Commissioner J\u00f8rgensen in Paris for talks on the global clean energy transition and housing affordability",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-paris-talks-global-clean-energy-transition-and-housing-affordability-2026-04-30_en",
+      "published_at": "2026-04-30T11:40:31Z",
+      "display_date": "30 April 2026"
+    },
+    {
+      "headline": "Iran, the Middle East and UK energy: factsheet",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
