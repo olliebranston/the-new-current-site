@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-05-07 04:09 UTC",
+  "last_updated": "2026-05-07 15:08 UTC",
   "r_and_d": [
+    {
+      "headline": "Top scientists to identify future members of European Research Council\u2019s Scientific Council",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/top-scientists-identify-future-members-european-research-councils-scientific-council-2026-05-07_en",
+      "published_at": "2026-05-07T10:02:39Z",
+      "display_date": "07 May 2026"
+    },
     {
       "headline": "Local roots, European reach: New strategy sets direction for research and technology infrastructures",
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/local-roots-european-reach-new-strategy-sets-direction-research-and-technology-infrastructures-2026-05-06_en",
       "published_at": "2026-05-06T06:51:26Z",
       "display_date": "06 May 2026"
-    },
-    {
-      "headline": "Boosting knowledge circulation: new study on economic impact of possible measures",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/boosting-knowledge-circulation-new-study-economic-impact-possible-measures-2026-04-30_en",
-      "published_at": "2026-05-04T13:25:21Z",
-      "display_date": "04 May 2026"
     },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,17 +39,31 @@
   ],
   "policy": [
     {
+      "headline": "EU awards over \u20ac1 billion to European hydrogen projects to accelerate the clean transition",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1004",
+      "published_at": "2026-05-07T13:07:46Z",
+      "display_date": "07 May 2026"
+    },
+    {
+      "headline": "UNC0918 Uniform Network Code (UNC) proposed changes",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/publications/unc0918-uniform-network-code-unc-proposed-changes",
+      "published_at": "2026-05-07T12:00:00Z",
+      "display_date": "07 May 2026"
+    },
+    {
+      "headline": "OFTO build: early and late competition models",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/ofto-build-early-and-late-competition-models",
+      "published_at": "2026-05-07T12:00:00Z",
+      "display_date": "07 May 2026"
+    },
+    {
       "headline": "Commissioner J\u00f8rgensen hosts high-level implementation dialogue on energy efficiency",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-hosts-high-level-implementation-dialogue-energy-efficiency-2026-05-05_en",
       "published_at": "2026-05-05T15:51:32Z",
-      "display_date": "05 May 2026"
-    },
-    {
-      "headline": "2026 European Sustainable Energy Awards: vote for your favourite finalist",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/2026-european-sustainable-energy-awards-vote-your-favourite-finalist-2026-05-05_en",
-      "published_at": "2026-05-05T12:48:42Z",
       "display_date": "05 May 2026"
     },
     {
@@ -58,20 +72,6 @@
       "link": "https://www.neso.energy/news/developing-ssep-together-transparency-collaboration-and-engagement",
       "published_at": "2026-05-01T00:00:00Z",
       "display_date": "01 May 2026"
-    },
-    {
-      "headline": "Security of Supply Strengthening energy security through international\u2026 30 Apr 2026 - 3 minute read On 20 and 21 April, NESO hosted its first International Security Roundtable in London. We brought\u2026",
-      "source": "NESO",
-      "link": "https://www.neso.energy/news/strengthening-energy-security-through-international-partnership",
-      "published_at": "2026-05-01T00:00:00Z",
-      "display_date": "01 May 2026"
-    },
-    {
-      "headline": "Iran, the Middle East and UK energy: factsheet",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
-      "published_at": null,
-      "display_date": null
     }
   ]
 }
