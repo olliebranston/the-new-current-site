@@ -1,33 +1,33 @@
 {
-  "last_updated": "2026-05-08 03:57 UTC",
+  "last_updated": "2026-05-08 14:20 UTC",
   "r_and_d": [
     {
-      "headline": "Top scientists to identify future members of European Research Council\u2019s Scientific Council",
+      "headline": "Boosting knowledge circulation: new study on economic impact of possible measures",
       "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/top-scientists-identify-future-members-european-research-councils-scientific-council-2026-05-07_en",
-      "published_at": "2026-05-07T10:02:39Z",
-      "display_date": "07 May 2026"
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/boosting-knowledge-circulation-new-study-economic-impact-possible-measures-2026-04-30_en",
+      "published_at": "2026-05-08T08:17:33Z",
+      "display_date": "08 May 2026"
+    },
+    {
+      "headline": "Updated ERA living guidelines on the responsible use of generative AI in research",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/updated-era-living-guidelines-responsible-use-generative-ai-research-2026-05-08_en",
+      "published_at": "2026-05-08T07:58:21Z",
+      "display_date": "08 May 2026"
     },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-05-07T00:00:00Z",
-      "display_date": "07 May 2026"
+      "published_at": "2026-05-08T00:00:00Z",
+      "display_date": "08 May 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-05-07T00:00:00Z",
-      "display_date": "07 May 2026"
-    },
-    {
-      "headline": "Local roots, European reach: New strategy sets direction for research and technology infrastructures",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/local-roots-european-reach-new-strategy-sets-direction-research-and-technology-infrastructures-2026-05-06_en",
-      "published_at": "2026-05-06T06:51:26Z",
-      "display_date": "06 May 2026"
+      "published_at": "2026-05-08T00:00:00Z",
+      "display_date": "08 May 2026"
     },
     {
       "headline": "Fundamental Research",
@@ -39,39 +39,39 @@
   ],
   "policy": [
     {
-      "headline": "EU awards over \u20ac1 billion to European hydrogen projects to accelerate the clean transition",
+      "headline": "Commission publishes guidance to support EU transport sector affected by the Middle East crisis",
       "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1004",
-      "published_at": "2026-05-07T13:07:46Z",
-      "display_date": "07 May 2026"
+      "link": "https://transport.ec.europa.eu/news-events/news/commission-publishes-guidance-support-eu-transport-sector-affected-middle-east-crisis-2026-05-08_en",
+      "published_at": "2026-05-08T12:25:38Z",
+      "display_date": "08 May 2026"
     },
     {
-      "headline": "UNC0918 Uniform Network Code (UNC) proposed changes",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/publications/unc0918-uniform-network-code-unc-proposed-changes",
-      "published_at": "2026-05-07T12:00:00Z",
-      "display_date": "07 May 2026"
-    },
-    {
-      "headline": "OFTO build: early and late competition models",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/ofto-build-early-and-late-competition-models",
-      "published_at": "2026-05-07T12:00:00Z",
-      "display_date": "07 May 2026"
-    },
-    {
-      "headline": "Commissioner J\u00f8rgensen hosts high-level implementation dialogue on energy efficiency",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-hosts-high-level-implementation-dialogue-energy-efficiency-2026-05-05_en",
-      "published_at": "2026-05-05T15:51:32Z",
-      "display_date": "05 May 2026"
+      "headline": "Security of Supply How voltage reduction can ensure system stability 8 May 2026 - 4 minute read Great Britain has one of the world\u2019s most secure electricity systems and we work constantly in the\u2026",
+      "source": "NESO",
+      "link": "https://www.neso.energy/news/how-voltage-reduction-can-ensure-system-stability",
+      "published_at": "2026-05-08T00:00:00Z",
+      "display_date": "08 May 2026"
     },
     {
       "headline": "Strategic planning Developing the SSEP together: transparency, collaboration\u2026 1 May 2026 - 3 minute read We brought energy developers together for the latest Strategic Spatial Energy Plan (SSEP) workshops\u2026",
       "source": "NESO",
       "link": "https://www.neso.energy/news/developing-ssep-together-transparency-collaboration-and-engagement",
-      "published_at": "2026-05-01T00:00:00Z",
-      "display_date": "01 May 2026"
+      "published_at": "2026-05-08T00:00:00Z",
+      "display_date": "08 May 2026"
+    },
+    {
+      "headline": "EU prepares coordinated response to address the jet fuel supply situation as the conflict in the Middle East persists",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/eu-prepares-coordinated-response-address-jet-fuel-supply-situation-conflict-middle-east-persists-2026-05-07_en",
+      "published_at": "2026-05-07T16:33:07Z",
+      "display_date": "07 May 2026"
+    },
+    {
+      "headline": "Iran, the Middle East and UK energy: factsheet",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
