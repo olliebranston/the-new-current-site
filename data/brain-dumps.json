@@ -1,11 +1,26 @@
 {
   "notes": [
     {
+      "title": "the primary energy fallacy - and the hidden benefit of electrification",
+      "date": "2026-05-13",
+      "tag": "Useful energy",
+      "content": [
+        "It is often stated that in 2025, global energy demand rose by more than 2,000 TWh 'equivalent', whilst low-emissions supply rose by only 1,300 TWh 'equivalent'. At first glance, this makes it look like clean energy is failing to grow quickly enough to meet new demand, let alone push fossil fuels out of the system.",
+        "This is where the primary energy fallacy becomes important: The primary energy fallacy is the mistake of assuming clean energy has to replace fossil energy on a one-for-one basis. I.e., if the world uses 100 units of fossil primary energy today, the assumption is that it needs 100 units of clean energy to replace it.",
+        "However, primary energy counts fossil fuels before they are burned. This means it counts the energy content of coal, oil and gas before that energy is converted into electricity, motion or heat. Yet with fossil fuels, a large share of that energy never becomes useful and instead is lost as waste heat.",
+        "Lawrence Livermore's energy flow charts show this clearly. The energy system does not just produce useful energy services, it also produces a very large amount of rejected energy. For example, in 2023 Ember estimated that only around 35% of total energy became useful energy, whilst roughly 65% was wasted before becoming useful.",
+        "Electrification changes this - energy becomes much more useful. An electric vehicle does not need to replace all the energy contained in petrol, rather it only needs to replace the useful motion that petrol produced after most of its energy was wasted as heat. EVs are roughly three times more efficient than internal combustion engine vehicles, so they can provide the same mobility with far less energy input.",
+        "Similarly, a heat pump does not need to replace gas input one-for-one either. It can provide the same warmth with three to five times less energy input than a fossil boiler, because it moves heat rather than simply creating it by burning fuel.",
+        "The task is to replace the useful services that fossil fuels provide, not replace every unit of fossil fuel primary energy with a unit of renewable energy. So when low-emissions supply rises by 1,300 TWh equivalent against a 2,000+ TWh equivalent increase in global energy demand, that does not mean clean energy is doing less than 65% of the job. There is still plenty of work to be done, but in useful-energy terms, the progress is larger than the headline comparison suggests.",
+        "When we electrify things like transport, heating and industry, we shrink the amount of energy the system needs to waste in the first place - accelerating the transition."
+      ]
+    },
+    {
       "title": "Keiretsu and Chrysler - an opportunity for CCUS",
       "date": "2026-04-09",
       "tag": "CCUS",
       "content": [
-        "Keiretsu refers to a system of corporate co-ordination established in post-war Japan. Large manufacturers, banks, trading houses and key suppliers were tied together through cross-shareholding, reciprocal commercial dependence and patient finance. This reduced uncertainty, stabilised investment horizons and supported collective problem-solving. Suppliers and financiers were incentiviesed to think beyond short-term contract margins and support end-to-end growth across the value chain.",
+        "Keiretsu refers to a system of corporate co-ordination established in post-war Japan. Large manufacturers, banks, trading houses and key suppliers were tied together through cross-shareholding, reciprocal commercial dependence and patient finance. This reduced uncertainty, stabilised investment horizons and supported collective problem-solving. Suppliers and financiers were incentivised to think beyond short-term contract margins and support end-to-end growth across the value chain.",
         "Chrysler adopted keiretsu-like principles through closer, longer-term supplier partnerships in the 1980s and 90s. Including earlier supplier development and mutual dependence in product development improved co-ordination and could generate gains in cost, speed and quality because suppliers were treated less as bidders and more as invested partners. This model was somewhat fragile within a weaker institutional alignment between capital and industry.",
         "For UK CCUS clusters, challenges must be overcome as risk is managed across the value chain in the face of significant commercial uncertainty. Cluster-level commitment mechanisms between emitters, infrastructure providers, financiers and strategic suppliers could adopt keiretsu principles. Just as in Japan keiretsu helped solve problems like high upfront capital costs, interdependence across multiple firms, and investment risk, in the UK it could support building long-duration commercial relationships, co-ordinated financing structures and stronger incentives for participants to invest in the success of the cluster as a whole."
       ]
@@ -32,6 +47,5 @@
         "This is not to say that the build-out is irrational - clearly, the investors developing these assets are comfortable with revenue projections. However, taking this another step further presents a risk to customers - if large parts of the AI stack carry very high revenue expectations, firms that become deeply reliant on those systems may also be increasing their future exposure to pricing power, taking on future vendor-power risk at exactly the moment the sector is under pressure to prove returns."
       ]
     }
-
   ]
 }
