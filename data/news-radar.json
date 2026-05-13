@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-13 04:27 UTC",
+  "last_updated": "2026-05-13 15:20 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,6 +39,20 @@
   ],
   "policy": [
     {
+      "headline": "Commission provides EU countries with practical examples to address energy crisis",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-provides-eu-countries-practical-examples-address-energy-crisis-2026-05-13_en",
+      "published_at": "2026-05-13T13:29:23Z",
+      "display_date": "13 May 2026"
+    },
+    {
+      "headline": "Strategic Innovation Fund Challenges: 2026 to 2033",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/guidance/strategic-innovation-fund-challenges-2026-2033",
+      "published_at": "2026-05-13T12:00:00Z",
+      "display_date": "13 May 2026"
+    },
+    {
       "headline": "Commission publishes guidance to support EU transport sector affected by the Middle East crisis",
       "source": "DG Energy",
       "link": "https://transport.ec.europa.eu/news-events/news/commission-publishes-guidance-support-eu-transport-sector-affected-middle-east-crisis-2026-05-08_en",
@@ -58,20 +72,6 @@
       "link": "https://www.neso.energy/news/developing-ssep-together-transparency-collaboration-and-engagement",
       "published_at": "2026-05-08T00:00:00Z",
       "display_date": "08 May 2026"
-    },
-    {
-      "headline": "EU prepares coordinated response to address the jet fuel supply situation as the conflict in the Middle East persists",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/eu-prepares-coordinated-response-address-jet-fuel-supply-situation-conflict-middle-east-persists-2026-05-07_en",
-      "published_at": "2026-05-07T16:33:07Z",
-      "display_date": "07 May 2026"
-    },
-    {
-      "headline": "Iran, the Middle East and UK energy: factsheet",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
-      "published_at": null,
-      "display_date": null
     }
   ]
 }
