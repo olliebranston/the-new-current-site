@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-05-15 04:32 UTC",
+  "last_updated": "2026-05-15 14:42 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-05-14T00:00:00Z",
-      "display_date": "14 May 2026"
+      "published_at": "2026-05-11T00:00:00Z",
+      "display_date": "11 May 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-05-14T00:00:00Z",
-      "display_date": "14 May 2026"
+      "published_at": "2026-05-11T00:00:00Z",
+      "display_date": "11 May 2026"
     },
     {
       "headline": "Boosting knowledge circulation: new study on economic impact of possible measures",
@@ -39,11 +39,25 @@
   ],
   "policy": [
     {
-      "headline": "Interconnector capacity hoarding",
+      "headline": "British Gas agrees settlement in relation to Ofgem\u2019s investigation of unfair treatment of prepayment meter customers",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/policy/interconnector-capacity-hoarding",
-      "published_at": "2026-05-14T12:00:00Z",
-      "display_date": "14 May 2026"
+      "link": "https://www.ofgem.gov.uk/press-release/british-gas-agrees-settlement-relation-ofgems-investigation-unfair-treatment-prepayment-meter-customers",
+      "published_at": "2026-05-15T12:00:00Z",
+      "display_date": "15 May 2026"
+    },
+    {
+      "headline": "About NESO More than \u00a33.4 billion in consumer benefits delivered under\u2026 15 May 2026 - 2 minute read Our latest performance report shows how major progress in whole system planning, digitalisation,\u2026",
+      "source": "NESO",
+      "link": "https://www.neso.energy/news/more-ps34-billion-consumer-benefits-delivered-under-riio-2-plus-major-whole-energy-industry-progress-over-last-year",
+      "published_at": "2026-05-15T00:00:00Z",
+      "display_date": "15 May 2026"
+    },
+    {
+      "headline": "Future energy Fintan heads to Whitelee: how demand in Scotland could help\u2026 14 May 2026 - 2 minute read Fintan Slye, NESO CEO, headed to Scotland this week to address the All-Energy Exhibition and\u2026",
+      "source": "NESO",
+      "link": "https://www.neso.energy/news/fintan-heads-whitelee-how-demand-scotland-could-help-lower-long-term-energy-bills",
+      "published_at": "2026-05-15T00:00:00Z",
+      "display_date": "15 May 2026"
     },
     {
       "headline": "Commission provides EU countries with practical examples to address energy crisis",
@@ -57,20 +71,6 @@
       "source": "DG Energy",
       "link": "https://transport.ec.europa.eu/news-events/news/commission-publishes-guidance-support-eu-transport-sector-affected-middle-east-crisis-2026-05-08_en",
       "published_at": "2026-05-08T12:25:38Z",
-      "display_date": "08 May 2026"
-    },
-    {
-      "headline": "Security of Supply How voltage reduction can ensure system stability 8 May 2026 - 4 minute read Great Britain has one of the world\u2019s most secure electricity systems and we work constantly in the\u2026",
-      "source": "NESO",
-      "link": "https://www.neso.energy/news/how-voltage-reduction-can-ensure-system-stability",
-      "published_at": "2026-05-08T00:00:00Z",
-      "display_date": "08 May 2026"
-    },
-    {
-      "headline": "Strategic planning Developing the SSEP together: transparency, collaboration\u2026 1 May 2026 - 3 minute read We brought energy developers together for the latest Strategic Spatial Energy Plan (SSEP) workshops\u2026",
-      "source": "NESO",
-      "link": "https://www.neso.energy/news/developing-ssep-together-transparency-collaboration-and-engagement",
-      "published_at": "2026-05-08T00:00:00Z",
       "display_date": "08 May 2026"
     }
   ]
