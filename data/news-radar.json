@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-18 04:48 UTC",
+  "last_updated": "2026-05-18 16:00 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,6 +39,20 @@
   ],
   "policy": [
     {
+      "headline": "Great Britain Fuel Mix Disclosure 2026: Renewable Energy Guarantees of Origin (REGOs)",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/guidance/great-britain-fuel-mix-disclosure-2026-renewable-energy-guarantees-origin-regos",
+      "published_at": "2026-05-18T12:00:00Z",
+      "display_date": "18 May 2026"
+    },
+    {
+      "headline": "RIIO-ED2 2025 Electricity System Restoration Re-opener",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/riio-ed2-2025-electricity-system-restoration-re-opener",
+      "published_at": "2026-05-18T12:00:00Z",
+      "display_date": "18 May 2026"
+    },
+    {
       "headline": "About NESO More than \u00a33.4 billion in consumer benefits delivered under\u2026 15 May 2026 - 2 minute read Our latest performance report shows how major progress in whole system planning, digitalisation,\u2026",
       "source": "NESO",
       "link": "https://www.neso.energy/news/more-ps34-billion-consumer-benefits-delivered-under-riio-2-plus-major-whole-energy-industry-progress-over-last-year",
@@ -58,20 +72,6 @@
       "link": "https://energy.ec.europa.eu/news/commission-provides-eu-countries-practical-examples-address-energy-crisis-2026-05-13_en",
       "published_at": "2026-05-13T13:29:23Z",
       "display_date": "13 May 2026"
-    },
-    {
-      "headline": "Commission publishes guidance to support EU transport sector affected by the Middle East crisis",
-      "source": "DG Energy",
-      "link": "https://transport.ec.europa.eu/news-events/news/commission-publishes-guidance-support-eu-transport-sector-affected-middle-east-crisis-2026-05-08_en",
-      "published_at": "2026-05-08T12:25:38Z",
-      "display_date": "08 May 2026"
-    },
-    {
-      "headline": "Iran, the Middle East and UK energy: factsheet",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
-      "published_at": null,
-      "display_date": null
     }
   ]
 }
