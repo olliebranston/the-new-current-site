@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-05-18 16:00 UTC",
+  "last_updated": "2026-05-19 04:38 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-05-14T00:00:00Z",
-      "display_date": "14 May 2026"
+      "published_at": "2026-05-18T00:00:00Z",
+      "display_date": "18 May 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-05-14T00:00:00Z",
-      "display_date": "14 May 2026"
+      "published_at": "2026-05-18T00:00:00Z",
+      "display_date": "18 May 2026"
     },
     {
       "headline": "Boosting knowledge circulation: new study on economic impact of possible measures",
@@ -39,17 +39,10 @@
   ],
   "policy": [
     {
-      "headline": "Great Britain Fuel Mix Disclosure 2026: Renewable Energy Guarantees of Origin (REGOs)",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/great-britain-fuel-mix-disclosure-2026-renewable-energy-guarantees-origin-regos",
-      "published_at": "2026-05-18T12:00:00Z",
-      "display_date": "18 May 2026"
-    },
-    {
-      "headline": "RIIO-ED2 2025 Electricity System Restoration Re-opener",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/riio-ed2-2025-electricity-system-restoration-re-opener",
-      "published_at": "2026-05-18T12:00:00Z",
+      "headline": "EU continues to monitor oil market situation and prepares coordinated response to address the jet fuel supply situation",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/eu-continues-monitor-oil-market-situation-and-prepares-coordinated-response-address-jet-fuel-supply-2026-05-18_en",
+      "published_at": "2026-05-18T17:08:01Z",
       "display_date": "18 May 2026"
     },
     {
@@ -72,6 +65,13 @@
       "link": "https://energy.ec.europa.eu/news/commission-provides-eu-countries-practical-examples-address-energy-crisis-2026-05-13_en",
       "published_at": "2026-05-13T13:29:23Z",
       "display_date": "13 May 2026"
+    },
+    {
+      "headline": "Iran, the Middle East and UK energy: factsheet",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
