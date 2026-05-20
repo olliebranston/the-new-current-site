@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-05-20 04:41 UTC",
+  "last_updated": "2026-05-20 16:02 UTC",
   "r_and_d": [
+    {
+      "headline": "Fundamental Research",
+      "source": "CORDIS Energy",
+      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
+      "published_at": "2026-05-19T00:00:00Z",
+      "display_date": "19 May 2026"
+    },
+    {
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-05-19T00:00:00Z",
+      "display_date": "19 May 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
@@ -21,20 +35,6 @@
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/boosting-knowledge-circulation-new-study-economic-impact-possible-measures-2026-04-30_en",
       "published_at": "2026-05-08T08:17:33Z",
       "display_date": "08 May 2026"
-    },
-    {
-      "headline": "Updated ERA living guidelines on the responsible use of generative AI in research",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/updated-era-living-guidelines-responsible-use-generative-ai-research-2026-05-08_en",
-      "published_at": "2026-05-08T07:58:21Z",
-      "display_date": "08 May 2026"
-    },
-    {
-      "headline": "Fundamental Research",
-      "source": "CORDIS Energy",
-      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
-      "published_at": "2026-04-29T00:00:00Z",
-      "display_date": "29 April 2026"
     }
   ],
   "policy": [
@@ -53,18 +53,18 @@
       "display_date": "25 May 2026"
     },
     {
-      "headline": "5 things you should know about nuclear energy",
+      "headline": "Joint readout between Commissioner J\u00f8rgensen and Minister Bowen",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/5-things-you-should-know-about-nuclear-energy-2026-05-19_en",
-      "published_at": "2026-05-19T08:51:30Z",
-      "display_date": "19 May 2026"
+      "link": "https://energy.ec.europa.eu/news/joint-readout-between-commissioner-jorgensen-and-minister-bowen-2026-05-20_en",
+      "published_at": "2026-05-20T15:10:37Z",
+      "display_date": "20 May 2026"
     },
     {
-      "headline": "EU continues to monitor oil market situation and prepares coordinated response to address the jet fuel supply situation",
+      "headline": "Commission approves \u20ac1.3 billion German State aid to support renewable hydrogen production",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/eu-continues-monitor-oil-market-situation-and-prepares-coordinated-response-address-jet-fuel-supply-2026-05-18_en",
-      "published_at": "2026-05-18T17:08:01Z",
-      "display_date": "18 May 2026"
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1096",
+      "published_at": "2026-05-20T11:34:49Z",
+      "display_date": "20 May 2026"
     },
     {
       "headline": "Iran, the Middle East and UK energy: factsheet",
