@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-05-20 16:02 UTC",
+  "last_updated": "2026-05-21 04:50 UTC",
   "r_and_d": [
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation",
+      "published_at": "2026-05-20T00:00:00Z",
+      "display_date": "20 May 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy",
+      "published_at": "2026-05-20T00:00:00Z",
+      "display_date": "20 May 2026"
+    },
     {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
@@ -14,20 +28,6 @@
       "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
       "published_at": "2026-05-19T00:00:00Z",
       "display_date": "19 May 2026"
-    },
-    {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-05-14T00:00:00Z",
-      "display_date": "14 May 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-05-14T00:00:00Z",
-      "display_date": "14 May 2026"
     },
     {
       "headline": "Boosting knowledge circulation: new study on economic impact of possible measures",
