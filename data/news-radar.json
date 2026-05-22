@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-05-22 04:40 UTC",
+  "last_updated": "2026-05-22 15:27 UTC",
   "r_and_d": [
+    {
+      "headline": "Directorate-General of Research and Innovation at the EU Green Week 2026",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/directorate-general-research-and-innovation-eu-green-week-2026-2026-05-22_en",
+      "published_at": "2026-05-22T10:44:24Z",
+      "display_date": "22 May 2026"
+    },
     {
       "headline": "Wide participation at RIMA meeting strengthens EU Research and innovation coordination",
       "source": "EU Research & Innovation",
@@ -26,13 +33,6 @@
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
-      "published_at": "2026-05-21T00:00:00Z",
-      "display_date": "21 May 2026"
-    },
-    {
-      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
-      "source": "CORDIS Energy",
-      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
       "published_at": "2026-05-21T00:00:00Z",
       "display_date": "21 May 2026"
     }
@@ -67,11 +67,11 @@
       "display_date": "25 May 2026"
     },
     {
-      "headline": "5 things you should know about nuclear energy",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/5-things-you-should-know-about-nuclear-energy-2026-05-19_en",
-      "published_at": "2026-05-21T12:41:58Z",
-      "display_date": "21 May 2026"
+      "headline": "Notice proposing modifications to the Pension Regulatory Instructions and Guidance",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/notice-proposing-modifications-pension-regulatory-instructions-and-guidance",
+      "published_at": "2026-05-22T12:00:00Z",
+      "display_date": "22 May 2026"
     }
   ]
 }
