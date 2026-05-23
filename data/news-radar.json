@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-22 15:27 UTC",
+  "last_updated": "2026-05-23 04:12 UTC",
   "r_and_d": [
     {
       "headline": "Directorate-General of Research and Innovation at the EU Green Week 2026",
@@ -9,24 +9,24 @@
       "display_date": "22 May 2026"
     },
     {
-      "headline": "Wide participation at RIMA meeting strengthens EU Research and innovation coordination",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/wide-participation-rima-meeting-strengthens-eu-research-and-innovation-coordination-2026-05-21_en",
-      "published_at": "2026-05-21T12:31:58Z",
-      "display_date": "21 May 2026"
-    },
-    {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-05-21T00:00:00Z",
-      "display_date": "21 May 2026"
+      "published_at": "2026-05-22T00:00:00Z",
+      "display_date": "22 May 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-05-21T00:00:00Z",
+      "published_at": "2026-05-22T00:00:00Z",
+      "display_date": "22 May 2026"
+    },
+    {
+      "headline": "Wide participation at RIMA meeting strengthens EU Research and innovation coordination",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/wide-participation-rima-meeting-strengthens-eu-research-and-innovation-coordination-2026-05-21_en",
+      "published_at": "2026-05-21T12:31:58Z",
       "display_date": "21 May 2026"
     },
     {
@@ -67,10 +67,10 @@
       "display_date": "25 May 2026"
     },
     {
-      "headline": "Notice proposing modifications to the Pension Regulatory Instructions and Guidance",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/notice-proposing-modifications-pension-regulatory-instructions-and-guidance",
-      "published_at": "2026-05-22T12:00:00Z",
+      "headline": "Copenhagen Forum underlines importance of energy infrastructure",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/copenhagen-forum-underlines-importance-energy-infrastructure-2026-05-22_en",
+      "published_at": "2026-05-22T11:57:22Z",
       "display_date": "22 May 2026"
     }
   ]
