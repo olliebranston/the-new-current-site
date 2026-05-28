@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-05-28 04:47 UTC",
+  "last_updated": "2026-05-28 16:37 UTC",
   "r_and_d": [
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation",
+      "published_at": "2026-05-28T00:00:00Z",
+      "display_date": "28 May 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy",
+      "published_at": "2026-05-28T00:00:00Z",
+      "display_date": "28 May 2026"
+    },
     {
       "headline": "EU and Vietnam deepen partnership in science, technology and innovation",
       "source": "EU Research & Innovation",
@@ -13,20 +27,6 @@
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/directorate-general-research-and-innovation-eu-green-week-2026-2026-05-22_en",
       "published_at": "2026-05-22T10:44:24Z",
-      "display_date": "22 May 2026"
-    },
-    {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-05-22T00:00:00Z",
-      "display_date": "22 May 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-05-22T00:00:00Z",
       "display_date": "22 May 2026"
     },
     {
@@ -53,25 +53,25 @@
       "display_date": "11 June 2026"
     },
     {
-      "headline": "New EU Task Force on Fusion Energy",
+      "headline": "Commission discusses gas and oil supply risks with EU countries as the conflict in the Middle East reaches a 3-month mark",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/new-eu-task-force-fusion-energy-2026-05-27_en",
-      "published_at": "2026-05-27T14:30:54Z",
-      "display_date": "27 May 2026"
+      "link": "https://energy.ec.europa.eu/news/commission-discusses-gas-and-oil-supply-risks-eu-countries-conflict-middle-east-reaches-3-month-mark-2026-05-28_en",
+      "published_at": "2026-05-28T09:10:52Z",
+      "display_date": "28 May 2026"
     },
     {
-      "headline": "Changes to energy price cap between 1 July and 30 September 2026",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-july-and-30-september-2026",
-      "published_at": "2026-05-27T12:00:00Z",
-      "display_date": "27 May 2026"
+      "headline": "Codes CMP475 Workgroup meeting 5 28 May 2026 1:30pm to 4:30pm Amendment to the Balancing Services Use of System (BSUoS) Tariff Reset process as per Connection and Use of System Code (CUSC). To\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/cmp475-workgroup-meeting-5",
+      "published_at": "2026-05-28T00:00:00Z",
+      "display_date": "28 May 2026"
     },
     {
-      "headline": "Proposed methodology for Electricity Bill Discount Scheme cost allowance",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/proposed-methodology-electricity-bill-discount-scheme-cost-allowance",
-      "published_at": "2026-05-27T12:00:00Z",
-      "display_date": "27 May 2026"
+      "headline": "Systems operation Balancing Programme Optimisation Focus Group\u2026 1 June 2026 2pm to 3:30pm Join our Balancing Programme Optimisation Focus Group on the 19 May from 11:00 - 12:30 to learn about the new parameters introduced by\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/balancing-programme-optimisation-focus-group-1-june-2026",
+      "published_at": "2026-05-28T00:00:00Z",
+      "display_date": "28 May 2026"
     }
   ]
 }
