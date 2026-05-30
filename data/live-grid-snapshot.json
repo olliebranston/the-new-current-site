@@ -1,74 +1,60 @@
 {
-  "last_updated": "2026-05-30 21:44 UTC",
+  "last_updated": "2026-05-30 22:40 UTC",
   "power_price": {
-    "value": 116.48,
+    "value": 0.0,
     "unit": "GBP/MWh",
-    "display": "116 GBP/MWh"
+    "display": "0 GBP/MWh"
   },
   "carbon_intensity": {
-    "value": 182,
+    "value": 170,
     "unit": "gCO2/kWh",
-    "display": "182 gCO2/kWh (actual)"
+    "display": "170 gCO2/kWh (actual)"
   },
   "demand": {
-    "value": 26443,
+    "value": 25577,
     "unit": "MW",
-    "display": "26,443 MW"
+    "display": "25,577 MW"
   },
   "generation": {
-    "value": 27263,
+    "value": 27019,
     "unit": "MW",
-    "display": "27,263 MW"
+    "display": "27,019 MW"
   },
   "generation_mix": {
-    "low_carbon_percentage": 40,
+    "low_carbon_percentage": 42,
     "segments": [
       {
         "key": "biomass",
         "label": "Biomass",
-        "percentage": 8.8,
+        "percentage": 9.6,
         "color": "#8b5cf6",
         "is_low_carbon": true
       },
       {
         "key": "imports",
         "label": "Imports",
-        "percentage": 18.1,
+        "percentage": 16.1,
         "color": "#ec4899",
         "is_low_carbon": false
       },
       {
         "key": "gas",
         "label": "Gas",
-        "percentage": 41.2,
+        "percentage": 41.9,
         "color": "#f97316",
         "is_low_carbon": false
       },
       {
         "key": "nuclear",
         "label": "Nuclear",
-        "percentage": 8.4,
+        "percentage": 9.5,
         "color": "#16a34a",
-        "is_low_carbon": true
-      },
-      {
-        "key": "other",
-        "label": "Other",
-        "percentage": 1.0,
-        "color": "#94a3b8",
-        "is_low_carbon": false
-      },
-      {
-        "key": "hydro",
-        "label": "Hydro",
-        "percentage": 2.1,
-        "color": "#0ea5e9",
         "is_low_carbon": true
       },
       {
         "key": "wind",
         "label": "Wind",
-        "percentage": 20.4,
+        "percentage": 22.8,
         "color": "#2457ff",
         "is_low_carbon": true
       }
