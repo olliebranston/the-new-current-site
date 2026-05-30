@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-29 16:11 UTC",
+  "last_updated": "2026-05-30 04:30 UTC",
   "r_and_d": [
     {
       "headline": "New scoreboard shows success of European startup policies",
@@ -12,15 +12,15 @@
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-05-28T00:00:00Z",
-      "display_date": "28 May 2026"
+      "published_at": "2026-05-29T00:00:00Z",
+      "display_date": "29 May 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-05-28T00:00:00Z",
-      "display_date": "28 May 2026"
+      "published_at": "2026-05-29T00:00:00Z",
+      "display_date": "29 May 2026"
     },
     {
       "headline": "EU and Vietnam deepen partnership in science, technology and innovation",
@@ -53,24 +53,24 @@
       "display_date": "11 June 2026"
     },
     {
+      "headline": "Systems operation Balancing Programme Optimisation Focus Group\u2026 1 June 2026 2pm to 3:30pm Join our Balancing Programme Optimisation Focus Group on the 19 May from 11:00 - 12:30 to learn about the new parameters introduced by\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/balancing-programme-optimisation-focus-group-1-june-2026",
+      "published_at": "2026-06-01T00:00:00Z",
+      "display_date": "01 June 2026"
+    },
+    {
+      "headline": "Codes CMP475 Workgroup meeting 6 2 June 2026 1:30pm to 4:30pm Amendment to the Balancing Services Use of System (BSUoS) Tariff Reset process as per Connection and Use of System Code (CUSC). To\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/cmp475-workgroup-meeting-6",
+      "published_at": "2026-06-01T00:00:00Z",
+      "display_date": "01 June 2026"
+    },
+    {
       "headline": "Energy Consumer Satisfaction Survey: January 2026",
       "source": "Ofgem",
       "link": "https://www.ofgem.gov.uk/research/energy-consumer-satisfaction-survey-january-2026",
       "published_at": "2026-05-29T12:00:00Z",
-      "display_date": "29 May 2026"
-    },
-    {
-      "headline": "Securing open data in energy: triage in data best practice guidance",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/securing-open-data-energy-triage-data-best-practice-guidance",
-      "published_at": "2026-05-29T12:00:00Z",
-      "display_date": "29 May 2026"
-    },
-    {
-      "headline": "Commission welcomes ENTSO-E report confirming EU electricity preparedness for summer",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commission-welcomes-entso-e-report-confirming-eu-electricity-preparedness-summer-2026-05-29_en",
-      "published_at": "2026-05-29T10:31:03Z",
       "display_date": "29 May 2026"
     }
   ]
