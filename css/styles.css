@@ -1723,6 +1723,46 @@ li {
   margin-bottom: 0;
 }
 
+.article-pullquote {
+  border-left: 3px solid var(--brand-blue);
+  margin: 2rem 0;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.article-pullquote cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.article-footnotes {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+}
+
+.article-footnotes ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.article-footnotes li {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.article-footnotes li:last-child {
+  margin-bottom: 0;
+}
+
 .article-navigation {
   margin-top: 34px;
   padding-top: 24px;
