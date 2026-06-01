@@ -488,7 +488,7 @@ news_radar = {
     "policy": policy_items,
 }
 
-with open("data/news-radar.json", "w", encoding="utf-8") as file:
+with open(REPO_ROOT / "data" / "news-radar.json", "w", encoding="utf-8") as file:
     json.dump(news_radar, file, indent=2)
 
 print("Saved automated news-radar.json successfully.")

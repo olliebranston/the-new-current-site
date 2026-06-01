@@ -1,4 +1,3 @@
-console.log("The New Current loaded successfully");
 
 const chartCanvas = document.getElementById("carbonChart");
 const powerPriceChartCanvas = document.getElementById("powerPriceChart");
@@ -1803,6 +1802,7 @@ function renderThoughtPieces(container, articles) {
 
   const sortedArticles = sortItemsByDate(articles);
 
+  const seriesTwoArticles = sortedArticles.filter((article) => article.section === "series-two");
   const seriesOneArticles = sortedArticles.filter((article) => article.section === "series-one");
   const archiveArticles = sortedArticles.filter((article) => article.section === "archive");
 
@@ -1810,7 +1810,9 @@ function renderThoughtPieces(container, articles) {
   <section class="thought-piece-section">
     <div class="thought-piece-section-heading">
       <p class="eyebrow">Series Two</p>
-      <p>Coming soon</p>
+    </div>
+    <div class="thought-piece-card-list">
+      ${seriesTwoArticles.map(buildThoughtPieceCard).join("")}
     </div>
   </section>
 

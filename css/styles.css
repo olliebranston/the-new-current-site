@@ -216,6 +216,11 @@ li {
   box-shadow: 0 12px 28px rgba(36, 87, 255, 0.24);
 }
 
+.contact-button:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 3px;
+}
+
 .homepage-main {
   display: flex;
   flex-direction: column;
