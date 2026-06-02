@@ -25,6 +25,13 @@ FOOTER_END = "<!-- site-footer:end -->"
 ARTICLE_NAV_START = "<!-- article-navigation:start -->"
 ARTICLE_NAV_END = "<!-- article-navigation:end -->"
 
+# Cross-section previous-article overrides.
+# Used when an article is the first in its section but should link back
+# to the last article of the preceding section.
+CROSS_SECTION_PREVIOUS: dict[str, str] = {
+    "articles/article-9.html": "articles/article-8.html",
+}
+
 
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
@@ -148,6 +155,12 @@ def sibling_articles(current: dict[str, object], articles: list[dict[str, object
 
     previous_article = same_section[current_index - 1] if current_index > 0 else None
     next_article = same_section[current_index + 1] if current_index + 1 < len(same_section) else None
+
+    if previous_article is None:
+        override_link = CROSS_SECTION_PREVIOUS.get(str(current["link"]))
+        if override_link:
+            previous_article = article_by_path(articles).get(override_link)
+
     return previous_article, next_article
 
 
