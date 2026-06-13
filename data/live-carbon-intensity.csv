@@ -1,7 +1,4 @@
 timestamp,forecast,actual,index,chart_value
-2026-06-12T18:30Z,63,86,low,86
-2026-06-12T19:00Z,74,91,moderate,91
-2026-06-12T19:30Z,78,97,moderate,97
 2026-06-12T20:00Z,87,99,moderate,99
 2026-06-12T20:30Z,89,99,moderate,99
 2026-06-12T21:00Z,92,96,moderate,96
@@ -46,4 +43,7 @@ timestamp,forecast,actual,index,chart_value
 2026-06-13T16:30Z,45,48,low,48
 2026-06-13T17:00Z,48,53,low,53
 2026-06-13T17:30Z,45,57,low,57
-2026-06-13T18:00Z,45,63,low,63
+2026-06-13T18:00Z,45,64,low,64
+2026-06-13T18:30Z,51,75,low,75
+2026-06-13T19:00Z,54,76,low,76
+2026-06-13T19:30Z,70,,low,70
