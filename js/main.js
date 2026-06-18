@@ -1644,13 +1644,13 @@ function renderBrainDumps(container, notes) {
     wrapper.className = "brain-dump-card";
 
     const paragraphs = Array.isArray(note.content)
-      ? note.content.map((paragraph) => `<p>${paragraph}</p>`).join("")
-      : `<p>${note.content}</p>`;
+      ? note.content.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")
+      : `<p>${escapeHtml(note.content)}</p>`;
 
     wrapper.innerHTML = `
       <div class="brain-dump-card-inner">
         <p class="card-kicker">Brain Dump</p>
-        <h3>${note.title}</h3>
+        <h3>${escapeHtml(note.title)}</h3>
         <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
         <div class="brain-dump-content">
           ${paragraphs}
@@ -1766,11 +1766,23 @@ function formatArticleDate(dateString) {
   });
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function buildThoughtPieceCard(article) {
+  const safeTitle = escapeHtml(article.title);
+  const safeSummary = escapeHtml(article.summary);
+
   const imageMarkup = article.image
     ? `
       <div class="thought-piece-card-image">
-        <img src="${article.image}" alt="${article.title}">
+        <img src="${article.image}" alt="${safeTitle}">
       </div>
     `
     : "";
@@ -1781,9 +1793,9 @@ function buildThoughtPieceCard(article) {
     <article class="thought-piece-card${noImageClass}">
       <div class="thought-piece-card-text">
         <p class="card-kicker">${article.author || "Oliver Branston"}</p>
-        <h3><a href="${article.link}">${article.title}</a></h3>
+        <h3><a href="${article.link}">${safeTitle}</a></h3>
         <p class="article-meta">${formatArticleDate(article.date)}</p>
-        <p>${article.summary}</p>
+        <p>${safeSummary}</p>
       </div>
       ${imageMarkup}
     </article>
