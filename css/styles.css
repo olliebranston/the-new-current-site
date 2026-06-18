@@ -802,6 +802,21 @@ li {
   margin-bottom: 0;
 }
 
+.data-section-related-link {
+  font-size: 0.95rem;
+}
+
+.data-section-related-link a {
+  color: var(--brand-blue);
+  text-decoration: none;
+}
+
+.data-section-related-link a:hover,
+.data-section-related-link a:focus-visible {
+  color: var(--brand-blue-hover);
+  text-decoration: underline;
+}
+
 .data-chart-row-list {
   display: flex;
   flex-direction: column;
