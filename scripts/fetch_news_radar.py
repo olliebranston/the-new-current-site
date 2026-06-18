@@ -4,9 +4,12 @@ import urllib3
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
+from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
 
 # ----------------
 # SOURCE URLS
