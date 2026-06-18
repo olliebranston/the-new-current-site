@@ -17,6 +17,7 @@ jobs:
 
     permissions:
       contents: write
+      issues: write
 
     steps:
       - name: Check out repository
@@ -44,3 +45,29 @@ jobs:
           git diff --cached --quiet || git commit -m "Update green generation and bill data"
           git pull --rebase origin main
           git push origin main
+
+      - name: Report failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="Pipeline failure: ${{ github.workflow }}"
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number')
+          if [ -z "$EXISTING" ]; then
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$TITLE" --body "Workflow run failed: $RUN_URL"
+          else
+            gh issue comment "$EXISTING" --repo "$GITHUB_REPOSITORY" --body "Still failing as of $(date -u). Run: $RUN_URL"
+          fi
+
+      - name: Close resolved failure issue
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="Pipeline failure: ${{ github.workflow }}"
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number')
+          if [ -n "$EXISTING" ]; then
+            gh issue close "$EXISTING" --repo "$GITHUB_REPOSITORY" --comment "Resolved as of $(date -u). Run: $RUN_URL"
+          fi
