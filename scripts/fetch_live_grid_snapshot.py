@@ -31,12 +31,13 @@ SEGMENT_COLOURS = {
     "storage": "#14b8a6",
 }
 
+REQUEST_TIMEOUT_SECONDS = 30
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = REPO_ROOT / "data" / "live-grid-snapshot.json"
 
 
 def fetch_json(url):
-    with urlopen(url) as response:
+    with urlopen(url, timeout=REQUEST_TIMEOUT_SECONDS) as response:
         return json.load(response)
 
 

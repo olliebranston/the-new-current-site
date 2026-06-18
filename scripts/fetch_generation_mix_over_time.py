@@ -8,6 +8,7 @@ import pandas as pd
 
 
 GENERATION_MIX_URL_TEMPLATE = "https://api.carbonintensity.org.uk/generation/{from_time}/pt24h"
+REQUEST_TIMEOUT_SECONDS = 30
 REPO_ROOT = Path(__file__).resolve().parent.parent
 LIVE_CSV_PATH = REPO_ROOT / "data" / "live-generation-mix.csv"
 CLEANED_CSV_PATH = REPO_ROOT / "data" / "cleaned-live-generation-mix.csv"
@@ -41,7 +42,7 @@ FUEL_LABELS = {
 
 
 def fetch_json(url):
-    with urlopen(url) as response:
+    with urlopen(url, timeout=REQUEST_TIMEOUT_SECONDS) as response:
         return json.load(response)
 
 

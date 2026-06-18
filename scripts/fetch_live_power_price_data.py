@@ -11,6 +11,7 @@ import pandas as pd
 ELEXON_API_BASE = "https://data.elexon.co.uk/bmrs/api/v1"
 ELEXON_MARKET_PRICE_URL = f"{ELEXON_API_BASE}/balancing/pricing/market-index"
 ELEXON_MARKET_INDEX_PROVIDER = "APXMIDP"
+REQUEST_TIMEOUT_SECONDS = 30
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 LIVE_CSV_PATH = REPO_ROOT / "data" / "live-power-price.csv"
@@ -19,7 +20,7 @@ CHART_JSON_PATH = REPO_ROOT / "data" / "power-price-chart-data.json"
 
 
 def fetch_json(url):
-    with urlopen(url) as response:
+    with urlopen(url, timeout=REQUEST_TIMEOUT_SECONDS) as response:
         return json.load(response)
 
 

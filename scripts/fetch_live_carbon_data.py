@@ -1,11 +1,14 @@
 import json
 import csv
+import sys
 from pathlib import Path
+from urllib.error import URLError
 from urllib.request import urlopen
 
 import pandas as pd
 
 API_URL_TEMPLATE = "https://api.carbonintensity.org.uk/intensity/{from_time}/pt24h"
+REQUEST_TIMEOUT_SECONDS = 30
 REPO_ROOT = Path(__file__).resolve().parent.parent
 LIVE_CSV_PATH = REPO_ROOT / "data" / "live-carbon-intensity.csv"
 CLEANED_CSV_PATH = REPO_ROOT / "data" / "cleaned-live-carbon-intensity.csv"
@@ -15,8 +18,12 @@ CHART_JSON_PATH = REPO_ROOT / "data" / "carbon-chart-data.json"
 from_time = pd.Timestamp.now("UTC").strftime("%Y-%m-%dT%H:%MZ")
 api_url = API_URL_TEMPLATE.format(from_time=from_time)
 
-with urlopen(api_url) as response:
-    api_data = json.load(response)
+try:
+    with urlopen(api_url, timeout=REQUEST_TIMEOUT_SECONDS) as response:
+        api_data = json.load(response)
+except (URLError, TimeoutError) as error:
+    print(f"Carbon Intensity API request failed: {error}", file=sys.stderr)
+    sys.exit(1)
 
 rows = api_data["data"]
 
