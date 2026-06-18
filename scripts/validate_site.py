@@ -4,7 +4,7 @@ import argparse
 import json
 import sys
 import xml.etree.ElementTree as ET
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlparse
@@ -13,6 +13,18 @@ from urllib.parse import urlparse
 BASE_URL = "https://olliebranston.github.io/the-new-current-site/"
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = REPO_ROOT / "data"
+
+# Only files produced by an actually cron-scheduled workflow get a freshness
+# check. Files only refreshed via workflow_dispatch/push (e.g. UK carbon
+# accounting data) have no expected cadence, so staleness there is normal.
+FRESHNESS_LIMITS = {
+    "carbon-chart-data.json": timedelta(hours=6),
+    "power-price-chart-data.json": timedelta(hours=6),
+    "generation-mix-chart-data.json": timedelta(hours=6),
+    "live-grid-snapshot.json": timedelta(hours=6),
+    "news-radar.json": timedelta(hours=48),
+    "green-generation-bills-chart-data.json": timedelta(days=45),
+}
 
 
 class SiteValidationError(Exception):
@@ -171,6 +183,25 @@ def validate_chart_json() -> None:
         require_keys(segment, ["key", "label", "percentage", "is_low_carbon"], f"live-grid-snapshot segment {index}")
 
 
+def validate_data_freshness() -> None:
+    now = datetime.now(timezone.utc)
+
+    for filename, max_age in FRESHNESS_LIMITS.items():
+        payload = require_keys(load_json(DATA_DIR / filename), ["last_updated"], filename)
+        raw_value = str(payload["last_updated"])
+
+        try:
+            last_updated = datetime.strptime(raw_value, "%Y-%m-%d %H:%M UTC").replace(tzinfo=timezone.utc)
+        except ValueError as exc:
+            raise SiteValidationError(f"{filename} has unparseable last_updated: {raw_value!r}") from exc
+
+        age = now - last_updated
+        require(
+            age <= max_age,
+            f"{filename} is stale: last_updated {raw_value} is {age} old (limit {max_age})",
+        )
+
+
 def validate_content_json() -> None:
     thought_pieces = require_keys(load_json(DATA_DIR / "thought-pieces.json"), ["articles"], "thought-pieces.json")
     articles = require_list(thought_pieces["articles"], "thought-pieces.json.articles")
@@ -313,6 +344,7 @@ def validate_layout_markers() -> None:
 
 def validate() -> None:
     validate_chart_json()
+    validate_data_freshness()
     validate_content_json()
     canonicals = validate_internal_links_and_assets()
     validate_sitemap_and_canonicals(canonicals)
