@@ -1,6 +1,20 @@
 {
   "notes": [
     {
+      "title": "Solar's capture rate problem - and what it means for investability",
+      "date": "2026-06-18",
+      "tag": "Solar",
+      "content": [
+        "Solar is unusually exposed to a classic economics problem - the more of it you build, the more it competes and drives down prices, and the less each new panel earns.",
+        "This is measured by the solar capture rate: the average price solar actually receives, weighted by when it generates, expressed as a percentage of the overall market average. As solar penetration rises, that rate falls. Germany's capture rate dropped from above 80% of market average in 2021 and 2022 to around 54% by 2025. This direction of travel is consistent across every market where solar has reached meaningful scale.",
+        "What makes solar and wind's exposure unusual compared to classic supply dynamics is the merit order: with a short-run marginal cost of essentially zero, when enough is online simultaneously it collapses the price floor. Solar is particularly exposed to this as it peaks predictably across an entire grid at the same time of day, unlike wind generation which is distributed more randomly across hours and locations.",
+        "New electricity demand from electrification is sometimes cited as a potential offset. However, whilst electrification will broadly raise total consumption, this will not necessarily happen during the hours solar would need it most, and will take time regardless.",
+        "From an investability perspective, most solar assets currently operating are protected by long-term PPAs or subsidy schemes and don't face capture rate risk directly. However, it is becoming increasingly difficult to have lenders finance fully merchant solar, because the revenue assumptions don't hold under a falling capture rate. PPA offtakers have become more cautious too, having underestimated cannibalisation risk in earlier contracts.",
+        "The market's answer is increasingly hybrid structures: solar co-located with battery storage, or combined wind-solar PPAs that smooth the generation profile across more hours.",
+        "These help, but they also raise the cost and complexity of what was supposed to be the cheapest form of new generation. The era of simple merchant solar, financed on a straightforward price assumption, is quietly closing."
+      ]
+    },
+    {
       "title": "The primary energy fallacy - and the hidden benefit of electrification",
       "date": "2026-05-13",
       "tag": "Useful energy",
