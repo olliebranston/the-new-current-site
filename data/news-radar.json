@@ -1,12 +1,33 @@
 {
-  "last_updated": "2026-06-22 05:36 UTC",
+  "last_updated": "2026-06-22 17:14 UTC",
   "r_and_d": [
+    {
+      "headline": "EU-South Africa mark 30 years of research and innovation cooperation",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-south-africa-mark-30-years-research-and-innovation-cooperation-2026-06-17_en",
+      "published_at": "2026-06-22T15:26:11Z",
+      "display_date": "22 June 2026"
+    },
     {
       "headline": "European Union and South Africa strengthen research and innovation cooperation at 18th JSTCC meeting",
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/european-union-and-south-africa-strengthen-research-and-innovation-cooperation-18th-jstcc-meeting-2026-06-18_en",
-      "published_at": "2026-06-18T15:31:38Z",
-      "display_date": "18 June 2026"
+      "published_at": "2026-06-22T15:23:38Z",
+      "display_date": "22 June 2026"
+    },
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation",
+      "published_at": "2026-06-22T00:00:00Z",
+      "display_date": "22 June 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy",
+      "published_at": "2026-06-22T00:00:00Z",
+      "display_date": "22 June 2026"
     },
     {
       "headline": "Fundamental Research",
@@ -14,27 +35,6 @@
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
       "published_at": "2026-06-18T00:00:00Z",
       "display_date": "18 June 2026"
-    },
-    {
-      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
-      "source": "CORDIS Energy",
-      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
-      "published_at": "2026-06-18T00:00:00Z",
-      "display_date": "18 June 2026"
-    },
-    {
-      "headline": "EU-South Africa mark 30 years of research and innovation cooperation",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-south-africa-mark-30-years-research-and-innovation-cooperation-2026-06-17_en",
-      "published_at": "2026-06-17T14:49:16Z",
-      "display_date": "17 June 2026"
-    },
-    {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-06-17T00:00:00Z",
-      "display_date": "17 June 2026"
     }
   ],
   "policy": [
@@ -53,25 +53,25 @@
       "display_date": "16 July 2026"
     },
     {
+      "headline": "Electricity Distribution Standard Licence Condition 31E: flexibility procurement statements 2026 to 2027",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/data/electricity-distribution-standard-licence-condition-31e-flexibility-procurement-statements-2026-2027",
+      "published_at": "2026-06-22T12:00:00Z",
+      "display_date": "22 June 2026"
+    },
+    {
+      "headline": "Electricity Distribution Standard Licence Condition 31E: flexibility procurement reports and supporting data 2025 to 2026",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/data/electricity-distribution-standard-licence-condition-31e-flexibility-procurement-reports-and-supporting-data-2025-2026",
+      "published_at": "2026-06-22T12:00:00Z",
+      "display_date": "22 June 2026"
+    },
+    {
       "headline": "Systems operation NESO Markets, Balancing and Dispatch: A\u2026 22 June 2026 12am to 11:59pm This event will bring together topics from across the Dispatch Transparency Programme, Electricity Markets & the Balancing\u2026 Events",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/neso-markets-balancing-and-dispatch-summer-system-update-london",
       "published_at": "2026-06-22T00:00:00Z",
       "display_date": "22 June 2026"
-    },
-    {
-      "headline": "Codes CMP475 Code Administrator Consultation 23 to 29 June 2026 12am to 11:59pm Amendment to the Balancing Services Use of System (BSUoS) Tariff Reset process as per Connection and Use of System Code (CUSC). To\u2026 Consultations",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/cmp475-code-administrator-consultation",
-      "published_at": "2026-06-22T00:00:00Z",
-      "display_date": "22 June 2026"
-    },
-    {
-      "headline": "Egypt and EU join forces on \u20ac690 million clean-energy grid investment",
-      "source": "DG Energy",
-      "link": "https://north-africa-middle-east-gulf.ec.europa.eu/news/egypt-and-eu-join-forces-eu690-million-clean-energy-grid-investment-2026-06-15_en",
-      "published_at": "2026-06-19T07:49:07Z",
-      "display_date": "19 June 2026"
     }
   ]
 }
