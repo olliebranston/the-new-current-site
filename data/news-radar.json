@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-06-25 04:38 UTC",
+  "last_updated": "2026-06-25 15:20 UTC",
   "r_and_d": [
+    {
+      "headline": "EU and Egypt strengthen research and innovation partnership following Horizon Europe association",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-and-egypt-strengthen-research-and-innovation-partnership-following-horizon-europe-association-2026-06-23_en",
+      "published_at": "2026-06-25T14:35:13Z",
+      "display_date": "25 June 2026"
+    },
+    {
+      "headline": "European Research Council awards \u20ac838 million to 319 top scientists to deliver groundbreaking discoveries",
+      "source": "EU Research & Innovation",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1427",
+      "published_at": "2026-06-25T09:09:35Z",
+      "display_date": "25 June 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
@@ -14,20 +28,6 @@
       "link": "https://www.energy.gov/topics/nuclear-energy",
       "published_at": "2026-06-24T00:00:00Z",
       "display_date": "24 June 2026"
-    },
-    {
-      "headline": "Third EU-Serbia Horizon Europe Joint Research and Innovation Committee meeting",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/third-eu-serbia-horizon-europe-joint-research-and-innovation-committee-meeting-2026-06-23_en",
-      "published_at": "2026-06-23T08:55:10Z",
-      "display_date": "23 June 2026"
-    },
-    {
-      "headline": "Fifth EU-Montenegro Horizon Europe Joint Research and Innovation Committee meeting",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/fifth-eu-montenegro-horizon-europe-joint-research-and-innovation-committee-meeting-2026-06-22_en",
-      "published_at": "2026-06-23T08:13:04Z",
-      "display_date": "23 June 2026"
     },
     {
       "headline": "Fundamental Research",
@@ -67,11 +67,11 @@
       "display_date": "30 June 2026"
     },
     {
-      "headline": "Joint call on current and prospective donors to contribute to the Ukraine Energy Support Fund",
+      "headline": "Call for applications: candidate energy infrastructure Projects of Common and Mutual Interest - hydrogen, electrolyser and CO2 category",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/joint-call-current-and-prospective-donors-contribute-ukraine-energy-support-fund-2026-06-24_en",
-      "published_at": "2026-06-24T14:58:39Z",
-      "display_date": "24 June 2026"
+      "link": "https://energy.ec.europa.eu/news/call-applications-candidate-energy-infrastructure-projects-common-and-mutual-interest-hydrogen-2026-06-25_en",
+      "published_at": "2026-06-25T12:36:15Z",
+      "display_date": "25 June 2026"
     }
   ]
 }
