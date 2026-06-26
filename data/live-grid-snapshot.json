@@ -1,74 +1,53 @@
 {
-  "last_updated": "2026-06-25 22:47 UTC",
+  "last_updated": "2026-06-26 01:31 UTC",
   "power_price": {
-    "value": 93.42,
+    "value": 104.58,
     "unit": "GBP/MWh",
-    "display": "93 GBP/MWh"
+    "display": "105 GBP/MWh"
   },
   "carbon_intensity": {
-    "value": 179,
+    "value": 189,
     "unit": "gCO2/kWh",
-    "display": "179 gCO2/kWh (actual)"
+    "display": "189 gCO2/kWh (actual)"
   },
   "demand": {
-    "value": 32601,
+    "value": 27842,
     "unit": "MW",
-    "display": "32,601 MW"
+    "display": "27,842 MW"
   },
   "generation": {
-    "value": 36899,
+    "value": 32442,
     "unit": "MW",
-    "display": "36,899 MW"
+    "display": "32,442 MW"
   },
   "generation_mix": {
-    "low_carbon_percentage": 52,
+    "low_carbon_percentage": 53,
     "segments": [
       {
         "key": "biomass",
         "label": "Biomass",
-        "percentage": 4.8,
+        "percentage": 6.3,
         "color": "#8b5cf6",
         "is_low_carbon": true
       },
       {
-        "key": "imports",
-        "label": "Imports",
-        "percentage": 2.7,
-        "color": "#ec4899",
-        "is_low_carbon": false
-      },
-      {
         "key": "gas",
         "label": "Gas",
-        "percentage": 40.9,
+        "percentage": 46.8,
         "color": "#f97316",
         "is_low_carbon": false
       },
       {
         "key": "nuclear",
         "label": "Nuclear",
-        "percentage": 10.2,
+        "percentage": 12.1,
         "color": "#16a34a",
-        "is_low_carbon": true
-      },
-      {
-        "key": "other",
-        "label": "Other",
-        "percentage": 4.0,
-        "color": "#94a3b8",
-        "is_low_carbon": false
-      },
-      {
-        "key": "hydro",
-        "label": "Hydro",
-        "percentage": 2.4,
-        "color": "#0ea5e9",
         "is_low_carbon": true
       },
       {
         "key": "wind",
         "label": "Wind",
-        "percentage": 34.9,
+        "percentage": 34.7,
         "color": "#2457ff",
         "is_low_carbon": true
       }
