@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-06-29 05:07 UTC",
+  "last_updated": "2026-06-29 16:14 UTC",
   "r_and_d": [
+    {
+      "headline": "Adoption of the reform of the Research Fund for Coal and Steel",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/adoption-reform-research-fund-coal-and-steel-2026-06-29_en",
+      "published_at": "2026-06-29T14:37:56Z",
+      "display_date": "29 June 2026"
+    },
     {
       "headline": "EU and Egypt strengthen research and innovation partnership following Horizon Europe association",
       "source": "EU Research & Innovation",
@@ -21,13 +28,6 @@
       "link": "https://www.energy.gov/topics/nuclear-energy",
       "published_at": "2026-06-26T00:00:00Z",
       "display_date": "26 June 2026"
-    },
-    {
-      "headline": "European Research Council awards \u20ac838 million to 319 top scientists to deliver groundbreaking discoveries",
-      "source": "EU Research & Innovation",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1427",
-      "published_at": "2026-06-25T09:09:35Z",
-      "display_date": "25 June 2026"
     },
     {
       "headline": "Fundamental Research",
@@ -67,11 +67,11 @@
       "display_date": "30 June 2026"
     },
     {
-      "headline": "First-ever EU tripartite agreement signed to boost energy storage",
+      "headline": "Eurostat: Renewable energy and natural gas supply up in 2025",
       "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1426",
-      "published_at": "2026-06-26T13:41:16Z",
-      "display_date": "26 June 2026"
+      "link": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260629-2",
+      "published_at": "2026-06-29T14:49:21Z",
+      "display_date": "29 June 2026"
     }
   ]
 }
