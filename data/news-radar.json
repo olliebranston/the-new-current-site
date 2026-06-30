@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-06-30 04:40 UTC",
+  "last_updated": "2026-06-30 15:04 UTC",
   "r_and_d": [
+    {
+      "headline": "First European research network on antisemitism and Jewish life officially launched",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/first-european-research-network-antisemitism-and-jewish-life-officially-launched-2026-06-30_en",
+      "published_at": "2026-06-30T10:06:25Z",
+      "display_date": "30 June 2026"
+    },
     {
       "headline": "Adoption of the reform of the Research Fund for Coal and Steel",
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/adoption-reform-research-fund-coal-and-steel-2026-06-29_en",
       "published_at": "2026-06-29T14:37:56Z",
       "display_date": "29 June 2026"
-    },
-    {
-      "headline": "EU and Egypt strengthen research and innovation partnership following Horizon Europe association",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-and-egypt-strengthen-research-and-innovation-partnership-following-horizon-europe-association-2026-06-25_en",
-      "published_at": "2026-06-26T06:32:57Z",
-      "display_date": "26 June 2026"
     },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,39 +39,39 @@
   ],
   "policy": [
     {
-      "headline": "Systems operation NESO Markets, Balancing and Dispatch: A\u2026 2 July 2026 12am to 11:59pm Register to attend our Markets, Balancing and Dispatch event to hear the latest updates across electricity markets, the balancing\u2026 Events",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/neso-markets-balancing-and-dispatch-summer-system-update-glasgow",
-      "published_at": "2026-06-30T00:00:00Z",
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-07-16T00:00:00Z",
+      "display_date": "16 July 2026"
+    },
+    {
+      "headline": "About Electricity",
+      "source": "ACER",
+      "link": "https://acer.europa.eu/electricity/about-electricity",
+      "published_at": "2026-07-16T00:00:00Z",
+      "display_date": "16 July 2026"
+    },
+    {
+      "headline": "Draft Electricity Transmission reporting and guidance (RIIO-ET3)",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/draft-electricity-transmission-reporting-and-guidance-riio-et3",
+      "published_at": "2026-06-30T12:00:00Z",
       "display_date": "30 June 2026"
     },
     {
-      "headline": "Codes Grid Code Development Forum (GCDF) - 8 July\u2026 8 July 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-8-july-2026",
-      "published_at": "2026-06-30T00:00:00Z",
+      "headline": "Draft gas transmission reporting and guidance (RIIO-GT3)",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/draft-gas-transmission-reporting-and-guidance-riio-gt3",
+      "published_at": "2026-06-30T12:00:00Z",
       "display_date": "30 June 2026"
     },
     {
-      "headline": "Eurostat: Renewable energy and natural gas supply up in 2025",
+      "headline": "EU and Canada conclude the Energy Security Business Roundtable to deepen transatlantic business relations",
       "source": "DG Energy",
-      "link": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260629-2",
-      "published_at": "2026-06-29T14:49:21Z",
-      "display_date": "29 June 2026"
-    },
-    {
-      "headline": "CEF Energy: 6th call for Cross-Border Renewable Energy Projects to obtain the status launched",
-      "source": "DG Energy",
-      "link": "https://cinea.ec.europa.eu/news-events/news/cef-energy-6th-call-cross-border-renewable-energy-projects-obtain-status-launched-2026-06-29_en",
-      "published_at": "2026-06-29T14:14:45Z",
-      "display_date": "29 June 2026"
-    },
-    {
-      "headline": "Iran, the Middle East and UK energy: factsheet",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
-      "published_at": null,
-      "display_date": null
+      "link": "https://energy.ec.europa.eu/news/eu-and-canada-conclude-energy-security-business-roundtable-deepen-transatlantic-business-relations-2026-06-30_en",
+      "published_at": "2026-06-30T08:43:00Z",
+      "display_date": "30 June 2026"
     }
   ]
 }
