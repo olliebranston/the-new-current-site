@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-29 16:14 UTC",
+  "last_updated": "2026-06-30 04:40 UTC",
   "r_and_d": [
     {
       "headline": "Adoption of the reform of the Research Fund for Coal and Steel",
@@ -39,30 +39,16 @@
   ],
   "policy": [
     {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-16T00:00:00Z",
-      "display_date": "16 July 2026"
-    },
-    {
-      "headline": "About Electricity",
-      "source": "ACER",
-      "link": "https://acer.europa.eu/electricity/about-electricity",
-      "published_at": "2026-07-16T00:00:00Z",
-      "display_date": "16 July 2026"
-    },
-    {
-      "headline": "Codes CMP475 Code Administrator Consultation 23 to 29 June 2026 12am to 11:59pm Amendment to the Balancing Services Use of System (BSUoS) Tariff Reset process as per Connection and Use of System Code (CUSC). To\u2026 Consultations",
+      "headline": "Systems operation NESO Markets, Balancing and Dispatch: A\u2026 2 July 2026 12am to 11:59pm Register to attend our Markets, Balancing and Dispatch event to hear the latest updates across electricity markets, the balancing\u2026 Events",
       "source": "NESO",
-      "link": "https://www.neso.energy/calendar/cmp475-code-administrator-consultation",
+      "link": "https://www.neso.energy/calendar/neso-markets-balancing-and-dispatch-summer-system-update-glasgow",
       "published_at": "2026-06-30T00:00:00Z",
       "display_date": "30 June 2026"
     },
     {
-      "headline": "Systems operation NESO Markets, Balancing and Dispatch: A\u2026 2 July 2026 12am to 11:59pm Register to attend our Markets, Balancing and Dispatch event to hear the latest updates across electricity markets, the balancing\u2026 Events",
+      "headline": "Codes Grid Code Development Forum (GCDF) - 8 July\u2026 8 July 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
       "source": "NESO",
-      "link": "https://www.neso.energy/calendar/neso-markets-balancing-and-dispatch-summer-system-update-glasgow",
+      "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-8-july-2026",
       "published_at": "2026-06-30T00:00:00Z",
       "display_date": "30 June 2026"
     },
@@ -72,6 +58,20 @@
       "link": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260629-2",
       "published_at": "2026-06-29T14:49:21Z",
       "display_date": "29 June 2026"
+    },
+    {
+      "headline": "CEF Energy: 6th call for Cross-Border Renewable Energy Projects to obtain the status launched",
+      "source": "DG Energy",
+      "link": "https://cinea.ec.europa.eu/news-events/news/cef-energy-6th-call-cross-border-renewable-energy-projects-obtain-status-launched-2026-06-29_en",
+      "published_at": "2026-06-29T14:14:45Z",
+      "display_date": "29 June 2026"
+    },
+    {
+      "headline": "Iran, the Middle East and UK energy: factsheet",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
