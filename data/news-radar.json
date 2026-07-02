@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-01 15:18 UTC",
+  "last_updated": "2026-07-02 04:35 UTC",
   "r_and_d": [
     {
       "headline": "First European research network on antisemitism and Jewish life officially launched",
@@ -30,14 +30,28 @@
       "display_date": "29 June 2026"
     },
     {
-      "headline": "Apply Now: 2026 Waste to Energy and Materials Technical Assistance for State, Local, and Tribal Governments",
-      "source": "DOE Hydrogen & Fuel Cells",
-      "link": "https://www.energy.gov/cmei/fuels/articles/apply-now-2026-waste-energy-and-materials-technical-assistance-state-local-and",
-      "published_at": "2026-04-16T13:00:00Z",
-      "display_date": "16 April 2026"
+      "headline": "Fundamental Research",
+      "source": "CORDIS Energy",
+      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
+      "published_at": "2026-06-18T00:00:00Z",
+      "display_date": "18 June 2026"
     }
   ],
   "policy": [
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-07-16T00:00:00Z",
+      "display_date": "16 July 2026"
+    },
+    {
+      "headline": "About Electricity",
+      "source": "ACER",
+      "link": "https://acer.europa.eu/electricity/about-electricity",
+      "published_at": "2026-07-16T00:00:00Z",
+      "display_date": "16 July 2026"
+    },
     {
       "headline": "Systems operation NESO Markets, Balancing and Dispatch: A\u2026 2 July 2026 12am to 11:59pm Register to attend our Markets, Balancing and Dispatch event to hear the latest updates across electricity markets, the balancing\u2026 Events",
       "source": "NESO",
@@ -53,24 +67,10 @@
       "display_date": "02 July 2026"
     },
     {
-      "headline": "NESO\u2019s proposed Dynamic Response Services amendments to the terms and conditions related to balancing",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/nesos-proposed-dynamic-response-services-amendments-terms-and-conditions-related-balancing",
-      "published_at": "2026-07-01T12:00:00Z",
-      "display_date": "01 July 2026"
-    },
-    {
-      "headline": "Energy Networks Ring-fence Review statutory consultation",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/energy-networks-ring-fence-review-statutory-consultation",
-      "published_at": "2026-07-01T12:00:00Z",
-      "display_date": "01 July 2026"
-    },
-    {
-      "headline": "Eurostat: 46% of EU\u2019s electricity came from renewables in Q1 2026",
+      "headline": "Gas Coordination Group: No immediate concerns about security of EU gas supply",
       "source": "DG Energy",
-      "link": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260701-1",
-      "published_at": "2026-07-01T09:25:40Z",
+      "link": "https://energy.ec.europa.eu/news/gas-coordination-group-no-immediate-concerns-about-security-eu-gas-supply-2026-07-01_en",
+      "published_at": "2026-07-01T16:20:05Z",
       "display_date": "01 July 2026"
     }
   ]
