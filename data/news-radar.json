@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-03 14:37 UTC",
+  "last_updated": "2026-07-04 04:07 UTC",
   "r_and_d": [
     {
       "headline": "Members of international coalition for science, research and innovation in Ukraine sign Gdansk declaration",
@@ -39,6 +39,20 @@
   ],
   "policy": [
     {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-07-16T00:00:00Z",
+      "display_date": "16 July 2026"
+    },
+    {
+      "headline": "About Electricity",
+      "source": "ACER",
+      "link": "https://acer.europa.eu/electricity/about-electricity",
+      "published_at": "2026-07-16T00:00:00Z",
+      "display_date": "16 July 2026"
+    },
+    {
       "headline": "Codes Grid Code Development Forum (GCDF) - 8 July\u2026 8 July 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-8-july-2026",
@@ -58,20 +72,6 @@
       "link": "https://www.ofgem.gov.uk/guidance/pensions-regulatory-instructions-and-guidance",
       "published_at": "2026-07-03T12:00:00Z",
       "display_date": "03 July 2026"
-    },
-    {
-      "headline": "Energy Union: New Spain-Portugal electricity interconnection inaugurated",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/energy-union-new-spain-portugal-electricity-interconnection-inaugurated-2026-07-02_en",
-      "published_at": "2026-07-02T16:00:35Z",
-      "display_date": "02 July 2026"
-    },
-    {
-      "headline": "Joint press release: \u20ac2.5 billion of EU ETS revenues invested in cleaner energy systems in 11 EU countries",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1501",
-      "published_at": "2026-07-02T11:05:37Z",
-      "display_date": "02 July 2026"
     }
   ]
 }
