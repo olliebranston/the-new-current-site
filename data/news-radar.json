@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-09 15:38 UTC",
+  "last_updated": "2026-07-10 04:29 UTC",
   "r_and_d": [
     {
       "headline": "Europe's innovation performance strengthens amidst global competition",
@@ -12,59 +12,45 @@
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-07-08T00:00:00Z",
-      "display_date": "08 July 2026"
+      "published_at": "2026-07-09T00:00:00Z",
+      "display_date": "09 July 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-07-08T00:00:00Z",
-      "display_date": "08 July 2026"
-    },
-    {
-      "headline": "Members of international coalition for science, research and innovation in Ukraine sign Gdansk declaration",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/members-international-coalition-science-research-and-innovation-ukraine-sign-gdansk-declaration-2026-07-02_en",
-      "published_at": "2026-07-02T07:41:48Z",
-      "display_date": "02 July 2026"
+      "published_at": "2026-07-09T00:00:00Z",
+      "display_date": "09 July 2026"
     },
     {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
-      "published_at": "2026-06-18T00:00:00Z",
-      "display_date": "18 June 2026"
+      "published_at": "2026-07-09T00:00:00Z",
+      "display_date": "09 July 2026"
+    },
+    {
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-07-09T00:00:00Z",
+      "display_date": "09 July 2026"
     }
   ],
   "policy": [
     {
-      "headline": "Energy price cap: update for the unidentified gas allowance October to December 2026",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/policy/energy-price-cap-update-unidentified-gas-allowance-october-december-2026",
-      "published_at": "2026-07-09T12:00:00Z",
-      "display_date": "09 July 2026"
-    },
-    {
-      "headline": "Electricity distribution network charges: notice period options",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/electricity-distribution-network-charges-notice-period-options",
-      "published_at": "2026-07-09T12:00:00Z",
-      "display_date": "09 July 2026"
-    },
-    {
-      "headline": "Codes Transmission Charging Methodologies Forum \u2026 9 July 2026 10am to 12:30pm Transmission Charging Methodologies Forum (TCMF) established under the Connection and Use of System Code (CUSC) to provide a\u2026 Meetings",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-9-july-2026",
-      "published_at": "2026-07-09T00:00:00Z",
-      "display_date": "09 July 2026"
-    },
-    {
       "headline": "Codes Grid Code - New Modification Proposal\u2026 15 July 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-15-july-2026",
-      "published_at": "2026-07-09T00:00:00Z",
-      "display_date": "09 July 2026"
+      "published_at": "2026-07-10T00:00:00Z",
+      "display_date": "10 July 2026"
+    },
+    {
+      "headline": "Connections Connections Reform: Fees and Securities\u2026 16 July 2026 2pm to 3pm Please join us for the latest connections reform update. We will be covering updates on fees, finance and securities. Ask pre\u2026 Events",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/connections-reform-fees-and-securities-webinar-july-2026",
+      "published_at": "2026-07-10T00:00:00Z",
+      "display_date": "10 July 2026"
     },
     {
       "headline": "Energy Union: New Spain-Portugal electricity interconnection inaugurated",
@@ -72,6 +58,20 @@
       "link": "https://energy.ec.europa.eu/news/energy-union-new-spain-portugal-electricity-interconnection-inaugurated-2026-07-02_en",
       "published_at": "2026-07-07T10:06:23Z",
       "display_date": "07 July 2026"
+    },
+    {
+      "headline": "Interconnections for South-West Europe at core of Ministerial Meeting in Paris today",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/interconnections-south-west-europe-core-ministerial-meeting-paris-today-2026-07-06_en",
+      "published_at": "2026-07-07T09:14:58Z",
+      "display_date": "07 July 2026"
+    },
+    {
+      "headline": "Government has secured \u00a3100 billion of clean energy investment",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/government-has-secured-100-billion-of-clean-energy-investment",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
