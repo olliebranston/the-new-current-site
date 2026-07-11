@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-11 03:48 UTC",
+  "last_updated": "2026-07-11 13:58 UTC",
   "r_and_d": [
     {
       "headline": "Commissioner Zaharieva leads dialogue on how to attract and retain research talent in Europe",
@@ -39,24 +39,24 @@
   ],
   "policy": [
     {
-      "headline": "Eurosat: Energy use for cooling in EU households doubled in 6 years",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260708-1",
-      "published_at": "2026-07-10T10:15:30Z",
-      "display_date": "10 July 2026"
-    },
-    {
       "headline": "Codes Grid Code - New Modification Proposal\u2026 15 July 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-15-july-2026",
-      "published_at": "2026-07-10T00:00:00Z",
-      "display_date": "10 July 2026"
+      "published_at": "2026-07-14T00:00:00Z",
+      "display_date": "14 July 2026"
     },
     {
       "headline": "Connections Connections Reform: Fees and Securities\u2026 16 July 2026 2pm to 3pm Please join us for the latest connections reform update. We will be covering updates on fees, finance and securities. Ask pre\u2026 Events",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/connections-reform-fees-and-securities-webinar-july-2026",
-      "published_at": "2026-07-10T00:00:00Z",
+      "published_at": "2026-07-14T00:00:00Z",
+      "display_date": "14 July 2026"
+    },
+    {
+      "headline": "Eurosat: Energy use for cooling in EU households doubled in 6 years",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260708-1",
+      "published_at": "2026-07-10T10:15:30Z",
       "display_date": "10 July 2026"
     },
     {
