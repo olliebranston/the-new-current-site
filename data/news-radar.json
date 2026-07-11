@@ -1,11 +1,25 @@
 {
-  "last_updated": "2026-07-10 15:06 UTC",
+  "last_updated": "2026-07-11 03:48 UTC",
   "r_and_d": [
     {
       "headline": "Commissioner Zaharieva leads dialogue on how to attract and retain research talent in Europe",
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/commissioner-zaharieva-leads-dialogue-how-attract-and-retain-research-talent-europe-2026-07-10_en",
       "published_at": "2026-07-10T12:31:10Z",
+      "display_date": "10 July 2026"
+    },
+    {
+      "headline": "Fundamental Research",
+      "source": "CORDIS Energy",
+      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
+      "published_at": "2026-07-10T00:00:00Z",
+      "display_date": "10 July 2026"
+    },
+    {
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-07-10T00:00:00Z",
       "display_date": "10 July 2026"
     },
     {
@@ -19,20 +33,6 @@
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-07-09T00:00:00Z",
-      "display_date": "09 July 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-07-09T00:00:00Z",
-      "display_date": "09 July 2026"
-    },
-    {
-      "headline": "Fundamental Research",
-      "source": "CORDIS Energy",
-      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
       "published_at": "2026-07-09T00:00:00Z",
       "display_date": "09 July 2026"
     }
