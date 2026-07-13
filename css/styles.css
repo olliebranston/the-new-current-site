@@ -486,8 +486,8 @@ li {
 .about-hero-card,
 .about-me-card,
 .thought-piece-card {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(198, 208, 221, 0.72);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
   box-shadow: var(--shadow-soft);
   transition:
     transform var(--transition-medium),
@@ -3169,7 +3169,7 @@ th {
 .article-newsletter-cta-btn {
   display: inline-block;
   padding: 10px 22px;
-  background: var(--brand-blue);
+  background: #ff6719;
   color: #fff;
   border-radius: 20px;
   font-size: 0.88rem;
@@ -3179,7 +3179,7 @@ th {
 }
 
 .article-newsletter-cta-btn:hover {
-  background: var(--brand-blue-hover);
+  background: #e55a10;
 }
 
 @media (max-width: 700px) {

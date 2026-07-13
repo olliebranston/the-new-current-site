@@ -2174,7 +2174,8 @@ function initThoughtPiecesPage(container, articles) {
       const textMatch = !query || (
         article.title.toLowerCase().includes(query) ||
         (article.summary || "").toLowerCase().includes(query) ||
-        (article.author || "").toLowerCase().includes(query)
+        (article.author || "").toLowerCase().includes(query) ||
+        (article.topic || "").toLowerCase().includes(query)
       );
       return topicMatch && textMatch;
     });
