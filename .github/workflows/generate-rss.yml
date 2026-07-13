@@ -1,0 +1,50 @@
+name: Generate RSS feed
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/thought-pieces.json"
+      - "scripts/generate_rss.py"
+      - ".github/workflows/generate-rss.yml"
+
+concurrency:
+  group: generate-rss-main
+  cancel-in-progress: false
+
+jobs:
+  generate-rss:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync with latest main
+        run: |
+          git checkout main
+          git pull --ff-only origin main
+
+      - name: Generate RSS feed
+        run: python scripts/generate_rss.py
+
+      - name: Commit RSS feed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add feed.xml
+          git diff --cached --quiet || git commit -m "Update RSS feed"
+          git push origin HEAD:main

@@ -1775,14 +1775,39 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
+const BOOKMARKS_KEY = "tnc-bookmarks";
+
+function getBookmarks() {
+  try { return new Set(JSON.parse(localStorage.getItem(BOOKMARKS_KEY) || "[]")); } catch { return new Set(); }
+}
+
+function saveBookmarks(set) {
+  localStorage.setItem(BOOKMARKS_KEY, JSON.stringify([...set]));
+}
+
+function toggleBookmark(link) {
+  const bookmarks = getBookmarks();
+  if (bookmarks.has(link)) { bookmarks.delete(link); } else { bookmarks.add(link); }
+  saveBookmarks(bookmarks);
+  return bookmarks.has(link);
+}
+
+function estimateReadingTime(text) {
+  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 220));
+}
+
+const BOOKMARK_ICON_SVG = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
+
 function buildThoughtPieceCard(article) {
   const safeTitle = escapeHtml(article.title);
   const safeSummary = escapeHtml(article.summary);
+  const isBookmarked = getBookmarks().has(article.link);
 
   const imageMarkup = article.image
     ? `
       <div class="thought-piece-card-image">
-        <img src="${article.image}" alt="${safeTitle}">
+        <img src="${article.image}" alt="${safeTitle}" loading="lazy">
       </div>
     `
     : "";
@@ -1790,9 +1815,12 @@ function buildThoughtPieceCard(article) {
   const noImageClass = article.image ? "" : " thought-piece-card-no-image";
 
   return `
-    <article class="thought-piece-card${noImageClass}">
+    <article class="thought-piece-card${noImageClass}" data-article-link="${article.link}">
       <div class="thought-piece-card-text">
-        <p class="card-kicker">${article.author || "Oliver Branston"}</p>
+        <div class="card-kicker-row">
+          <p class="card-kicker">${article.author || "Oliver Branston"}</p>
+          <button class="bookmark-btn${isBookmarked ? " active" : ""}" data-link="${article.link}" type="button" aria-label="${isBookmarked ? "Remove bookmark" : "Save article"}">${BOOKMARK_ICON_SVG}</button>
+        </div>
         <h3><a href="${article.link}">${safeTitle}</a></h3>
         <p class="article-meta">${formatArticleDate(article.date)}</p>
         <p>${safeSummary}</p>
@@ -1890,7 +1918,9 @@ if (brainDumpsContainer || homepageBrainDumps) {
   fetch("data/brain-dumps.json")
     .then((response) => response.json())
     .then((brainDumpData) => {
-      renderBrainDumps(brainDumpsContainer, brainDumpData.notes);
+      if (brainDumpsContainer) {
+        initBrainDumpsPage(brainDumpsContainer, brainDumpData.notes);
+      }
       renderHomepageBrainDumps(homepageBrainDumps, brainDumpData.notes);
     })
     .catch((error) => {
@@ -1998,14 +2028,37 @@ initBackToTop();
 
 /* ─── Thought pieces search and filter ─────────────────────────── */
 
+function parseUrlState() {
+  const raw = location.hash.slice(1);
+  if (!raw) return { q: "", topics: [] };
+  try {
+    const params = new URLSearchParams(raw);
+    return {
+      q: params.get("q") || "",
+      topics: params.get("topics") ? params.get("topics").split(",").filter(Boolean) : []
+    };
+  } catch { return { q: "", topics: [] }; }
+}
+
+function serializeUrlState(query, activeTopics) {
+  const params = new URLSearchParams();
+  if (query) params.set("q", query);
+  const topicsArr = [...activeTopics].filter((t) => t !== "All" && t !== "Saved");
+  if (topicsArr.length) params.set("topics", topicsArr.join(","));
+  const str = params.toString();
+  history.replaceState(null, "", location.pathname + (str ? "#" + str : ""));
+}
+
 function initThoughtPiecesPage(container, articles) {
   if (!container) return;
 
   const sortedArticles = sortItemsByDate(articles);
-  const topics = ["All", ...Array.from(new Set(sortedArticles.map((a) => a.topic).filter(Boolean))).sort()];
+  const topicSet = Array.from(new Set(sortedArticles.map((a) => a.topic).filter(Boolean))).sort();
+  const initialState = parseUrlState();
 
-  let activeTopics = new Set(["All"]);
-  let searchQuery = "";
+  let activeTopics = initialState.topics.length > 0 ? new Set(initialState.topics) : new Set(["All"]);
+  let searchQuery = initialState.q;
+  let showSavedOnly = false;
 
   const searchWrap = document.createElement("div");
   searchWrap.className = "tp-search-bar";
@@ -2021,11 +2074,14 @@ function initThoughtPiecesPage(container, articles) {
         placeholder="Search articles…"
         aria-label="Search articles"
         autocomplete="off"
+        value="${escapeHtml(searchQuery)}"
       />
     </div>
     <div class="tp-filter-chips" id="tpFilterChips">
-      ${topics.map((topic) => `
-        <button class="tp-filter-chip${topic === "All" ? " active" : ""}" data-topic="${topic}" type="button">${topic}</button>
+      <button class="tp-filter-chip${activeTopics.has("All") ? " active" : ""}" data-topic="All" type="button">All</button>
+      <button class="tp-filter-chip tp-saved-chip" data-topic="Saved" type="button">${BOOKMARK_ICON_SVG} Saved</button>
+      ${topicSet.map((topic) => `
+        <button class="tp-filter-chip${activeTopics.has(topic) ? " active" : ""}" data-topic="${topic}" type="button">${topic}</button>
       `).join("")}
     </div>
   `;
@@ -2037,9 +2093,11 @@ function initThoughtPiecesPage(container, articles) {
 
   function filterArticles() {
     const query = searchQuery.toLowerCase().trim();
-    const filterAll = activeTopics.has("All");
+    const filterAll = activeTopics.has("All") && !showSavedOnly;
+    const bookmarks = showSavedOnly ? getBookmarks() : null;
 
     return sortedArticles.filter((article) => {
+      if (showSavedOnly && !bookmarks.has(article.link)) return false;
       const topicMatch = filterAll || activeTopics.has(article.topic);
       const textMatch = !query || (
         article.title.toLowerCase().includes(query) ||
@@ -2054,7 +2112,10 @@ function initThoughtPiecesPage(container, articles) {
     const filtered = filterArticles();
 
     if (filtered.length === 0) {
-      container.innerHTML = '<p class="tp-no-results">No articles match your search.</p>';
+      const msg = showSavedOnly
+        ? "No saved articles yet. Click the bookmark icon on any article to save it."
+        : "No articles match your search.";
+      container.innerHTML = `<p class="tp-no-results">${msg}</p>`;
       return;
     }
 
@@ -2080,8 +2141,19 @@ function initThoughtPiecesPage(container, articles) {
     `).join("");
   }
 
+  function syncChipStates() {
+    chipsContainer.querySelectorAll(".tp-filter-chip").forEach((c) => {
+      if (c.dataset.topic === "Saved") {
+        c.classList.toggle("active", showSavedOnly);
+      } else {
+        c.classList.toggle("active", !showSavedOnly && activeTopics.has(c.dataset.topic));
+      }
+    });
+  }
+
   searchInput.addEventListener("input", (e) => {
     searchQuery = e.target.value;
+    serializeUrlState(searchQuery, activeTopics);
     render();
   });
 
@@ -2090,9 +2162,14 @@ function initThoughtPiecesPage(container, articles) {
     if (!chip) return;
     const topic = chip.dataset.topic;
 
-    if (topic === "All") {
+    if (topic === "Saved") {
+      showSavedOnly = !showSavedOnly;
+      if (showSavedOnly) activeTopics = new Set(["All"]);
+    } else if (topic === "All") {
+      showSavedOnly = false;
       activeTopics = new Set(["All"]);
     } else {
+      showSavedOnly = false;
       activeTopics.delete("All");
       if (activeTopics.has(topic)) {
         activeTopics.delete(topic);
@@ -2102,12 +2179,287 @@ function initThoughtPiecesPage(container, articles) {
       }
     }
 
-    chipsContainer.querySelectorAll(".tp-filter-chip").forEach((c) => {
-      c.classList.toggle("active", activeTopics.has(c.dataset.topic));
+    syncChipStates();
+    serializeUrlState(searchQuery, activeTopics);
+    render();
+  });
+
+  container.addEventListener("click", (e) => {
+    const btn = e.target.closest(".bookmark-btn");
+    if (!btn) return;
+    const link = btn.dataset.link;
+    const isNowBookmarked = toggleBookmark(link);
+    btn.classList.toggle("active", isNowBookmarked);
+    btn.setAttribute("aria-label", isNowBookmarked ? "Remove bookmark" : "Save article");
+    if (showSavedOnly) render();
+  });
+
+  render();
+}
+
+/* ─── Article page enhancements ─────────────────────────────────── */
+
+function initArticlePageFeatures() {
+  const articleEl = document.querySelector(".article-content");
+  if (!articleEl) return;
+
+  const articleHeader = articleEl.querySelector(".article-header");
+  const pagePath = location.pathname.replace(/^.*\/articles\//, "articles/");
+
+  // Reading time
+  const bodyText = articleEl.textContent || "";
+  const minutes = estimateReadingTime(bodyText);
+
+  // Article bookmark (resolve link relative to articles/ folder)
+  const articleLink = pagePath;
+  const isBookmarked = getBookmarks().has(articleLink);
+
+  // Topic chip
+  const topic = articleEl.dataset.topic;
+  if (topic && articleHeader) {
+    const topicLink = document.createElement("a");
+    topicLink.className = "article-topic-chip";
+    topicLink.href = `../thought-pieces.html#topics=${encodeURIComponent(topic)}`;
+    topicLink.textContent = topic;
+    const kicker = articleHeader.querySelector(".article-kicker");
+    if (kicker) kicker.after(topicLink);
+    else articleHeader.prepend(topicLink);
+  }
+
+  // Build actions row below header
+  const actionsRow = document.createElement("div");
+  actionsRow.className = "article-actions-row";
+  actionsRow.innerHTML = `
+    <span class="reading-time-badge">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      ${minutes} min read
+    </span>
+    <button class="article-bookmark-btn${isBookmarked ? " active" : ""}" id="articleBookmarkBtn" type="button" aria-label="${isBookmarked ? "Remove bookmark" : "Save article"}">
+      ${BOOKMARK_ICON_SVG}
+      <span>${isBookmarked ? "Saved" : "Save"}</span>
+    </button>
+    <button class="article-share-btn" id="articleShareBtn" type="button">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      Copy link
+    </button>
+  `;
+
+  if (articleHeader) {
+    articleHeader.after(actionsRow);
+  }
+
+  // Bookmark toggle
+  const bookmarkBtn = document.getElementById("articleBookmarkBtn");
+  if (bookmarkBtn) {
+    bookmarkBtn.addEventListener("click", () => {
+      const nowBookmarked = toggleBookmark(articleLink);
+      bookmarkBtn.classList.toggle("active", nowBookmarked);
+      bookmarkBtn.setAttribute("aria-label", nowBookmarked ? "Remove bookmark" : "Save article");
+      bookmarkBtn.querySelector("span").textContent = nowBookmarked ? "Saved" : "Save";
+      bookmarkBtn.querySelector("svg").style.fill = nowBookmarked ? "currentColor" : "none";
+    });
+  }
+
+  // Share button
+  const shareBtn = document.getElementById("articleShareBtn");
+  if (shareBtn) {
+    shareBtn.addEventListener("click", async () => {
+      const originalHTML = shareBtn.innerHTML;
+      try {
+        await navigator.clipboard.writeText(location.href);
+        shareBtn.textContent = "Copied!";
+        setTimeout(() => { shareBtn.innerHTML = originalHTML; }, 2000);
+      } catch {
+        shareBtn.innerHTML = originalHTML;
+      }
+    });
+  }
+
+  // Table of contents
+  const headings = [...articleEl.querySelectorAll("section h2")];
+  if (headings.length >= 3) {
+    headings.forEach((h, i) => {
+      if (!h.id) h.id = `section-${i}`;
     });
 
+    const toc = document.createElement("nav");
+    toc.className = "article-toc";
+    toc.setAttribute("aria-label", "Table of contents");
+    toc.innerHTML = `
+      <p class="article-toc-title">Contents</p>
+      <ol class="article-toc-list">
+        ${headings.map((h) => `<li><a href="#${h.id}">${escapeHtml(h.textContent)}</a></li>`).join("")}
+      </ol>
+    `;
+
+    const sections = articleEl.querySelectorAll("section");
+    if (sections.length >= 2) {
+      sections[0].after(toc);
+    }
+  }
+}
+
+initArticlePageFeatures();
+
+/* ─── Brain dumps page search ───────────────────────────────────── */
+
+function initBrainDumpsPage(container, notes) {
+  if (!container) return;
+
+  const sortedNotes = sortItemsByDate(notes);
+  const tags = ["All", ...Array.from(new Set(sortedNotes.map((n) => n.tag).filter(Boolean))).sort()];
+
+  let searchQuery = "";
+  let activeTag = "All";
+
+  const searchWrap = document.createElement("div");
+  searchWrap.className = "tp-search-bar";
+  searchWrap.innerHTML = `
+    <div class="tp-search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        class="tp-search-input bd-search-input"
+        id="bdSearchInput"
+        placeholder="Search notes…"
+        aria-label="Search notes"
+        autocomplete="off"
+      />
+    </div>
+    <div class="tp-filter-chips" id="bdFilterChips">
+      ${tags.map((tag) => `
+        <button class="tp-filter-chip${tag === "All" ? " active" : ""}" data-tag="${tag}" type="button">${tag}</button>
+      `).join("")}
+    </div>
+  `;
+
+  container.parentNode.insertBefore(searchWrap, container);
+
+  const searchInput = document.getElementById("bdSearchInput");
+  const chipsContainer = document.getElementById("bdFilterChips");
+
+  function render() {
+    const query = searchQuery.toLowerCase().trim();
+
+    const filtered = sortedNotes.filter((note) => {
+      const tagMatch = activeTag === "All" || note.tag === activeTag;
+      const text = [note.title, note.tag, ...(Array.isArray(note.content) ? note.content : [note.content])].join(" ").toLowerCase();
+      const textMatch = !query || text.includes(query);
+      return tagMatch && textMatch;
+    });
+
+    if (filtered.length === 0) {
+      container.innerHTML = '<p class="tp-no-results">No notes match your search.</p>';
+      return;
+    }
+
+    container.innerHTML = "";
+    filtered.forEach((note) => {
+      const wrapper = document.createElement("article");
+      wrapper.className = "brain-dump-card";
+      const paragraphs = Array.isArray(note.content)
+        ? note.content.map((p) => `<p>${escapeHtml(p)}</p>`).join("")
+        : `<p>${escapeHtml(note.content)}</p>`;
+      wrapper.innerHTML = `
+        <div class="brain-dump-card-inner">
+          <p class="card-kicker">Brain Dump</p>
+          <h3>${escapeHtml(note.title)}</h3>
+          <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
+          <div class="brain-dump-content">${paragraphs}</div>
+        </div>
+      `;
+      container.appendChild(wrapper);
+    });
+  }
+
+  searchInput.addEventListener("input", (e) => {
+    searchQuery = e.target.value;
+    render();
+  });
+
+  chipsContainer.addEventListener("click", (e) => {
+    const chip = e.target.closest(".tp-filter-chip");
+    if (!chip) return;
+    activeTag = chip.dataset.tag;
+    chipsContainer.querySelectorAll(".tp-filter-chip").forEach((c) => {
+      c.classList.toggle("active", c.dataset.tag === activeTag);
+    });
     render();
   });
 
   render();
 }
+
+/* ─── Keyboard shortcuts ────────────────────────────────────────── */
+
+function initKeyboardShortcuts() {
+  document.addEventListener("keydown", (e) => {
+    const tag = (e.target.tagName || "").toLowerCase();
+    const isEditing = tag === "input" || tag === "textarea" || e.target.isContentEditable;
+
+    if (e.key === "/" && !isEditing && !e.metaKey && !e.ctrlKey) {
+      const searchInput = document.getElementById("tpSearchInput") || document.getElementById("bdSearchInput");
+      if (searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      }
+    }
+
+    if (e.key === "Escape" && isEditing) {
+      e.target.blur();
+    }
+  });
+}
+
+initKeyboardShortcuts();
+
+/* ─── Accessibility: main-content skip target ───────────────────── */
+
+(function setMainId() {
+  const mainEl = document.querySelector("main");
+  if (mainEl && !mainEl.id) mainEl.id = "main-content";
+})();
+
+/* ─── Scroll fade animations ────────────────────────────────────── */
+
+function initScrollAnimations() {
+  if (!window.IntersectionObserver) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  const TARGETS = ".thought-piece-card, .brain-dump-card, .grid-metric-card, .generation-mix-panel, .data-preview-card, .recommendation-card, .radar-item";
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-in");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: "0px 0px -30px 0px" });
+
+  function observeNew(root) {
+    root.querySelectorAll(TARGETS).forEach((el) => {
+      if (!el.classList.contains("animate-in")) {
+        el.classList.add("animate-fade");
+        observer.observe(el);
+      }
+    });
+  }
+
+  observeNew(document);
+
+  const mutObs = new MutationObserver((mutations) => {
+    mutations.forEach((m) => {
+      m.addedNodes.forEach((node) => {
+        if (node.nodeType === 1) observeNew(node);
+      });
+    });
+  });
+
+  mutObs.observe(document.body, { childList: true, subtree: true });
+}
+
+initScrollAnimations();

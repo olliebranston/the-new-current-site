@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The New Current</title>
+    <link>https://olliebranston.github.io/the-new-current-site/</link>
+    <description>Energy transition writing and analysis by Ollie Branston — markets, policy, technology, and system change.</description>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 18 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://olliebranston.github.io/the-new-current-site/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dan Gill on energy resilience for critical national infrastructure</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-10.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-10.html</guid>
+      <description>Why energy resilience for critical national infrastructure is moving from an engineering detail to a board-level risk, from the Heathrow substation fire to priorities for Chief Risk Officers and policy-makers.</description>
+      <author>Oliver Branston with Dan Gill</author>
+      <category>Energy resilience</category>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Andrew Horstead on power system reinvention for utilities</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-9.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-9.html</guid>
+      <description>How management teams should be thinking about the power system, from structural demand growth and network bottlenecks to geopolitics, orchestration and resilience.</description>
+      <author>Oliver Branston with Andrew Horstead</author>
+      <category>Power systems</category>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Anthony Byrne on agentic AI for grid operators</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-8.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-8.html</guid>
+      <description>A case for agent-driven workflows in grid operations, focused on governed data layers, operational productivity, resilience and the barriers of data, people and cyber risk.</description>
+      <author>Oliver Branston with Anthony Byrne</author>
+      <category>AI and grid operations</category>
+      <pubDate>Wed, 17 Dec 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Alwyn Hopkins on the EU Carbon Border Adjustment Mechanism (CBAM)</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-7.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-7.html</guid>
+      <description>A practical explanation of CBAM, from carbon leakage and reporting rules to importer strategy, embedded emissions and geopolitical implications.</description>
+      <author>Oliver Branston with Alwyn Hopkins</author>
+      <category>Carbon pricing and trade</category>
+      <pubDate>Fri, 28 Nov 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Samuel Pachoud on market-led vs planned energy systems</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-6.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-6.html</guid>
+      <description>A comparison of market-led and planned energy systems, drawing lessons from Britain, the US, Australia, France and China on how to deliver faster clean power build-out.</description>
+      <author>Oliver Branston with Samuel Pachoud</author>
+      <category>Power systems</category>
+      <pubDate>Thu, 20 Nov 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Declan O’Donahue on the changing role of energy system operators</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-5.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-5.html</guid>
+      <description>A guide to GB’s evolving system operator model, the grid connection backlog, and the importance of better data, flexibility and process reform.</description>
+      <author>Oliver Branston with Declan O’Donahue</author>
+      <category>Grid and system operation</category>
+      <pubDate>Thu, 06 Nov 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Asif Sheikh on the case for CCUS</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-4.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-4.html</guid>
+      <description>An explanation of why CCUS is technologically ready but still economically difficult, and how different policy playbooks are trying to create viable markets.</description>
+      <author>Oliver Branston with Asif Sheikh</author>
+      <category>CCUS</category>
+      <pubDate>Tue, 21 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meera Kotak on unlocking opportunities and addressing challenges for modular reactors</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-3.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-3.html</guid>
+      <description>A look at how modular reactors could move nuclear from one-off megaprojects to repeatable product models, and what must happen on fuel, licensing and supply chains to make that possible.</description>
+      <author>Oliver Branston with Meera Kotak</author>
+      <category>Nuclear</category>
+      <pubDate>Thu, 09 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Benjamin Collie on Gas in Britain’s Power Transition</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-2.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-2.html</guid>
+      <description>An overview of gas’s changing role in Britain’s electricity system, and how gas plant operators may adapt through flexibility, hydrogen, CCUS and new commercial models.</description>
+      <author>Oliver Branston with Benjamin Collie</author>
+      <category>Power and gas</category>
+      <pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Piyush Patel on Europe’s role in global battery supply chains</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-1.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-1.html</guid>
+      <description>A discussion of Europe’s battery supply chain options, from joint ventures and midstream diversification to distressed asset acquisition and the future of sodium-ion technologies.</description>
+      <author>Oliver Branston with Piyush Patel</author>
+      <category>Batteries</category>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Environmental Effect of Crypto</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/archive-article-1.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/archive-article-1.html</guid>
+      <description>An archive thought piece exploring whether cryptocurrency’s energy use has been overstated and whether mining could, under some conditions, support renewable energy growth.</description>
+      <author>Oliver Branston</author>
+      <category>Archive</category>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A New Age of Greenwashing in the Car Industry Thought Piece</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/archive-article-2.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/archive-article-2.html</guid>
+      <description>An archive piece on electric vehicles, asking whether they are as sustainable as they appear once manufacturing, mining, electricity production and recycling are all considered.</description>
+      <author>Oliver Branston</author>
+      <category>Archive</category>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>UN Gender Bond Thought Piece</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/archive-article-3.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/archive-article-3.html</guid>
+      <description>An archive article examining sovereign gender bonds, microfinance and the limits of sustainable finance as a tool for delivering meaningful change for women.</description>
+      <author>Oliver Branston</author>
+      <category>Archive</category>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

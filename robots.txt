@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://olliebranston.github.io/the-new-current-site/sitemap.xml
+Sitemap: https://olliebranston.github.io/the-new-current-site/feed.xml

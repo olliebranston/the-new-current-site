@@ -2372,6 +2372,28 @@ th {
   }
 }
 
+/* ─── Skip to content ───────────────────────────────────────────── */
+
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 16px;
+  z-index: 9999;
+  padding: 10px 18px;
+  background: var(--brand-blue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: none;
+}
+
 /* ─── Dark mode ─────────────────────────────────────────────────── */
 
 [data-theme="dark"] {
@@ -2545,6 +2567,28 @@ th {
   color: var(--text-muted);
 }
 
+.tp-saved-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tp-saved-chip svg {
+  width: 13px;
+  height: 13px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: fill var(--transition-fast);
+}
+
+.tp-saved-chip.active svg {
+  fill: #fff;
+  stroke: #fff;
+}
+
 /* ─── Reading progress bar ─────────────────────────────────────── */
 
 .reading-progress {
@@ -2623,3 +2667,324 @@ th {
     max-width: 100%;
   }
 }
+
+/* ─── Bookmark button on cards ──────────────────────────────────── */
+
+.card-kicker-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.card-kicker-row .card-kicker {
+  margin-bottom: 0;
+}
+
+.bookmark-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  border-radius: 6px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+.bookmark-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: fill var(--transition-fast), stroke var(--transition-fast);
+}
+
+.bookmark-btn:hover {
+  color: var(--brand-blue);
+  transform: scale(1.1);
+}
+
+.bookmark-btn.active {
+  color: var(--brand-blue);
+}
+
+.bookmark-btn.active svg {
+  fill: var(--brand-blue);
+  stroke: var(--brand-blue);
+}
+
+.bookmark-btn:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+
+/* ─── Article page: reading time, share, TOC ────────────────────── */
+
+.article-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.reading-time-badge {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.reading-time-badge svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.article-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--bg-surface);
+  color: var(--text-soft);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.article-share-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.article-share-btn:hover {
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+.article-share-btn:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 3px;
+}
+
+.article-bookmark-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--bg-surface);
+  color: var(--text-soft);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.article-bookmark-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: fill var(--transition-fast);
+}
+
+.article-bookmark-btn:hover,
+.article-bookmark-btn.active {
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+.article-bookmark-btn.active svg {
+  fill: var(--brand-blue);
+  stroke: var(--brand-blue);
+}
+
+.article-bookmark-btn:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 3px;
+}
+
+/* ─── Table of contents ─────────────────────────────────────────── */
+
+.article-toc {
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin: 28px 0;
+  max-width: 480px;
+}
+
+.article-toc-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.article-toc-list {
+  margin: 0;
+  padding: 0 0 0 18px;
+  list-style: decimal;
+}
+
+.article-toc-list li {
+  margin-bottom: 5px;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.article-toc-list a {
+  color: var(--brand-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.article-toc-list a:hover {
+  color: var(--brand-blue-hover);
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .article-toc {
+    max-width: 100%;
+  }
+
+  .article-actions-row {
+    gap: 8px;
+  }
+}
+
+/* ─── Scroll fade animations ────────────────────────────────────── */
+
+.animate-fade {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.animate-fade.animate-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade,
+  .animate-fade.animate-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── Article topic chip ────────────────────────────────────────── */
+
+.article-topic-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  background: var(--brand-blue-soft);
+  color: var(--brand-blue);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.article-topic-chip:hover {
+  background: var(--brand-blue);
+  color: #fff;
+}
+
+/* ─── Print styles ──────────────────────────────────────────────── */
+
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .reading-progress,
+  .back-to-top,
+  .article-actions-row,
+  .article-toc,
+  .article-navigation,
+  .substack-cta {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  h1 { font-size: 22pt; }
+  h2 { font-size: 16pt; page-break-after: avoid; }
+  h3 { font-size: 13pt; page-break-after: avoid; }
+
+  p, li { color: #000; orphans: 3; widows: 3; }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #555;
+  }
+
+  a[href^="#"]::after,
+  a[href^="mailto:"]::after {
+    content: "";
+  }
+
+  .article-image {
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  section { page-break-inside: avoid; }
+}
+

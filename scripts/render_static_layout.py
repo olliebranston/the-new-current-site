@@ -42,6 +42,12 @@ THEME_LOADER_SCRIPT = (
     "</script>"
 )
 
+RSS_LINK = (
+    '<link rel="alternate" type="application/rss+xml" '
+    'title="The New Current" '
+    'href="https://olliebranston.github.io/the-new-current-site/feed.xml" />'
+)
+
 
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
@@ -259,10 +265,27 @@ def replace_article_navigation(text: str, path: Path, articles: list[dict[str, o
     return re.sub(r"(\n\s*</article>\s*\n\s*</main>)", f"\n{block}\\1", text, count=1)
 
 
-def inject_theme_loader(text: str) -> str:
-    if THEME_LOADER_SCRIPT in text:
+def inject_article_topic(text: str, current: dict[str, object] | None) -> str:
+    topic = str(current.get("topic", "")) if current else ""
+    if not topic:
         return text
-    return text.replace("</head>", f"  {THEME_LOADER_SCRIPT}\n</head>", 1)
+    old = '<article class="article-content">'
+    if old not in text:
+        return text
+    new = f'<article class="article-content" data-topic="{escape_html(topic)}">'
+    return text.replace(old, new, 1)
+
+
+def inject_head_tags(text: str) -> str:
+    tags_to_inject = []
+    if RSS_LINK not in text:
+        tags_to_inject.append(RSS_LINK)
+    if THEME_LOADER_SCRIPT not in text:
+        tags_to_inject.append(THEME_LOADER_SCRIPT)
+    if not tags_to_inject:
+        return text
+    injection = "\n".join(f"  {tag}" for tag in tags_to_inject) + "\n"
+    return text.replace("</head>", f"{injection}</head>", 1)
 
 
 def render_page(path: Path, articles: list[dict[str, object]]) -> bool:
@@ -285,9 +308,12 @@ def render_page(path: Path, articles: list[dict[str, object]]) -> bool:
         FOOTER_END,
         footer,
     )
-    text = inject_theme_loader(text)
+    text = inject_head_tags(text)
 
     if path.parent.name == "articles":
+        link = f"articles/{path.name}"
+        current_article = article_by_path(articles).get(link)
+        text = inject_article_topic(text, current_article)
         text = replace_article_navigation(text, path, articles)
 
     return write_if_changed(path, text)

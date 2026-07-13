@@ -76,6 +76,18 @@ CONTENT_CHECKS: list[tuple[str, bytes, str]] = [
     ("/js/main.js", b"initReadingProgress", "reading progress JS"),
     ("/js/main.js", b"initBackToTop", "back-to-top JS"),
     ("/js/main.js", b"initThoughtPiecesPage", "thought pieces search JS"),
+    # Iteration 3
+    ("/index.html", b"skip-link", "skip-to-content link"),
+    ("/index.html", b"application/rss+xml", "RSS autodiscovery link"),
+    ("/index.html", b"feed.xml", "RSS feed link in head"),
+    ("/css/styles.css", b"@media print", "print styles"),
+    ("/css/styles.css", b".skip-link", "skip link CSS"),
+    ("/js/main.js", b"initBrainDumpsPage", "brain dumps search JS"),
+    ("/js/main.js", b"initKeyboardShortcuts", "keyboard shortcuts JS"),
+    ("/js/main.js", b"initArticlePageFeatures", "article page features JS"),
+    ("/js/main.js", b"article-toc", "table of contents JS"),
+    ("/js/main.js", b"article-share-btn", "share button JS"),
+    ("/js/main.js", b"BOOKMARKS_KEY", "bookmarks JS"),
 ]
 
 
