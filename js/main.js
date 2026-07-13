@@ -1814,12 +1814,16 @@ function buildThoughtPieceCard(article) {
 
   const noImageClass = article.image ? "" : " thought-piece-card-no-image";
 
+  const isRead = getReadArticles().has(article.link);
+  const featuredBadge = article.featured ? '<span class="card-featured-badge">Featured</span>' : "";
+  const readBadge = isRead ? '<span class="card-read-badge" title="Read">✓</span>' : "";
+
   return `
     <article class="thought-piece-card${noImageClass}" data-article-link="${article.link}">
       <div class="thought-piece-card-text">
         <div class="card-kicker-row">
           <p class="card-kicker">${article.author || "Oliver Branston"}</p>
-          <button class="bookmark-btn${isBookmarked ? " active" : ""}" data-link="${article.link}" type="button" aria-label="${isBookmarked ? "Remove bookmark" : "Save article"}">${BOOKMARK_ICON_SVG}</button>
+          <div class="card-badges">${featuredBadge}${readBadge}<button class="bookmark-btn${isBookmarked ? " active" : ""}" data-link="${article.link}" type="button" aria-label="${isBookmarked ? "Remove bookmark" : "Save article"}">${BOOKMARK_ICON_SVG}</button></div>
         </div>
         <h3><a href="${article.link}">${safeTitle}</a></h3>
         <p class="article-meta">${formatArticleDate(article.date)}</p>
@@ -2086,6 +2090,11 @@ function initThoughtPiecesPage(container, articles) {
     </div>
   `;
 
+  const resultCount = document.createElement("p");
+  resultCount.className = "tp-result-count";
+  resultCount.setAttribute("aria-live", "polite");
+  searchWrap.appendChild(resultCount);
+
   container.parentNode.insertBefore(searchWrap, container);
 
   const searchInput = document.getElementById("tpSearchInput");
@@ -2110,6 +2119,9 @@ function initThoughtPiecesPage(container, articles) {
 
   function render() {
     const filtered = filterArticles();
+    const total = sortedArticles.length;
+    const isFiltered = searchQuery.trim() || !activeTopics.has("All") || showSavedOnly;
+    resultCount.textContent = isFiltered ? `Showing ${filtered.length} of ${total} articles` : "";
 
     if (filtered.length === 0) {
       const msg = showSavedOnly
@@ -2463,3 +2475,61 @@ function initScrollAnimations() {
 }
 
 initScrollAnimations();
+
+/* ─── Mobile hamburger nav ──────────────────────────────────────── */
+
+function initMobileNav() {
+  const hamburger = document.getElementById("navHamburger");
+  const nav = document.getElementById("siteNav");
+  if (!hamburger || !nav) return;
+
+  hamburger.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("is-open");
+    hamburger.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
+      nav.classList.remove("is-open");
+      hamburger.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  nav.querySelectorAll(".nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      hamburger.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+initMobileNav();
+
+/* ─── Mark as read ──────────────────────────────────────────────── */
+
+const READ_KEY = "tnc-read";
+
+function getReadArticles() {
+  try { return new Set(JSON.parse(localStorage.getItem(READ_KEY) || "[]")); } catch { return new Set(); }
+}
+
+function markCurrentArticleRead() {
+  const articleEl = document.querySelector(".article-content");
+  if (!articleEl) return;
+
+  const pagePath = location.pathname.replace(/^.*\/articles\//, "articles/");
+  let marked = false;
+
+  window.addEventListener("scroll", () => {
+    if (marked) return;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0 && (window.scrollY / docHeight) >= 0.85) {
+      const readSet = getReadArticles();
+      readSet.add(pagePath);
+      localStorage.setItem(READ_KEY, JSON.stringify([...readSet]));
+      marked = true;
+    }
+  }, { passive: true });
+}
+
+markCurrentArticleRead();
