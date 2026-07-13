@@ -1625,6 +1625,8 @@ if (recommendedRead || recommendedListen) {
       console.error("Error loading recommendations data:", error);
     });
 }
+const COPY_ICON_SVG = '<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+
 function renderBrainDumps(container, notes) {
   if (!container) {
     return;
@@ -1643,20 +1645,32 @@ function renderBrainDumps(container, notes) {
     const wrapper = document.createElement("article");
     wrapper.className = "brain-dump-card";
 
-    const paragraphs = Array.isArray(note.content)
-      ? note.content.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")
-      : `<p>${escapeHtml(note.content)}</p>`;
+    const contentArr = Array.isArray(note.content) ? note.content : [note.content];
+    const paragraphs = contentArr.map((p) => `<p>${escapeHtml(p)}</p>`).join("");
 
     wrapper.innerHTML = `
       <div class="brain-dump-card-inner">
         <p class="card-kicker">Brain Dump</p>
-        <h3>${escapeHtml(note.title)}</h3>
+        <div class="brain-dump-card-header">
+          <h3>${escapeHtml(note.title)}</h3>
+          <button class="brain-dump-copy-btn" type="button" aria-label="Copy note">${COPY_ICON_SVG} Copy</button>
+        </div>
         <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
         <div class="brain-dump-content">
           ${paragraphs}
         </div>
       </div>
     `;
+
+    const copyBtn = wrapper.querySelector(".brain-dump-copy-btn");
+    copyBtn.addEventListener("click", async () => {
+      const text = `${note.title}\n\n${contentArr.join("\n\n")}`;
+      try {
+        await navigator.clipboard.writeText(text);
+        copyBtn.innerHTML = `${COPY_ICON_SVG} Copied!`;
+        setTimeout(() => { copyBtn.innerHTML = `${COPY_ICON_SVG} Copy`; }, 2000);
+      } catch { /* clipboard not available */ }
+    });
 
     container.appendChild(wrapper);
   });
@@ -2647,6 +2661,153 @@ function initCommandPalette() {
 }
 
 initCommandPalette();
+
+/* ─── Skeleton loading for containers ───────────────────────────── */
+
+function showSkeletons(container, count = 3) {
+  if (!container) return;
+  container.innerHTML = Array.from({ length: count }, () => `
+    <div class="skeleton-card">
+      <div class="skeleton-line narrow"></div>
+      <div class="skeleton-line title"></div>
+      <div class="skeleton-line medium"></div>
+      <div class="skeleton-line full"></div>
+      <div class="skeleton-line wide"></div>
+      <div class="skeleton-line medium"></div>
+    </div>
+  `).join("");
+}
+
+(function initSkeletons() {
+  if (thoughtPiecesContainer) showSkeletons(thoughtPiecesContainer, 3);
+  if (brainDumpsContainer) showSkeletons(brainDumpsContainer, 3);
+})();
+
+/* ─── Reading history panel ─────────────────────────────────────── */
+
+function initReadingHistory() {
+  const HISTORY_ARTICLES_KEY = "tnc-read";
+
+  function getHistoryData(thoughtPiecesData) {
+    const articles = thoughtPiecesData || [];
+    const readSet = getReadArticles();
+    const bookmarkSet = getBookmarks();
+    const isArticlePage = location.pathname.includes("/articles/");
+    const prefix = isArticlePage ? "../" : "";
+
+    const readArticles = articles
+      .filter((a) => readSet.has(a.link))
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    const savedArticles = articles
+      .filter((a) => bookmarkSet.has(a.link))
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    return { readArticles, savedArticles, prefix };
+  }
+
+  function renderTab(listEl, articles, prefix, emptyMsg) {
+    if (!articles.length) {
+      listEl.innerHTML = `<p class="history-empty">${emptyMsg}</p>`;
+      return;
+    }
+    listEl.innerHTML = articles.map((a) => `
+      <a class="history-item" href="${prefix}${a.link}">
+        <div class="history-item-title">${escapeHtml(a.title)}</div>
+        <div class="history-item-meta">${a.topic || ""} · ${formatArticleDate(a.date)}</div>
+      </a>
+    `).join("");
+  }
+
+  let overlay = null;
+  let activeTab = "saved";
+  let tpData = null;
+
+  async function ensureData() {
+    if (tpData) return;
+    const isArticlePage = location.pathname.includes("/articles/");
+    const prefix = isArticlePage ? "../" : "";
+    try {
+      const resp = await fetch(`${prefix}data/thought-pieces.json`);
+      const json = await resp.json();
+      tpData = json.articles || [];
+    } catch { tpData = []; }
+  }
+
+  function updatePanel() {
+    if (!overlay) return;
+    const listEl = overlay.querySelector(".history-list");
+    const { readArticles, savedArticles, prefix } = getHistoryData(tpData);
+
+    if (activeTab === "saved") {
+      renderTab(listEl, savedArticles, prefix, "No saved articles yet. Click the bookmark icon on any article.");
+    } else {
+      renderTab(listEl, readArticles, prefix, "No articles read yet. Articles are marked read when you reach the bottom.");
+    }
+  }
+
+  function open() {
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.className = "history-overlay";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-label", "Reading history");
+      overlay.innerHTML = `
+        <div class="history-panel">
+          <div class="history-panel-header">
+            <h2 class="history-panel-title">Your Library</h2>
+            <button class="history-close-btn" aria-label="Close" type="button">
+              <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+          <div class="history-tabs">
+            <button class="history-tab active" data-tab="saved" type="button">Saved</button>
+            <button class="history-tab" data-tab="read" type="button">Read</button>
+          </div>
+          <div class="history-list"></div>
+          <div class="history-panel-footer">
+            <button class="history-clear-btn" type="button">Clear all</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+
+      overlay.querySelector(".history-close-btn").addEventListener("click", close);
+      overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
+
+      overlay.querySelectorAll(".history-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          activeTab = tab.dataset.tab;
+          overlay.querySelectorAll(".history-tab").forEach((t) => t.classList.toggle("active", t === tab));
+          updatePanel();
+        });
+      });
+
+      overlay.querySelector(".history-clear-btn").addEventListener("click", () => {
+        if (activeTab === "saved") {
+          localStorage.removeItem(BOOKMARKS_KEY);
+        } else {
+          localStorage.removeItem(READ_KEY);
+        }
+        updatePanel();
+      });
+    }
+
+    overlay.classList.add("open");
+    ensureData().then(updatePanel);
+  }
+
+  function close() {
+    if (overlay) overlay.classList.remove("open");
+  }
+
+  const historyBtn = document.getElementById("historyBtn");
+  if (historyBtn) historyBtn.addEventListener("click", open);
+
+  return { open };
+}
+
+const readingHistory = initReadingHistory();
 
 /* ─── Mobile hamburger nav ──────────────────────────────────────── */
 
