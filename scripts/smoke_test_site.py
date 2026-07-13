@@ -102,6 +102,13 @@ CONTENT_CHECKS: list[tuple[str, bytes, str]] = [
     ("/css/styles.css", b".cmd-highlight", "command palette highlight CSS"),
     ("/css/styles.css", b".article-newsletter-cta", "newsletter CTA CSS"),
     ("/css/styles.css", b".toc-active", "ToC active section CSS"),
+    # Iteration 10
+    ("/js/main.js", b"trapFocus", "focus trap utility JS"),
+    ("/js/main.js", b"QUICK_ACTIONS", "command palette quick actions JS"),
+    ("/js/main.js", b"toggle-theme", "dark mode quick action JS"),
+    ("/js/main.js", b"showShortcuts", "keyboard shortcuts help JS"),
+    ("/css/styles.css", b".shortcuts-panel", "keyboard shortcuts panel CSS"),
+    ("/css/styles.css", b".shortcut-row", "shortcut row CSS"),
 ]
 
 

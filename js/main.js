@@ -1804,6 +1804,28 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
+function trapFocus(container) {
+  const FOCUSABLE = 'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])';
+  container.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab") return;
+    const items = [...container.querySelectorAll(FOCUSABLE)];
+    if (!items.length) { e.preventDefault(); return; }
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first || !container.contains(document.activeElement)) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last || !container.contains(document.activeElement)) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+}
+
 function highlightMatch(text, query) {
   const escaped = escapeHtml(text);
   if (!query) return escaped;
@@ -2497,12 +2519,63 @@ function initBrainDumpsPage(container, notes) {
 /* ─── Keyboard shortcuts ────────────────────────────────────────── */
 
 function initKeyboardShortcuts() {
+  let shortcutsOverlay = null;
+
+  function showShortcuts() {
+    if (shortcutsOverlay) {
+      shortcutsOverlay.classList.toggle("open");
+      return;
+    }
+    shortcutsOverlay = document.createElement("div");
+    shortcutsOverlay.className = "cmd-overlay open";
+    shortcutsOverlay.setAttribute("role", "dialog");
+    shortcutsOverlay.setAttribute("aria-label", "Keyboard shortcuts");
+    shortcutsOverlay.innerHTML = `
+      <div class="cmd-palette shortcuts-panel">
+        <div class="cmd-input-wrap shortcuts-panel-header">
+          <span class="shortcuts-panel-title">Keyboard shortcuts</span>
+          <button class="shortcuts-close-btn" aria-label="Close" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="shortcuts-list">
+          <div class="shortcut-row"><kbd>Ctrl K</kbd><span>Open search</span></div>
+          <div class="shortcut-row"><kbd>/</kbd><span>Open search</span></div>
+          <div class="shortcut-row"><kbd>?</kbd><span>Show keyboard shortcuts</span></div>
+          <div class="shortcut-row"><kbd>b</kbd><span>Bookmark article (on article pages)</span></div>
+          <div class="shortcut-row"><kbd>Esc</kbd><span>Close dialog / blur input</span></div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(shortcutsOverlay);
+    trapFocus(shortcutsOverlay.querySelector(".shortcuts-panel"));
+    shortcutsOverlay.querySelector(".shortcuts-close-btn").addEventListener("click", () => shortcutsOverlay.classList.remove("open"));
+    shortcutsOverlay.addEventListener("click", (e) => { if (e.target === shortcutsOverlay) shortcutsOverlay.classList.remove("open"); });
+    shortcutsOverlay.addEventListener("keydown", (e) => { if (e.key === "Escape") shortcutsOverlay.classList.remove("open"); });
+  }
+
   document.addEventListener("keydown", (e) => {
     const tag = (e.target.tagName || "").toLowerCase();
     const isEditing = tag === "input" || tag === "textarea" || e.target.isContentEditable;
 
     if (e.key === "Escape" && isEditing) {
       e.target.blur();
+      return;
+    }
+
+    if (isEditing || e.metaKey || e.ctrlKey || e.altKey) return;
+
+    if (e.key === "?") {
+      e.preventDefault();
+      showShortcuts();
+    }
+
+    if (e.key === "b") {
+      const bookmarkBtn = document.getElementById("articleBookmarkBtn");
+      if (bookmarkBtn) {
+        e.preventDefault();
+        bookmarkBtn.click();
+      }
     }
   });
 }
@@ -2569,9 +2642,19 @@ function initCommandPalette() {
 
   const ARTICLE_ICON = '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>';
   const BRAIN_ICON = '<svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-1.16z"/></svg>';
+  const NAV_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>';
+  const THEME_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
 
   const isArticlePage = location.pathname.includes("/articles/");
   const prefix = isArticlePage ? "../" : "";
+
+  const QUICK_ACTIONS = [
+    { type: "page", title: "Thought Pieces", meta: "Browse all articles", url: `${prefix}thought-pieces.html`, icon: ARTICLE_ICON },
+    { type: "page", title: "Data & Charts", meta: "Live grid intelligence", url: `${prefix}data.html`, icon: NAV_ICON },
+    { type: "page", title: "Reporting", meta: "Editor's picks and news radar", url: `${prefix}reporting.html`, icon: NAV_ICON },
+    { type: "page", title: "Brain Dumps", meta: "Quick notes and observations", url: `${prefix}brain-dumps.html`, icon: BRAIN_ICON },
+    { type: "action", title: "Toggle dark mode", meta: "Switch between light and dark", url: null, icon: THEME_ICON },
+  ];
 
   async function loadData() {
     if (dataLoaded) return;
@@ -2607,7 +2690,7 @@ function initCommandPalette() {
 
   function getResults(query) {
     const q = query.trim().toLowerCase();
-    if (!q) return allItems.slice(0, 8);
+    if (!q) return [...QUICK_ACTIONS, ...allItems.slice(0, 5)];
     return allItems.filter((item) =>
       item.title.toLowerCase().includes(q) ||
       (item.meta || "").toLowerCase().includes(q) ||
@@ -2626,6 +2709,7 @@ function initCommandPalette() {
     }
 
     const q = query.trim();
+    const pages = results.filter((r) => r.type === "page" || r.type === "action");
     const articles = results.filter((r) => r.type === "article");
     const notes = results.filter((r) => r.type === "note");
 
@@ -2636,7 +2720,7 @@ function initCommandPalette() {
       items.forEach((item) => {
         const globalIdx = results.indexOf(item);
         html += `
-          <button class="cmd-result-item" data-index="${globalIdx}" data-url="${item.url ? escapeHtml(item.url) : ""}" type="button">
+          <button class="cmd-result-item" data-index="${globalIdx}" data-url="${item.url ? escapeHtml(item.url) : ""}" data-action="${item.type === "action" ? "toggle-theme" : ""}" type="button">
             <span class="cmd-result-icon">${item.icon}</span>
             <span class="cmd-result-text">
               <span class="cmd-result-title">${highlightMatch(item.title, q)}</span>
@@ -2646,6 +2730,7 @@ function initCommandPalette() {
       });
     };
 
+    addGroup("Quick actions", pages);
     addGroup("Articles", articles);
     addGroup("Brain Dumps", notes);
     resultsEl.innerHTML = html;
@@ -2678,11 +2763,12 @@ function initCommandPalette() {
       input = overlay.querySelector(".cmd-input");
       resultsEl = overlay.querySelector(".cmd-results");
 
+      trapFocus(overlay.querySelector(".cmd-palette"));
       input.addEventListener("input", () => renderResults(input.value));
       overlay.addEventListener("click", (e) => {
         if (e.target === overlay) close();
         const btn = e.target.closest(".cmd-result-item");
-        if (btn) navigate(btn.dataset.url);
+        if (btn) navigate(btn.dataset.url, btn.dataset.action);
       });
 
       overlay.addEventListener("keydown", (e) => {
@@ -2696,7 +2782,7 @@ function initCommandPalette() {
         } else if (e.key === "Enter") {
           e.preventDefault();
           const focused = items[focusedIndex];
-          if (focused) navigate(focused.dataset.url);
+          if (focused) navigate(focused.dataset.url, focused.dataset.action);
         } else if (e.key === "Escape") {
           close();
           return;
@@ -2718,7 +2804,13 @@ function initCommandPalette() {
     if (overlay) overlay.classList.remove("open");
   }
 
-  function navigate(url) {
+  function navigate(url, action) {
+    if (action === "toggle-theme") {
+      const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
+      close();
+      return;
+    }
     if (!url) return;
     close();
     location.href = url;
@@ -2849,6 +2941,7 @@ function initReadingHistory() {
       `;
       document.body.appendChild(overlay);
 
+      trapFocus(overlay.querySelector(".history-panel"));
       overlay.querySelector(".history-close-btn").addEventListener("click", close);
       overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
 
