@@ -2417,8 +2417,10 @@ function initArticlePageFeatures() {
   const newsletterCta = document.createElement("aside");
   newsletterCta.className = "article-newsletter-cta";
   newsletterCta.innerHTML = `
-    <p class="article-newsletter-cta-heading">Stay in the loop</p>
-    <p class="article-newsletter-cta-body">The New Current covers the energy transition through original analysis, live intelligence, and curated reporting. Follow on Substack to get new pieces directly in your inbox.</p>
+    <div class="article-newsletter-cta-text">
+      <p class="article-newsletter-cta-heading">Stay in the loop</p>
+      <p class="article-newsletter-cta-body">New energy transition analysis, direct to your inbox.</p>
+    </div>
     <a class="article-newsletter-cta-btn" href="https://substack.com/@olliebranston" target="_blank" rel="noopener noreferrer">Follow on Substack</a>
   `;
   articleEl.after(newsletterCta);
