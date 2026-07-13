@@ -57,6 +57,7 @@
   "dateModified": "2026-06-02"
 }
 </script>
+  <script>(function(){var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
 <!-- site-header:start -->
@@ -72,7 +73,13 @@
       <a href="../about.html" class="nav-link">About</a>
     </nav>
 
-    <a href="mailto:ollie.branston123@gmail.com" class="contact-button">Contact</a>
+    <div class="site-header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+        <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3V1m0 22v-2M4.22 4.22l-1.42-1.42M20.78 20.78l-1.42-1.42M1 12H3m18 0h2M4.22 19.78l-1.42 1.42M20.78 3.22l-1.42 1.42M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7z"/></svg>
+      </button>
+      <a href="mailto:ollie.branston123@gmail.com" class="contact-button">Contact</a>
+    </div>
   </div>
 </header>
 <!-- site-header:end -->

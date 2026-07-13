@@ -60,19 +60,50 @@ def fetch(url: str) -> bytes:
     return body
 
 
+CONTENT_CHECKS: list[tuple[str, bytes, str]] = [
+    ("/index.html", b"themeToggle", "theme toggle button"),
+    ("/index.html", b"data-theme", "anti-FOUC theme loader script"),
+    ("/thought-pieces.html", b"themeToggle", "theme toggle button"),
+    ("/thought-pieces.html", b"data-theme", "anti-FOUC theme loader script"),
+    ("/articles/article-8.html", b"themeToggle", "theme toggle button"),
+    ("/articles/article-8.html", b"data-theme", "anti-FOUC theme loader script"),
+    ("/css/styles.css", b'[data-theme="dark"]', "dark mode CSS"),
+    ("/css/styles.css", b".theme-toggle", "theme toggle CSS"),
+    ("/css/styles.css", b".tp-search-bar", "thought pieces search CSS"),
+    ("/css/styles.css", b".reading-progress", "reading progress bar CSS"),
+    ("/css/styles.css", b".back-to-top", "back-to-top button CSS"),
+    ("/js/main.js", b"initThemeToggle", "theme toggle JS"),
+    ("/js/main.js", b"initReadingProgress", "reading progress JS"),
+    ("/js/main.js", b"initBackToTop", "back-to-top JS"),
+    ("/js/main.js", b"initThoughtPiecesPage", "thought pieces search JS"),
+]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Run a local static server and smoke-test key site assets.")
     parser.parse_args()
     server, base_url = run_server()
     failures = []
+    body_cache: dict[str, bytes] = {}
 
     try:
         for path in SMOKE_PATHS:
             try:
                 body = fetch(f"{base_url}{path}")
+                body_cache[path] = body
                 print(f"OK {path} ({len(body)} bytes)")
             except (RuntimeError, urllib.error.URLError) as exc:
                 failures.append(f"{path}: {exc}")
+
+        for path, needle, description in CONTENT_CHECKS:
+            body = body_cache.get(path)
+            if body is None:
+                failures.append(f"{path}: content check skipped (fetch failed)")
+                continue
+            if needle not in body:
+                failures.append(f"{path}: missing {description} ({needle.decode()!r})")
+            else:
+                print(f"OK {path} contains {description}")
     finally:
         server.shutdown()
         server.server_close()

@@ -32,6 +32,16 @@ CROSS_SECTION_PREVIOUS: dict[str, str] = {
     "articles/article-9.html": "articles/article-8.html",
 }
 
+THEME_LOADER_SCRIPT = (
+    "<script>"
+    "(function(){"
+    "var t=localStorage.getItem('theme');"
+    "if(!t){t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';}"
+    "document.documentElement.setAttribute('data-theme',t);"
+    "})();"
+    "</script>"
+)
+
 
 def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8")
@@ -249,6 +259,12 @@ def replace_article_navigation(text: str, path: Path, articles: list[dict[str, o
     return re.sub(r"(\n\s*</article>\s*\n\s*</main>)", f"\n{block}\\1", text, count=1)
 
 
+def inject_theme_loader(text: str) -> str:
+    if THEME_LOADER_SCRIPT in text:
+        return text
+    return text.replace("</head>", f"  {THEME_LOADER_SCRIPT}\n</head>", 1)
+
+
 def render_page(path: Path, articles: list[dict[str, object]]) -> bool:
     text = read_text(path)
     values = template_values(path)
@@ -269,6 +285,7 @@ def render_page(path: Path, articles: list[dict[str, object]]) -> bool:
         FOOTER_END,
         footer,
     )
+    text = inject_theme_loader(text)
 
     if path.parent.name == "articles":
         text = replace_article_navigation(text, path, articles)

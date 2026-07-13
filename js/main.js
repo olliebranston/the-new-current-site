@@ -1917,10 +1917,197 @@ if (thoughtPiecesContainer || homepageThoughtPieces) {
   fetch("data/thought-pieces.json")
     .then((response) => response.json())
     .then((thoughtPiecesData) => {
-      renderThoughtPieces(thoughtPiecesContainer, thoughtPiecesData.articles);
+      if (thoughtPiecesContainer) {
+        initThoughtPiecesPage(thoughtPiecesContainer, thoughtPiecesData.articles);
+      }
       renderHomepageThoughtPieces(homepageThoughtPieces, thoughtPiecesData.articles);
     })
     .catch((error) => {
       console.error("Error loading thought pieces data:", error);
     });
+}
+
+/* ─── Dark mode ─────────────────────────────────────────────────── */
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+}
+
+function initThemeToggle() {
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const theme = savedTheme || (prefersDark ? "dark" : "light");
+  applyTheme(theme);
+
+  const toggle = document.getElementById("themeToggle");
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    applyTheme(current === "dark" ? "light" : "dark");
+  });
+}
+
+initThemeToggle();
+
+/* ─── Reading progress bar ─────────────────────────────────────── */
+
+function initReadingProgress() {
+  const isArticle = document.body.closest("body") && document.querySelector(".article-content");
+  if (!isArticle) return;
+
+  const bar = document.createElement("div");
+  bar.className = "reading-progress";
+  bar.setAttribute("role", "progressbar");
+  bar.setAttribute("aria-label", "Reading progress");
+  document.body.prepend(bar);
+
+  function updateProgress() {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+    bar.style.width = `${Math.min(100, progress)}%`;
+  }
+
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  updateProgress();
+}
+
+initReadingProgress();
+
+/* ─── Back to top button ───────────────────────────────────────── */
+
+function initBackToTop() {
+  const btn = document.createElement("button");
+  btn.className = "back-to-top";
+  btn.setAttribute("aria-label", "Back to top");
+  btn.setAttribute("type", "button");
+  btn.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  document.body.appendChild(btn);
+
+  function onScroll() {
+    btn.classList.toggle("visible", window.scrollY > 320);
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+  onScroll();
+}
+
+initBackToTop();
+
+/* ─── Thought pieces search and filter ─────────────────────────── */
+
+function initThoughtPiecesPage(container, articles) {
+  if (!container) return;
+
+  const sortedArticles = sortItemsByDate(articles);
+  const topics = ["All", ...Array.from(new Set(sortedArticles.map((a) => a.topic).filter(Boolean))).sort()];
+
+  let activeTopics = new Set(["All"]);
+  let searchQuery = "";
+
+  const searchWrap = document.createElement("div");
+  searchWrap.className = "tp-search-bar";
+  searchWrap.innerHTML = `
+    <div class="tp-search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+      <input
+        type="search"
+        class="tp-search-input"
+        id="tpSearchInput"
+        placeholder="Search articles…"
+        aria-label="Search articles"
+        autocomplete="off"
+      />
+    </div>
+    <div class="tp-filter-chips" id="tpFilterChips">
+      ${topics.map((topic) => `
+        <button class="tp-filter-chip${topic === "All" ? " active" : ""}" data-topic="${topic}" type="button">${topic}</button>
+      `).join("")}
+    </div>
+  `;
+
+  container.parentNode.insertBefore(searchWrap, container);
+
+  const searchInput = document.getElementById("tpSearchInput");
+  const chipsContainer = document.getElementById("tpFilterChips");
+
+  function filterArticles() {
+    const query = searchQuery.toLowerCase().trim();
+    const filterAll = activeTopics.has("All");
+
+    return sortedArticles.filter((article) => {
+      const topicMatch = filterAll || activeTopics.has(article.topic);
+      const textMatch = !query || (
+        article.title.toLowerCase().includes(query) ||
+        (article.summary || "").toLowerCase().includes(query) ||
+        (article.author || "").toLowerCase().includes(query)
+      );
+      return topicMatch && textMatch;
+    });
+  }
+
+  function render() {
+    const filtered = filterArticles();
+
+    if (filtered.length === 0) {
+      container.innerHTML = '<p class="tp-no-results">No articles match your search.</p>';
+      return;
+    }
+
+    const seriesTwoArticles = filtered.filter((a) => a.section === "series-two");
+    const seriesOneArticles = filtered.filter((a) => a.section === "series-one");
+    const archiveArticles = filtered.filter((a) => a.section === "archive");
+
+    const sections = [
+      { label: "Series Two", items: seriesTwoArticles },
+      { label: "Series One", items: seriesOneArticles },
+      { label: "Archive", items: archiveArticles }
+    ].filter((s) => s.items.length > 0);
+
+    container.innerHTML = sections.map((s) => `
+      <section class="thought-piece-section">
+        <div class="thought-piece-section-heading">
+          <p class="eyebrow">${s.label}</p>
+        </div>
+        <div class="thought-piece-card-list">
+          ${s.items.map(buildThoughtPieceCard).join("")}
+        </div>
+      </section>
+    `).join("");
+  }
+
+  searchInput.addEventListener("input", (e) => {
+    searchQuery = e.target.value;
+    render();
+  });
+
+  chipsContainer.addEventListener("click", (e) => {
+    const chip = e.target.closest(".tp-filter-chip");
+    if (!chip) return;
+    const topic = chip.dataset.topic;
+
+    if (topic === "All") {
+      activeTopics = new Set(["All"]);
+    } else {
+      activeTopics.delete("All");
+      if (activeTopics.has(topic)) {
+        activeTopics.delete(topic);
+        if (activeTopics.size === 0) activeTopics.add("All");
+      } else {
+        activeTopics.add(topic);
+      }
+    }
+
+    chipsContainer.querySelectorAll(".tp-filter-chip").forEach((c) => {
+      c.classList.toggle("active", activeTopics.has(c.dataset.topic));
+    });
+
+    render();
+  });
+
+  render();
 }
