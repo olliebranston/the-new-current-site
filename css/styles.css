@@ -1666,6 +1666,57 @@ li {
   color: var(--brand-blue);
 }
 
+.radar-show-more {
+  display: block;
+  margin: 12px 0 0;
+  padding: 8px 16px;
+  background: var(--bg-surface-alt);
+  border: 1.5px solid var(--border-light);
+  border-radius: 20px;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+}
+
+.radar-show-more:hover {
+  background: var(--brand-blue-soft);
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+/* ─── Article H2 heading anchors ─── */
+
+h2.has-anchor {
+  position: relative;
+}
+
+.heading-anchor {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  opacity: 0;
+  color: var(--text-muted);
+  transition: opacity 0.15s, color 0.15s;
+  vertical-align: middle;
+}
+
+.heading-anchor svg {
+  width: 18px;
+  height: 18px;
+}
+
+h2.has-anchor:hover .heading-anchor,
+.heading-anchor:focus-visible {
+  opacity: 1;
+}
+
+.heading-anchor:hover,
+.heading-anchor.copied {
+  color: var(--brand-blue);
+}
+
 @supports (grid-template-rows: subgrid) {
   .recommendations-grid {
     grid-template-rows: repeat(4, auto);
@@ -3084,6 +3135,53 @@ th {
   text-decoration: underline;
 }
 
+.article-toc-list a.toc-active {
+  color: var(--brand-blue);
+  font-weight: 600;
+}
+
+/* ─── Article newsletter CTA ────────────────────────────────────── */
+
+.article-newsletter-cta {
+  margin: 40px auto;
+  max-width: var(--content-width);
+  padding: 28px 32px;
+  background: var(--brand-blue-soft);
+  border: 1.5px solid var(--brand-blue-glow);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.article-newsletter-cta-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 8px;
+}
+
+.article-newsletter-cta-body {
+  font-size: 0.92rem;
+  color: var(--text-soft);
+  margin: 0 0 18px;
+  line-height: 1.6;
+}
+
+.article-newsletter-cta-btn {
+  display: inline-block;
+  padding: 10px 22px;
+  background: var(--brand-blue);
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.18s;
+}
+
+.article-newsletter-cta-btn:hover {
+  background: var(--brand-blue-hover);
+}
+
 @media (max-width: 700px) {
   .article-toc {
     max-width: 100%;
@@ -3540,6 +3638,14 @@ th {
   color: var(--text-muted);
 }
 
+.cmd-highlight {
+  background: var(--brand-blue-soft);
+  color: var(--brand-blue);
+  border-radius: 2px;
+  padding: 0 1px;
+  font-style: normal;
+}
+
 .cmd-hint kbd {
   font-family: inherit;
   font-size: 0.72rem;
@@ -3647,6 +3753,11 @@ th {
   a[href^="#"]::after,
   a[href^="mailto:"]::after {
     content: "";
+  }
+
+  .heading-anchor,
+  .radar-show-more {
+    display: none;
   }
 
   .article-image {

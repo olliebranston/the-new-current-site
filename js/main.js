@@ -1552,6 +1552,18 @@ function renderEmptyMessage(container, message) {
   container.replaceChildren(createTextElement("p", "", message));
 }
 
+const RADAR_INITIAL_COUNT = 5;
+
+function buildRadarArticle(item) {
+  const wrapper = document.createElement("article");
+  wrapper.className = "radar-item";
+  const title = document.createElement("h4");
+  const meta = createTextElement("p", "radar-meta", formatRadarMeta(item));
+  title.appendChild(createSafeExternalLink(item.link, item.headline));
+  wrapper.append(title, meta);
+  return wrapper;
+}
+
 function renderRadarItems(container, items) {
   if (!container) {
     return;
@@ -1562,20 +1574,23 @@ function renderRadarItems(container, items) {
     return;
   }
 
-  const sortedItems = sortItemsByPublishedDate(items).slice(0, 5);
-
+  const sortedItems = sortItemsByPublishedDate(items);
   container.replaceChildren();
 
-  sortedItems.forEach((item) => {
-    const wrapper = document.createElement("article");
-    wrapper.className = "radar-item";
-    const title = document.createElement("h4");
-    const meta = createTextElement("p", "radar-meta", formatRadarMeta(item));
+  sortedItems.slice(0, RADAR_INITIAL_COUNT).forEach((item) => container.appendChild(buildRadarArticle(item)));
 
-    title.appendChild(createSafeExternalLink(item.link, item.headline));
-    wrapper.append(title, meta);
-    container.appendChild(wrapper);
-  });
+  if (sortedItems.length > RADAR_INITIAL_COUNT) {
+    const remaining = sortedItems.length - RADAR_INITIAL_COUNT;
+    const showMoreBtn = document.createElement("button");
+    showMoreBtn.className = "radar-show-more";
+    showMoreBtn.type = "button";
+    showMoreBtn.textContent = `Show ${remaining} more`;
+    showMoreBtn.addEventListener("click", () => {
+      sortedItems.slice(RADAR_INITIAL_COUNT).forEach((item) => container.insertBefore(buildRadarArticle(item), showMoreBtn));
+      showMoreBtn.remove();
+    });
+    container.appendChild(showMoreBtn);
+  }
 }
 
 function renderRecommendation(container, item, labelText) {
@@ -1787,6 +1802,18 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function highlightMatch(text, query) {
+  const escaped = escapeHtml(text);
+  if (!query) return escaped;
+  const idx = escaped.toLowerCase().indexOf(query.toLowerCase());
+  if (idx === -1) return escaped;
+  return (
+    escaped.slice(0, idx) +
+    `<mark class="cmd-highlight">${escaped.slice(idx, idx + query.length)}</mark>` +
+    escaped.slice(idx + query.length)
+  );
 }
 
 const BOOKMARKS_KEY = "tnc-bookmarks";
@@ -2301,12 +2328,31 @@ function initArticlePageFeatures() {
     });
   }
 
+  // H2 deep-link anchors
+  articleEl.querySelectorAll("h2").forEach((h, i) => {
+    if (!h.id) h.id = `section-${i}`;
+    const anchor = document.createElement("a");
+    anchor.className = "heading-anchor";
+    anchor.href = `#${h.id}`;
+    anchor.setAttribute("aria-label", "Copy link to section");
+    anchor.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+    anchor.addEventListener("click", async (e) => {
+      e.preventDefault();
+      const url = `${location.href.split("#")[0]}#${h.id}`;
+      history.replaceState(null, "", `#${h.id}`);
+      try {
+        await navigator.clipboard.writeText(url);
+        anchor.classList.add("copied");
+        setTimeout(() => anchor.classList.remove("copied"), 2000);
+      } catch { /* clipboard access denied */ }
+    });
+    h.classList.add("has-anchor");
+    h.appendChild(anchor);
+  });
+
   // Table of contents
   const headings = [...articleEl.querySelectorAll("section h2")];
   if (headings.length >= 3) {
-    headings.forEach((h, i) => {
-      if (!h.id) h.id = `section-${i}`;
-    });
 
     const toc = document.createElement("nav");
     toc.className = "article-toc";
@@ -2322,7 +2368,37 @@ function initArticlePageFeatures() {
     if (sections.length >= 2) {
       sections[0].after(toc);
     }
+
+    // Active section tracking in ToC
+    const tocLinks = [...toc.querySelectorAll("a")];
+    if ("IntersectionObserver" in window && tocLinks.length) {
+      let activeLinkIdx = -1;
+      const setActive = (idx) => {
+        if (idx === activeLinkIdx) return;
+        activeLinkIdx = idx;
+        tocLinks.forEach((a, i) => a.classList.toggle("toc-active", i === idx));
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = headings.indexOf(entry.target);
+            if (idx !== -1) setActive(idx);
+          }
+        });
+      }, { rootMargin: "0px 0px -60% 0px", threshold: 0 });
+      headings.forEach((h) => observer.observe(h));
+    }
   }
+
+  // Newsletter CTA
+  const newsletterCta = document.createElement("aside");
+  newsletterCta.className = "article-newsletter-cta";
+  newsletterCta.innerHTML = `
+    <p class="article-newsletter-cta-heading">Stay in the loop</p>
+    <p class="article-newsletter-cta-body">The New Current covers the energy transition through original analysis, live intelligence, and curated reporting. Follow on Substack to get new pieces directly in your inbox.</p>
+    <a class="article-newsletter-cta-btn" href="https://substack.com/@olliebranston" target="_blank" rel="noopener noreferrer">Follow on Substack</a>
+  `;
+  articleEl.after(newsletterCta);
 }
 
 initArticlePageFeatures();
@@ -2549,6 +2625,7 @@ function initCommandPalette() {
       return;
     }
 
+    const q = query.trim();
     const articles = results.filter((r) => r.type === "article");
     const notes = results.filter((r) => r.type === "note");
 
@@ -2556,13 +2633,13 @@ function initCommandPalette() {
     const addGroup = (label, items) => {
       if (!items.length) return;
       html += `<p class="cmd-group-label">${label}</p>`;
-      items.forEach((item, localIdx) => {
+      items.forEach((item) => {
         const globalIdx = results.indexOf(item);
         html += `
           <button class="cmd-result-item" data-index="${globalIdx}" data-url="${item.url ? escapeHtml(item.url) : ""}" type="button">
             <span class="cmd-result-icon">${item.icon}</span>
             <span class="cmd-result-text">
-              <span class="cmd-result-title">${escapeHtml(item.title)}</span>
+              <span class="cmd-result-title">${highlightMatch(item.title, q)}</span>
               <span class="cmd-result-meta">${escapeHtml(item.meta || "")}</span>
             </span>
           </button>`;
@@ -2866,3 +2943,33 @@ function markCurrentArticleRead() {
 }
 
 markCurrentArticleRead();
+
+/* ─── Dynamic footer copyright year ────────────────────────────── */
+
+(function setFooterYear() {
+  const year = new Date().getFullYear();
+  document.querySelectorAll(".footer-bottom").forEach((el) => {
+    const firstP = el.querySelector("p");
+    if (firstP && !el.querySelector(".footer-year")) {
+      firstP.insertAdjacentHTML("beforeend", ` &copy; <span class="footer-year">${year}</span>`);
+    }
+  });
+})();
+
+/* ─── Auto-refresh live grid snapshot ──────────────────────────── */
+
+function refreshLiveSnapshot() {
+  fetch("data/live-grid-snapshot.json")
+    .then((r) => r.json())
+    .then((snapshotData) => {
+      updateSnapshotMetric(snapshotDemand, snapshotDemandUnit, snapshotData.demand);
+      updateSnapshotMetric(snapshotGeneration, snapshotGenerationUnit, snapshotData.generation);
+      renderGenerationMix(snapshotData);
+      renderGatewayGenerationMix(snapshotData);
+    })
+    .catch(() => { /* silent — user still has the initial data */ });
+}
+
+if (snapshotDemand || snapshotGeneration || snapshotCarbonIntensity || generationMixVisual || gatewayGenerationMixVisual) {
+  setInterval(refreshLiveSnapshot, 5 * 60 * 1000);
+}

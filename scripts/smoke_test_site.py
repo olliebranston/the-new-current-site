@@ -88,6 +88,20 @@ CONTENT_CHECKS: list[tuple[str, bytes, str]] = [
     ("/js/main.js", b"article-toc", "table of contents JS"),
     ("/js/main.js", b"article-share-btn", "share button JS"),
     ("/js/main.js", b"BOOKMARKS_KEY", "bookmarks JS"),
+    # Iteration 8
+    ("/js/main.js", b"radar-show-more", "radar show-more button JS"),
+    ("/js/main.js", b"heading-anchor", "article H2 deep link anchor JS"),
+    ("/js/main.js", b"footer-year", "dynamic footer year JS"),
+    ("/js/main.js", b"refreshLiveSnapshot", "auto-refresh live snapshot JS"),
+    ("/css/styles.css", b".radar-show-more", "radar show-more CSS"),
+    ("/css/styles.css", b".heading-anchor", "heading anchor CSS"),
+    # Iteration 9
+    ("/js/main.js", b"highlightMatch", "command palette search highlighting JS"),
+    ("/js/main.js", b"toc-active", "ToC active section tracking JS"),
+    ("/js/main.js", b"article-newsletter-cta", "newsletter CTA JS"),
+    ("/css/styles.css", b".cmd-highlight", "command palette highlight CSS"),
+    ("/css/styles.css", b".article-newsletter-cta", "newsletter CTA CSS"),
+    ("/css/styles.css", b".toc-active", "ToC active section CSS"),
 ]
 
 
