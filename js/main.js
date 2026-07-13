@@ -2411,15 +2411,6 @@ function initKeyboardShortcuts() {
     const tag = (e.target.tagName || "").toLowerCase();
     const isEditing = tag === "input" || tag === "textarea" || e.target.isContentEditable;
 
-    if (e.key === "/" && !isEditing && !e.metaKey && !e.ctrlKey) {
-      const searchInput = document.getElementById("tpSearchInput") || document.getElementById("bdSearchInput");
-      if (searchInput) {
-        e.preventDefault();
-        searchInput.focus();
-        searchInput.select();
-      }
-    }
-
     if (e.key === "Escape" && isEditing) {
       e.target.blur();
     }
@@ -2475,6 +2466,187 @@ function initScrollAnimations() {
 }
 
 initScrollAnimations();
+
+/* ─── Global command palette ────────────────────────────────────── */
+
+function initCommandPalette() {
+  let overlay = null;
+  let input = null;
+  let resultsEl = null;
+  let focusedIndex = -1;
+  let allItems = [];
+  let dataLoaded = false;
+
+  const ARTICLE_ICON = '<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>';
+  const BRAIN_ICON = '<svg viewBox="0 0 24 24"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-1.16z"/></svg>';
+
+  const isArticlePage = location.pathname.includes("/articles/");
+  const prefix = isArticlePage ? "../" : "";
+
+  async function loadData() {
+    if (dataLoaded) return;
+    try {
+      const [tpData, bdData] = await Promise.all([
+        fetch(`${prefix}data/thought-pieces.json`).then((r) => r.json()),
+        fetch(`${prefix}data/brain-dumps.json`).then((r) => r.json())
+      ]);
+
+      const articles = sortItemsByDate(tpData.articles || []).map((a) => ({
+        type: "article",
+        title: a.title,
+        meta: `${a.topic || ""} · ${formatArticleDate(a.date)}`,
+        url: prefix + a.link,
+        icon: ARTICLE_ICON
+      }));
+
+      const notes = sortItemsByDate(bdData.notes || []).map((n) => ({
+        type: "note",
+        title: n.title,
+        meta: `Brain Dump · ${n.tag || ""}`,
+        url: null,
+        content: (Array.isArray(n.content) ? n.content : [n.content]).join(" "),
+        icon: BRAIN_ICON
+      }));
+
+      allItems = [...articles, ...notes];
+      dataLoaded = true;
+    } catch (err) {
+      console.error("Command palette data load failed:", err);
+    }
+  }
+
+  function getResults(query) {
+    const q = query.trim().toLowerCase();
+    if (!q) return allItems.slice(0, 8);
+    return allItems.filter((item) =>
+      item.title.toLowerCase().includes(q) ||
+      (item.meta || "").toLowerCase().includes(q) ||
+      (item.content || "").toLowerCase().includes(q)
+    ).slice(0, 10);
+  }
+
+  function renderResults(query) {
+    if (!resultsEl) return;
+    const results = getResults(query);
+    focusedIndex = -1;
+
+    if (results.length === 0) {
+      resultsEl.innerHTML = `<p class="cmd-empty">No results for "${escapeHtml(query)}"</p>`;
+      return;
+    }
+
+    const articles = results.filter((r) => r.type === "article");
+    const notes = results.filter((r) => r.type === "note");
+
+    let html = "";
+    const addGroup = (label, items) => {
+      if (!items.length) return;
+      html += `<p class="cmd-group-label">${label}</p>`;
+      items.forEach((item, localIdx) => {
+        const globalIdx = results.indexOf(item);
+        html += `
+          <button class="cmd-result-item" data-index="${globalIdx}" data-url="${item.url ? escapeHtml(item.url) : ""}" type="button">
+            <span class="cmd-result-icon">${item.icon}</span>
+            <span class="cmd-result-text">
+              <span class="cmd-result-title">${escapeHtml(item.title)}</span>
+              <span class="cmd-result-meta">${escapeHtml(item.meta || "")}</span>
+            </span>
+          </button>`;
+      });
+    };
+
+    addGroup("Articles", articles);
+    addGroup("Brain Dumps", notes);
+    resultsEl.innerHTML = html;
+  }
+
+  function open() {
+    if (!overlay) {
+      overlay = document.createElement("div");
+      overlay.className = "cmd-overlay";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-label", "Search");
+      overlay.innerHTML = `
+        <div class="cmd-palette">
+          <div class="cmd-input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="search" class="cmd-input" placeholder="Search articles and notes…" autocomplete="off" aria-label="Search" />
+          </div>
+          <div class="cmd-results"></div>
+          <div class="cmd-footer">
+            <span class="cmd-hint"><kbd>↑↓</kbd> navigate</span>
+            <span class="cmd-hint"><kbd>↵</kbd> open</span>
+            <span class="cmd-hint"><kbd>Esc</kbd> close</span>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+
+      input = overlay.querySelector(".cmd-input");
+      resultsEl = overlay.querySelector(".cmd-results");
+
+      input.addEventListener("input", () => renderResults(input.value));
+      overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) close();
+        const btn = e.target.closest(".cmd-result-item");
+        if (btn) navigate(btn.dataset.url);
+      });
+
+      overlay.addEventListener("keydown", (e) => {
+        const items = [...resultsEl.querySelectorAll(".cmd-result-item")];
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          focusedIndex = Math.min(focusedIndex + 1, items.length - 1);
+        } else if (e.key === "ArrowUp") {
+          e.preventDefault();
+          focusedIndex = Math.max(focusedIndex - 1, -1);
+        } else if (e.key === "Enter") {
+          e.preventDefault();
+          const focused = items[focusedIndex];
+          if (focused) navigate(focused.dataset.url);
+        } else if (e.key === "Escape") {
+          close();
+          return;
+        }
+        items.forEach((item, i) => item.classList.toggle("focused", i === focusedIndex));
+        if (focusedIndex >= 0 && items[focusedIndex]) {
+          items[focusedIndex].scrollIntoView({ block: "nearest" });
+        }
+      });
+    }
+
+    overlay.classList.add("open");
+    input.value = "";
+    loadData().then(() => renderResults(""));
+    requestAnimationFrame(() => input.focus());
+  }
+
+  function close() {
+    if (overlay) overlay.classList.remove("open");
+  }
+
+  function navigate(url) {
+    if (!url) return;
+    close();
+    location.href = url;
+  }
+
+  document.addEventListener("keydown", (e) => {
+    const tag = (e.target.tagName || "").toLowerCase();
+    const isEditing = tag === "input" || tag === "textarea" || e.target.isContentEditable;
+    if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || (e.key === "/" && !isEditing && !e.metaKey && !e.ctrlKey)) {
+      e.preventDefault();
+      open();
+    }
+  });
+
+  const triggerBtn = document.getElementById("cmdSearchTrigger");
+  if (triggerBtn) triggerBtn.addEventListener("click", open);
+}
+
+initCommandPalette();
 
 /* ─── Mobile hamburger nav ──────────────────────────────────────── */
 
