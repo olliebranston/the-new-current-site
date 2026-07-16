@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-07-16 03:44 UTC",
+  "last_updated": "2026-07-16 14:28 UTC",
   "r_and_d": [
+    {
+      "headline": "Join the international bioeconomy community in Dublin - registration now open for the Global Bioeconomy Summit 2026",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/join-international-bioeconomy-community-dublin-registration-now-open-global-bioeconomy-summit-2026-2026-07-16_en",
+      "published_at": "2026-07-16T08:51:03Z",
+      "display_date": "16 July 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
@@ -28,42 +35,35 @@
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/new-report-published-building-food-2040-stakeholder-input-new-eu-strategic-research-innovation-2026-07-13_en",
       "published_at": "2026-07-13T13:27:29Z",
       "display_date": "13 July 2026"
-    },
-    {
-      "headline": "Commissioner Zaharieva leads dialogue on how to attract and retain research talent in Europe",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/commissioner-zaharieva-leads-dialogue-how-attract-and-retain-research-talent-europe-2026-07-10_en",
-      "published_at": "2026-07-10T12:31:10Z",
-      "display_date": "10 July 2026"
     }
   ],
   "policy": [
     {
-      "headline": "The Commission calls on EU countries to transpose the reinforced rules on the energy performance of buildings",
+      "headline": "Commission approves \u20ac300 million Irish State aid scheme for temporary electricity price relief for energy-intensive companies",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-transpose-reinforced-rules-energy-performance-buildings-2026-07-15_en",
-      "published_at": "2026-07-15T13:44:01Z",
-      "display_date": "15 July 2026"
-    },
-    {
-      "headline": "Remarks by Commissioner J\u00f8rgensen at the press conference of the Energy Council",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1472",
-      "published_at": "2026-07-15T07:29:49Z",
-      "display_date": "15 July 2026"
-    },
-    {
-      "headline": "Codes Grid Code - New Modification Proposal\u2026 15 July 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-15-july-2026",
-      "published_at": "2026-07-15T00:00:00Z",
-      "display_date": "15 July 2026"
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1610",
+      "published_at": "2026-07-16T10:12:14Z",
+      "display_date": "16 July 2026"
     },
     {
       "headline": "Connections Connections Reform: Fees and Securities\u2026 16 July 2026 2pm to 3pm Please join us for the latest connections reform update. We will be covering updates on fees, finance and securities. Ask pre\u2026 Events",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/connections-reform-fees-and-securities-webinar-july-2026",
-      "published_at": "2026-07-15T00:00:00Z",
+      "published_at": "2026-07-16T00:00:00Z",
+      "display_date": "16 July 2026"
+    },
+    {
+      "headline": "Codes Grid Code - Panel Papers Published to\u2026 22 July 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-22-july-2026",
+      "published_at": "2026-07-16T00:00:00Z",
+      "display_date": "16 July 2026"
+    },
+    {
+      "headline": "The Commission calls on EU countries to transpose the reinforced rules on the energy performance of buildings",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-calls-eu-countries-transpose-reinforced-rules-energy-performance-buildings-2026-07-15_en",
+      "published_at": "2026-07-15T13:44:01Z",
       "display_date": "15 July 2026"
     },
     {
