@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-20 14:36 UTC",
+  "last_updated": "2026-07-21 03:52 UTC",
   "r_and_d": [
     {
       "headline": "EU and India strengthen strategic partnership with third Trade and Technology Council",
@@ -53,6 +53,13 @@
       "display_date": "21 July 2026"
     },
     {
+      "headline": "New in EPREL: a comparison tool to support sustainable purchasing",
+      "source": "DG Energy",
+      "link": "https://energy-efficient-products.ec.europa.eu/news/new-eprel-comparison-tool-support-sustainable-purchasing-2026-07-20_en",
+      "published_at": "2026-07-20T14:54:05Z",
+      "display_date": "20 July 2026"
+    },
+    {
       "headline": "Commission provides clarity on how to effectively implement EU rules to reduce methane emissions",
       "source": "DG Energy",
       "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1651",
@@ -60,18 +67,11 @@
       "display_date": "20 July 2026"
     },
     {
-      "headline": "Grid Code GC0179: Removal of Balancing Code No.4 from the Grid Code Authority Decision",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/publications/grid-code-gc0179-removal-balancing-code-no4-grid-code-authority-decision",
-      "published_at": "2026-07-20T12:00:00Z",
-      "display_date": "20 July 2026"
-    },
-    {
-      "headline": "Proposed modifications to Harlaxton Gas Networks connection charging methodology",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/transparency-document/proposed-modifications-harlaxton-gas-networks-connection-charging-methodology",
-      "published_at": "2026-07-20T12:00:00Z",
-      "display_date": "20 July 2026"
+      "headline": "Government has secured \u00a3100 billion of clean energy investment",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/government-has-secured-100-billion-of-clean-energy-investment",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
