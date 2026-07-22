@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-07-22 03:53 UTC",
+  "last_updated": "2026-07-22 14:30 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
+      "published_at": "2026-07-22T00:00:00Z",
+      "display_date": "22 July 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
+      "published_at": "2026-07-22T00:00:00Z",
+      "display_date": "22 July 2026"
     },
     {
       "headline": "EU and India strengthen strategic partnership with third Trade and Technology Council",
@@ -39,32 +39,25 @@
   ],
   "policy": [
     {
-      "headline": "Long duration electricity storage window 1: revised special licence conditions",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/call-for-input/long-duration-electricity-storage-window-1-revised-special-licence-conditions",
-      "published_at": "2026-07-21T12:00:00Z",
-      "display_date": "21 July 2026"
-    },
-    {
-      "headline": "Consumer Vulnerability Strategy: progress report",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/transparency-document/consumer-vulnerability-strategy-progress-report",
-      "published_at": "2026-07-21T12:00:00Z",
-      "display_date": "21 July 2026"
+      "headline": "EU Hydrogen Mechanism: Call for interest to test hydrogen infrastructure",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/eu-hydrogen-mechanism-call-interest-test-hydrogen-infrastructure-2026-07-22_en",
+      "published_at": "2026-07-22T08:30:39Z",
+      "display_date": "22 July 2026"
     },
     {
       "headline": "Codes Grid Code - Panel Papers Published to\u2026 22 July 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-22-july-2026",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
+      "published_at": "2026-07-22T00:00:00Z",
+      "display_date": "22 July 2026"
     },
     {
       "headline": "Codes Grid Code Review Panel Meeting - 30 July 2026 30 July 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-30-july-2026",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
+      "published_at": "2026-07-22T00:00:00Z",
+      "display_date": "22 July 2026"
     },
     {
       "headline": "New in EPREL: a comparison tool to support sustainable purchasing",
@@ -72,6 +65,13 @@
       "link": "https://energy-efficient-products.ec.europa.eu/news/new-eprel-comparison-tool-support-sustainable-purchasing-2026-07-20_en",
       "published_at": "2026-07-20T14:54:05Z",
       "display_date": "20 July 2026"
+    },
+    {
+      "headline": "Government has secured \u00a3100 billion of clean energy investment",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/government-has-secured-100-billion-of-clean-energy-investment",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
