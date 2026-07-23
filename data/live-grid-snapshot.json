@@ -1,81 +1,67 @@
 {
-  "last_updated": "2026-07-23 07:21 UTC",
+  "last_updated": "2026-07-23 10:05 UTC",
   "power_price": {
-    "value": 131.23,
+    "value": 132.05,
     "unit": "GBP/MWh",
-    "display": "131 GBP/MWh"
+    "display": "132 GBP/MWh"
   },
   "carbon_intensity": {
-    "value": 143,
+    "value": 108,
     "unit": "gCO2/kWh",
-    "display": "143 gCO2/kWh (actual)"
+    "display": "108 gCO2/kWh (forecast)"
   },
   "demand": {
-    "value": 20814,
+    "value": 29606,
     "unit": "MW",
-    "display": "20,814 MW"
+    "display": "29,606 MW"
   },
   "generation": {
-    "value": 24973,
+    "value": 32203,
     "unit": "MW",
-    "display": "24,973 MW"
+    "display": "32,203 MW"
   },
   "generation_mix": {
-    "low_carbon_percentage": 50,
+    "low_carbon_percentage": 60,
     "segments": [
       {
         "key": "biomass",
         "label": "Biomass",
-        "percentage": 8.6,
+        "percentage": 9.2,
         "color": "#8b5cf6",
         "is_low_carbon": true
       },
       {
         "key": "imports",
         "label": "Imports",
-        "percentage": 22.1,
+        "percentage": 20.9,
         "color": "#ec4899",
         "is_low_carbon": false
       },
       {
         "key": "gas",
         "label": "Gas",
-        "percentage": 24.4,
+        "percentage": 18.6,
         "color": "#f97316",
         "is_low_carbon": false
       },
       {
         "key": "nuclear",
         "label": "Nuclear",
-        "percentage": 11.7,
+        "percentage": 12.0,
         "color": "#16a34a",
-        "is_low_carbon": true
-      },
-      {
-        "key": "other",
-        "label": "Other",
-        "percentage": 3.7,
-        "color": "#94a3b8",
-        "is_low_carbon": false
-      },
-      {
-        "key": "hydro",
-        "label": "Hydro",
-        "percentage": 1.8,
-        "color": "#0ea5e9",
         "is_low_carbon": true
       },
       {
         "key": "solar",
         "label": "Solar",
-        "percentage": 12.0,
+        "percentage": 27.9,
         "color": "#f5b700",
         "is_low_carbon": true
       },
       {
         "key": "wind",
         "label": "Wind",
-        "percentage": 15.6,
+        "percentage": 11.4,
         "color": "#2457ff",
         "is_low_carbon": true
       }
