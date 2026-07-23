@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-23 03:50 UTC",
+  "last_updated": "2026-07-23 14:37 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,39 +39,39 @@
   ],
   "policy": [
     {
-      "headline": "EU Hydrogen Mechanism: Call for interest to test hydrogen infrastructure",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/eu-hydrogen-mechanism-call-interest-test-hydrogen-infrastructure-2026-07-22_en",
-      "published_at": "2026-07-22T08:30:39Z",
-      "display_date": "22 July 2026"
+      "headline": "Green Gas Support Scheme Annual Report: Scheme Year 5 April 2025 to March 2026",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/transparency-document/green-gas-support-scheme-annual-report-scheme-year-5-april-2025-march-2026",
+      "published_at": "2026-07-23T12:00:00Z",
+      "display_date": "23 July 2026"
     },
     {
-      "headline": "Codes Grid Code - Panel Papers Published to\u2026 22 July 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-22-july-2026",
-      "published_at": "2026-07-22T00:00:00Z",
-      "display_date": "22 July 2026"
+      "headline": "Proposed modifications to National Gas Transmission\u2019s Baseline Network Risk Outputs following Asset Health Re-opener",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/proposed-modifications-national-gas-transmissions-baseline-network-risk-outputs-following-asset-health-re-opener",
+      "published_at": "2026-07-23T12:00:00Z",
+      "display_date": "23 July 2026"
+    },
+    {
+      "headline": "Eurostat: Renewables make up 26% of EU energy use",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260723-1",
+      "published_at": "2026-07-23T09:32:47Z",
+      "display_date": "23 July 2026"
     },
     {
       "headline": "Codes Grid Code Review Panel Meeting - 30 July 2026 30 July 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-30-july-2026",
-      "published_at": "2026-07-22T00:00:00Z",
-      "display_date": "22 July 2026"
+      "published_at": "2026-07-23T00:00:00Z",
+      "display_date": "23 July 2026"
     },
     {
-      "headline": "New in EPREL: a comparison tool to support sustainable purchasing",
-      "source": "DG Energy",
-      "link": "https://energy-efficient-products.ec.europa.eu/news/new-eprel-comparison-tool-support-sustainable-purchasing-2026-07-20_en",
-      "published_at": "2026-07-20T14:54:05Z",
-      "display_date": "20 July 2026"
-    },
-    {
-      "headline": "Government has secured \u00a3100 billion of clean energy investment",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/government-has-secured-100-billion-of-clean-energy-investment",
-      "published_at": null,
-      "display_date": null
+      "headline": "Codes Grid Code Development Forum (GCDF) - 5\u2026 5 August 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-5-august-2026",
+      "published_at": "2026-07-23T00:00:00Z",
+      "display_date": "23 July 2026"
     }
   ]
 }
