@@ -1,9 +1,4 @@
 timestamp,forecast,actual,index,chart_value
-2026-07-22T12:00Z,93,98,moderate,98
-2026-07-22T12:30Z,89,98,moderate,98
-2026-07-22T13:00Z,87,96,moderate,96
-2026-07-22T13:30Z,88,97,moderate,97
-2026-07-22T14:00Z,90,100,moderate,100
 2026-07-22T14:30Z,90,100,moderate,100
 2026-07-22T15:00Z,99,109,moderate,109
 2026-07-22T15:30Z,104,124,moderate,124
@@ -44,6 +39,11 @@ timestamp,forecast,actual,index,chart_value
 2026-07-23T09:00Z,111,110,moderate,110
 2026-07-23T09:30Z,108,108,moderate,108
 2026-07-23T10:00Z,109,105,moderate,105
-2026-07-23T10:30Z,114,102,moderate,102
-2026-07-23T11:00Z,103,,moderate,103
-2026-07-23T11:30Z,101,,moderate,101
+2026-07-23T10:30Z,114,101,moderate,101
+2026-07-23T11:00Z,103,100,moderate,100
+2026-07-23T11:30Z,101,96,moderate,96
+2026-07-23T12:00Z,97,95,moderate,95
+2026-07-23T12:30Z,97,95,moderate,95
+2026-07-23T13:00Z,91,93,moderate,93
+2026-07-23T13:30Z,89,90,moderate,90
+2026-07-23T14:00Z,91,,moderate,91
