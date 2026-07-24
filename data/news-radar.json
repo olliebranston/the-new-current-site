@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-24 03:50 UTC",
+  "last_updated": "2026-07-24 14:17 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,39 +39,39 @@
   ],
   "policy": [
     {
-      "headline": "Green Gas Support Scheme Annual Report: Scheme Year 5 April 2025 to March 2026",
+      "headline": "Approval of the modified Access Rules for the Nemo Link interconnector pursuant to SLC 11A of the Electricity Interconnector Licence",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/transparency-document/green-gas-support-scheme-annual-report-scheme-year-5-april-2025-march-2026",
-      "published_at": "2026-07-23T12:00:00Z",
-      "display_date": "23 July 2026"
+      "link": "https://www.ofgem.gov.uk/decision/approval-modified-access-rules-nemo-link-interconnector-pursuant-slc-11a-electricity-interconnector-licence",
+      "published_at": "2026-07-24T12:00:00Z",
+      "display_date": "24 July 2026"
     },
     {
-      "headline": "Proposed modifications to National Gas Transmission\u2019s Baseline Network Risk Outputs following Asset Health Re-opener",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/proposed-modifications-national-gas-transmissions-baseline-network-risk-outputs-following-asset-health-re-opener",
-      "published_at": "2026-07-23T12:00:00Z",
-      "display_date": "23 July 2026"
-    },
-    {
-      "headline": "Eurostat: Renewables make up 26% of EU energy use",
+      "headline": "New ecodesign rules for industrial fans apply from 24 July",
       "source": "DG Energy",
-      "link": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260723-1",
-      "published_at": "2026-07-23T09:32:47Z",
-      "display_date": "23 July 2026"
+      "link": "https://energy.ec.europa.eu/news/new-ecodesign-rules-industrial-fans-apply-24-july-2026-07-24_en",
+      "published_at": "2026-07-24T08:00:38Z",
+      "display_date": "24 July 2026"
     },
     {
-      "headline": "Codes Grid Code Review Panel Meeting - 30 July 2026 30 July 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-30-july-2026",
-      "published_at": "2026-07-23T00:00:00Z",
-      "display_date": "23 July 2026"
+      "headline": "Oil Coordination Group confirms no immediate supply concerns in the EU",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/oil-coordination-group-confirms-no-immediate-supply-concerns-eu-2026-07-24_en",
+      "published_at": "2026-07-24T07:48:17Z",
+      "display_date": "24 July 2026"
     },
     {
-      "headline": "Codes Grid Code Development Forum (GCDF) - 5\u2026 5 August 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-5-august-2026",
-      "published_at": "2026-07-23T00:00:00Z",
-      "display_date": "23 July 2026"
+      "headline": "Government has secured \u00a3100 billion of clean energy investment",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/government-has-secured-100-billion-of-clean-energy-investment",
+      "published_at": null,
+      "display_date": null
+    },
+    {
+      "headline": "Iran, the Middle East and UK energy: factsheet",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
