@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-24 14:17 UTC",
+  "last_updated": "2026-07-25 03:44 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,13 +39,6 @@
   ],
   "policy": [
     {
-      "headline": "Approval of the modified Access Rules for the Nemo Link interconnector pursuant to SLC 11A of the Electricity Interconnector Licence",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/approval-modified-access-rules-nemo-link-interconnector-pursuant-slc-11a-electricity-interconnector-licence",
-      "published_at": "2026-07-24T12:00:00Z",
-      "display_date": "24 July 2026"
-    },
-    {
       "headline": "New ecodesign rules for industrial fans apply from 24 July",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/new-ecodesign-rules-industrial-fans-apply-24-july-2026-07-24_en",
@@ -70,6 +63,13 @@
       "headline": "Iran, the Middle East and UK energy: factsheet",
       "source": "DESNZ",
       "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "published_at": null,
+      "display_date": null
+    },
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
       "published_at": null,
       "display_date": null
     }
