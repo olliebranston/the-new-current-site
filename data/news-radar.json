@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-07-28 03:43 UTC",
+  "last_updated": "2026-07-28 14:45 UTC",
   "r_and_d": [
+    {
+      "headline": "Research and innovation projects supporting the upcoming Circular Economy Act",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/research-and-innovation-projects-supporting-upcoming-circular-economy-act-2026-07-28_en",
+      "published_at": "2026-07-28T13:02:15Z",
+      "display_date": "28 July 2026"
+    },
+    {
+      "headline": "New Charter boosts access for companies to cutting-edge research and technology infrastructures in Europe",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/new-charter-boosts-access-companies-cutting-edge-research-and-technology-infrastructures-europe-2026-07-28_en",
+      "published_at": "2026-07-28T09:53:29Z",
+      "display_date": "28 July 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
@@ -16,20 +30,6 @@
       "display_date": "26 July 2026"
     },
     {
-      "headline": "EU and India strengthen strategic partnership with third Trade and Technology Council",
-      "source": "EU Research & Innovation",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1627",
-      "published_at": "2026-07-20T07:11:15Z",
-      "display_date": "20 July 2026"
-    },
-    {
-      "headline": "EU and Portugal team up to keep brightest tech talents at home",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-and-portugal-team-keep-brightest-tech-talents-home-2026-07-17_en",
-      "published_at": "2026-07-17T12:50:34Z",
-      "display_date": "17 July 2026"
-    },
-    {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
@@ -38,20 +38,6 @@
     }
   ],
   "policy": [
-    {
-      "headline": "Grid Code GC0139: enhanced planning-data exchange to facilitate whole system planning Authority Decision",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/publications/grid-code-gc0139-enhanced-planning-data-exchange-facilitate-whole-system-planning-authority-decision",
-      "published_at": "2026-07-27T12:00:00Z",
-      "display_date": "27 July 2026"
-    },
-    {
-      "headline": "Domestic billing performance assessment",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/research/domestic-billing-performance-assessment",
-      "published_at": "2026-07-27T12:00:00Z",
-      "display_date": "27 July 2026"
-    },
     {
       "headline": "New ecodesign rules for industrial fans apply from 24 July",
       "source": "DG Energy",
@@ -70,6 +56,20 @@
       "headline": "Government has secured \u00a3100 billion of clean energy investment",
       "source": "DESNZ",
       "link": "https://www.gov.uk/government/news/government-has-secured-100-billion-of-clean-energy-investment",
+      "published_at": null,
+      "display_date": null
+    },
+    {
+      "headline": "Iran, the Middle East and UK energy: factsheet",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/iran-the-middle-east-and-uk-energy-factsheet",
+      "published_at": null,
+      "display_date": null
+    },
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
       "published_at": null,
       "display_date": null
     }
