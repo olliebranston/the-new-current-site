@@ -1,6 +1,4 @@
 timestamp,forecast,actual,index,chart_value
-2026-08-01T21:00Z,167,160,moderate,160
-2026-08-01T21:30Z,169,162,moderate,162
 2026-08-01T22:00Z,161,162,moderate,162
 2026-08-01T22:30Z,166,162,moderate,162
 2026-08-01T23:00Z,170,161,moderate,161
@@ -47,3 +45,5 @@ timestamp,forecast,actual,index,chart_value
 2026-08-02T19:30Z,169,179,high,179
 2026-08-02T20:00Z,185,176,high,176
 2026-08-02T20:30Z,173,174,high,174
+2026-08-02T21:00Z,172,170,high,170
+2026-08-02T21:30Z,158,165,moderate,165
