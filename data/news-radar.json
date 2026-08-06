@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-06 03:46 UTC",
+  "last_updated": "2026-08-06 14:41 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,6 +39,13 @@
   ],
   "policy": [
     {
+      "headline": "Ofgem Energy Redress Scheme supports one million customers with record \u00a3250 million funding",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-energy-redress-scheme-supports-one-million-customers-record-ps250-million-funding",
+      "published_at": "2026-08-06T12:00:00Z",
+      "display_date": "06 August 2026"
+    },
+    {
       "headline": "Codes Transmission Charging Methodologies Forum \u2026 6 August 2026 10am to 12:30pm Transmission Charging Methodologies Forum (TCMF) established under the Connection and Use of System Code (CUSC) to provide a\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-6-august-2026",
@@ -46,9 +53,9 @@
       "display_date": "06 August 2026"
     },
     {
-      "headline": "Codes Grid Code - New Modification Proposal\u2026 12 August 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "headline": "Codes GC0181 \u2013 Enhance the Effectiveness of System\u2026 10 August 2026 10am to 1pm The 9th Workgroup Meeting for GC0181 \u2013 Enhance the Effectiveness of System Incidents Reporting Meetings",
       "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-12-august-2026",
+      "link": "https://www.neso.energy/calendar/gc0181-enhance-effectiveness-system-incidents-reporting-workgroup-meeting-9",
       "published_at": "2026-08-06T00:00:00Z",
       "display_date": "06 August 2026"
     },
@@ -65,13 +72,6 @@
       "link": "https://energy.ec.europa.eu/news/oil-coordination-group-confirms-no-immediate-supply-concerns-eu-2026-07-24_en",
       "published_at": "2026-07-24T07:48:17Z",
       "display_date": "24 July 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
     }
   ]
 }
