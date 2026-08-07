@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-08-07 03:21 UTC",
+  "last_updated": "2026-08-07 13:44 UTC",
   "r_and_d": [
+    {
+      "headline": "Ready4EIC: new training programme for innovative SMEs in EU enlargement countries",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/ready4eic-new-training-programme-innovative-smes-eu-enlargement-countries-2026-08-07_en",
+      "published_at": "2026-08-07T13:32:13Z",
+      "display_date": "07 August 2026"
+    },
+    {
+      "headline": "Sixth AU-EU Innovation Agenda Workshop on youth-led innovations, empowering the next generation of researchers and entrepreneurs",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/sixth-au-eu-innovation-agenda-workshop-youth-led-innovations-empowering-next-generation-researchers-2026-08-07_en",
+      "published_at": "2026-08-07T09:30:17Z",
+      "display_date": "07 August 2026"
+    },
     {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
@@ -21,20 +35,6 @@
       "link": "https://www.energy.gov/topics/energy-innovation",
       "published_at": "2026-08-04T00:00:00Z",
       "display_date": "04 August 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-08-04T00:00:00Z",
-      "display_date": "04 August 2026"
-    },
-    {
-      "headline": "Research and innovation projects supporting the upcoming Circular Economy Act",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/research-and-innovation-projects-supporting-upcoming-circular-economy-act-2026-07-28_en",
-      "published_at": "2026-07-28T13:02:15Z",
-      "display_date": "28 July 2026"
     }
   ],
   "policy": [
@@ -53,24 +53,24 @@
       "display_date": "10 August 2026"
     },
     {
-      "headline": "Ofgem Energy Redress Scheme supports one million customers with record \u00a3250 million funding",
+      "headline": "Smart Secure Electricity Systems (SSES) Load Control Licence: consumer protection guidance",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/press-release/ofgem-energy-redress-scheme-supports-one-million-customers-record-ps250-million-funding",
-      "published_at": "2026-08-06T12:00:00Z",
-      "display_date": "06 August 2026"
+      "link": "https://www.ofgem.gov.uk/guidance/smart-secure-electricity-systems-sses-load-control-licence-consumer-protection-guidance",
+      "published_at": "2026-08-07T12:00:00Z",
+      "display_date": "07 August 2026"
+    },
+    {
+      "headline": "R0207 Retail Energy Code (REC) proposed changes",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/publications/r0207-retail-energy-code-rec-proposed-changes",
+      "published_at": "2026-08-07T12:00:00Z",
+      "display_date": "07 August 2026"
     },
     {
       "headline": "New ecodesign rules for industrial fans apply from 24 July",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/new-ecodesign-rules-industrial-fans-apply-24-july-2026-07-24_en",
       "published_at": "2026-07-24T08:00:38Z",
-      "display_date": "24 July 2026"
-    },
-    {
-      "headline": "Oil Coordination Group confirms no immediate supply concerns in the EU",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/oil-coordination-group-confirms-no-immediate-supply-concerns-eu-2026-07-24_en",
-      "published_at": "2026-07-24T07:48:17Z",
       "display_date": "24 July 2026"
     }
   ]
