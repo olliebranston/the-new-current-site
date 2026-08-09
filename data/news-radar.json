@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-08 13:23 UTC",
+  "last_updated": "2026-08-09 02:33 UTC",
   "r_and_d": [
     {
       "headline": "Sixth AU-EU Innovation Agenda Workshop on youth-led innovations, empowering the next generation of researchers and entrepreneurs",
@@ -53,25 +53,25 @@
       "display_date": "10 August 2026"
     },
     {
-      "headline": "Smart Secure Electricity Systems (SSES) Load Control Licence: consumer protection guidance",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/smart-secure-electricity-systems-sses-load-control-licence-consumer-protection-guidance",
-      "published_at": "2026-08-07T12:00:00Z",
-      "display_date": "07 August 2026"
-    },
-    {
-      "headline": "R0207 Retail Energy Code (REC) proposed changes",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/publications/r0207-retail-energy-code-rec-proposed-changes",
-      "published_at": "2026-08-07T12:00:00Z",
-      "display_date": "07 August 2026"
-    },
-    {
       "headline": "New ecodesign rules for industrial fans apply from 24 July",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/new-ecodesign-rules-industrial-fans-apply-24-july-2026-07-24_en",
       "published_at": "2026-07-24T08:00:38Z",
       "display_date": "24 July 2026"
+    },
+    {
+      "headline": "Oil Coordination Group confirms no immediate supply concerns in the EU",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/oil-coordination-group-confirms-no-immediate-supply-concerns-eu-2026-07-24_en",
+      "published_at": "2026-07-24T07:48:17Z",
+      "display_date": "24 July 2026"
+    },
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-07-21T00:00:00Z",
+      "display_date": "21 July 2026"
     }
   ]
 }
