@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-11 02:32 UTC",
+  "last_updated": "2026-08-11 13:48 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,25 +39,25 @@
   ],
   "policy": [
     {
-      "headline": "Modifications to Special Condition 3.21 of the gas transporter licence - Biomethane Distributed Entry Reinforcement",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/modifications-special-condition-321-gas-transporter-licence-biomethane-distributed-entry-reinforcement",
-      "published_at": "2026-08-10T12:00:00Z",
-      "display_date": "10 August 2026"
-    },
-    {
-      "headline": "Codes GC0181 \u2013 Enhance the Effectiveness of System\u2026 10 August 2026 10am to 1pm The 9th Workgroup Meeting for GC0181 \u2013 Enhance the Effectiveness of System Incidents Reporting Meetings",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/gc0181-enhance-effectiveness-system-incidents-reporting-workgroup-meeting-9",
-      "published_at": "2026-08-10T00:00:00Z",
-      "display_date": "10 August 2026"
+      "headline": "Europe\u2019s electricity system remains stable despite extreme weather",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/europes-electricity-system-remains-stable-despite-extreme-weather-2026-08-11_en",
+      "published_at": "2026-08-11T13:36:12Z",
+      "display_date": "11 August 2026"
     },
     {
       "headline": "Codes Grid Code - New Modification Proposal\u2026 12 August 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-12-august-2026",
-      "published_at": "2026-08-10T00:00:00Z",
-      "display_date": "10 August 2026"
+      "published_at": "2026-08-11T00:00:00Z",
+      "display_date": "11 August 2026"
+    },
+    {
+      "headline": "Codes Grid Code - Panel Papers Published to\u2026 19 August 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-19-august-2026",
+      "published_at": "2026-08-11T00:00:00Z",
+      "display_date": "11 August 2026"
     },
     {
       "headline": "New ecodesign rules for industrial fans apply from 24 July",
@@ -67,11 +67,11 @@
       "display_date": "24 July 2026"
     },
     {
-      "headline": "Oil Coordination Group confirms no immediate supply concerns in the EU",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/oil-coordination-group-confirms-no-immediate-supply-concerns-eu-2026-07-24_en",
-      "published_at": "2026-07-24T07:48:17Z",
-      "display_date": "24 July 2026"
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-07-21T00:00:00Z",
+      "display_date": "21 July 2026"
     }
   ]
 }
