@@ -1,27 +1,27 @@
 {
-  "last_updated": "2026-08-12 04:29 UTC",
+  "last_updated": "2026-08-12 06:04 UTC",
   "power_price": {
-    "value": 124.28,
+    "value": 140.41,
     "unit": "GBP/MWh",
-    "display": "124 GBP/MWh"
+    "display": "140 GBP/MWh"
   },
   "carbon_intensity": {
-    "value": 127,
+    "value": 130,
     "unit": "gCO2/kWh",
-    "display": "127 gCO2/kWh (actual)"
+    "display": "130 gCO2/kWh (forecast)"
   },
   "demand": {
-    "value": 22413,
+    "value": 20999,
     "unit": "MW",
-    "display": "22,413 MW"
+    "display": "20,999 MW"
   },
   "generation": {
-    "value": 25801,
+    "value": 26454,
     "unit": "MW",
-    "display": "25,801 MW"
+    "display": "26,454 MW"
   },
   "generation_mix": {
-    "low_carbon_percentage": 66,
+    "low_carbon_percentage": 64,
     "segments": [
       {
         "key": "biomass",
@@ -33,42 +33,35 @@
       {
         "key": "imports",
         "label": "Imports",
-        "percentage": 4.7,
+        "percentage": 5.4,
         "color": "#ec4899",
         "is_low_carbon": false
       },
       {
         "key": "gas",
         "label": "Gas",
-        "percentage": 28.8,
+        "percentage": 30.1,
         "color": "#f97316",
         "is_low_carbon": false
       },
       {
         "key": "nuclear",
         "label": "Nuclear",
-        "percentage": 14.3,
+        "percentage": 14.9,
         "color": "#16a34a",
         "is_low_carbon": true
       },
       {
-        "key": "other",
-        "label": "Other",
-        "percentage": 0.9,
-        "color": "#94a3b8",
-        "is_low_carbon": false
-      },
-      {
-        "key": "hydro",
-        "label": "Hydro",
-        "percentage": 1.0,
-        "color": "#0ea5e9",
+        "key": "solar",
+        "label": "Solar",
+        "percentage": 0.6,
+        "color": "#f5b700",
         "is_low_carbon": true
       },
       {
         "key": "wind",
         "label": "Wind",
-        "percentage": 40.8,
+        "percentage": 39.4,
         "color": "#2457ff",
         "is_low_carbon": true
       }
