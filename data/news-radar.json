@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-13 03:03 UTC",
+  "last_updated": "2026-08-13 13:53 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,18 +39,32 @@
   ],
   "policy": [
     {
-      "headline": "Codes Grid Code - New Modification Proposal\u2026 12 August 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-12-august-2026",
-      "published_at": "2026-08-12T00:00:00Z",
-      "display_date": "12 August 2026"
+      "headline": "Eurostat: Record low coal share in EU electricity production",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260813-1",
+      "published_at": "2026-08-13T12:29:31Z",
+      "display_date": "13 August 2026"
+    },
+    {
+      "headline": "AI Reg Lab: July 2026",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/transparency-document/ai-reg-lab-july-2026",
+      "published_at": "2026-08-13T12:00:00Z",
+      "display_date": "13 August 2026"
     },
     {
       "headline": "Codes Grid Code - Panel Papers Published to\u2026 19 August 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-19-august-2026",
-      "published_at": "2026-08-12T00:00:00Z",
-      "display_date": "12 August 2026"
+      "published_at": "2026-08-13T00:00:00Z",
+      "display_date": "13 August 2026"
+    },
+    {
+      "headline": "Codes Grid Code Review Panel Meeting - 27 August\u2026 27 August 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-27-august-2026",
+      "published_at": "2026-08-13T00:00:00Z",
+      "display_date": "13 August 2026"
     },
     {
       "headline": "Europe\u2019s electricity system remains stable despite extreme weather",
@@ -58,20 +72,6 @@
       "link": "https://energy.ec.europa.eu/news/europes-electricity-system-remains-stable-despite-extreme-weather-2026-08-11_en",
       "published_at": "2026-08-11T13:36:12Z",
       "display_date": "11 August 2026"
-    },
-    {
-      "headline": "New ecodesign rules for industrial fans apply from 24 July",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/new-ecodesign-rules-industrial-fans-apply-24-july-2026-07-24_en",
-      "published_at": "2026-07-24T08:00:38Z",
-      "display_date": "24 July 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
     }
   ]
 }
