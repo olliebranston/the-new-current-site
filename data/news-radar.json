@@ -1,19 +1,26 @@
 {
-  "last_updated": "2026-08-14 03:03 UTC",
+  "last_updated": "2026-08-14 13:49 UTC",
   "r_and_d": [
+    {
+      "headline": "New study assesses progress in reforming research assessment",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/new-study-assesses-progress-reforming-research-assessment-2026-06-25_en",
+      "published_at": "2026-08-14T13:28:52Z",
+      "display_date": "14 August 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-08-12T00:00:00Z",
-      "display_date": "12 August 2026"
+      "published_at": "2026-08-14T00:00:00Z",
+      "display_date": "14 August 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-08-12T00:00:00Z",
-      "display_date": "12 August 2026"
+      "published_at": "2026-08-14T00:00:00Z",
+      "display_date": "14 August 2026"
     },
     {
       "headline": "Fundamental Research",
@@ -28,16 +35,30 @@
       "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
       "published_at": "2026-08-10T00:00:00Z",
       "display_date": "10 August 2026"
-    },
-    {
-      "headline": "Sixth AU-EU Innovation Agenda Workshop on youth-led innovations, empowering the next generation of researchers and entrepreneurs",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/sixth-au-eu-innovation-agenda-workshop-youth-led-innovations-empowering-next-generation-researchers-2026-08-07_en",
-      "published_at": "2026-08-07T15:11:29Z",
-      "display_date": "07 August 2026"
     }
   ],
   "policy": [
+    {
+      "headline": "Codes Grid Code - Panel Papers Published to\u2026 19 August 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-19-august-2026",
+      "published_at": "2026-08-18T00:00:00Z",
+      "display_date": "18 August 2026"
+    },
+    {
+      "headline": "Codes Grid Code Review Panel Meeting - 27 August\u2026 27 August 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-27-august-2026",
+      "published_at": "2026-08-18T00:00:00Z",
+      "display_date": "18 August 2026"
+    },
+    {
+      "headline": "Statutory consultation on modifications to Independent Gas Transporter licence conditions for the Relative Price Control",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/statutory-consultation-modifications-independent-gas-transporter-licence-conditions-relative-price-control",
+      "published_at": "2026-08-14T12:00:00Z",
+      "display_date": "14 August 2026"
+    },
     {
       "headline": "Eurostat: Record low coal share in EU electricity production",
       "source": "DG Energy",
@@ -46,32 +67,11 @@
       "display_date": "13 August 2026"
     },
     {
-      "headline": "Codes Grid Code - Panel Papers Published to\u2026 19 August 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-19-august-2026",
-      "published_at": "2026-08-13T00:00:00Z",
-      "display_date": "13 August 2026"
-    },
-    {
-      "headline": "Codes Grid Code Review Panel Meeting - 27 August\u2026 27 August 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-27-august-2026",
-      "published_at": "2026-08-13T00:00:00Z",
-      "display_date": "13 August 2026"
-    },
-    {
       "headline": "Europe\u2019s electricity system remains stable despite extreme weather",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/europes-electricity-system-remains-stable-despite-extreme-weather-2026-08-11_en",
       "published_at": "2026-08-11T13:36:12Z",
       "display_date": "11 August 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
     }
   ]
 }
