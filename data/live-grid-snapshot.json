@@ -1,67 +1,67 @@
 {
-  "last_updated": "2026-08-15 08:02 UTC",
+  "last_updated": "2026-08-15 08:46 UTC",
   "power_price": {
-    "value": 129.24,
+    "value": 130.44,
     "unit": "GBP/MWh",
-    "display": "129 GBP/MWh"
+    "display": "130 GBP/MWh"
   },
   "carbon_intensity": {
     "value": 81,
     "unit": "gCO2/kWh",
-    "display": "81 gCO2/kWh (forecast)"
+    "display": "81 gCO2/kWh (actual)"
   },
   "demand": {
-    "value": 21663,
+    "value": 23182,
     "unit": "MW",
-    "display": "21,663 MW"
+    "display": "23,182 MW"
   },
   "generation": {
-    "value": 26466,
+    "value": 27142,
     "unit": "MW",
-    "display": "26,466 MW"
+    "display": "27,142 MW"
   },
   "generation_mix": {
-    "low_carbon_percentage": 64,
+    "low_carbon_percentage": 65,
     "segments": [
       {
         "key": "biomass",
         "label": "Biomass",
-        "percentage": 10.1,
+        "percentage": 7.7,
         "color": "#8b5cf6",
         "is_low_carbon": true
       },
       {
         "key": "imports",
         "label": "Imports",
-        "percentage": 26.0,
+        "percentage": 24.9,
         "color": "#ec4899",
         "is_low_carbon": false
       },
       {
         "key": "gas",
         "label": "Gas",
-        "percentage": 10.3,
+        "percentage": 10.1,
         "color": "#f97316",
         "is_low_carbon": false
       },
       {
         "key": "nuclear",
         "label": "Nuclear",
-        "percentage": 16.4,
+        "percentage": 15.7,
         "color": "#16a34a",
         "is_low_carbon": true
       },
       {
         "key": "solar",
         "label": "Solar",
-        "percentage": 12.6,
+        "percentage": 18.5,
         "color": "#f5b700",
         "is_low_carbon": true
       },
       {
         "key": "wind",
         "label": "Wind",
-        "percentage": 24.6,
+        "percentage": 23.0,
         "color": "#2457ff",
         "is_low_carbon": true
       }
