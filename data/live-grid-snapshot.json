@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-08-16 15:37 UTC",
+  "last_updated": "2026-08-16 15:58 UTC",
   "power_price": {
-    "value": 131.88,
+    "value": 145.56,
     "unit": "GBP/MWh",
-    "display": "132 GBP/MWh"
+    "display": "146 GBP/MWh"
   },
   "carbon_intensity": {
     "value": 118,
