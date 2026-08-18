@@ -1,14 +1,14 @@
 {
-  "last_updated": "2026-08-18 21:40 UTC",
+  "last_updated": "2026-08-18 21:59 UTC",
   "power_price": {
-    "value": 0.0,
+    "value": 189.73,
     "unit": "GBP/MWh",
-    "display": "0 GBP/MWh"
+    "display": "190 GBP/MWh"
   },
   "carbon_intensity": {
-    "value": 199,
+    "value": 196,
     "unit": "gCO2/kWh",
-    "display": "199 gCO2/kWh (actual)"
+    "display": "196 gCO2/kWh (actual)"
   },
   "demand": {
     "value": 29817,
