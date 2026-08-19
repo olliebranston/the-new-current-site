@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-19 01:57 UTC",
+  "last_updated": "2026-08-19 13:16 UTC",
   "r_and_d": [
     {
       "headline": "Confronting extreme heat, drought and wildfires: How EU-funded research is helping Europe to respond and adapt",
@@ -39,18 +39,25 @@
   ],
   "policy": [
     {
+      "headline": "RIIO-ED2 re-opener applications 2026: draft determinations",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/riio-ed2-re-opener-applications-2026-draft-determinations",
+      "published_at": "2026-08-19T12:00:00Z",
+      "display_date": "19 August 2026"
+    },
+    {
       "headline": "Codes Grid Code - Panel Papers Published to\u2026 19 August 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-19-august-2026",
-      "published_at": "2026-08-18T00:00:00Z",
-      "display_date": "18 August 2026"
+      "published_at": "2026-08-19T00:00:00Z",
+      "display_date": "19 August 2026"
     },
     {
       "headline": "Codes Grid Code Review Panel Meeting - 27 August\u2026 27 August 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-27-august-2026",
-      "published_at": "2026-08-18T00:00:00Z",
-      "display_date": "18 August 2026"
+      "published_at": "2026-08-19T00:00:00Z",
+      "display_date": "19 August 2026"
     },
     {
       "headline": "Eurostat: EU economy greenhouse gas emissions: +0.3% in Q1 2026",
@@ -65,13 +72,6 @@
       "link": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260813-1",
       "published_at": "2026-08-13T12:29:31Z",
       "display_date": "13 August 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
     }
   ]
 }
