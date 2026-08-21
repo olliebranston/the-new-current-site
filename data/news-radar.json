@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-21 02:02 UTC",
+  "last_updated": "2026-08-21 13:22 UTC",
   "r_and_d": [
     {
       "headline": "Fundamental Research",
@@ -53,6 +53,13 @@
       "display_date": "26 August 2026"
     },
     {
+      "headline": "Last Resort Supply Payment claims minded-to positions 2026: EDF (Utility Point and Zog)",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/last-resort-supply-payment-claims-minded-positions-2026-edf-utility-point-and-zog",
+      "published_at": "2026-08-21T12:00:00Z",
+      "display_date": "21 August 2026"
+    },
+    {
       "headline": "Electricity Coordination Group discusses extreme weather impacts on electricity security of supply in Central Europe and South-East Europe",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/electricity-coordination-group-discusses-extreme-weather-impacts-electricity-security-supply-central-2026-08-19_en",
@@ -65,13 +72,6 @@
       "link": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260814-1",
       "published_at": "2026-08-14T15:18:35Z",
       "display_date": "14 August 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
     }
   ]
 }
