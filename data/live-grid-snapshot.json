@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-25 23:11 UTC",
+  "last_updated": "2026-08-25 23:39 UTC",
   "power_price": {
     "value": 0.0,
     "unit": "GBP/MWh",
@@ -11,9 +11,9 @@
     "display": "92 gCO2/kWh (actual)"
   },
   "demand": {
-    "value": 28174,
+    "value": 26816,
     "unit": "MW",
-    "display": "28,174 MW"
+    "display": "26,816 MW"
   },
   "generation": {
     "value": 27093,
@@ -26,14 +26,21 @@
       {
         "key": "biomass",
         "label": "Biomass",
-        "percentage": 11.4,
+        "percentage": 11.5,
         "color": "#8b5cf6",
         "is_low_carbon": true
       },
       {
+        "key": "imports",
+        "label": "Imports",
+        "percentage": 0.2,
+        "color": "#ec4899",
+        "is_low_carbon": false
+      },
+      {
         "key": "gas",
         "label": "Gas",
-        "percentage": 24.6,
+        "percentage": 24.3,
         "color": "#f97316",
         "is_low_carbon": false
       },
@@ -47,7 +54,7 @@
       {
         "key": "wind",
         "label": "Wind",
-        "percentage": 47.0,
+        "percentage": 46.8,
         "color": "#2457ff",
         "is_low_carbon": true
       }
