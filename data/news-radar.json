@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-26 13:29 UTC",
+  "last_updated": "2026-08-27 10:01 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,32 +39,18 @@
   ],
   "policy": [
     {
-      "headline": "Changes to energy price cap between 1 October and 31 December 2026",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-october-and-31-december-2026",
-      "published_at": "2026-08-26T12:00:00Z",
-      "display_date": "26 August 2026"
-    },
-    {
-      "headline": "Energy price cap will rise by 4% from October 2026",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/press-release/energy-price-cap-will-rise-4-october-2026",
-      "published_at": "2026-08-26T12:00:00Z",
-      "display_date": "26 August 2026"
-    },
-    {
       "headline": "Codes Grid Code Review Panel Meeting - 27 August\u2026 27 August 2026 10am to 2pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-review-panel-meeting-27-august-2026",
-      "published_at": "2026-08-26T00:00:00Z",
-      "display_date": "26 August 2026"
+      "published_at": "2026-08-27T00:00:00Z",
+      "display_date": "27 August 2026"
     },
     {
       "headline": "Connections Gate 2 to Gate 1 webinar - Connections Reform 27 August 2026 1:45pm to 2:15pm Following customer requests, we recently published guidance on the process for moving from Gate 2 to Gate 1. To support customers\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/gate-2-gate-1-webinar-connections-reform",
-      "published_at": "2026-08-26T00:00:00Z",
-      "display_date": "26 August 2026"
+      "published_at": "2026-08-27T00:00:00Z",
+      "display_date": "27 August 2026"
     },
     {
       "headline": "Electricity Coordination Group discusses extreme weather impacts on electricity security of supply in Central Europe and South-East Europe",
@@ -72,6 +58,20 @@
       "link": "https://energy.ec.europa.eu/news/electricity-coordination-group-discusses-extreme-weather-impacts-electricity-security-supply-central-2026-08-19_en",
       "published_at": "2026-08-19T14:18:16Z",
       "display_date": "19 August 2026"
+    },
+    {
+      "headline": "Eurostat: EU economy greenhouse gas emissions: +0.3% in Q1 2026",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20260814-1",
+      "published_at": "2026-08-14T15:18:35Z",
+      "display_date": "14 August 2026"
+    },
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-07-21T00:00:00Z",
+      "display_date": "21 July 2026"
     }
   ]
 }
