@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-28 22:28 UTC",
+  "last_updated": "2026-08-29 07:13 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -16,25 +16,25 @@
       "display_date": "27 August 2026"
     },
     {
-      "headline": "Fundamental Research",
-      "source": "CORDIS Energy",
-      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
-      "published_at": "2026-08-21T00:00:00Z",
-      "display_date": "21 August 2026"
-    },
-    {
-      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
-      "source": "CORDIS Energy",
-      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
-      "published_at": "2026-08-21T00:00:00Z",
-      "display_date": "21 August 2026"
-    },
-    {
       "headline": "Confronting extreme heat, drought and wildfires: How EU-funded research is helping Europe to respond and adapt",
       "source": "EU Research & Innovation",
       "link": "https://cinea.ec.europa.eu/news-events/news/confronting-extreme-heat-drought-and-wildfires-how-eu-funded-research-helping-europe-respond-and-2026-08-13_en",
       "published_at": "2026-08-18T08:04:11Z",
       "display_date": "18 August 2026"
+    },
+    {
+      "headline": "New study assesses progress in reforming research assessment",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/new-study-assesses-progress-reforming-research-assessment-2026-06-25_en",
+      "published_at": "2026-08-14T13:28:52Z",
+      "display_date": "14 August 2026"
+    },
+    {
+      "headline": "DOE Alternative Fuels and Feedstocks Office Announces Intent to Advance Innovative Chemical Technologies",
+      "source": "DOE Hydrogen & Fuel Cells",
+      "link": "https://www.energy.gov/cmei/fuels/articles/doe-alternative-fuels-and-feedstocks-office-announces-intent-advance-innovative",
+      "published_at": "2026-07-14T18:13:38Z",
+      "display_date": "14 July 2026"
     }
   ],
   "policy": [
@@ -42,15 +42,15 @@
       "headline": "Codes Grid Code Development Forum (GCDF) - 2\u2026 2 September 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-2-september-2026",
-      "published_at": "2026-08-28T00:00:00Z",
-      "display_date": "28 August 2026"
+      "published_at": "2026-09-02T00:00:00Z",
+      "display_date": "02 September 2026"
     },
     {
       "headline": "Codes Transmission Charging Methodologies Forum \u2026 3 September 2026 10am to 12:30pm Transmission Charging Methodologies Forum (TCMF) established under the Connection and Use of System Code (CUSC) to provide a\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-3-september-2026",
-      "published_at": "2026-08-28T00:00:00Z",
-      "display_date": "28 August 2026"
+      "published_at": "2026-09-02T00:00:00Z",
+      "display_date": "02 September 2026"
     },
     {
       "headline": "Electricity Coordination Group discusses extreme weather impacts on electricity security of supply in Central Europe and South-East Europe",
@@ -67,11 +67,11 @@
       "display_date": "14 August 2026"
     },
     {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
+      "headline": "Households living near new pylons to save thousands on bills",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/households-living-near-new-pylons-to-save-thousands-on-bills",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
