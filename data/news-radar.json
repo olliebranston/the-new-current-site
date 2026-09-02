@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-02 04:47 UTC",
+  "last_updated": "2026-09-02 16:42 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,6 +39,20 @@
   ],
   "policy": [
     {
+      "headline": "Energy code reform phase 1: code manager licence modifications",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/energy-code-reform-phase-1-code-manager-licence-modifications",
+      "published_at": "2026-09-02T12:00:00Z",
+      "display_date": "02 September 2026"
+    },
+    {
+      "headline": "Commission approves German capacity mechanism of up to \u20ac35 billion to secure electricity supply",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1778",
+      "published_at": "2026-09-02T11:39:24Z",
+      "display_date": "02 September 2026"
+    },
+    {
       "headline": "Codes Grid Code Development Forum (GCDF) - 2\u2026 2 September 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-2-september-2026",
@@ -51,20 +65,6 @@
       "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-3-september-2026",
       "published_at": "2026-09-02T00:00:00Z",
       "display_date": "02 September 2026"
-    },
-    {
-      "headline": "Sea Link: project assessment",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/sea-link-project-assessment",
-      "published_at": "2026-09-01T12:00:00Z",
-      "display_date": "01 September 2026"
-    },
-    {
-      "headline": "Notice under the Electricity (Competitive Tenders for Offshore Transmission Licences) Regulations 2015 for TR14",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/notice-under-electricity-competitive-tenders-offshore-transmission-licences-regulations-2015-tr14",
-      "published_at": "2026-09-01T12:00:00Z",
-      "display_date": "01 September 2026"
     },
     {
       "headline": "EIB approves over \u20ac9 billion in financing to boost European businesses and energy autonomy",
