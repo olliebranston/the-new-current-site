@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-09-03 04:44 UTC",
+  "last_updated": "2026-09-03 16:33 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-09-01T00:00:00Z",
-      "display_date": "01 September 2026"
+      "published_at": "2026-09-03T00:00:00Z",
+      "display_date": "03 September 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-09-01T00:00:00Z",
-      "display_date": "01 September 2026"
+      "published_at": "2026-09-03T00:00:00Z",
+      "display_date": "03 September 2026"
     },
     {
       "headline": "Fundamental Research",
@@ -39,11 +39,25 @@
   ],
   "policy": [
     {
-      "headline": "Energy code reform phase 1: code manager licence modifications",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/energy-code-reform-phase-1-code-manager-licence-modifications",
-      "published_at": "2026-09-02T12:00:00Z",
-      "display_date": "02 September 2026"
+      "headline": "Gas Coordination Group: No immediate security of supply risk",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/gas-coordination-group-no-immediate-security-supply-risk-2026-09-03_en",
+      "published_at": "2026-09-03T15:38:37Z",
+      "display_date": "03 September 2026"
+    },
+    {
+      "headline": "Codes Transmission Charging Methodologies Forum \u2026 3 September 2026 10am to 12:30pm Transmission Charging Methodologies Forum (TCMF) established under the Connection and Use of System Code (CUSC) to provide a\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-3-september-2026",
+      "published_at": "2026-09-03T00:00:00Z",
+      "display_date": "03 September 2026"
+    },
+    {
+      "headline": "Future energy Data Sharing Infrastructure (DSI) \u2013 Industry\u2026 4 September 2026 12:05pm to 1pm An industry webinar to present how NESO is taking on the responsibility to deliver and coordinate the DSI on behalf of the sector.Join\u2026 Events",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/data-sharing-infrastructure-dsi-industry-webinar-4-sep-2026",
+      "published_at": "2026-09-03T00:00:00Z",
+      "display_date": "03 September 2026"
     },
     {
       "headline": "Commission approves German capacity mechanism of up to \u20ac35 billion to secure electricity supply",
@@ -53,25 +67,11 @@
       "display_date": "02 September 2026"
     },
     {
-      "headline": "Codes Grid Code Development Forum (GCDF) - 2\u2026 2 September 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-2-september-2026",
-      "published_at": "2026-09-02T00:00:00Z",
-      "display_date": "02 September 2026"
-    },
-    {
-      "headline": "Codes Transmission Charging Methodologies Forum \u2026 3 September 2026 10am to 12:30pm Transmission Charging Methodologies Forum (TCMF) established under the Connection and Use of System Code (CUSC) to provide a\u2026 Meetings",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-3-september-2026",
-      "published_at": "2026-09-02T00:00:00Z",
-      "display_date": "02 September 2026"
-    },
-    {
-      "headline": "EIB approves over \u20ac9 billion in financing to boost European businesses and energy autonomy",
-      "source": "DG Energy",
-      "link": "https://www.eib.org/en/press/all/2026-273-eib-approves-over-eur9-billion-in-financing-to-boost-european-businesses-and-energy-autonomy",
-      "published_at": "2026-08-31T13:27:00Z",
-      "display_date": "31 August 2026"
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-07-21T00:00:00Z",
+      "display_date": "21 July 2026"
     }
   ]
 }
