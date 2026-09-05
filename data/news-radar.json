@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-09-04 16:29 UTC",
+  "last_updated": "2026-09-05 04:41 UTC",
   "r_and_d": [
+    {
+      "headline": "DOE\u2019s Alternative Fuels and Feedstocks Office Announces up to $58 Million to Promote Chemical Innovation",
+      "source": "DOE Hydrogen & Fuel Cells",
+      "link": "https://www.energy.gov/cmei/fuels/articles/does-alternative-fuels-and-feedstocks-office-announces-58-million-promote",
+      "published_at": "2026-09-04T15:59:00Z",
+      "display_date": "04 September 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
@@ -28,13 +35,6 @@
       "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
       "published_at": "2026-08-21T00:00:00Z",
       "display_date": "21 August 2026"
-    },
-    {
-      "headline": "Confronting extreme heat, drought and wildfires: How EU-funded research is helping Europe to respond and adapt",
-      "source": "EU Research & Innovation",
-      "link": "https://cinea.ec.europa.eu/news-events/news/confronting-extreme-heat-drought-and-wildfires-how-eu-funded-research-helping-europe-respond-and-2026-08-13_en",
-      "published_at": "2026-08-18T08:04:11Z",
-      "display_date": "18 August 2026"
     }
   ],
   "policy": [
@@ -43,13 +43,6 @@
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/preparatory-study-possible-new-energy-label-computers-2026-09-04_en",
       "published_at": "2026-09-04T12:52:42Z",
-      "display_date": "04 September 2026"
-    },
-    {
-      "headline": "Energy code reform: statutory consultation on modifications to the Retail Energy Code and affected licences",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/energy-code-reform-statutory-consultation-modifications-retail-energy-code-and-affected-licences",
-      "published_at": "2026-09-04T12:00:00Z",
       "display_date": "04 September 2026"
     },
     {
@@ -72,6 +65,13 @@
       "link": "https://energy.ec.europa.eu/news/gas-coordination-group-no-immediate-security-supply-risk-2026-09-03_en",
       "published_at": "2026-09-03T15:38:37Z",
       "display_date": "03 September 2026"
+    },
+    {
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-07-21T00:00:00Z",
+      "display_date": "21 July 2026"
     }
   ]
 }
