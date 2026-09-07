@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-06 15:34 UTC",
+  "last_updated": "2026-09-07 17:46 UTC",
   "r_and_d": [
     {
       "headline": "DOE\u2019s Alternative Fuels and Feedstocks Office Announces up to $58 Million to Promote Chemical Innovation",
@@ -53,25 +53,25 @@
       "display_date": "08 September 2026"
     },
     {
+      "headline": "Data Communications Company (DCC) remuneration policy",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/guidance/data-communications-company-dcc-remuneration-policy",
+      "published_at": "2026-09-07T12:00:00Z",
+      "display_date": "07 September 2026"
+    },
+    {
+      "headline": "P441 Balancing and Settlement Code (BSC) and R0268 Retail Energy code (REC) send back decision letters",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/publications/p441-balancing-and-settlement-code-bsc-and-r0268-retail-energy-code-rec-send-back-decision-letters",
+      "published_at": "2026-09-07T12:00:00Z",
+      "display_date": "07 September 2026"
+    },
+    {
       "headline": "Preparatory study for possible new energy label for computers",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/preparatory-study-possible-new-energy-label-computers-2026-09-04_en",
       "published_at": "2026-09-04T12:52:42Z",
       "display_date": "04 September 2026"
-    },
-    {
-      "headline": "Gas Coordination Group: No immediate security of supply risk",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/gas-coordination-group-no-immediate-security-supply-risk-2026-09-03_en",
-      "published_at": "2026-09-03T15:38:37Z",
-      "display_date": "03 September 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
     }
   ]
 }
