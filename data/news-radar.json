@@ -1,6 +1,27 @@
 {
-  "last_updated": "2026-09-08 04:53 UTC",
+  "last_updated": "2026-09-08 16:44 UTC",
   "r_and_d": [
+    {
+      "headline": "Commission launches new strategic approach to boost research, innovation, deployment and uptake in Europe\u2019s agri-food sector",
+      "source": "EU Research & Innovation",
+      "link": "https://agriculture.ec.europa.eu/media/news/commission-launches-agri-food-innovation-strategy-2026-09-08_en",
+      "published_at": "2026-09-08T10:17:49Z",
+      "display_date": "08 September 2026"
+    },
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation",
+      "published_at": "2026-09-08T00:00:00Z",
+      "display_date": "08 September 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy",
+      "published_at": "2026-09-08T00:00:00Z",
+      "display_date": "08 September 2026"
+    },
     {
       "headline": "DOE\u2019s Alternative Fuels and Feedstocks Office Announces up to $58 Million to Promote Chemical Innovation",
       "source": "DOE Hydrogen & Fuel Cells",
@@ -9,35 +30,28 @@
       "display_date": "04 September 2026"
     },
     {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-09-03T00:00:00Z",
-      "display_date": "03 September 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-09-03T00:00:00Z",
-      "display_date": "03 September 2026"
-    },
-    {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
       "published_at": "2026-08-21T00:00:00Z",
       "display_date": "21 August 2026"
-    },
-    {
-      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
-      "source": "CORDIS Energy",
-      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
-      "published_at": "2026-08-21T00:00:00Z",
-      "display_date": "21 August 2026"
     }
   ],
   "policy": [
+    {
+      "headline": "Oil Coordination Group: No immediate security of oil supply concerns in the EU",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/oil-coordination-group-no-immediate-security-oil-supply-concerns-eu-2026-09-08_en",
+      "published_at": "2026-09-08T15:54:49Z",
+      "display_date": "08 September 2026"
+    },
+    {
+      "headline": "Elia Transmission Belgium secures a \u20ac1 billion green credit facility from the European Investment Bank for the Princess Elisabeth Island project",
+      "source": "DG Energy",
+      "link": "https://www.eib.org/en/press/news/news-elia-transmission-belgium-obtient-une-facilite-de-credit-verte-de-eur1-milliard-de-la-banque-europeenne-d-investissement-pour-son-projet-de-l-ile-princesse-elisabeth?utm_source=socialmedia&utm_medium=Social&utm_campaign=PressRelease&utm_content=Princess%20Elisabeth%20Island&utm_term=Energy-Renewable-Efficiency_Belgium&utm_id=2026-09-07_01_en",
+      "published_at": "2026-09-08T08:37:01Z",
+      "display_date": "08 September 2026"
+    },
     {
       "headline": "Codes Grid Code - New Modification Proposal\u2026 9 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
@@ -51,20 +65,6 @@
       "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-16-september-2025",
       "published_at": "2026-09-08T00:00:00Z",
       "display_date": "08 September 2026"
-    },
-    {
-      "headline": "Preparatory study for possible new energy label for computers",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/preparatory-study-possible-new-energy-label-computers-2026-09-04_en",
-      "published_at": "2026-09-04T12:52:42Z",
-      "display_date": "04 September 2026"
-    },
-    {
-      "headline": "Gas Coordination Group: No immediate security of supply risk",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/gas-coordination-group-no-immediate-security-supply-risk-2026-09-03_en",
-      "published_at": "2026-09-03T15:38:37Z",
-      "display_date": "03 September 2026"
     },
     {
       "headline": "ELECTRICITY",
