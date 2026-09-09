@@ -1,12 +1,19 @@
 {
-  "last_updated": "2026-09-09 04:54 UTC",
+  "last_updated": "2026-09-09 16:46 UTC",
   "r_and_d": [
     {
-      "headline": "Commission launches new strategic approach to boost research, innovation, deployment and uptake in Europe\u2019s agri-food sector",
+      "headline": "Commission proposes new European Innovation Act to help innovative European ideas grow and compete globally",
       "source": "EU Research & Innovation",
-      "link": "https://agriculture.ec.europa.eu/media/news/commission-launches-agri-food-innovation-strategy-2026-09-08_en",
-      "published_at": "2026-09-08T10:17:49Z",
-      "display_date": "08 September 2026"
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1810",
+      "published_at": "2026-09-09T11:33:20Z",
+      "display_date": "09 September 2026"
+    },
+    {
+      "headline": "Biodiversa+ launches a new research call on novel ecosystems",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/biodiversa-launches-new-research-call-novel-ecosystems-2026-09-09_en",
+      "published_at": "2026-09-09T08:08:16Z",
+      "display_date": "09 September 2026"
     },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -28,16 +35,23 @@
       "link": "https://www.energy.gov/cmei/fuels/articles/does-alternative-fuels-and-feedstocks-office-announces-58-million-promote",
       "published_at": "2026-09-04T15:59:00Z",
       "display_date": "04 September 2026"
-    },
-    {
-      "headline": "Fundamental Research",
-      "source": "CORDIS Energy",
-      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
-      "published_at": "2026-08-21T00:00:00Z",
-      "display_date": "21 August 2026"
     }
   ],
   "policy": [
+    {
+      "headline": "Codes Grid Code - New Modification Proposal\u2026 9 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-09-september-2025",
+      "published_at": "2026-09-09T00:00:00Z",
+      "display_date": "09 September 2026"
+    },
+    {
+      "headline": "Codes Grid Code - Panel Papers Published to\u2026 16 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-16-september-2025",
+      "published_at": "2026-09-09T00:00:00Z",
+      "display_date": "09 September 2026"
+    },
     {
       "headline": "Oil Coordination Group: No immediate security of oil supply concerns in the EU",
       "source": "DG Energy",
@@ -50,20 +64,6 @@
       "source": "DG Energy",
       "link": "https://www.eib.org/en/press/news/news-elia-transmission-belgium-obtient-une-facilite-de-credit-verte-de-eur1-milliard-de-la-banque-europeenne-d-investissement-pour-son-projet-de-l-ile-princesse-elisabeth?utm_source=socialmedia&utm_medium=Social&utm_campaign=PressRelease&utm_content=Princess%20Elisabeth%20Island&utm_term=Energy-Renewable-Efficiency_Belgium&utm_id=2026-09-07_01_en",
       "published_at": "2026-09-08T08:37:01Z",
-      "display_date": "08 September 2026"
-    },
-    {
-      "headline": "Codes Grid Code - New Modification Proposal\u2026 9 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-09-september-2025",
-      "published_at": "2026-09-08T00:00:00Z",
-      "display_date": "08 September 2026"
-    },
-    {
-      "headline": "Codes Grid Code - Panel Papers Published to\u2026 16 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-16-september-2025",
-      "published_at": "2026-09-08T00:00:00Z",
       "display_date": "08 September 2026"
     },
     {
