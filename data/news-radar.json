@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-09-10 04:56 UTC",
+  "last_updated": "2026-09-10 16:32 UTC",
   "r_and_d": [
+    {
+      "headline": "10th CELAC-EU Joint Initiative on Research and Innovation and Senior Officials Meeting advances bi-regional cooperation in research and innovation",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/10th-celac-eu-joint-initiative-research-and-innovation-and-senior-officials-meeting-advances-bi-2026-09-10_en",
+      "published_at": "2026-09-10T15:05:48Z",
+      "display_date": "10 September 2026"
+    },
     {
       "headline": "Commission proposes new European Innovation Act to help innovative European ideas grow and compete globally",
       "source": "EU Research & Innovation",
       "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1810",
       "published_at": "2026-09-09T11:33:20Z",
-      "display_date": "09 September 2026"
-    },
-    {
-      "headline": "Biodiversa+ launches a new research call on novel ecosystems",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/biodiversa-launches-new-research-call-novel-ecosystems-2026-09-09_en",
-      "published_at": "2026-09-09T08:08:16Z",
       "display_date": "09 September 2026"
     },
     {
@@ -39,39 +39,39 @@
   ],
   "policy": [
     {
-      "headline": "Codes Grid Code - New Modification Proposal\u2026 9 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-09-september-2025",
-      "published_at": "2026-09-09T00:00:00Z",
-      "display_date": "09 September 2026"
+      "headline": "Nuclear medicine: New EU framework to secure Europe\u2019s supply of medical radioisotopes and reduce dependence on Russia",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/nuclear-medicine-new-eu-framework-secure-europes-supply-medical-radioisotopes-and-reduce-dependence-2026-09-10_en",
+      "published_at": "2026-09-10T15:12:10Z",
+      "display_date": "10 September 2026"
+    },
+    {
+      "headline": "Consultation on proposed electricity market reforms in the Netherlands",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/consultation-proposed-electricity-market-reforms-netherlands-2026-09-10_en",
+      "published_at": "2026-09-10T15:08:14Z",
+      "display_date": "10 September 2026"
+    },
+    {
+      "headline": "Annual report on the operation of the capacity market in 2025/26",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/transparency-document/annual-report-operation-capacity-market-202526",
+      "published_at": "2026-09-10T12:00:00Z",
+      "display_date": "10 September 2026"
+    },
+    {
+      "headline": "Renewables Obligation\u2019s total obligation for April 2025 to March 2026",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/transparency-document/renewables-obligations-total-obligation-april-2025-march-2026",
+      "published_at": "2026-09-10T12:00:00Z",
+      "display_date": "10 September 2026"
     },
     {
       "headline": "Codes Grid Code - Panel Papers Published to\u2026 16 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-16-september-2025",
-      "published_at": "2026-09-09T00:00:00Z",
-      "display_date": "09 September 2026"
-    },
-    {
-      "headline": "Oil Coordination Group: No immediate security of oil supply concerns in the EU",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/oil-coordination-group-no-immediate-security-oil-supply-concerns-eu-2026-09-08_en",
-      "published_at": "2026-09-08T15:54:49Z",
-      "display_date": "08 September 2026"
-    },
-    {
-      "headline": "Elia Transmission Belgium secures a \u20ac1 billion green credit facility from the European Investment Bank for the Princess Elisabeth Island project",
-      "source": "DG Energy",
-      "link": "https://www.eib.org/en/press/news/news-elia-transmission-belgium-obtient-une-facilite-de-credit-verte-de-eur1-milliard-de-la-banque-europeenne-d-investissement-pour-son-projet-de-l-ile-princesse-elisabeth?utm_source=socialmedia&utm_medium=Social&utm_campaign=PressRelease&utm_content=Princess%20Elisabeth%20Island&utm_term=Energy-Renewable-Efficiency_Belgium&utm_id=2026-09-07_01_en",
-      "published_at": "2026-09-08T08:37:01Z",
-      "display_date": "08 September 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
+      "published_at": "2026-09-10T00:00:00Z",
+      "display_date": "10 September 2026"
     }
   ]
 }
