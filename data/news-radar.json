@@ -1,12 +1,19 @@
 {
-  "last_updated": "2026-09-14 05:09 UTC",
+  "last_updated": "2026-09-14 18:06 UTC",
   "r_and_d": [
     {
-      "headline": "10th CELAC-EU Joint Initiative on Research and Innovation and Senior Officials Meeting advances bi-regional cooperation in research and innovation",
+      "headline": "Europe\u2019s young research talent takes on cancer, climate and more",
       "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/10th-celac-eu-joint-initiative-research-and-innovation-and-senior-officials-meeting-advances-bi-2026-09-10_en",
-      "published_at": "2026-09-10T15:05:48Z",
-      "display_date": "10 September 2026"
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/europes-young-research-talent-takes-cancer-climate-and-more-2026-09-14_en",
+      "published_at": "2026-09-14T12:35:18Z",
+      "display_date": "14 September 2026"
+    },
+    {
+      "headline": "EU Missions drive systemic change, new assessment shows",
+      "source": "EU Research & Innovation",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1863",
+      "published_at": "2026-09-14T10:00:40Z",
+      "display_date": "14 September 2026"
     },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -21,13 +28,6 @@
       "link": "https://www.energy.gov/topics/nuclear-energy",
       "published_at": "2026-09-10T00:00:00Z",
       "display_date": "10 September 2026"
-    },
-    {
-      "headline": "Commission proposes new European Innovation Act to help innovative European ideas grow and compete globally",
-      "source": "EU Research & Innovation",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1810",
-      "published_at": "2026-09-09T11:33:20Z",
-      "display_date": "09 September 2026"
     },
     {
       "headline": "DOE\u2019s Alternative Fuels and Feedstocks Office Announces up to $58 Million to Promote Chemical Innovation",
@@ -53,25 +53,25 @@
       "display_date": "15 September 2026"
     },
     {
+      "headline": "Call for applications: candidate energy infrastructure Projects of Common and Mutual Interest \u2013 electricity and smart grids",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/call-applications-candidate-energy-infrastructure-projects-common-and-mutual-interest-electricity-2026-09-14_en",
+      "published_at": "2026-09-14T12:33:15Z",
+      "display_date": "14 September 2026"
+    },
+    {
+      "headline": "Rejection of 2026 Capacity Market change proposals without consultation",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/decision/rejection-2026-capacity-market-change-proposals-without-consultation",
+      "published_at": "2026-09-14T12:00:00Z",
+      "display_date": "14 September 2026"
+    },
+    {
       "headline": "Nuclear medicine: New EU framework to secure Europe\u2019s supply of medical radioisotopes and reduce dependence on Russia",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/nuclear-medicine-new-eu-framework-secure-europes-supply-medical-radioisotopes-and-reduce-dependence-2026-09-10_en",
       "published_at": "2026-09-10T15:12:10Z",
       "display_date": "10 September 2026"
-    },
-    {
-      "headline": "Consultation on proposed electricity market reforms in the Netherlands",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/consultation-proposed-electricity-market-reforms-netherlands-2026-09-10_en",
-      "published_at": "2026-09-10T15:08:14Z",
-      "display_date": "10 September 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-07-21T00:00:00Z",
-      "display_date": "21 July 2026"
     }
   ]
 }
