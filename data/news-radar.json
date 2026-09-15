@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-09-15 05:03 UTC",
+  "last_updated": "2026-09-15 17:09 UTC",
   "r_and_d": [
+    {
+      "headline": "10th CELAC-EU Joint Initiative on Research and Innovation Senior Officials Meeting advances bi-regional cooperation in research and innovation",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/10th-celac-eu-joint-initiative-research-and-innovation-senior-officials-meeting-advances-bi-regional-2026-09-10_en",
+      "published_at": "2026-09-15T09:39:56Z",
+      "display_date": "15 September 2026"
+    },
     {
       "headline": "Europe\u2019s young research talent takes on cancer, climate and more",
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/europes-young-research-talent-takes-cancer-climate-and-more-2026-09-14_en",
       "published_at": "2026-09-14T12:35:18Z",
-      "display_date": "14 September 2026"
-    },
-    {
-      "headline": "EU Missions drive systemic change, new assessment shows",
-      "source": "EU Research & Innovation",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1863",
-      "published_at": "2026-09-14T10:00:40Z",
       "display_date": "14 September 2026"
     },
     {
@@ -39,6 +39,27 @@
   ],
   "policy": [
     {
+      "headline": "Commission launches Energy Regulation Academy to support public officials to implement EU energy measures",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commission-launches-energy-regulation-academy-support-public-officials-implement-eu-energy-measures-2026-09-15_en",
+      "published_at": "2026-09-15T15:35:05Z",
+      "display_date": "15 September 2026"
+    },
+    {
+      "headline": "Energy codes: Strategic Direction Statement",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/guidance/energy-codes-strategic-direction-statement",
+      "published_at": "2026-09-15T12:00:00Z",
+      "display_date": "15 September 2026"
+    },
+    {
+      "headline": "EIB helps transform Lithuania\u2019s port of Klaip\u0117da into defence and clean-energy hub with \u20ac100 million in financing",
+      "source": "DG Energy",
+      "link": "https://www.eib.org/en/press/all/2026-293-eib-helps-transform-lithuania-s-port-of-klaipeda-into-defence-and-clean-energy-hub-with-eur100-million-in-financing",
+      "published_at": "2026-09-15T11:12:47Z",
+      "display_date": "15 September 2026"
+    },
+    {
       "headline": "Codes Grid Code - Panel Papers Published to\u2026 16 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-16-september-2025",
@@ -51,27 +72,6 @@
       "link": "https://www.neso.energy/calendar/balancing-programme-technology-focus-group-16-september-2026",
       "published_at": "2026-09-15T00:00:00Z",
       "display_date": "15 September 2026"
-    },
-    {
-      "headline": "Call for applications: candidate energy infrastructure Projects of Common and Mutual Interest \u2013 electricity and smart grids",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/call-applications-candidate-energy-infrastructure-projects-common-and-mutual-interest-electricity-2026-09-14_en",
-      "published_at": "2026-09-14T12:33:15Z",
-      "display_date": "14 September 2026"
-    },
-    {
-      "headline": "Rejection of 2026 Capacity Market change proposals without consultation",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/rejection-2026-capacity-market-change-proposals-without-consultation",
-      "published_at": "2026-09-14T12:00:00Z",
-      "display_date": "14 September 2026"
-    },
-    {
-      "headline": "Nuclear medicine: New EU framework to secure Europe\u2019s supply of medical radioisotopes and reduce dependence on Russia",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/nuclear-medicine-new-eu-framework-secure-europes-supply-medical-radioisotopes-and-reduce-dependence-2026-09-10_en",
-      "published_at": "2026-09-10T15:12:10Z",
-      "display_date": "10 September 2026"
     }
   ]
 }
