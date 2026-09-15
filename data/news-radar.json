@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-14 18:06 UTC",
+  "last_updated": "2026-09-15 05:03 UTC",
   "r_and_d": [
     {
       "headline": "Europe\u2019s young research talent takes on cancer, climate and more",
@@ -16,25 +16,25 @@
       "display_date": "14 September 2026"
     },
     {
+      "headline": "Fundamental Research",
+      "source": "CORDIS Energy",
+      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
+      "published_at": "2026-09-14T00:00:00Z",
+      "display_date": "14 September 2026"
+    },
+    {
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-09-14T00:00:00Z",
+      "display_date": "14 September 2026"
+    },
+    {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
       "published_at": "2026-09-10T00:00:00Z",
       "display_date": "10 September 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-09-10T00:00:00Z",
-      "display_date": "10 September 2026"
-    },
-    {
-      "headline": "DOE\u2019s Alternative Fuels and Feedstocks Office Announces up to $58 Million to Promote Chemical Innovation",
-      "source": "DOE Hydrogen & Fuel Cells",
-      "link": "https://www.energy.gov/cmei/fuels/articles/does-alternative-fuels-and-feedstocks-office-announces-58-million-promote",
-      "published_at": "2026-09-04T15:59:00Z",
-      "display_date": "04 September 2026"
     }
   ],
   "policy": [
