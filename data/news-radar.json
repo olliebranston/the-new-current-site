@@ -1,6 +1,27 @@
 {
-  "last_updated": "2026-09-16 04:59 UTC",
+  "last_updated": "2026-09-16 17:09 UTC",
   "r_and_d": [
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation",
+      "published_at": "2026-09-16T00:00:00Z",
+      "display_date": "16 September 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy",
+      "published_at": "2026-09-16T00:00:00Z",
+      "display_date": "16 September 2026"
+    },
+    {
+      "headline": "Open Access in the European Research Area: progress remains uneven as new report calls for more concerted action",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/open-access-european-research-area-progress-remains-uneven-new-report-calls-more-concerted-action-2026-09-15_en",
+      "published_at": "2026-09-15T11:02:16Z",
+      "display_date": "15 September 2026"
+    },
     {
       "headline": "10th CELAC-EU Joint Initiative on Research and Innovation Senior Officials Meeting advances bi-regional cooperation in research and innovation",
       "source": "EU Research & Innovation",
@@ -9,68 +30,47 @@
       "display_date": "15 September 2026"
     },
     {
-      "headline": "Europe\u2019s young research talent takes on cancer, climate and more",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/europes-young-research-talent-takes-cancer-climate-and-more-2026-09-14_en",
-      "published_at": "2026-09-14T12:35:18Z",
-      "display_date": "14 September 2026"
-    },
-    {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
       "published_at": "2026-09-14T00:00:00Z",
       "display_date": "14 September 2026"
-    },
-    {
-      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
-      "source": "CORDIS Energy",
-      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
-      "published_at": "2026-09-14T00:00:00Z",
-      "display_date": "14 September 2026"
-    },
-    {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-09-10T00:00:00Z",
-      "display_date": "10 September 2026"
     }
   ],
   "policy": [
     {
+      "headline": "Supporting Great Britain\u2019s electricity network supply chains",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/blog/supporting-great-britains-electricity-network-supply-chains",
+      "published_at": "2026-09-16T12:00:00Z",
+      "display_date": "16 September 2026"
+    },
+    {
       "headline": "Commission launches Energy Regulation Academy to support public officials to implement EU energy measures",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/commission-launches-energy-regulation-academy-support-public-officials-implement-eu-energy-measures-2026-09-15_en",
-      "published_at": "2026-09-15T15:35:05Z",
-      "display_date": "15 September 2026"
+      "published_at": "2026-09-16T08:11:15Z",
+      "display_date": "16 September 2026"
     },
     {
-      "headline": "Energy codes: Strategic Direction Statement",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/energy-codes-strategic-direction-statement",
-      "published_at": "2026-09-15T12:00:00Z",
-      "display_date": "15 September 2026"
+      "headline": "Codes Grid Code - Panel Papers Published to\u2026 16 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-16-september-2025",
+      "published_at": "2026-09-16T00:00:00Z",
+      "display_date": "16 September 2026"
+    },
+    {
+      "headline": "Systems operation Balancing Programme Technology Focus Group -\u2026 16 September 2026 2pm to 3:30pm Join our Technology Focus Group on the Wed 16 Sep at 14:00 to learn the latest on: EDL/EDT transition plans as we migrate from\u2026 Events",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/balancing-programme-technology-focus-group-16-september-2026",
+      "published_at": "2026-09-16T00:00:00Z",
+      "display_date": "16 September 2026"
     },
     {
       "headline": "EIB helps transform Lithuania\u2019s port of Klaip\u0117da into defence and clean-energy hub with \u20ac100 million in financing",
       "source": "DG Energy",
       "link": "https://www.eib.org/en/press/all/2026-293-eib-helps-transform-lithuania-s-port-of-klaipeda-into-defence-and-clean-energy-hub-with-eur100-million-in-financing",
       "published_at": "2026-09-15T11:12:47Z",
-      "display_date": "15 September 2026"
-    },
-    {
-      "headline": "Codes Grid Code - Panel Papers Published to\u2026 16 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-16-september-2025",
-      "published_at": "2026-09-15T00:00:00Z",
-      "display_date": "15 September 2026"
-    },
-    {
-      "headline": "Systems operation Balancing Programme Technology Focus Group -\u2026 16 September 2026 2pm to 3:30pm Join our Technology Focus Group on the Wed 16 Sep at 14:00 to learn the latest on: EDL/EDT transition plans as we migrate from\u2026 Events",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/balancing-programme-technology-focus-group-16-september-2026",
-      "published_at": "2026-09-15T00:00:00Z",
       "display_date": "15 September 2026"
     }
   ]
