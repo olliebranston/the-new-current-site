@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-16 17:09 UTC",
+  "last_updated": "2026-09-17 05:01 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -16,34 +16,41 @@
       "display_date": "16 September 2026"
     },
     {
-      "headline": "Open Access in the European Research Area: progress remains uneven as new report calls for more concerted action",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/open-access-european-research-area-progress-remains-uneven-new-report-calls-more-concerted-action-2026-09-15_en",
-      "published_at": "2026-09-15T11:02:16Z",
-      "display_date": "15 September 2026"
-    },
-    {
-      "headline": "10th CELAC-EU Joint Initiative on Research and Innovation Senior Officials Meeting advances bi-regional cooperation in research and innovation",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/10th-celac-eu-joint-initiative-research-and-innovation-senior-officials-meeting-advances-bi-regional-2026-09-10_en",
-      "published_at": "2026-09-15T09:39:56Z",
-      "display_date": "15 September 2026"
-    },
-    {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
       "published_at": "2026-09-14T00:00:00Z",
       "display_date": "14 September 2026"
+    },
+    {
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-09-14T00:00:00Z",
+      "display_date": "14 September 2026"
+    },
+    {
+      "headline": "DOE\u2019s Alternative Fuels and Feedstocks Office Announces up to $58 Million to Promote Chemical Innovation",
+      "source": "DOE Hydrogen & Fuel Cells",
+      "link": "https://www.energy.gov/cmei/fuels/articles/does-alternative-fuels-and-feedstocks-office-announces-58-million-promote",
+      "published_at": "2026-09-04T15:59:00Z",
+      "display_date": "04 September 2026"
     }
   ],
   "policy": [
     {
-      "headline": "Supporting Great Britain\u2019s electricity network supply chains",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/blog/supporting-great-britains-electricity-network-supply-chains",
-      "published_at": "2026-09-16T12:00:00Z",
-      "display_date": "16 September 2026"
+      "headline": "Energy Explained Skips Behind Constraints Data Publication\u2026 17 September 2026 10am to 11am Join us for an update on the publication of Skips Behind Constraints data. Following industry agreement on the methodology used to\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/skips-behind-constraints-data-publication-update",
+      "published_at": "2026-09-17T00:00:00Z",
+      "display_date": "17 September 2026"
+    },
+    {
+      "headline": "Systems operation Balancing Programme September Webinar 22 September 2026 1pm to 2:30pm Join us to hear the latest updates on Balancing and Forecasting System transformation at NESO.Secure your place at our online Balancing\u2026 Events",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/balancing-programme-september-webinar",
+      "published_at": "2026-09-17T00:00:00Z",
+      "display_date": "17 September 2026"
     },
     {
       "headline": "Commission launches Energy Regulation Academy to support public officials to implement EU energy measures",
@@ -53,25 +60,18 @@
       "display_date": "16 September 2026"
     },
     {
-      "headline": "Codes Grid Code - Panel Papers Published to\u2026 16 September 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-16-september-2025",
-      "published_at": "2026-09-16T00:00:00Z",
-      "display_date": "16 September 2026"
-    },
-    {
-      "headline": "Systems operation Balancing Programme Technology Focus Group -\u2026 16 September 2026 2pm to 3:30pm Join our Technology Focus Group on the Wed 16 Sep at 14:00 to learn the latest on: EDL/EDT transition plans as we migrate from\u2026 Events",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/balancing-programme-technology-focus-group-16-september-2026",
-      "published_at": "2026-09-16T00:00:00Z",
-      "display_date": "16 September 2026"
-    },
-    {
       "headline": "EIB helps transform Lithuania\u2019s port of Klaip\u0117da into defence and clean-energy hub with \u20ac100 million in financing",
       "source": "DG Energy",
       "link": "https://www.eib.org/en/press/all/2026-293-eib-helps-transform-lithuania-s-port-of-klaipeda-into-defence-and-clean-energy-hub-with-eur100-million-in-financing",
       "published_at": "2026-09-15T11:12:47Z",
       "display_date": "15 September 2026"
+    },
+    {
+      "headline": "Households can save as plug-in solar panels come to market",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/households-can-save-as-plug-in-solar-panels-come-to-market",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
