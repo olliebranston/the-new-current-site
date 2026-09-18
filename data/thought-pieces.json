@@ -119,6 +119,28 @@
       "link": "articles/article-11.html",
       "image": "content/article-11.jpg",
       "section": "series-two",
+      "featured": false
+    },
+    {
+      "title": "Tom Morris on the Behind the Meter opportunity",
+      "author": "Oliver Branston with Tom Morris",
+      "date": "2026-09-08",
+      "topic": "Behind-the-meter energy",
+      "summary": "Behind-the-meter assets are moving from a sustainability add-on to growth-enabling infrastructure – how grid queues, resilience and non-energy costs are reshaping the business case for on-site solar, storage and generation.",
+      "link": "articles/article-12.html",
+      "image": "content/article-12.jpg",
+      "section": "series-two",
+      "featured": false
+    },
+    {
+      "title": "Rob Harris-Deans on data centres and the energy transition",
+      "author": "Oliver Branston with Rob Harris-Deans",
+      "date": "2026-09-17",
+      "topic": "Data centres",
+      "summary": "Data centres are moving from digital real estate to energy infrastructure – how grid access, private wires, SMRs and demand flexibility are shaping the collision between AI growth and the power system.",
+      "link": "articles/article-13.html",
+      "image": "content/article-13.jpg",
+      "section": "series-two",
       "featured": true
     },
     {

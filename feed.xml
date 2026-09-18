@@ -5,8 +5,26 @@
     <link>https://olliebranston.github.io/the-new-current-site/</link>
     <description>Energy transition writing and analysis by Ollie Branston — markets, policy, technology, and system change.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 09 Jul 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://olliebranston.github.io/the-new-current-site/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rob Harris-Deans on data centres and the energy transition</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-13.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-13.html</guid>
+      <description>Data centres are moving from digital real estate to energy infrastructure – how grid access, private wires, SMRs and demand flexibility are shaping the collision between AI growth and the power system.</description>
+      <author>Oliver Branston with Rob Harris-Deans</author>
+      <category>Data centres</category>
+      <pubDate>Thu, 17 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tom Morris on the Behind the Meter opportunity</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-12.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-12.html</guid>
+      <description>Behind-the-meter assets are moving from a sustainability add-on to growth-enabling infrastructure – how grid queues, resilience and non-energy costs are reshaping the business case for on-site solar, storage and generation.</description>
+      <author>Oliver Branston with Tom Morris</author>
+      <category>Behind-the-meter energy</category>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Andrew Perkins and Thomas Fletcher on the rise of energy regulation in GB</title>
       <link>https://olliebranston.github.io/the-new-current-site/articles/article-11.html</link>
