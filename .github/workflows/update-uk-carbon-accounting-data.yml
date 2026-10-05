@@ -49,7 +49,7 @@ jobs:
         run: python scripts/fetch_uk_carbon_accounting_data.py
 
       - name: Validate site data
-        run: python scripts/validate_site.py
+        run: python scripts/validate_site.py --fresh
 
       - name: Commit updated UK carbon accounting data
         run: |

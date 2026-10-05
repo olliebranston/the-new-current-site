@@ -32,7 +32,7 @@ jobs:
         run: python scripts/fetch_live_grid_snapshot.py
 
       - name: Validate site data
-        run: python scripts/validate_site.py
+        run: python scripts/validate_site.py --fresh live-grid-snapshot.json
 
       - name: Commit updated live grid snapshot
         run: |

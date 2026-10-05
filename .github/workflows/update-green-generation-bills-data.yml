@@ -3,7 +3,7 @@ name: Update green generation and bill data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 7 5 * *"
+    - cron: "17 7 5,12,19 * *"  # retries a missed monthly run; commits only if data changed
   push:
     paths:
       - "scripts/fetch_green_generation_bills_data.py"
@@ -35,7 +35,7 @@ jobs:
         run: python scripts/fetch_green_generation_bills_data.py
 
       - name: Validate site data
-        run: python scripts/validate_site.py
+        run: python scripts/validate_site.py --fresh green-generation-bills-chart-data.json
 
       - name: Commit updated chart data
         run: |

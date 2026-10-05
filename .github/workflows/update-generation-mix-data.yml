@@ -32,7 +32,7 @@ jobs:
         run: python scripts/fetch_generation_mix_over_time.py
 
       - name: Validate site data
-        run: python scripts/validate_site.py
+        run: python scripts/validate_site.py --fresh generation-mix-chart-data.json
 
       - name: Commit updated data files
         run: |

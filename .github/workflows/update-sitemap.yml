@@ -34,7 +34,7 @@ jobs:
         run: python scripts/generate_sitemap.py
 
       - name: Validate site data
-        run: python scripts/validate_site.py
+        run: python scripts/validate_site.py --fresh
 
       - name: Commit updated sitemap
         run: |

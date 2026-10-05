@@ -183,10 +183,23 @@ def validate_chart_json() -> None:
         require_keys(segment, ["key", "label", "percentage", "is_low_carbon"], f"live-grid-snapshot segment {index}")
 
 
-def validate_data_freshness() -> None:
+def validate_data_freshness(only: list[str] | None = None) -> None:
+    """Check data files are within their freshness limits.
+
+    only=None checks every file (site-quality / weekly health check).
+    A list restricts the check to those files, so a data workflow is only
+    blocked by staleness in the files it actually refreshes - one stale
+    source must not stop every other workflow from committing fresh data.
+    """
     now = datetime.now(timezone.utc)
 
+    if only is not None:
+        unknown = [name for name in only if name not in FRESHNESS_LIMITS]
+        require(not unknown, f"--fresh got files with no freshness limit: {unknown}")
+
     for filename, max_age in FRESHNESS_LIMITS.items():
+        if only is not None and filename not in only:
+            continue
         payload = require_keys(load_json(DATA_DIR / filename), ["last_updated"], filename)
         raw_value = str(payload["last_updated"])
 
@@ -342,9 +355,9 @@ def validate_layout_markers() -> None:
             require("<!-- article-navigation:start -->" in text, f"{page.relative_to(REPO_ROOT)} missing generated article navigation")
 
 
-def validate() -> None:
+def validate(fresh_only: list[str] | None = None) -> None:
     validate_chart_json()
-    validate_data_freshness()
+    validate_data_freshness(fresh_only)
     validate_content_json()
     canonicals = validate_internal_links_and_assets()
     validate_sitemap_and_canonicals(canonicals)
@@ -353,10 +366,20 @@ def validate() -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate static site data, links, sitemap, and generated layout markers.")
-    parser.parse_args()
+    parser.add_argument(
+        "--fresh",
+        nargs="*",
+        metavar="FILE",
+        default=None,
+        help=(
+            "Only check freshness for these data/ files (e.g. news-radar.json). "
+            "Pass --fresh with no files to skip freshness. Omit to check all."
+        ),
+    )
+    args = parser.parse_args()
 
     try:
-        validate()
+        validate(args.fresh)
     except SiteValidationError as exc:
         print(f"Site validation failed: {exc}", file=sys.stderr)
         return 1

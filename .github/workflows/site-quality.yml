@@ -2,6 +2,8 @@ name: Site quality
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "7 6 * * 1"  # weekly full health check, Monday ~07:07 UK time
   push:
     paths:
       - "*.html"
