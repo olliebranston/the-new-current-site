@@ -1,12 +1,19 @@
 {
-  "last_updated": "2026-10-06 06:34 UTC",
+  "last_updated": "2026-10-06 18:29 UTC",
   "r_and_d": [
     {
-      "headline": "EU-funded researcher Peter Hegemann wins 2026 Nobel Prize in Physiology or Medicine",
+      "headline": "Commission earmarks \u20ac65 million to safeguard critical data for life sciences and biotechnology",
       "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-funded-researcher-peter-hegemann-wins-2026-nobel-prize-physiology-or-medicine-2026-10-05_en",
-      "published_at": "2026-10-05T13:02:38Z",
-      "display_date": "05 October 2026"
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/commission-earmarks-eur65-million-safeguard-critical-data-life-sciences-and-biotechnology-2026-10-06_en",
+      "published_at": "2026-10-06T10:01:59Z",
+      "display_date": "06 October 2026"
+    },
+    {
+      "headline": "Fourth EU-Faroe Islands Horizon Europe Joint Research and Innovation Committee meeting",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/fourth-eu-faroe-islands-horizon-europe-joint-research-and-innovation-committee-meeting-2026-10-06_en",
+      "published_at": "2026-10-06T09:07:45Z",
+      "display_date": "06 October 2026"
     },
     {
       "headline": "AFFO in Action: Powering Possibilities This October",
@@ -28,43 +35,36 @@
       "link": "https://www.energy.gov/topics/nuclear-energy",
       "published_at": "2026-10-05T00:00:00Z",
       "display_date": "05 October 2026"
-    },
-    {
-      "headline": "Japan officially joins Horizon Europe",
-      "source": "EU Research & Innovation",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1705",
-      "published_at": "2026-10-02T14:52:23Z",
-      "display_date": "02 October 2026"
     }
   ],
   "policy": [
     {
-      "headline": "Domestic energy customer credit balances, July 2025 to June 2026",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/data/domestic-energy-customer-credit-balances-july-2025-june-2026",
-      "published_at": "2026-10-05T12:00:00Z",
-      "display_date": "05 October 2026"
-    },
-    {
-      "headline": "Heat network regulation: authorisation application arrangements",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/heat-network-regulation-authorisation-application-arrangements",
-      "published_at": "2026-10-05T12:00:00Z",
-      "display_date": "05 October 2026"
-    },
-    {
-      "headline": "G7 Leaders' Statement on global energy security and market stability",
+      "headline": "Energy Transition Investment Council - Call for applications",
       "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2057",
-      "published_at": "2026-10-05T07:30:04Z",
-      "display_date": "05 October 2026"
+      "link": "https://energy.ec.europa.eu/news/energy-transition-investment-council-call-applications-2026-10-06_en",
+      "published_at": "2026-10-06T15:54:04Z",
+      "display_date": "06 October 2026"
     },
     {
-      "headline": "Energy Union Task Force meets to ensure coordination on diesel supplies and prices in Europe",
+      "headline": "MP293 Smart Energy Code (SEC) proposed changes",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/publications/mp293-smart-energy-code-sec-proposed-changes",
+      "published_at": "2026-10-06T12:00:00Z",
+      "display_date": "06 October 2026"
+    },
+    {
+      "headline": "0920 Uniform Network Code (UNC) proposed changes",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/publications/0920-uniform-network-code-unc-proposed-changes",
+      "published_at": "2026-10-06T12:00:00Z",
+      "display_date": "06 October 2026"
+    },
+    {
+      "headline": "Speech by President von der Leyen at the European Parliament plenary debate in preparation of the European Council meeting of 15-16 October 2026",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/energy-union-task-force-meets-ensure-coordination-diesel-supplies-and-prices-europe-2026-10-02_en",
-      "published_at": "2026-10-02T09:55:32Z",
-      "display_date": "02 October 2026"
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/SPEECH_26_2077",
+      "published_at": "2026-10-06T09:45:26Z",
+      "display_date": "06 October 2026"
     },
     {
       "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 17 September 2026 to 19 October 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for\u2026 Publications",
