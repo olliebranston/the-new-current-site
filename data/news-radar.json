@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-10-07 06:12 UTC",
+  "last_updated": "2026-10-07 18:59 UTC",
   "r_and_d": [
     {
-      "headline": "Commission earmarks \u20ac65 million to safeguard critical data for life sciences and biotechnology",
+      "headline": "Research and Innovation at the Nucleus: Romania holds Enhanced dialogue with the European Commission",
       "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/commission-earmarks-eur65-million-safeguard-critical-data-life-sciences-and-biotechnology-2026-10-06_en",
-      "published_at": "2026-10-06T10:01:59Z",
-      "display_date": "06 October 2026"
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/research-and-innovation-nucleus-romania-holds-enhanced-dialogue-european-commission-2026-10-07_en",
+      "published_at": "2026-10-07T12:46:52Z",
+      "display_date": "07 October 2026"
     },
     {
-      "headline": "Fourth EU-Faroe Islands Horizon Europe Joint Research and Innovation Committee meeting",
+      "headline": "32nd meeting of the Union for the Mediterranean Platform on Research and Innovation",
       "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/fourth-eu-faroe-islands-horizon-europe-joint-research-and-innovation-committee-meeting-2026-10-06_en",
-      "published_at": "2026-10-06T09:07:45Z",
-      "display_date": "06 October 2026"
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/32nd-meeting-union-mediterranean-platform-research-and-innovation-2026-10-07_en",
+      "published_at": "2026-10-07T11:53:57Z",
+      "display_date": "07 October 2026"
     },
     {
       "headline": "AFFO in Action: Powering Possibilities This October",
@@ -39,24 +39,24 @@
   ],
   "policy": [
     {
+      "headline": "Enabling greater self-build of transmission connections",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/enabling-greater-self-build-transmission-connections",
+      "published_at": "2026-10-07T12:00:00Z",
+      "display_date": "07 October 2026"
+    },
+    {
+      "headline": "Approval of the proposed revised Interconnection Agreement and Pressure Service Charges Agreement between BBL Company V.O.F. and National Gas Transmission",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/decision/approval-proposed-revised-interconnection-agreement-and-pressure-service-charges-agreement-between-bbl-company-vof-and-national-gas-transmission",
+      "published_at": "2026-10-07T12:00:00Z",
+      "display_date": "07 October 2026"
+    },
+    {
       "headline": "Energy Transition Investment Council - Call for applications",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/energy-transition-investment-council-call-applications-2026-10-06_en",
       "published_at": "2026-10-06T15:54:04Z",
-      "display_date": "06 October 2026"
-    },
-    {
-      "headline": "MP293 Smart Energy Code (SEC) proposed changes",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/publications/mp293-smart-energy-code-sec-proposed-changes",
-      "published_at": "2026-10-06T12:00:00Z",
-      "display_date": "06 October 2026"
-    },
-    {
-      "headline": "0920 Uniform Network Code (UNC) proposed changes",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/publications/0920-uniform-network-code-unc-proposed-changes",
-      "published_at": "2026-10-06T12:00:00Z",
       "display_date": "06 October 2026"
     },
     {
