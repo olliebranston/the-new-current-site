@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-08 06:20 UTC",
+  "last_updated": "2026-10-08 18:55 UTC",
   "r_and_d": [
     {
       "headline": "Research and Innovation at the Nucleus: Romania holds Enhanced dialogue with the European Commission",
@@ -39,18 +39,18 @@
   ],
   "policy": [
     {
-      "headline": "Enabling greater self-build of transmission connections",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/enabling-greater-self-build-transmission-connections",
-      "published_at": "2026-10-07T12:00:00Z",
-      "display_date": "07 October 2026"
+      "headline": "EU gas system prepared for the winter despite lower storage levels",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/eu-gas-system-prepared-winter-despite-lower-storage-levels-2026-10-08_en",
+      "published_at": "2026-10-08T15:55:59Z",
+      "display_date": "08 October 2026"
     },
     {
-      "headline": "Approval of the proposed revised Interconnection Agreement and Pressure Service Charges Agreement between BBL Company V.O.F. and National Gas Transmission",
+      "headline": "Exempting smaller suppliers from the Universal Service Obligation",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/approval-proposed-revised-interconnection-agreement-and-pressure-service-charges-agreement-between-bbl-company-vof-and-national-gas-transmission",
-      "published_at": "2026-10-07T12:00:00Z",
-      "display_date": "07 October 2026"
+      "link": "https://www.ofgem.gov.uk/consultation/exempting-smaller-suppliers-universal-service-obligation",
+      "published_at": "2026-10-08T12:00:00Z",
+      "display_date": "08 October 2026"
     },
     {
       "headline": "Energy Transition Investment Council - Call for applications",
@@ -60,16 +60,16 @@
       "display_date": "06 October 2026"
     },
     {
-      "headline": "Speech by President von der Leyen at the European Parliament plenary debate in preparation of the European Council meeting of 15-16 October 2026",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/SPEECH_26_2077",
-      "published_at": "2026-10-06T09:45:26Z",
-      "display_date": "06 October 2026"
-    },
-    {
       "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 17 September 2026 to 19 October 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/2026-grid-code-review-panel-elections-nominations",
+      "published_at": "2026-09-17T00:00:00Z",
+      "display_date": "17 September 2026"
+    },
+    {
+      "headline": "Codes Transmission Charging Methodologies Forum \u2026 8 October 2026 10am to 12:30pm Transmission Charging Methodologies Forum (TCMF) established under the Connection and Use of System Code (CUSC) to provide a\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/transmission-charging-methodologies-forum-tcmf-cusc-issues-steering-group-cisg-8-october-2026",
       "published_at": "2026-09-17T00:00:00Z",
       "display_date": "17 September 2026"
     }
