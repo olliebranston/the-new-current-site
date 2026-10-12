@@ -1,67 +1,74 @@
 {
-  "last_updated": "2026-10-11 23:12 UTC",
+  "last_updated": "2026-10-12 02:26 UTC",
   "power_price": {
-    "value": 152.1,
+    "value": 162.6,
     "unit": "GBP/MWh",
-    "display": "152 GBP/MWh"
+    "display": "163 GBP/MWh"
   },
   "carbon_intensity": {
-    "value": 141,
+    "value": 121,
     "unit": "gCO2/kWh",
-    "display": "141 gCO2/kWh (actual)"
+    "display": "121 gCO2/kWh (actual)"
   },
   "demand": {
-    "value": 28867,
+    "value": 23846,
     "unit": "MW",
-    "display": "28,867 MW"
+    "display": "23,846 MW"
   },
   "generation": {
-    "value": 27776,
+    "value": 25633,
     "unit": "MW",
-    "display": "27,776 MW"
+    "display": "25,633 MW"
   },
   "generation_mix": {
-    "low_carbon_percentage": 64,
+    "low_carbon_percentage": 67,
     "segments": [
       {
         "key": "biomass",
         "label": "Biomass",
-        "percentage": 13.0,
+        "percentage": 12.0,
         "color": "#8b5cf6",
         "is_low_carbon": true
       },
       {
         "key": "imports",
         "label": "Imports",
-        "percentage": 8.8,
+        "percentage": 5.5,
         "color": "#ec4899",
         "is_low_carbon": false
       },
       {
         "key": "gas",
         "label": "Gas",
-        "percentage": 27.7,
+        "percentage": 26.1,
         "color": "#f97316",
         "is_low_carbon": false
       },
       {
         "key": "nuclear",
         "label": "Nuclear",
-        "percentage": 17.7,
+        "percentage": 15.9,
         "color": "#16a34a",
         "is_low_carbon": true
       },
       {
+        "key": "other",
+        "label": "Other",
+        "percentage": 1.5,
+        "color": "#94a3b8",
+        "is_low_carbon": false
+      },
+      {
         "key": "hydro",
         "label": "Hydro",
-        "percentage": 0.1,
+        "percentage": 2.0,
         "color": "#0ea5e9",
         "is_low_carbon": true
       },
       {
         "key": "wind",
         "label": "Wind",
-        "percentage": 32.8,
+        "percentage": 37.0,
         "color": "#2457ff",
         "is_low_carbon": true
       }
