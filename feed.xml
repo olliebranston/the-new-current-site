@@ -5,8 +5,17 @@
     <link>https://olliebranston.github.io/the-new-current-site/</link>
     <description>Energy transition writing and analysis by Ollie Branston — markets, policy, technology, and system change.</description>
     <language>en-gb</language>
-    <lastBuildDate>Thu, 17 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://olliebranston.github.io/the-new-current-site/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gillian O’Boyle on agentic AI for grid operators: achieving growth</title>
+      <link>https://olliebranston.github.io/the-new-current-site/articles/article-14.html</link>
+      <guid isPermaLink="true">https://olliebranston.github.io/the-new-current-site/articles/article-14.html</guid>
+      <description>Agentic AI as a growth lever for grid operators – how forecasting, real-time dispatch and network planning can lift decision throughput, and why data, governance and operating models decide who wins.</description>
+      <author>Oliver Branston with Gillian O’Boyle</author>
+      <category>AI and grid operations</category>
+      <pubDate>Tue, 22 Sep 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Rob Harris-Deans on data centres and the energy transition</title>
       <link>https://olliebranston.github.io/the-new-current-site/articles/article-13.html</link>
