@@ -52,4 +52,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/uk-carbon-accounting-source-inspection.json
           git diff --cached --quiet || git commit -m "Inspect UK carbon accounting sources"
-          git push origin HEAD:main
+          bash scripts/push_with_retry.sh

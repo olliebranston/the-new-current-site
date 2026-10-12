@@ -58,4 +58,4 @@ jobs:
           git add data/uk-carbon-accounting-data.csv
           git add data/uk-carbon-accounting-chart-data.json
           git diff --cached --quiet || git commit -m "Update UK carbon accounting data"
-          git push origin HEAD:main
+          bash scripts/push_with_retry.sh
