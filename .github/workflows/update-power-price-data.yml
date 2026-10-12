@@ -1,13 +1,10 @@
 name: Update power price data
 
 on:
+  # Manual only. "Update comparison charts" refreshes this data on its schedule
+  # and when the fetch script changes; a push trigger here made both write the
+  # same files at once and clash.
   workflow_dispatch:
-  push:
-    paths:
-      - "scripts/fetch_live_power_price_data.py"
-      - "scripts/validate_site.py"
-      - "requirements.txt"
-      - ".github/workflows/update-power-price-data.yml"
 
 jobs:
   update-data:
