@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-12 06:12 UTC",
+  "last_updated": "2026-10-12 20:07 UTC",
   "r_and_d": [
     {
       "headline": "National Hydrogen and Fuel Cell Day 2026: Celebrating the \u201cSwiss Army Knife\u201d of the Periodic Table",
@@ -39,18 +39,25 @@
   ],
   "policy": [
     {
+      "headline": "Energy price cap: updating the time-of-use methodology",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/call-for-input/energy-price-cap-updating-time-use-methodology",
+      "published_at": "2026-10-12T12:00:00Z",
+      "display_date": "12 October 2026"
+    },
+    {
+      "headline": "Methane emissions reporting templates \u2013 Commission launches call for feedback",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/methane-emissions-reporting-templates-commission-launches-call-feedback-2026-10-12_en",
+      "published_at": "2026-10-12T07:30:09Z",
+      "display_date": "12 October 2026"
+    },
+    {
       "headline": "EU gas system prepared for the winter despite lower storage levels",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/eu-gas-system-prepared-winter-despite-lower-storage-levels-2026-10-08_en",
       "published_at": "2026-10-08T15:55:59Z",
       "display_date": "08 October 2026"
-    },
-    {
-      "headline": "Energy Transition Investment Council - Call for applications",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/energy-transition-investment-council-call-applications-2026-10-06_en",
-      "published_at": "2026-10-06T15:54:04Z",
-      "display_date": "06 October 2026"
     },
     {
       "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 17 September 2026 to 19 October 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for\u2026 Publications",
@@ -65,13 +72,6 @@
       "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-14-october-2026",
       "published_at": "2026-09-17T00:00:00Z",
       "display_date": "17 September 2026"
-    },
-    {
-      "headline": "Great British Grid to speed up connections and cut bills",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/great-british-grid-to-speed-up-connections-and-cut-bills",
-      "published_at": null,
-      "display_date": null
     }
   ]
 }
