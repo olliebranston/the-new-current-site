@@ -18,12 +18,14 @@ DATA_DIR = REPO_ROOT / "data"
 # check. Files only refreshed via workflow_dispatch/push (e.g. UK carbon
 # accounting data) have no expected cadence, so staleness there is normal.
 FRESHNESS_LIMITS = {
-    "carbon-chart-data.json": timedelta(hours=6),
-    "power-price-chart-data.json": timedelta(hours=6),
-    "generation-mix-chart-data.json": timedelta(hours=6),
-    "live-grid-snapshot.json": timedelta(hours=6),
+    # GitHub runs the 30-min cron only every ~3-10h in practice, so allow a day.
+    "carbon-chart-data.json": timedelta(hours=24),
+    "power-price-chart-data.json": timedelta(hours=24),
+    "generation-mix-chart-data.json": timedelta(hours=24),
+    "live-grid-snapshot.json": timedelta(hours=24),
     "news-radar.json": timedelta(hours=48),
-    "green-generation-bills-chart-data.json": timedelta(days=45),
+    # Runs on the 5th, 12th and 19th: 30 days means two runs in a row failed.
+    "green-generation-bills-chart-data.json": timedelta(days=30),
 }
 
 

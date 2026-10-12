@@ -31,7 +31,7 @@ Run from the repo root. Pick the rows that match what changed; when unsure, run 
 | Python scripts in `scripts/` | run the script once locally | runs clean and writes the expected file in `data/` |
 
 Notes:
-- `validate_site.py` includes **data-freshness** checks (live grid data must be < 6h old). Locally that fails if you haven't pulled the bot's latest data commits. Run `git pull` first. If freshness is the *only* failure, report it as "stale local data, not a code problem", but say so explicitly.
+- `validate_site.py` includes **data-freshness** checks (live grid data must be < 24h old). Locally that fails if you haven't pulled the bot's latest data commits. Run `git pull` first. If freshness is the *only* failure, report it as "stale local data, not a code problem", but say so explicitly.
 - After a push, check CI rather than assuming: `gh run list --limit 8` (if the `gh` CLI is installed) or ask Ollie to glance at the Actions tab. `site-quality`, `render-static-layout`, `update-sitemap` and `generate-rss` all trigger on content pushes.
 - Visual check: for layout/CSS/JS changes, run `python -m http.server` and ask Ollie to eyeball the affected page (light and dark theme). Say that this check was manual.
 
