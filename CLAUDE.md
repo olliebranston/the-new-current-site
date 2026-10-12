@@ -30,7 +30,9 @@ There is no dev server — open HTML files directly in a browser or use a local 
 
 ### Data pipeline
 
-GitHub Actions workflows run Python scripts on a schedule (every 30 mins for live grid data, daily for news). Each script fetches from an external API or RSS feed, transforms with pandas, and writes JSON/CSV to `data/`. The workflow then commits these files back to the repo. The frontend reads those static files at page load — there are no API routes.
+GitHub Actions workflows run Python scripts on a schedule (live grid data is set to every 30 mins but GitHub actually runs it every ~3-10h; news every 12h; bills on the 5th/12th/19th). Each script fetches from an external API or RSS feed, transforms with pandas, and writes JSON/CSV to `data/`. The workflow then commits these files back to the repo. The frontend reads those static files at page load — there are no API routes.
+
+Rules for workflows: commit via `bash scripts/push_with_retry.sh` (never a bare `git push`); each data file has exactly one automatic writer ("Update comparison charts" owns the live grid files); validate with `validate_site.py --fresh <the files this workflow refreshes>`. Failures and recoveries alert via Telegram (`notify-failures.yml`, which has a manual test button). Lessons: `docs/LEARNINGS.md`.
 
 Live sources: Carbon Intensity API, Elexon BMRS (prices), NESO (historic generation mix), DESNZ data portal (domestic bills). News sources: ~9 RSS feeds. All sources are documented in `docs/data-sources.md`.
 
