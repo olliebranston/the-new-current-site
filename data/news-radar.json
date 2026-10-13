@@ -1,25 +1,25 @@
 {
-  "last_updated": "2026-10-12 21:19 UTC",
+  "last_updated": "2026-10-13 06:54 UTC",
   "r_and_d": [
-    {
-      "headline": "National Hydrogen and Fuel Cell Day 2026: Celebrating the \u201cSwiss Army Knife\u201d of the Periodic Table",
-      "source": "DOE Hydrogen & Fuel Cells",
-      "link": "https://www.energy.gov/cmei/fuels/articles/national-hydrogen-and-fuel-cell-day-2026-celebrating-swiss-army-knife-periodic",
-      "published_at": "2026-10-08T13:00:00Z",
-      "display_date": "08 October 2026"
-    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-10-08T00:00:00Z",
-      "display_date": "08 October 2026"
+      "published_at": "2026-10-12T00:00:00Z",
+      "display_date": "12 October 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-10-08T00:00:00Z",
+      "published_at": "2026-10-12T00:00:00Z",
+      "display_date": "12 October 2026"
+    },
+    {
+      "headline": "National Hydrogen and Fuel Cell Day 2026: Celebrating the \u201cSwiss Army Knife\u201d of the Periodic Table",
+      "source": "DOE Hydrogen & Fuel Cells",
+      "link": "https://www.energy.gov/cmei/fuels/articles/national-hydrogen-and-fuel-cell-day-2026-celebrating-swiss-army-knife-periodic",
+      "published_at": "2026-10-08T13:00:00Z",
       "display_date": "08 October 2026"
     },
     {
@@ -38,13 +38,6 @@
     }
   ],
   "policy": [
-    {
-      "headline": "Energy price cap: updating the time-of-use methodology",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/call-for-input/energy-price-cap-updating-time-use-methodology",
-      "published_at": "2026-10-12T12:00:00Z",
-      "display_date": "12 October 2026"
-    },
     {
       "headline": "Methane emissions reporting templates \u2013 Commission launches call for feedback",
       "source": "DG Energy",
@@ -72,6 +65,13 @@
       "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-14-october-2026",
       "published_at": "2026-09-17T00:00:00Z",
       "display_date": "17 September 2026"
+    },
+    {
+      "headline": "Great British Grid to speed up connections and cut bills",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/great-british-grid-to-speed-up-connections-and-cut-bills",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
