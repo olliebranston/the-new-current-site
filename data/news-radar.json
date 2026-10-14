@@ -1,12 +1,19 @@
 {
-  "last_updated": "2026-10-14 05:04 UTC",
+  "last_updated": "2026-10-14 17:22 UTC",
   "r_and_d": [
+    {
+      "headline": "DOE Alternative Fuels and Feedstocks Office Announces Intent to Award Up to $60 Million for Innovative Chemical, Fuel, and Fertilizer Technologies",
+      "source": "DOE Hydrogen & Fuel Cells",
+      "link": "https://www.energy.gov/cmei/articles/doe-alternative-fuels-and-feedstocks-office-announces-intent-award-60-million",
+      "published_at": "2026-10-14T10:03:19Z",
+      "display_date": "14 October 2026"
+    },
     {
       "headline": "The 17th EU-China Joint Steering Committee meeting on Science and Technology Cooperation",
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/17th-eu-china-joint-steering-committee-meeting-science-and-technology-cooperation-2026-10-13_en",
-      "published_at": "2026-10-13T14:31:19Z",
-      "display_date": "13 October 2026"
+      "published_at": "2026-10-14T09:08:09Z",
+      "display_date": "14 October 2026"
     },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -28,48 +35,41 @@
       "link": "https://www.energy.gov/cmei/fuels/articles/national-hydrogen-and-fuel-cell-day-2026-celebrating-swiss-army-knife-periodic",
       "published_at": "2026-10-08T13:00:00Z",
       "display_date": "08 October 2026"
-    },
-    {
-      "headline": "Research and Innovation at the Nucleus: Romania holds Enhanced dialogue with the European Commission",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/research-and-innovation-nucleus-romania-holds-enhanced-dialogue-european-commission-2026-10-07_en",
-      "published_at": "2026-10-07T12:46:52Z",
-      "display_date": "07 October 2026"
     }
   ],
   "policy": [
     {
-      "headline": "\u200b\u200bEvidencing wider value in procurement decisions: guidance\u200b",
+      "headline": "Cross-border gas network code \u2013 Commission launches call for feedback on revision of rules",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/cross-border-gas-network-code-commission-launches-call-feedback-revision-rules-2026-10-14_en",
+      "published_at": "2026-10-14T15:50:34Z",
+      "display_date": "14 October 2026"
+    },
+    {
+      "headline": "Energy Consumer Satisfaction Survey: July to August 2026 summary",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/evidencing-wider-value-procurement-decisions-guidance",
-      "published_at": "2026-10-13T12:00:00Z",
-      "display_date": "13 October 2026"
+      "link": "https://www.ofgem.gov.uk/research/energy-consumer-satisfaction-survey-july-august-2026-summary",
+      "published_at": "2026-10-14T12:00:00Z",
+      "display_date": "14 October 2026"
     },
     {
-      "headline": "Eurostat: EU oil imports value up by 56%, volume stable in Q2 2026",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20260922-2",
-      "published_at": "2026-10-13T09:58:44Z",
-      "display_date": "13 October 2026"
+      "headline": "Offshore Transmission: Draft Cost Assessment for the Moray West Offshore Wind Farm",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/decision/offshore-transmission-draft-cost-assessment-moray-west-offshore-wind-farm",
+      "published_at": "2026-10-14T12:00:00Z",
+      "display_date": "14 October 2026"
     },
     {
-      "headline": "Methane emissions reporting templates \u2013 Commission launches call for feedback",
+      "headline": "EU local leaders and authorities gather to discuss affordable energy, housing and climate resilience",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/methane-emissions-reporting-templates-commission-launches-call-feedback-2026-10-12_en",
-      "published_at": "2026-10-12T07:30:09Z",
-      "display_date": "12 October 2026"
+      "link": "https://energy.ec.europa.eu/news/eu-local-leaders-and-authorities-gather-discuss-affordable-energy-housing-and-climate-resilience-2026-10-14_en",
+      "published_at": "2026-10-14T11:58:50Z",
+      "display_date": "14 October 2026"
     },
     {
       "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 17 September 2026 to 19 October 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/2026-grid-code-review-panel-elections-nominations",
-      "published_at": "2026-09-17T00:00:00Z",
-      "display_date": "17 September 2026"
-    },
-    {
-      "headline": "Codes Grid Code - New Modification Proposal\u2026 14 October 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-new-modification-proposal-submission-date-14-october-2026",
       "published_at": "2026-09-17T00:00:00Z",
       "display_date": "17 September 2026"
     }
