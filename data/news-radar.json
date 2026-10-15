@@ -1,6 +1,27 @@
 {
-  "last_updated": "2026-10-15 04:54 UTC",
+  "last_updated": "2026-10-15 17:11 UTC",
   "r_and_d": [
+    {
+      "headline": "Commission launches RAISE pledging initiative to boost AI support for researchers across Europe",
+      "source": "EU Research & Innovation",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2175",
+      "published_at": "2026-10-15T12:48:49Z",
+      "display_date": "15 October 2026"
+    },
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation",
+      "published_at": "2026-10-15T00:00:00Z",
+      "display_date": "15 October 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy",
+      "published_at": "2026-10-15T00:00:00Z",
+      "display_date": "15 October 2026"
+    },
     {
       "headline": "DOE Alternative Fuels and Feedstocks Office Announces Intent to Award Up to $60 Million for Innovative Chemical, Fuel, and Fertilizer Technologies",
       "source": "DOE Hydrogen & Fuel Cells",
@@ -14,50 +35,29 @@
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/17th-eu-china-joint-steering-committee-meeting-science-and-technology-cooperation-2026-10-13_en",
       "published_at": "2026-10-14T09:08:09Z",
       "display_date": "14 October 2026"
-    },
-    {
-      "headline": "National Hydrogen and Fuel Cell Day 2026: Celebrating the \u201cSwiss Army Knife\u201d of the Periodic Table",
-      "source": "DOE Hydrogen & Fuel Cells",
-      "link": "https://www.energy.gov/cmei/fuels/articles/national-hydrogen-and-fuel-cell-day-2026-celebrating-swiss-army-knife-periodic",
-      "published_at": "2026-10-08T13:00:00Z",
-      "display_date": "08 October 2026"
-    },
-    {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-10-08T00:00:00Z",
-      "display_date": "08 October 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-10-08T00:00:00Z",
-      "display_date": "08 October 2026"
     }
   ],
   "policy": [
     {
+      "headline": "DNO funding of Flexibility Market Asset Registration and Market Facilitator delivery",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/guidance/dno-funding-flexibility-market-asset-registration-and-market-facilitator-delivery",
+      "published_at": "2026-10-15T12:00:00Z",
+      "display_date": "15 October 2026"
+    },
+    {
+      "headline": "Delivering an energy system that works for consumers",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/speech/delivering-energy-system-works-consumers",
+      "published_at": "2026-10-15T12:00:00Z",
+      "display_date": "15 October 2026"
+    },
+    {
       "headline": "Cross-border gas network code \u2013 Commission launches call for feedback on revision of rules",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/cross-border-gas-network-code-commission-launches-call-feedback-revision-rules-2026-10-14_en",
-      "published_at": "2026-10-14T15:50:34Z",
-      "display_date": "14 October 2026"
-    },
-    {
-      "headline": "Energy Consumer Satisfaction Survey: July to August 2026 summary",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/research/energy-consumer-satisfaction-survey-july-august-2026-summary",
-      "published_at": "2026-10-14T12:00:00Z",
-      "display_date": "14 October 2026"
-    },
-    {
-      "headline": "Offshore Transmission: Draft Cost Assessment for the Moray West Offshore Wind Farm",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/offshore-transmission-draft-cost-assessment-moray-west-offshore-wind-farm",
-      "published_at": "2026-10-14T12:00:00Z",
-      "display_date": "14 October 2026"
+      "published_at": "2026-10-15T09:14:27Z",
+      "display_date": "15 October 2026"
     },
     {
       "headline": "EU local leaders and authorities gather to discuss affordable energy, housing and climate resilience",
