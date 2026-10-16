@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-15 17:11 UTC",
+  "last_updated": "2026-10-16 04:44 UTC",
   "r_and_d": [
     {
       "headline": "Commission launches RAISE pledging initiative to boost AI support for researchers across Europe",
@@ -23,35 +23,21 @@
       "display_date": "15 October 2026"
     },
     {
-      "headline": "DOE Alternative Fuels and Feedstocks Office Announces Intent to Award Up to $60 Million for Innovative Chemical, Fuel, and Fertilizer Technologies",
-      "source": "DOE Hydrogen & Fuel Cells",
-      "link": "https://www.energy.gov/cmei/articles/doe-alternative-fuels-and-feedstocks-office-announces-intent-award-60-million",
-      "published_at": "2026-10-14T10:03:19Z",
-      "display_date": "14 October 2026"
+      "headline": "Fundamental Research",
+      "source": "CORDIS Energy",
+      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
+      "published_at": "2026-10-15T00:00:00Z",
+      "display_date": "15 October 2026"
     },
     {
-      "headline": "The 17th EU-China Joint Steering Committee meeting on Science and Technology Cooperation",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/17th-eu-china-joint-steering-committee-meeting-science-and-technology-cooperation-2026-10-13_en",
-      "published_at": "2026-10-14T09:08:09Z",
-      "display_date": "14 October 2026"
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-10-15T00:00:00Z",
+      "display_date": "15 October 2026"
     }
   ],
   "policy": [
-    {
-      "headline": "DNO funding of Flexibility Market Asset Registration and Market Facilitator delivery",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/dno-funding-flexibility-market-asset-registration-and-market-facilitator-delivery",
-      "published_at": "2026-10-15T12:00:00Z",
-      "display_date": "15 October 2026"
-    },
-    {
-      "headline": "Delivering an energy system that works for consumers",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/speech/delivering-energy-system-works-consumers",
-      "published_at": "2026-10-15T12:00:00Z",
-      "display_date": "15 October 2026"
-    },
     {
       "headline": "Cross-border gas network code \u2013 Commission launches call for feedback on revision of rules",
       "source": "DG Energy",
@@ -72,6 +58,20 @@
       "link": "https://www.neso.energy/calendar/2026-grid-code-review-panel-elections-nominations",
       "published_at": "2026-09-17T00:00:00Z",
       "display_date": "17 September 2026"
+    },
+    {
+      "headline": "Codes Grid Code - Panel Papers Published to\u2026 21 October 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-21-october-2026",
+      "published_at": "2026-09-17T00:00:00Z",
+      "display_date": "17 September 2026"
+    },
+    {
+      "headline": "Great British Grid to speed up connections and cut bills",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/great-british-grid-to-speed-up-connections-and-cut-bills",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
