@@ -1958,17 +1958,22 @@ function renderHomepageThoughtPieces(container, articles) {
   const secondaryArticles = sortedArticles.slice(1, 3);
 
   container.innerHTML = `
-    <article class="featured-thought-card">
-      <div class="featured-thought-content">
-        <p class="card-kicker">Most recent article</p>
-        <h3><a href="${featuredArticle.link}">${featuredArticle.title}</a></h3>
-        <p class="article-meta">${formatArticleDate(featuredArticle.date)} · ${featuredArticle.author || "Oliver Branston"}</p>
-        <p>${featuredArticle.summary}</p>
+    <article class="home-lead-article">
+      <div class="home-lead-text">
+        <p class="card-kicker">Latest${featuredArticle.topic ? ` · ${featuredArticle.topic}` : ""}</p>
+        <h2 class="home-lead-title"><a href="${featuredArticle.link}">${featuredArticle.title}</a></h2>
+        <p class="home-lead-standfirst">${featuredArticle.summary}</p>
+        <p class="article-meta">${featuredArticle.author || "Oliver Branston"} · ${formatArticleDate(featuredArticle.date)}</p>
       </div>
-      <div class="featured-thought-image">
+      <a class="home-lead-media" href="${featuredArticle.link}" tabindex="-1" aria-hidden="true">
         <img src="${featuredArticle.image}" alt="${featuredArticle.title}">
-      </div>
+      </a>
     </article>
+
+    <div class="subsection-header">
+      <p class="subsection-label">Thought Pieces</p>
+      <a href="thought-pieces.html" class="subsection-link">View all Thought Pieces</a>
+    </div>
 
     <div class="thought-list">
       ${secondaryArticles.map((article) => `

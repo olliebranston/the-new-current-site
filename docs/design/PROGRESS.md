@@ -22,3 +22,8 @@
 ## Iteration 5 — Back-to-top button
 - Replaced the floating blue back-to-top styles with `.back-to-top { display: none; }`. Verified after scrolling at 1440 and 390: JS still adds `.visible`, but the button renders 0×0 and is out of the tab order.
 - Compromise: main.js still creates the button (initBackToTop). Removing that call is outside the allowed main.js edits, and the smoke test expects both `initBackToTop` and the `.back-to-top` selector, so the button is hidden rather than deleted. Logged in LATER.md.
+
+## Iteration 6 — Homepage intro + lead story
+- index.html: the hero card (eyebrow, "The New Current" H1, three "learning project / two halves" paragraphs, logo image) is replaced by the spec's one-line intro and a lead-story section. The H1 is kept for screen readers (.sr-only). The thought-pieces container moved into the lead section, and its "Thought Pieces / View all" header now comes from the card template.
+- main.js (card HTML template only, renderHomepageThoughtPieces): the latest piece renders as kicker "Latest · {topic}", a serif 52px headline, a serif 20px standfirst, a meta line and a 3:2 photo on the right; it stacks below 900px (headline 36px). The two "Recent" cards stay as a temporary 2-up row for the next task. Removed the home-hero/featured-thought CSS and the unused heroSheen animation.
+- Compromise: the blue lightbulb photo (content/home-logo.jpg) no longer appears on the homepage, matching the reference. It's still the favicon and the social preview image. The reference's "[Caption: place, year]" isn't shown because there's no caption data.
