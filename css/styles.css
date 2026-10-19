@@ -377,13 +377,14 @@ li {
 }
 
 .home-intro {
-  grid-column: 1;
+  grid-column: 1 / -1;
   grid-row: 1;
-  max-width: 460px;
+  max-width: 860px;
   margin: 0 0 var(--space-32);
+  font-family: var(--font-serif);
+  font-size: var(--fs-22);
+  line-height: 1.45;
   color: var(--ink-2);
-  font-size: var(--fs-16);
-  line-height: 1.55;
 }
 
 .home-lead-text {
@@ -419,14 +420,16 @@ li {
 
 .home-lead-media {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 2;
   display: block;
+  padding-top: var(--space-24);
+  border-top: 1px solid var(--ink);
 }
 
 .home-lead-media img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius);
 }
