@@ -16,7 +16,7 @@ One per iteration, in this order.
 - [x] Reporting page: ruled newswire list
 - [x] About page
 - [x] Byline and date-format fixes
-- [ ] Topic consolidation in thought-pieces.json + check filters still work
+- [x] Topic consolidation in thought-pieces.json + check filters still work
 - [ ] Article title consistency
 - [ ] Dark mode pass across all pages
 - [ ] Mobile pass (390px) across all pages
