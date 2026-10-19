@@ -2184,12 +2184,11 @@ function initThoughtPiecesPage(container, articles) {
 
   function filterArticles() {
     const query = searchQuery.toLowerCase().trim();
-    const filterAll = activeTopics.has("All") && !showSavedOnly;
     const bookmarks = showSavedOnly ? getBookmarks() : null;
 
     return sortedArticles.filter((article) => {
       if (showSavedOnly && !bookmarks.has(article.link)) return false;
-      const topicMatch = filterAll || activeTopics.has(article.topic);
+      const topicMatch = activeTopics.has("All") || activeTopics.has(article.topic);
       const textMatch = !query || (
         article.title.toLowerCase().includes(query) ||
         (article.summary || "").toLowerCase().includes(query) ||
