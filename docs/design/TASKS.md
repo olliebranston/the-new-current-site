@@ -14,7 +14,7 @@ One per iteration, in this order.
 - [x] Brain dumps page: ruled list, drop "PREVIEW"
 - [x] Data page: flatten chart cards, figure row for live numbers (no chart code changes)
 - [x] Reporting page: ruled newswire list
-- [ ] About page
+- [x] About page
 - [ ] Byline and date-format fixes
 - [ ] Topic consolidation in thought-pieces.json + check filters still work
 - [ ] Article title consistency

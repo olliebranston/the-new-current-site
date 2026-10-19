@@ -57,3 +57,7 @@
 ## Iteration 12 — Reporting page
 - News radar items reuse the homepage newswire row: "source · date" on the left, sans 16/500 headline on the right, hairline between rows, stacked below 900px. In main.js only buildRadarArticle's markup changed (meta first, newswire classes; the radar-item class is kept). R&D and Policy are serif 22 subheadings over a hairline; "Show N more" is a plain accent text button.
 - reporting.html: "Editor's picks" and "News radar" are serif section headers under the 1px ink rule (News radar has "Last updated" as meta text on the right). The two recommendations are flat ruled columns: kicker, serif 22 title, source, description (one column below 900px). Removed the old reporting/recommendation/radar card CSS and the 16px grid gap between radar rows.
+
+## Iteration 13 — About page
+- Flattened every card. The intro is a 7/5 grid (kicker, serif 36 statement, serif 20 body | the lightbulb photo at 3:2, which keeps that photo on the site). "What you will find here" and "Project context" sit under 1px ink rules; the site guide is four ruled columns (2 below 900px, 1 below 560px) with serif 22 titles; the context blocks and "About me" are plain serif 20/1.6 text at 680px with hairlines between them. The author photo is 220px at 4:5, and LinkedIn/Substack are plain accent links instead of brand-coloured pills (removes two literal colours).
+- Copy fix: "contact button in the top right" → "Contact link at the bottom of every page", since the header Contact button became Subscribe in iteration 4.
