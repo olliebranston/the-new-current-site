@@ -12,7 +12,7 @@ One per iteration, in this order.
 - [x] Thought pieces page: photo header, underline topic tabs, story grid
 - [x] Article pages: header, byline row, photo, 680px serif body, contents, prev/next
 - [x] Brain dumps page: ruled list, drop "PREVIEW"
-- [ ] Data page: flatten chart cards, figure row for live numbers (no chart code changes)
+- [x] Data page: flatten chart cards, figure row for live numbers (no chart code changes)
 - [ ] Reporting page: ruled newswire list
 - [ ] About page
 - [ ] Byline and date-format fixes
