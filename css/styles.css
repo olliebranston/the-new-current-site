@@ -2896,64 +2896,14 @@ th {
 
 /* ─── Back to top button ───────────────────────────────────────── */
 
+/* Removed in the editorial redesign. main.js still creates the button
+   (initBackToTop) and the smoke test expects this selector, so it is hidden
+   rather than deleted. */
 .back-to-top {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 150;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: var(--brand-blue);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: none;
-  opacity: 0;
-  transform: translateY(12px);
-  pointer-events: none;
-  transition:
-    opacity var(--transition-medium),
-    transform var(--transition-medium),
-    background var(--transition-fast);
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.back-to-top:hover {
-  background: var(--brand-blue-hover);
-}
-
-.back-to-top:focus-visible {
-  outline: 2px solid var(--brand-blue);
-  outline-offset: 3px;
-}
-
-.back-to-top svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  display: none;
 }
 
 @media (max-width: 700px) {
-  .back-to-top {
-    bottom: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-  }
-
   .tp-search-input-wrap {
     max-width: 100%;
   }

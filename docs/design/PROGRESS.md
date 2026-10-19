@@ -18,3 +18,7 @@
 - Header template: ink serif wordmark, centred sans nav in sentence case (accent underline on the active page), plain borderless icon buttons (search, library, theme; ⌘K hint removed; sun icon now stroked so it renders in dark mode), outlined "Subscribe" → Substack replaces the blue "Contact" pill. Below 560px the Subscribe button moves into the hamburger menu (fixes 390px overflow).
 - Footer template follows the reference: wordmark + one-line description, Read / Track / Elsewhere columns (Contact, RSS feed and About kept under Elsewhere), single "Built by Ollie Branston. © year" line. Removed the dark-mode header/footer overrides (tokens handle it). Re-rendered all pages.
 - Not done: the reference's live grid strip under the header needs new data-loading JS → logged in LATER.md.
+
+## Iteration 5 — Back-to-top button
+- Replaced the floating blue back-to-top styles with `.back-to-top { display: none; }`. Verified after scrolling at 1440 and 390: JS still adds `.visible`, but the button renders 0×0 and is out of the tab order.
+- Compromise: main.js still creates the button (initBackToTop). Removing that call is outside the allowed main.js edits, and the smoke test expects both `initBackToTop` and the `.back-to-top` selector, so the button is hidden rather than deleted. Logged in LATER.md.

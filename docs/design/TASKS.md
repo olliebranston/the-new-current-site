@@ -6,7 +6,7 @@ One per iteration, in this order.
 - [x] Global type: apply font families and the 8-size scale site-wide
 - [x] Remove all box-shadows, gradients, and non-token radii
 - [x] Header + footer templates (then run render_static_layout.py)
-- [ ] Remove floating back-to-top button
+- [x] Remove floating back-to-top button
 - [ ] Homepage: intro copy + lead story layout
 - [ ] Homepage: thought pieces grid, brain dumps list, data preview, reporting list, newsletter band
 - [ ] Thought pieces page: photo header, underline topic tabs, story grid
