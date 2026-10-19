@@ -1330,7 +1330,7 @@ if (chartCanvas) {
     .then((response) => response.json())
     .then((chartData) => {
       if (pageDataUpdated) {
-        pageDataUpdated.textContent = `Last updated: ${chartData.last_updated}`;
+        pageDataUpdated.textContent = `Last updated: ${formatUpdatedStamp(chartData.last_updated)}`;
         pageDataUpdated.classList.remove("loading-placeholder");
       }
 
@@ -1496,16 +1496,18 @@ function sortItemsByPublishedDate(items) {
 }
 
 function formatRadarMeta(item) {
-  if (item.source && item.display_date) {
-    return `${item.source} · ${item.display_date}`;
+  const displayDate = formatDisplayDate(item.published_at) || item.display_date;
+
+  if (item.source && displayDate) {
+    return `${item.source} · ${displayDate}`;
   }
 
   if (item.source) {
     return item.source;
   }
 
-  if (item.display_date) {
-    return item.display_date;
+  if (displayDate) {
+    return displayDate;
   }
 
   return "";
@@ -1556,11 +1558,12 @@ const RADAR_INITIAL_COUNT = 5;
 
 function buildRadarArticle(item) {
   const wrapper = document.createElement("article");
-  wrapper.className = "radar-item";
+  wrapper.className = "radar-item newswire-item";
   const title = document.createElement("h4");
-  const meta = createTextElement("p", "radar-meta", formatRadarMeta(item));
+  title.className = "newswire-title";
+  const meta = createTextElement("p", "radar-meta newswire-meta", formatRadarMeta(item));
   title.appendChild(createSafeExternalLink(item.link, item.headline));
-  wrapper.append(title, meta);
+  wrapper.append(meta, title);
   return wrapper;
 }
 
@@ -1617,7 +1620,7 @@ if (radarRAndD || radarPolicy) {
     .then((response) => response.json())
     .then((newsData) => {
       if (newsRadarLastUpdated) {
-        newsRadarLastUpdated.textContent = `Last updated: ${newsData.last_updated || "not available"}`;
+        newsRadarLastUpdated.textContent = `Last updated: ${formatUpdatedStamp(newsData.last_updated) || "not available"}`;
         newsRadarLastUpdated.classList.remove("loading-placeholder");
       }
 
@@ -1664,13 +1667,15 @@ function renderBrainDumps(container, notes) {
     const paragraphs = contentArr.map((p) => `<p>${escapeHtml(p)}</p>`).join("");
 
     wrapper.innerHTML = `
-      <div class="brain-dump-card-inner">
-        <p class="card-kicker">Brain Dump</p>
+      <div class="brain-dump-aside">
+        <p class="brain-dump-date">${formatDisplayDate(note.date)}</p>
+        <p class="brain-dump-tag">${escapeHtml(note.tag)}</p>
+      </div>
+      <div class="brain-dump-body">
         <div class="brain-dump-card-header">
-          <h3>${escapeHtml(note.title)}</h3>
+          <h2 class="brain-dump-title">${escapeHtml(note.title)}</h2>
           <button class="brain-dump-copy-btn" type="button" aria-label="Copy note">${COPY_ICON_SVG} Copy</button>
         </div>
-        <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
         <div class="brain-dump-content">
           ${paragraphs}
         </div>
@@ -1704,19 +1709,13 @@ function renderHomepageBrainDumps(container, notes) {
 
   container.innerHTML = "";
 
-  sortedNotes.slice(0, 3).forEach((note) => {
+  sortedNotes.slice(0, 4).forEach((note) => {
     const wrapper = document.createElement("article");
-    wrapper.className = "brain-dump-preview-card";
-
-    const previewText = Array.isArray(note.content)
-      ? note.content[0]
-      : note.content;
+    wrapper.className = "ruled-item";
 
     wrapper.innerHTML = `
-  <p class="card-kicker">Preview</p>
-  <h4>${note.title}</h4>
-  <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
-  <p class="brain-dump-preview-text">${previewText}</p>
+  <h3 class="ruled-item-title"><a href="brain-dumps.html">${note.title}</a></h3>
+  <p class="ruled-item-meta">${formatDisplayDate(note.date)} · ${note.tag}</p>
 `;
 
     container.appendChild(wrapper);
@@ -1728,40 +1727,37 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
   }
 
   const cards = [];
+  const newsMeta = (item) => [item.source, formatDisplayDate(item.published_at) || item.display_date].filter(Boolean).join(" · ");
 
-  if (recommendations && recommendations.recommended_read) {
+  if (newsData && newsData.policy && newsData.policy.length > 0) {
     cards.push({
-      kicker: "Recommended",
-      title: "Read",
-      link: recommendations.recommended_read.link,
-      text: recommendations.recommended_read.title
-    });
-  }
-
-  if (recommendations && recommendations.recommended_listen) {
-    cards.push({
-      kicker: "Recommended",
-      title: "Listen",
-      link: recommendations.recommended_listen.link,
-      text: recommendations.recommended_listen.title
+      meta: newsMeta(newsData.policy[0]),
+      link: newsData.policy[0].link,
+      text: newsData.policy[0].headline
     });
   }
 
   if (newsData && newsData.r_and_d && newsData.r_and_d.length > 0) {
     cards.push({
-      kicker: "Latest",
-      title: "R&D",
+      meta: newsMeta(newsData.r_and_d[0]),
       link: newsData.r_and_d[0].link,
       text: newsData.r_and_d[0].headline
     });
   }
 
-  if (newsData && newsData.policy && newsData.policy.length > 0) {
+  if (recommendations && recommendations.recommended_listen) {
     cards.push({
-      kicker: "Latest",
-      title: "Policy",
-      link: newsData.policy[0].link,
-      text: newsData.policy[0].headline
+      meta: ["Recommended listen", recommendations.recommended_listen.source].filter(Boolean).join(" · "),
+      link: recommendations.recommended_listen.link,
+      text: recommendations.recommended_listen.title
+    });
+  }
+
+  if (recommendations && recommendations.recommended_read) {
+    cards.push({
+      meta: ["Recommended read", recommendations.recommended_read.source].filter(Boolean).join(" · "),
+      link: recommendations.recommended_read.link,
+      text: recommendations.recommended_read.title
     });
   }
 
@@ -1774,25 +1770,42 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
 
   cards.forEach((cardData) => {
     const card = document.createElement("article");
-    card.className = "reporting-preview-card";
+    card.className = "newswire-item";
 
-    const kicker = createTextElement("p", "card-kicker", cardData.kicker);
-    const title = document.createElement("h4");
-    title.appendChild(createSafeExternalLink(cardData.link, cardData.title));
-    const text = createTextElement("p", "reporting-preview-text", cardData.text);
+    const meta = createTextElement("p", "newswire-meta", cardData.meta);
+    const title = document.createElement("h3");
+    title.className = "newswire-title";
+    title.appendChild(createSafeExternalLink(cardData.link, cardData.text));
 
-    card.append(kicker, title, text);
+    card.append(meta, title);
     container.appendChild(card);
   });
 }
 
-function formatArticleDate(dateString) {
-  const date = new Date(dateString);
+// Display dates as "22 September 2026". Date-only ISO strings are read as UTC
+// so they never shift a day; timestamps are shown in UK time.
+function formatDisplayDate(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+  const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(value);
 
   return date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
     year: "numeric",
-    month: "long"
+    timeZone: dateOnly ? "UTC" : "Europe/London"
   });
+}
+
+function formatArticleDate(dateString) {
+  return formatDisplayDate(dateString);
+}
+
+// "2026-10-12 20:46 UTC" → "12 October 2026, 20:46 UTC"
+function formatUpdatedStamp(value) {
+  const match = /^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2})/.exec(value || "");
+  return match ? `${formatDisplayDate(match[1])}, ${match[2]} UTC` : (value || "");
 }
 
 function escapeHtml(value) {
@@ -1866,33 +1879,30 @@ function buildThoughtPieceCard(article) {
   const safeTitle = escapeHtml(article.title);
   const safeSummary = escapeHtml(article.summary);
   const isBookmarked = getBookmarks().has(article.link);
+  const isRead = getReadArticles().has(article.link);
+  const coAuthors = escapeHtml((article.author || "").replace(/^(Ollie|Oliver) Branston\s*/, ""));
+  const kicker = [article.featured ? "Featured" : "", escapeHtml(article.topic || "")].filter(Boolean).join(" · ");
 
   const imageMarkup = article.image
     ? `
-      <div class="thought-piece-card-image">
-        <img src="${article.image}" alt="${safeTitle}" loading="lazy">
-      </div>
+      <a class="story-card-media" href="${article.link}" tabindex="-1" aria-hidden="true">
+        <img src="${article.image}" alt="" loading="lazy">
+      </a>
     `
     : "";
 
-  const noImageClass = article.image ? "" : " thought-piece-card-no-image";
-
-  const isRead = getReadArticles().has(article.link);
-  const featuredBadge = article.featured ? '<span class="card-featured-badge">Featured</span>' : "";
-  const readBadge = isRead ? '<span class="card-read-badge" title="Read">✓</span>' : "";
+  const readBadge = isRead ? '<span class="card-read-badge" title="Read">✓ Read</span>' : "";
 
   return `
-    <article class="thought-piece-card${noImageClass}" data-article-link="${article.link}">
-      <div class="thought-piece-card-text">
-        <div class="card-kicker-row">
-          <p class="card-kicker">${article.author || "Oliver Branston"}</p>
-          <div class="card-badges">${featuredBadge}${readBadge}<button class="bookmark-btn${isBookmarked ? " active" : ""}" data-link="${article.link}" type="button" aria-label="${isBookmarked ? "Remove bookmark" : "Save article"}">${BOOKMARK_ICON_SVG}</button></div>
-        </div>
-        <h3><a href="${article.link}">${safeTitle}</a></h3>
-        <p class="article-meta">${formatArticleDate(article.date)}</p>
-        <p>${safeSummary}</p>
-      </div>
+    <article class="story-card thought-piece-card" data-article-link="${article.link}">
       ${imageMarkup}
+      <div class="story-card-kicker-row">
+        <p class="card-kicker">${kicker}</p>
+        <div class="card-badges">${readBadge}<button class="bookmark-btn${isBookmarked ? " active" : ""}" data-link="${article.link}" type="button" aria-label="${isBookmarked ? "Remove bookmark" : "Save article"}">${BOOKMARK_ICON_SVG}</button></div>
+      </div>
+      <h3 class="story-card-title"><a href="${article.link}">${safeTitle}</a></h3>
+      <p class="story-card-summary">${safeSummary}</p>
+      <p class="story-card-meta">${formatArticleDate(article.date)}${coAuthors ? ` · ${coAuthors}` : ""}</p>
     </article>
   `;
 }
@@ -1915,28 +1925,28 @@ function renderThoughtPieces(container, articles) {
 
   container.innerHTML = `
   <section class="thought-piece-section">
-    <div class="thought-piece-section-heading">
-      <p class="eyebrow">Series Two</p>
+    <div class="section-header">
+      <h2>Series two</h2>
     </div>
-    <div class="thought-piece-card-list">
+    <div class="story-grid">
       ${seriesTwoArticles.map(buildThoughtPieceCard).join("")}
     </div>
   </section>
 
   <section class="thought-piece-section">
-    <div class="thought-piece-section-heading">
-      <p class="eyebrow">Series One</p>
+    <div class="section-header">
+      <h2>Series one</h2>
     </div>
-    <div class="thought-piece-card-list">
+    <div class="story-grid">
       ${seriesOneArticles.map(buildThoughtPieceCard).join("")}
     </div>
   </section>
 
   <section class="thought-piece-section">
-    <div class="thought-piece-section-heading">
-      <p class="eyebrow">Archive</p>
+    <div class="section-header">
+      <h2>Archive</h2>
     </div>
-    <div class="thought-piece-card-list">
+    <div class="story-grid">
       ${archiveArticles.map(buildThoughtPieceCard).join("")}
     </div>
   </section>
@@ -1955,27 +1965,36 @@ function renderHomepageThoughtPieces(container, articles) {
 
   const sortedArticles = sortItemsByDate(articles);
   const featuredArticle = sortedArticles[0];
-  const secondaryArticles = sortedArticles.slice(1, 3);
+  const secondaryArticles = sortedArticles.slice(1, 4);
+  const coAuthors = (article) => (article.author || "").replace(/^(Ollie|Oliver) Branston\s*/, "");
 
   container.innerHTML = `
-    <article class="featured-thought-card">
-      <div class="featured-thought-content">
-        <p class="card-kicker">Most recent article</p>
-        <h3><a href="${featuredArticle.link}">${featuredArticle.title}</a></h3>
-        <p class="article-meta">${formatArticleDate(featuredArticle.date)} · ${featuredArticle.author || "Oliver Branston"}</p>
-        <p>${featuredArticle.summary}</p>
+    <article class="home-lead-article">
+      <div class="home-lead-text">
+        <p class="card-kicker">Latest${featuredArticle.topic ? ` · ${featuredArticle.topic}` : ""}</p>
+        <h2 class="home-lead-title"><a href="${featuredArticle.link}">${featuredArticle.title}</a></h2>
+        <p class="home-lead-standfirst">${featuredArticle.summary}</p>
+        <p class="article-meta">${featuredArticle.author || "Ollie Branston"} · ${formatArticleDate(featuredArticle.date)}</p>
       </div>
-      <div class="featured-thought-image">
+      <a class="home-lead-media" href="${featuredArticle.link}" tabindex="-1" aria-hidden="true">
         <img src="${featuredArticle.image}" alt="${featuredArticle.title}">
-      </div>
+      </a>
     </article>
 
-    <div class="thought-list">
+    <div class="section-header home-story-header">
+      <h2>Thought pieces</h2>
+      <a href="thought-pieces.html" class="section-header-link">All thought pieces <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="story-grid">
       ${secondaryArticles.map((article) => `
-        <article class="compact-thought-card">
-          <p class="card-kicker">Recent</p>
-          <h4><a href="${article.link}">${article.title}</a></h4>
-          <p class="article-meta">${formatArticleDate(article.date)} · ${article.author || "Oliver Branston"}</p>
+        <article class="story-card">
+          <a class="story-card-media" href="${article.link}" tabindex="-1" aria-hidden="true">
+            <img src="${article.image}" alt="" loading="lazy">
+          </a>
+          ${article.topic ? `<p class="card-kicker">${article.topic}</p>` : ""}
+          <h3 class="story-card-title"><a href="${article.link}">${article.title}</a></h3>
+          <p class="story-card-meta">${formatArticleDate(article.date)}${coAuthors(article) ? ` · ${coAuthors(article)}` : ""}</p>
         </article>
       `).join("")}
     </div>
@@ -2165,12 +2184,11 @@ function initThoughtPiecesPage(container, articles) {
 
   function filterArticles() {
     const query = searchQuery.toLowerCase().trim();
-    const filterAll = activeTopics.has("All") && !showSavedOnly;
     const bookmarks = showSavedOnly ? getBookmarks() : null;
 
     return sortedArticles.filter((article) => {
       if (showSavedOnly && !bookmarks.has(article.link)) return false;
-      const topicMatch = filterAll || activeTopics.has(article.topic);
+      const topicMatch = activeTopics.has("All") || activeTopics.has(article.topic);
       const textMatch = !query || (
         article.title.toLowerCase().includes(query) ||
         (article.summary || "").toLowerCase().includes(query) ||
@@ -2200,17 +2218,17 @@ function initThoughtPiecesPage(container, articles) {
     const archiveArticles = filtered.filter((a) => a.section === "archive");
 
     const sections = [
-      { label: "Series Two", items: seriesTwoArticles },
-      { label: "Series One", items: seriesOneArticles },
+      { label: "Series two", items: seriesTwoArticles },
+      { label: "Series one", items: seriesOneArticles },
       { label: "Archive", items: archiveArticles }
     ].filter((s) => s.items.length > 0);
 
     container.innerHTML = sections.map((s) => `
       <section class="thought-piece-section">
-        <div class="thought-piece-section-heading">
-          <p class="eyebrow">${s.label}</p>
+        <div class="section-header">
+          <h2>${s.label}</h2>
         </div>
-        <div class="thought-piece-card-list">
+        <div class="story-grid">
           ${s.items.map(buildThoughtPieceCard).join("")}
         </div>
       </section>
@@ -2271,6 +2289,9 @@ function initThoughtPiecesPage(container, articles) {
   });
 
   render();
+
+  // Arriving with a topic already chosen (e.g. from an article's topic link): show the filtered list
+  if (initialState.topics.length) searchWrap.scrollIntoView({ block: "start" });
 }
 
 /* ─── Article page enhancements ─────────────────────────────────── */
@@ -2490,10 +2511,12 @@ function initBrainDumpsPage(container, notes) {
         ? note.content.map((p) => `<p>${escapeHtml(p)}</p>`).join("")
         : `<p>${escapeHtml(note.content)}</p>`;
       wrapper.innerHTML = `
-        <div class="brain-dump-card-inner">
-          <p class="card-kicker">Brain Dump</p>
-          <h3>${escapeHtml(note.title)}</h3>
-          <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
+        <div class="brain-dump-aside">
+          <p class="brain-dump-date">${formatDisplayDate(note.date)}</p>
+          <p class="brain-dump-tag">${escapeHtml(note.tag)}</p>
+        </div>
+        <div class="brain-dump-body">
+          <h2 class="brain-dump-title">${escapeHtml(note.title)}</h2>
           <div class="brain-dump-content">${paragraphs}</div>
         </div>
       `;
@@ -3069,3 +3092,40 @@ function refreshLiveSnapshot() {
 if (snapshotDemand || snapshotGeneration || snapshotCarbonIntensity || generationMixVisual || gatewayGenerationMixVisual) {
   setInterval(refreshLiveSnapshot, 5 * 60 * 1000);
 }
+
+/* ─── Homepage live grid ticker ─────────────────────────────────── */
+
+// Reads the same snapshot file as the Data page dashboard and fills the strip under
+// the header. Stays hidden if the file can't be loaded.
+function initGridTicker() {
+  const ticker = document.getElementById("gridTicker");
+  if (!ticker) return;
+
+  const FUEL_TOKENS = ["gas", "wind", "nuclear", "biomass", "solar", "imports"];
+  const setText = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+
+  fetch("data/live-grid-snapshot.json")
+    .then((response) => response.json())
+    .then((snapshot) => {
+      const mix = snapshot.generation_mix || {};
+      setText("tickerUpdated", `· ${formatUpdatedStamp(snapshot.last_updated)}`);
+      setText("tickerLowCarbon", `${mix.low_carbon_percentage}%`);
+      setText("tickerCarbon", `${snapshot.carbon_intensity.value}`);
+      setText("tickerPrice", `£${Math.round(snapshot.power_price.value)}`);
+      setText("tickerDemand", (snapshot.demand.value / 1000).toFixed(1));
+
+      const bar = document.getElementById("tickerMix");
+      const segments = (mix.segments || []).filter((s) => s.percentage > 0);
+      bar.setAttribute("role", "img");
+      bar.setAttribute("aria-label", `Generation mix: ${segments.map((s) => `${s.label} ${s.percentage}%`).join(", ")}`);
+      bar.innerHTML = segments.map((s) => {
+        const colour = FUEL_TOKENS.includes(s.key) ? `var(--fuel-${s.key})` : "var(--ink-faint)";
+        return `<span style="width:${s.percentage}%;background:${colour}" title="${escapeHtml(s.label)} ${s.percentage}%"></span>`;
+      }).join("");
+
+      ticker.hidden = false;
+    })
+    .catch(() => { /* leave the ticker hidden */ });
+}
+
+initGridTicker();

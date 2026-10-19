@@ -73,17 +73,17 @@
     <a href="index.html" class="site-brand">The New Current</a>
 
     <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
-      <a href="thought-pieces.html" class="nav-link">Thought Pieces</a>
-      <a href="brain-dumps.html" class="nav-link">Brain Dumps</a>
+      <a href="thought-pieces.html" class="nav-link">Thought pieces</a>
+      <a href="brain-dumps.html" class="nav-link">Brain dumps</a>
       <a href="data.html" class="nav-link">Data</a>
       <a href="reporting.html" class="nav-link">Reporting</a>
       <a href="about.html" class="nav-link">About</a>
+      <a href="https://substack.com/@olliebranston" class="nav-link nav-link-subscribe" target="_blank" rel="noopener noreferrer">Subscribe</a>
     </nav>
 
     <div class="site-header-actions">
       <button class="cmd-search-trigger" id="cmdSearchTrigger" aria-label="Search (Ctrl+K)" type="button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <span class="cmd-search-hint">⌘K</span>
       </button>
       <button class="history-btn" id="historyBtn" aria-label="Your library" type="button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
@@ -92,7 +92,7 @@
         <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3V1m0 22v-2M4.22 4.22l-1.42-1.42M20.78 20.78l-1.42-1.42M1 12H3m18 0h2M4.22 19.78l-1.42 1.42M20.78 3.22l-1.42 1.42M12 7a5 5 0 1 0 0 10A5 5 0 0 0 12 7z"/></svg>
       </button>
-      <a href="mailto:ollie.branston123@gmail.com" class="contact-button">Contact</a>
+      <a href="https://substack.com/@olliebranston" class="subscribe-button" target="_blank" rel="noopener noreferrer">Subscribe</a>
       <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="siteNav" type="button">
         <span class="hamburger-bar"></span>
         <span class="hamburger-bar"></span>
@@ -102,140 +102,104 @@
   </div>
 </header>
 <!-- site-header:end -->
+<aside class="grid-ticker" id="gridTicker" aria-label="Live GB grid snapshot" hidden>
+  <div class="grid-ticker-inner">
+    <span class="grid-ticker-label"><span class="grid-ticker-dot" aria-hidden="true"></span>GB grid <span class="grid-ticker-updated" id="tickerUpdated"></span></span>
+    <span class="grid-ticker-item">Low-carbon <strong id="tickerLowCarbon"></strong><span class="grid-ticker-mix" id="tickerMix"></span></span>
+    <span class="grid-ticker-item">Carbon intensity <strong id="tickerCarbon"></strong> gCO₂/kWh</span>
+    <span class="grid-ticker-item grid-ticker-optional">Price <strong id="tickerPrice"></strong>/MWh</span>
+    <span class="grid-ticker-item grid-ticker-optional">Demand <strong id="tickerDemand"></strong> GW</span>
+    <a href="data.html#live-gb-dashboard" class="grid-ticker-link">Live data <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
 
 <main class="homepage-main">
-  <section class="home-hero-card">
-    <div class="home-hero-text">
-      <p class="eyebrow">Energy transition intelligence</p>
-      <h1>The New Current</h1>
-      <p>
-        The New Current is a free energy transition website by Ollie Branston.
-      </p>
-      <p>
-        It is built as a real-world learning project in public, bringing together
-        writing, live data, reporting, and structured experimentation in one place.
-      </p>
-      <p>
-        The site is organised around two halves: <strong>Original Thoughts</strong>
-        and <strong>Live Intelligence</strong>.
-      </p>
-    </div>
+  <section class="home-lead" aria-labelledby="homeLeadHeading">
+    <h1 class="sr-only" id="homeLeadHeading">The New Current</h1>
 
-    <div class="home-hero-media">
-      <img src="content/home-logo.jpg" alt="The New Current logo" class="home-hero-image">
+    <div id="homepageThoughtPieces" class="home-lead-content">
+      <p class="loading-placeholder">Loading the latest thought piece...</p>
     </div>
   </section>
 
-  <section class="homepage-section">
-    <div class="homepage-section-heading">
-      <p class="eyebrow">Original Thoughts</p>
-      <h2>Thought Pieces and Brain Dumps</h2>
+  <section class="home-brain-dumps" aria-labelledby="homeBrainDumpsHeading">
+    <div class="section-header">
+      <h2 id="homeBrainDumpsHeading">Brain dumps</h2>
+      <a href="brain-dumps.html" class="section-header-link">All <span aria-hidden="true">→</span></a>
     </div>
+    <p class="section-dek">Shorter, quicker takes.</p>
 
-    <div class="homepage-subsection">
-      <div class="subsection-header">
-        <div>
-          <p class="subsection-label">Thought Pieces</p>
-        </div>
-        <a href="thought-pieces.html" class="subsection-link">View all Thought Pieces</a>
-      </div>
-
-      <div id="homepageThoughtPieces" class="thoughts-grid">
-        <p class="loading-placeholder">Loading thought pieces...</p>
-      </div>
-    </div>
-
-    <div class="homepage-subsection">
-      <div class="subsection-header">
-        <div>
-          <p class="subsection-label">Brain Dumps</p>
-        </div>
-        <a href="brain-dumps.html" class="subsection-link">View all Brain Dumps</a>
-      </div>
-
-      <div id="homepageBrainDumps" class="brain-dump-preview-grid">
-        <p class="loading-placeholder">Loading Brain Dumps preview...</p>
-      </div>
+    <div id="homepageBrainDumps" class="ruled-list">
+      <p class="loading-placeholder">Loading brain dumps...</p>
     </div>
   </section>
 
-  <section class="homepage-section">
-    <div class="homepage-section-heading">
-      <p class="eyebrow">Live Intelligence</p>
-      <h2>Data and Reporting</h2>
+  <section class="home-data" aria-labelledby="homeDataHeading">
+    <div class="section-header">
+      <h2 id="homeDataHeading">From the data</h2>
+      <a href="data.html" class="section-header-link">Explore the data <span aria-hidden="true">→</span></a>
     </div>
 
-    <div class="homepage-subsection">
-      <div class="subsection-header">
-        <div>
-          <p class="subsection-label">Data</p>
+    <div class="data-gateway-grid">
+      <a href="data.html#consumption-production" class="data-gateway-card">
+        <p class="eyebrow">Carbon accounting</p>
+        <h3>The UK’s hidden carbon footprint</h3>
+        <p class="data-gateway-source">tCO₂e per person, 1996–2022 · Defra, ONS</p>
+        <div class="data-gateway-visual">
+          <canvas id="gatewayConsumptionPerPersonChart"></canvas>
         </div>
-        <a href="data.html" class="subsection-link">Go to Data</a>
-      </div>
+        <p>
+          The UK’s production emissions have fallen sharply over recent decades,
+          but consumption-based emissions tell a less positive story.
+        </p>
+      </a>
 
-      <div class="data-gateway-grid">
-        <a href="data.html#consumption-production" class="data-gateway-card">
-          <p class="eyebrow">Carbon accounting</p>
-          <h3>The UK’s hidden carbon footprint</h3>
-          <div class="data-gateway-visual">
-            <canvas id="gatewayConsumptionPerPersonChart"></canvas>
-          </div>
-          <p>
-            The UK’s production emissions have fallen sharply over recent decades,
-            but consumption-based emissions tell a less positive story.
-          </p>
-        </a>
-
-        <a href="data.html#live-gb-dashboard" class="data-gateway-card">
-          <p class="eyebrow">Live monitoring</p>
-          <h3>Live GB dashboard</h3>
-          <div id="gatewayGenerationMixVisual" class="data-gateway-visual loading-placeholder">
-            Loading generation mix...
-          </div>
-          <p>
-            A live, high-level dashboard view of key GB electricity metrics
-            including price, carbon intensity, demand, generation, and mix.
-          </p>
-        </a>
-
-        <a href="data.html#carbon-price-relationship" class="data-gateway-card">
-          <p class="eyebrow">Market signals</p>
-          <h3>Clean power, complex bills</h3>
-          <div class="data-gateway-visual">
-            <canvas id="gatewayPowerPriceChart"></canvas>
-          </div>
-          <p>
-            Low-carbon generation can cut wholesale prices, but the cost of running a
-            cleaner, more flexible grid still shows up in consumer bills.
-          </p>
-        </a>
-      </div>
-    </div>
-
-    <div class="homepage-subsection">
-      <div class="subsection-header">
-        <div>
-          <p class="subsection-label">Reporting</p>
+      <a href="data.html#live-gb-dashboard" class="data-gateway-card">
+        <p class="eyebrow">Live monitoring</p>
+        <h3>Live GB dashboard</h3>
+        <p class="data-gateway-source">Live GB generation mix · Carbon Intensity API (NESO)</p>
+        <div id="gatewayGenerationMixVisual" class="data-gateway-visual loading-placeholder">
+          Loading generation mix...
         </div>
-        <a href="reporting.html" class="subsection-link">Go to Reporting</a>
-      </div>
+        <p>
+          A live, high-level dashboard view of key GB electricity metrics
+          including price, carbon intensity, demand, generation, and mix.
+        </p>
+      </a>
 
-      <div id="homepageReportingPreview" class="reporting-preview-grid">
-        <p class="loading-placeholder">Loading reporting preview...</p>
-      </div>
+      <a href="data.html#carbon-price-relationship" class="data-gateway-card">
+        <p class="eyebrow">Market signals</p>
+        <h3>Clean power, complex bills</h3>
+        <p class="data-gateway-source">£/MWh, half-hourly · Elexon BMRS</p>
+        <div class="data-gateway-visual">
+          <canvas id="gatewayPowerPriceChart"></canvas>
+        </div>
+        <p>
+          Low-carbon generation can cut wholesale prices, but the cost of running a
+          cleaner, more flexible grid still shows up in consumer bills.
+        </p>
+      </a>
     </div>
   </section>
 
-  <section class="homepage-section">
-    <div class="subsection-header">
-      <div>
-        <p class="eyebrow">About</p>
-        <h2>Why this site exists</h2>
-      </div>
-      <a href="about.html" class="subsection-link">Go to About</a>
+  <section class="home-reporting" aria-labelledby="homeReportingHeading">
+    <div class="section-header">
+      <h2 id="homeReportingHeading">Reporting</h2>
+      <a href="reporting.html" class="section-header-link">News radar <span aria-hidden="true">→</span></a>
     </div>
 
-    <article class="about-preview-card">
+    <div id="homepageReportingPreview" class="newswire-list">
+      <p class="loading-placeholder">Loading reporting...</p>
+    </div>
+  </section>
+
+  <section class="home-about" aria-labelledby="homeAboutHeading">
+    <div class="section-header">
+      <h2 id="homeAboutHeading">Why this site exists</h2>
+      <a href="about.html" class="section-header-link">About <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="home-about-text">
       <p>
         The New Current is a free website about the energy transition, built in public
         as both a publication and a coding project. It brings together thought pieces,
@@ -254,29 +218,42 @@
         Over time, it will continue to grow into a more useful resource for curious
         newcomers, informed generalists, and people already embedded in the space.
       </p>
-    </article>
+    </div>
   </section>
 </main>
+
+<section class="newsletter-band" aria-labelledby="newsletterBandHeading">
+  <div class="newsletter-band-inner">
+    <img src="content/home-logo.jpg" alt="The New Current brand mark: a lightbulb wrapped in streaks of blue light" class="newsletter-band-image" loading="lazy">
+    <div class="newsletter-band-text">
+      <h2 id="newsletterBandHeading">A new thought piece every fortnight</h2>
+      <p>UK energy transition analysis, written with the people building it. Free, in your inbox.</p>
+    </div>
+    <a href="https://substack.com/@olliebranston" class="newsletter-band-button" target="_blank" rel="noopener noreferrer">Subscribe on Substack</a>
+  </div>
+</section>
 <!-- site-footer:start -->
 <footer class="site-footer">
   <div class="site-footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <h3>The New Current</h3>
-        <p>
-          A free website about the energy transition, combining original thoughts,
-          live intelligence, reporting, and learning in public.
-        </p>
+        <p class="footer-wordmark">The New Current</p>
+        <p>Writing and live data on the UK energy transition, by Ollie Branston.</p>
       </div>
 
       <div class="footer-links">
-        <h4>Explore</h4>
+        <h4>Read</h4>
         <ul>
-          <li><a href="thought-pieces.html">Thought Pieces</a></li>
-          <li><a href="brain-dumps.html">Brain Dumps</a></li>
+          <li><a href="thought-pieces.html">Thought pieces</a></li>
+          <li><a href="brain-dumps.html">Brain dumps</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h4>Track</h4>
+        <ul>
           <li><a href="data.html">Data</a></li>
           <li><a href="reporting.html">Reporting</a></li>
-          <li><a href="about.html">About</a></li>
         </ul>
       </div>
 
@@ -285,15 +262,15 @@
         <ul>
           <li><a href="https://www.linkedin.com/in/oliverbranston/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://substack.com/@olliebranston" target="_blank" rel="noopener noreferrer">Substack</a></li>
-          <li><a href="feed.xml" type="application/rss+xml">RSS Feed</a></li>
+          <li><a href="feed.xml" type="application/rss+xml">RSS feed</a></li>
           <li><a href="mailto:ollie.branston123@gmail.com">Contact</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
       <p>Built by Ollie Branston.</p>
-      <p>Original Thoughts and Live Intelligence.</p>
     </div>
   </div>
 </footer>
