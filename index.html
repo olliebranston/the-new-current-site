@@ -116,67 +116,65 @@
     </div>
   </section>
 
-  <div class="home-columns">
-    <section class="home-brain-dumps" aria-labelledby="homeBrainDumpsHeading">
-      <div class="section-header">
-        <h2 id="homeBrainDumpsHeading">Brain dumps</h2>
-        <a href="brain-dumps.html" class="section-header-link">All <span aria-hidden="true">→</span></a>
-      </div>
-      <p class="section-dek">Shorter, quicker takes.</p>
+<section class="home-brain-dumps" aria-labelledby="homeBrainDumpsHeading">
+    <div class="section-header">
+      <h2 id="homeBrainDumpsHeading">Brain dumps</h2>
+      <a href="brain-dumps.html" class="section-header-link">All <span aria-hidden="true">→</span></a>
+    </div>
+    <p class="section-dek">Shorter, quicker takes.</p>
 
-      <div id="homepageBrainDumps" class="ruled-list">
-        <p class="loading-placeholder">Loading brain dumps...</p>
-      </div>
-    </section>
+    <div id="homepageBrainDumps" class="ruled-list">
+      <p class="loading-placeholder">Loading brain dumps...</p>
+    </div>
+  </section>
 
-    <section class="home-data" aria-labelledby="homeDataHeading">
-      <div class="section-header">
-        <h2 id="homeDataHeading">From the data</h2>
-        <a href="data.html" class="section-header-link">Explore the data <span aria-hidden="true">→</span></a>
-      </div>
+<section class="home-data" aria-labelledby="homeDataHeading">
+    <div class="section-header">
+      <h2 id="homeDataHeading">From the data</h2>
+      <a href="data.html" class="section-header-link">Explore the data <span aria-hidden="true">→</span></a>
+    </div>
 
-      <div class="data-gateway-grid">
-        <a href="data.html#consumption-production" class="data-gateway-card">
-          <p class="eyebrow">Carbon accounting</p>
-          <h3>The UK’s hidden carbon footprint</h3>
-          <p class="data-gateway-source">tCO₂e per person, 1996–2022 · Defra, ONS</p>
-          <div class="data-gateway-visual">
-            <canvas id="gatewayConsumptionPerPersonChart"></canvas>
-          </div>
-          <p>
-            The UK’s production emissions have fallen sharply over recent decades,
-            but consumption-based emissions tell a less positive story.
-          </p>
-        </a>
+    <div class="data-gateway-grid">
+      <a href="data.html#consumption-production" class="data-gateway-card">
+        <p class="eyebrow">Carbon accounting</p>
+        <h3>The UK’s hidden carbon footprint</h3>
+        <p class="data-gateway-source">tCO₂e per person, 1996–2022 · Defra, ONS</p>
+        <div class="data-gateway-visual">
+          <canvas id="gatewayConsumptionPerPersonChart"></canvas>
+        </div>
+        <p>
+          The UK’s production emissions have fallen sharply over recent decades,
+          but consumption-based emissions tell a less positive story.
+        </p>
+      </a>
 
-        <a href="data.html#live-gb-dashboard" class="data-gateway-card">
-          <p class="eyebrow">Live monitoring</p>
-          <h3>Live GB dashboard</h3>
-          <p class="data-gateway-source">Live GB generation mix · Carbon Intensity API (NESO)</p>
-          <div id="gatewayGenerationMixVisual" class="data-gateway-visual loading-placeholder">
-            Loading generation mix...
-          </div>
-          <p>
-            A live, high-level dashboard view of key GB electricity metrics
-            including price, carbon intensity, demand, generation, and mix.
-          </p>
-        </a>
+      <a href="data.html#live-gb-dashboard" class="data-gateway-card">
+        <p class="eyebrow">Live monitoring</p>
+        <h3>Live GB dashboard</h3>
+        <p class="data-gateway-source">Live GB generation mix · Carbon Intensity API (NESO)</p>
+        <div id="gatewayGenerationMixVisual" class="data-gateway-visual loading-placeholder">
+          Loading generation mix...
+        </div>
+        <p>
+          A live, high-level dashboard view of key GB electricity metrics
+          including price, carbon intensity, demand, generation, and mix.
+        </p>
+      </a>
 
-        <a href="data.html#carbon-price-relationship" class="data-gateway-card">
-          <p class="eyebrow">Market signals</p>
-          <h3>Clean power, complex bills</h3>
-          <p class="data-gateway-source">£/MWh, half-hourly · Elexon BMRS</p>
-          <div class="data-gateway-visual">
-            <canvas id="gatewayPowerPriceChart"></canvas>
-          </div>
-          <p>
-            Low-carbon generation can cut wholesale prices, but the cost of running a
-            cleaner, more flexible grid still shows up in consumer bills.
-          </p>
-        </a>
-      </div>
-    </section>
-  </div>
+      <a href="data.html#carbon-price-relationship" class="data-gateway-card">
+        <p class="eyebrow">Market signals</p>
+        <h3>Clean power, complex bills</h3>
+        <p class="data-gateway-source">£/MWh, half-hourly · Elexon BMRS</p>
+        <div class="data-gateway-visual">
+          <canvas id="gatewayPowerPriceChart"></canvas>
+        </div>
+        <p>
+          Low-carbon generation can cut wholesale prices, but the cost of running a
+          cleaner, more flexible grid still shows up in consumer bills.
+        </p>
+      </a>
+    </div>
+  </section>
 
   <section class="home-reporting" aria-labelledby="homeReportingHeading">
     <div class="section-header">

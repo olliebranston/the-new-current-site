@@ -328,8 +328,7 @@ li {
   gap: var(--space-64);
 }
 
-.homepage-main > section,
-.homepage-main > .home-columns > section {
+.homepage-main > section {
   margin-bottom: 0;
 }
 
@@ -566,79 +565,6 @@ li {
 
 /* ─── Homepage: brain dumps beside "From the data" ──────────────── */
 
-.home-columns {
-  display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: var(--space-48);
-  align-items: start;
-}
-
-.home-data .data-gateway-grid {
-  grid-template-columns: minmax(0, 1fr);
-  gap: 0;
-}
-
-.home-data .data-gateway-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
-  grid-template-rows: auto auto 1fr;
-  column-gap: var(--space-24);
-  min-height: 0;
-  padding: var(--space-16) 0;
-  border: none;
-  border-bottom: 1px solid var(--rule);
-  border-radius: 0;
-  background: none;
-  color: var(--ink-2);
-}
-
-.home-data .data-gateway-card:first-child {
-  padding-top: 0;
-}
-
-.home-data .data-gateway-card:hover {
-  transform: none;
-  border-color: var(--rule);
-}
-
-.home-data .data-gateway-card .eyebrow {
-  grid-column: 1;
-  margin-bottom: var(--space-8);
-}
-
-.home-data .data-gateway-card h3 {
-  grid-column: 1;
-  margin-bottom: var(--space-8);
-  font-size: var(--fs-20);
-}
-
-.home-data .data-gateway-card p:last-child {
-  grid-column: 1;
-  margin: 0;
-  font-size: var(--fs-14);
-  color: var(--ink-muted);
-}
-
-.home-data .data-gateway-source {
-  grid-column: 1;
-  margin: 0 0 var(--space-8);
-}
-
-.home-data .data-gateway-visual {
-  grid-column: 2;
-  grid-row: 1 / span 4;
-  height: 180px;
-  min-height: 0;
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  background: none;
-}
-
-.home-data .gateway-generation-mix-chart-wrap {
-  max-width: 170px;
-}
-
 /* ─── Newswire list (reporting) ─────────────────────────────────── */
 
 .newswire-item {
@@ -677,8 +603,30 @@ li {
 /* ─── Homepage: about blurb ─────────────────────────────────────── */
 
 .home-about-text {
-  max-width: var(--article-width);
+  column-count: 2;
+  column-gap: var(--space-48);
   color: var(--ink-2);
+}
+
+.home-about-text p {
+  margin-top: 0;
+  break-inside: avoid;
+}
+
+#homepageBrainDumps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: var(--space-48);
+}
+
+@media (max-width: 700px) {
+  .home-about-text {
+    column-count: 1;
+  }
+
+  #homepageBrainDumps {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 /* ─── Newsletter band (dark ink, full width) ────────────────────── */
@@ -743,9 +691,6 @@ li {
 }
 
 @media (max-width: 900px) {
-  .home-columns {
-    grid-template-columns: minmax(0, 1fr);
-  }
 
   .story-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -774,18 +719,6 @@ li {
 @media (max-width: 600px) {
   .story-grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .home-data .data-gateway-card {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .home-data .data-gateway-visual {
-    grid-column: 1;
-    grid-row: auto;
-    margin: var(--space-12) 0;
   }
 }
 
