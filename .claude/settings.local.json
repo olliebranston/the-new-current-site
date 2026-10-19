@@ -6,7 +6,9 @@
       "Bash(Sort-Object Name)",
       "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\t14\\\\OneDrive\\\\Projects\\\\The New Current\\\\the-new-current-site\\\\the-new-current-site\" -Recurse -File)",
       "Bash(Select-Object FullName)",
-      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\t14\\\\OneDrive\\\\Projects\\\\The New Current\\\\the-new-current-site\\\\the-new-current-site\" -Recurse -Force)"
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\t14\\\\OneDrive\\\\Projects\\\\The New Current\\\\the-new-current-site\\\\the-new-current-site\" -Recurse -Force)",
+      "Bash(node --check \"C:\\\\Users\\\\t14\\\\OneDrive\\\\Projects\\\\The New Current\\\\the-new-current-site\\\\js\\\\main.js\")",
+      "Bash(python scripts/smoke_test_site.py)"
     ]
   }
 }
