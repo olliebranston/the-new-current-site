@@ -1,21 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap");
+
 :root {
-  --bg-page: #f5f7fb;
-  --bg-surface: #ffffff;
-  --bg-surface-alt: #f0f3f9;
-  --bg-dark: #0f1724;
+  /* Editorial palette (docs/design/DESIGN_SPEC.md) */
+  --paper: #FBFAF7;
+  --surface: #F3F1EC;
+  --ink: #16181D;
+  --ink-2: #4A4E55;
+  --ink-muted: #5C6068;
+  --ink-faint: #6B6F76;
+  --rule: #E4E1DA;
+  --accent: #1F45D1;
+  --accent-hover: #1838AE;
+  --accent-soft: rgba(31, 69, 209, 0.08);
+  --accent-glow: rgba(31, 69, 209, 0.18);
 
-  --text-main: #0f1724;
-  --text-soft: #3b4758;
-  --text-muted: #6b7280;
-  --text-inverse: #f8fafc;
+  /* Fuel palette — defined for later; not wired into charts yet */
+  --fuel-gas: #8C8F96;
+  --fuel-wind: #2E6BD9;
+  --fuel-nuclear: #7B5CC4;
+  --fuel-biomass: #4E9A63;
+  --fuel-solar: #E2B33C;
+  --fuel-imports: #C9C4BA;
 
-  --border-light: #d8e0ea;
-  --border-strong: #c6d0dd;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
 
-  --brand-blue: #2457ff;
-  --brand-blue-hover: #1a43cc;
-  --brand-blue-soft: rgba(36, 87, 255, 0.08);
-  --brand-blue-glow: rgba(36, 87, 255, 0.18);
+  --radius: 2px;
+  --focus-ring: 0 0 0 3px var(--accent-glow);
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+
+  --page-width: 1200px;
+  --gutter: 24px;
+  --article-width: 680px;
+
+  /* Legacy names, mapped onto the editorial palette until each rule is migrated */
+  --bg-page: var(--paper);
+  --bg-surface: var(--paper);
+  --bg-surface-alt: var(--surface);
+  --bg-dark: var(--ink);
+
+  --text-main: var(--ink);
+  --text-soft: var(--ink-2);
+  --text-muted: var(--ink-muted);
+  --text-inverse: var(--paper);
+
+  --border-light: var(--rule);
+  --border-strong: var(--rule);
+
+  --brand-blue: var(--accent);
+  --brand-blue-hover: var(--accent-hover);
+  --brand-blue-soft: var(--accent-soft);
+  --brand-blue-glow: var(--accent-glow);
 
   --shadow-soft: 0 10px 30px rgba(15, 23, 36, 0.06);
   --shadow-medium: 0 16px 40px rgba(15, 23, 36, 0.10);
@@ -26,7 +69,7 @@
   --radius-lg: 28px;
   --radius-xl: 34px;
 
-  --max-width: 1180px;
+  --max-width: var(--page-width);
   --content-width: 760px;
 
   --transition-fast: 180ms ease;
@@ -46,17 +89,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background:
-    radial-gradient(circle at top left, rgba(36, 87, 255, 0.05), transparent 30%),
-    linear-gradient(to bottom, #f7f9fc 0%, #f4f7fb 100%);
+  background: var(--paper);
   color: var(--text-main);
   transition: background var(--transition-medium), color var(--transition-medium);
-}
-
-[data-theme="dark"] body {
-  background:
-    radial-gradient(circle at top left, rgba(77, 130, 255, 0.06), transparent 30%),
-    linear-gradient(to bottom, #0d1117 0%, #0f1520 100%);
 }
 
 img {
@@ -2534,23 +2569,17 @@ th {
 /* ─── Dark mode ─────────────────────────────────────────────────── */
 
 [data-theme="dark"] {
-  --bg-page: #0d1117;
-  --bg-surface: #161b22;
-  --bg-surface-alt: #1c2333;
-  --bg-dark: #e6edf3;
-
-  --text-main: #e6edf3;
-  --text-soft: #b1bac4;
-  --text-muted: #7d8590;
-  --text-inverse: #0d1117;
-
-  --border-light: #30363d;
-  --border-strong: #3d444d;
-
-  --brand-blue: #5c8fff;
-  --brand-blue-hover: #7aa8ff;
-  --brand-blue-soft: rgba(92, 143, 255, 0.12);
-  --brand-blue-glow: rgba(92, 143, 255, 0.22);
+  --paper: #111215;
+  --surface: #1A1B1F;
+  --ink: #ECEAE4;
+  --ink-2: #C4C2BC;
+  --ink-muted: #A3A29D;
+  --ink-faint: #8E8D89;
+  --rule: #2A2C31;
+  --accent: #7C9BFF;
+  --accent-hover: #A3B9FF;
+  --accent-soft: rgba(124, 155, 255, 0.12);
+  --accent-glow: rgba(124, 155, 255, 0.24);
 
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.4);
   --shadow-medium: 0 16px 40px rgba(0, 0, 0, 0.5);
