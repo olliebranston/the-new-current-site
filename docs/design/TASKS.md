@@ -13,7 +13,7 @@ One per iteration, in this order.
 - [x] Article pages: header, byline row, photo, 680px serif body, contents, prev/next
 - [x] Brain dumps page: ruled list, drop "PREVIEW"
 - [x] Data page: flatten chart cards, figure row for live numbers (no chart code changes)
-- [ ] Reporting page: ruled newswire list
+- [x] Reporting page: ruled newswire list
 - [ ] About page
 - [ ] Byline and date-format fixes
 - [ ] Topic consolidation in thought-pieces.json + check filters still work

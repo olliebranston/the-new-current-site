@@ -1556,11 +1556,12 @@ const RADAR_INITIAL_COUNT = 5;
 
 function buildRadarArticle(item) {
   const wrapper = document.createElement("article");
-  wrapper.className = "radar-item";
+  wrapper.className = "radar-item newswire-item";
   const title = document.createElement("h4");
-  const meta = createTextElement("p", "radar-meta", formatRadarMeta(item));
+  title.className = "newswire-title";
+  const meta = createTextElement("p", "radar-meta newswire-meta", formatRadarMeta(item));
   title.appendChild(createSafeExternalLink(item.link, item.headline));
-  wrapper.append(title, meta);
+  wrapper.append(meta, title);
   return wrapper;
 }
 
