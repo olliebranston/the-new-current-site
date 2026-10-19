@@ -15,7 +15,7 @@ One per iteration, in this order.
 - [x] Data page: flatten chart cards, figure row for live numbers (no chart code changes)
 - [x] Reporting page: ruled newswire list
 - [x] About page
-- [ ] Byline and date-format fixes
+- [x] Byline and date-format fixes
 - [ ] Topic consolidation in thought-pieces.json + check filters still work
 - [ ] Article title consistency
 - [ ] Dark mode pass across all pages

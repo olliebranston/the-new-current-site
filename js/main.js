@@ -1330,7 +1330,7 @@ if (chartCanvas) {
     .then((response) => response.json())
     .then((chartData) => {
       if (pageDataUpdated) {
-        pageDataUpdated.textContent = `Last updated: ${chartData.last_updated}`;
+        pageDataUpdated.textContent = `Last updated: ${formatUpdatedStamp(chartData.last_updated)}`;
         pageDataUpdated.classList.remove("loading-placeholder");
       }
 
@@ -1496,16 +1496,18 @@ function sortItemsByPublishedDate(items) {
 }
 
 function formatRadarMeta(item) {
-  if (item.source && item.display_date) {
-    return `${item.source} · ${item.display_date}`;
+  const displayDate = formatDisplayDate(item.published_at) || item.display_date;
+
+  if (item.source && displayDate) {
+    return `${item.source} · ${displayDate}`;
   }
 
   if (item.source) {
     return item.source;
   }
 
-  if (item.display_date) {
-    return item.display_date;
+  if (displayDate) {
+    return displayDate;
   }
 
   return "";
@@ -1618,7 +1620,7 @@ if (radarRAndD || radarPolicy) {
     .then((response) => response.json())
     .then((newsData) => {
       if (newsRadarLastUpdated) {
-        newsRadarLastUpdated.textContent = `Last updated: ${newsData.last_updated || "not available"}`;
+        newsRadarLastUpdated.textContent = `Last updated: ${formatUpdatedStamp(newsData.last_updated) || "not available"}`;
         newsRadarLastUpdated.classList.remove("loading-placeholder");
       }
 
@@ -1666,7 +1668,7 @@ function renderBrainDumps(container, notes) {
 
     wrapper.innerHTML = `
       <div class="brain-dump-aside">
-        <p class="brain-dump-date">${note.date}</p>
+        <p class="brain-dump-date">${formatDisplayDate(note.date)}</p>
         <p class="brain-dump-tag">${escapeHtml(note.tag)}</p>
       </div>
       <div class="brain-dump-body">
@@ -1713,7 +1715,7 @@ function renderHomepageBrainDumps(container, notes) {
 
     wrapper.innerHTML = `
   <h3 class="ruled-item-title"><a href="brain-dumps.html">${note.title}</a></h3>
-  <p class="ruled-item-meta">${note.date} · ${note.tag}</p>
+  <p class="ruled-item-meta">${formatDisplayDate(note.date)} · ${note.tag}</p>
 `;
 
     container.appendChild(wrapper);
@@ -1725,7 +1727,7 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
   }
 
   const cards = [];
-  const newsMeta = (item) => [item.source, item.display_date].filter(Boolean).join(" · ");
+  const newsMeta = (item) => [item.source, formatDisplayDate(item.published_at) || item.display_date].filter(Boolean).join(" · ");
 
   if (newsData && newsData.policy && newsData.policy.length > 0) {
     cards.push({
@@ -1780,13 +1782,30 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
   });
 }
 
-function formatArticleDate(dateString) {
-  const date = new Date(dateString);
+// Display dates as "22 September 2026". Date-only ISO strings are read as UTC
+// so they never shift a day; timestamps are shown in UK time.
+function formatDisplayDate(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+  const dateOnly = /^\d{4}-\d{2}-\d{2}$/.test(value);
 
   return date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
     year: "numeric",
-    month: "long"
+    timeZone: dateOnly ? "UTC" : "Europe/London"
   });
+}
+
+function formatArticleDate(dateString) {
+  return formatDisplayDate(dateString);
+}
+
+// "2026-10-12 20:46 UTC" → "12 October 2026, 20:46 UTC"
+function formatUpdatedStamp(value) {
+  const match = /^(\d{4}-\d{2}-\d{2})[ T](\d{2}:\d{2})/.exec(value || "");
+  return match ? `${formatDisplayDate(match[1])}, ${match[2]} UTC` : (value || "");
 }
 
 function escapeHtml(value) {
@@ -1861,7 +1880,7 @@ function buildThoughtPieceCard(article) {
   const safeSummary = escapeHtml(article.summary);
   const isBookmarked = getBookmarks().has(article.link);
   const isRead = getReadArticles().has(article.link);
-  const coAuthors = escapeHtml((article.author || "").replace(/^Oliver Branston\s*/, ""));
+  const coAuthors = escapeHtml((article.author || "").replace(/^(Ollie|Oliver) Branston\s*/, ""));
   const kicker = [article.featured ? "Featured" : "", escapeHtml(article.topic || "")].filter(Boolean).join(" · ");
 
   const imageMarkup = article.image
@@ -1947,7 +1966,7 @@ function renderHomepageThoughtPieces(container, articles) {
   const sortedArticles = sortItemsByDate(articles);
   const featuredArticle = sortedArticles[0];
   const secondaryArticles = sortedArticles.slice(1, 4);
-  const coAuthors = (article) => (article.author || "").replace(/^Oliver Branston\s*/, "");
+  const coAuthors = (article) => (article.author || "").replace(/^(Ollie|Oliver) Branston\s*/, "");
 
   container.innerHTML = `
     <article class="home-lead-article">
@@ -1955,7 +1974,7 @@ function renderHomepageThoughtPieces(container, articles) {
         <p class="card-kicker">Latest${featuredArticle.topic ? ` · ${featuredArticle.topic}` : ""}</p>
         <h2 class="home-lead-title"><a href="${featuredArticle.link}">${featuredArticle.title}</a></h2>
         <p class="home-lead-standfirst">${featuredArticle.summary}</p>
-        <p class="article-meta">${featuredArticle.author || "Oliver Branston"} · ${formatArticleDate(featuredArticle.date)}</p>
+        <p class="article-meta">${featuredArticle.author || "Ollie Branston"} · ${formatArticleDate(featuredArticle.date)}</p>
       </div>
       <a class="home-lead-media" href="${featuredArticle.link}" tabindex="-1" aria-hidden="true">
         <img src="${featuredArticle.image}" alt="${featuredArticle.title}">
@@ -2491,7 +2510,7 @@ function initBrainDumpsPage(container, notes) {
         : `<p>${escapeHtml(note.content)}</p>`;
       wrapper.innerHTML = `
         <div class="brain-dump-aside">
-          <p class="brain-dump-date">${note.date}</p>
+          <p class="brain-dump-date">${formatDisplayDate(note.date)}</p>
           <p class="brain-dump-tag">${escapeHtml(note.tag)}</p>
         </div>
         <div class="brain-dump-body">

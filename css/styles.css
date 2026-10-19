@@ -3039,6 +3039,19 @@ th {
   color: var(--ink-2);
 }
 
+.article-content .article-byline {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--fs-14);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.article-byline-author {
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .article-header .article-meta {
   margin: 0;
   font-family: var(--font-sans);
