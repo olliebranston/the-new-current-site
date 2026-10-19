@@ -4,7 +4,7 @@ One per iteration, in this order.
 
 - [x] Tokens: rewrite :root + dark theme tokens per spec; add the font @import; remove body gradient
 - [x] Global type: apply font families and the 8-size scale site-wide
-- [ ] Remove all box-shadows, gradients, and non-token radii
+- [x] Remove all box-shadows, gradients, and non-token radii
 - [ ] Header + footer templates (then run render_static_layout.py)
 - [ ] Remove floating back-to-top button
 - [ ] Homepage: intro copy + lead story layout
