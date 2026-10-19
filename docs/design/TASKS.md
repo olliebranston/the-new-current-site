@@ -18,6 +18,6 @@ One per iteration, in this order.
 - [x] Byline and date-format fixes
 - [x] Topic consolidation in thought-pieces.json + check filters still work
 - [x] Article title consistency
-- [ ] Dark mode pass across all pages
+- [x] Dark mode pass across all pages
 - [ ] Mobile pass (390px) across all pages
 - [ ] Final: all checks pass; write docs/design/CHANGELOG.md summarising every change

@@ -37,6 +37,7 @@
 
   --radius: 2px;
   --focus-ring: 0 0 0 3px var(--accent-glow);
+  --overlay: rgba(22, 24, 29, 0.45);
   --band: #16181D;
   --band-ink: #FBFAF7;
   --band-muted: #C4C2BC;
@@ -1278,9 +1279,9 @@ td {
 }
 
 th {
-  background: #eef3fa;
-  font-weight: 700;
-  color: var(--text-main);
+  background: var(--surface);
+  font-weight: 600;
+  color: var(--ink);
 }
 
 .site-footer {
@@ -1526,9 +1527,9 @@ th {
   left: 16px;
   z-index: 9999;
   padding: 10px 18px;
-  background: var(--brand-blue);
-  color: #fff;
-  font-weight: 700;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
   font-size: var(--fs-14);
   border-radius: 0 0 var(--radius) var(--radius);
   text-decoration: none;
@@ -1554,6 +1555,7 @@ th {
   --accent-hover: #A3B9FF;
   --accent-soft: rgba(124, 155, 255, 0.12);
   --accent-glow: rgba(124, 155, 255, 0.24);
+  --overlay: rgba(0, 0, 0, 0.6);
   --band: #1A1B1F;
   --band-ink: #ECEAE4;
   --band-muted: #A3A29D;
@@ -2465,7 +2467,7 @@ th {
   position: fixed;
   inset: 0;
   z-index: 900;
-  background: rgba(15, 23, 36, 0.4);
+  background: var(--overlay);
   backdrop-filter: blur(3px);
   display: flex;
   justify-content: flex-end;
@@ -2655,7 +2657,7 @@ th {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(15, 23, 36, 0.55);
+  background: var(--overlay);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: flex-start;
@@ -3479,6 +3481,16 @@ th {
 /* ─── Print styles ──────────────────────────────────────────────── */
 
 @media print {
+  :root,
+  :root[data-theme="dark"] {
+    --paper: #FFFFFF;
+    --surface: #FFFFFF;
+    --ink: #000000;
+    --ink-2: #222222;
+    --ink-muted: #555555;
+    --rule: #CCCCCC;
+  }
+
   .site-header,
   .site-footer,
   .skip-link,
@@ -3488,8 +3500,8 @@ th {
   }
 
   body {
-    background: #fff !important;
-    color: #000 !important;
+    background: var(--paper) !important;
+    color: var(--ink) !important;
     font-size: var(--fs-16);
     line-height: 1.6;
   }
@@ -3503,12 +3515,12 @@ th {
   h2 { font-size: var(--fs-22); page-break-after: avoid; }
   h3 { font-size: var(--fs-20); page-break-after: avoid; }
 
-  p, li { color: #000; orphans: 3; widows: 3; }
+  p, li { color: var(--ink); orphans: 3; widows: 3; }
 
   a[href]::after {
     content: " (" attr(href) ")";
     font-size: var(--fs-12);
-    color: #555;
+    color: var(--ink-muted);
   }
 
   a[href^="#"]::after,

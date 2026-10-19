@@ -74,3 +74,8 @@
 ## Iteration 16 — Article title consistency
 - Compared every article's H1 and <title> with thought-pieces.json: 15 of 17 already matched. Two H1s carried series numbering not in the JSON: article-8 ("…grid operators 1: The governed data core") and article-14 ("…grid operators 2: Achieving growth"). Both H1s now use the JSON title; <title>/og:title already matched. All 17 now match, and render_static_layout reports no changes.
 - Compromise: the JSON title wins because the loop may only edit the JSON byline and topic fields, and the reference mock-up uses the JSON wording. The "Part 1/2" series cue is lost from those two headlines → LATER.md.
+
+## Iteration 17 — Dark mode pass (all 14 checks pass)
+- Removed the last 8 literal colours, so check a passes: table header → var(--surface); skip link → ink on paper; the cmd-palette and history-panel overlays use a new --overlay token (lighter scrim in light mode, darker in dark). The print stylesheet now redefines the colour tokens under `@media print` (also over `:root[data-theme="dark"]`), so printing from dark mode gives black on white. The only dark-mode overrides left are the canvas brightness filter and the theme-icon swap; everything else follows the tokens.
+- Ran a one-off WCAG AA audit of every visible text node against its composited background (7 pages × light/dark at 1440): 0 failures. A deliberately low-contrast probe was flagged (2.23:1), so the audit itself works. Visual sweep of all dark pages: consistent, no leftover light panels.
+- Known gap (Chart.js, out of scope): chart lines use the old darker blue, which is weaker on the dark paper. Already in LATER.md.
