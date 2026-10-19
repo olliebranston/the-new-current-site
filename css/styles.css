@@ -88,6 +88,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 96px; /* in-page links stop below the sticky header */
+}
+
+@media (max-width: 900px) {
+  html {
+    scroll-padding-top: 80px;
+  }
 }
 
 body {

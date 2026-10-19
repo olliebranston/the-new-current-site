@@ -2289,6 +2289,9 @@ function initThoughtPiecesPage(container, articles) {
   });
 
   render();
+
+  // Arriving with a topic already chosen (e.g. from an article's topic link): show the filtered list
+  if (initialState.topics.length) searchWrap.scrollIntoView({ block: "start" });
 }
 
 /* ─── Article page enhancements ─────────────────────────────────── */
