@@ -211,12 +211,24 @@ def html_files() -> list[Path]:
     return sorted(p for p in REPO_ROOT.rglob("*.html") if ".git" not in p.parts and "node_modules" not in p.parts)
 
 
+# The one permitted use: the Person "alternateName" inside JSON-LD structured data,
+# which tells search engines both names belong to the same person.
+ALLOWED_ALTERNATE_NAME_RE = re.compile(r'^\s*"alternateName":\s*"Oliver Branston",?\s*$')
+
+
 def byline_check() -> Result:
     bad = []
     for path in sorted((REPO_ROOT / "data").glob("*.json")) + html_files():
+        in_json_ld = False
         for n, line in enumerate(path.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
-            if "Oliver Branston" in line:
+            if '<script type="application/ld+json">' in line:
+                in_json_ld = True
+            if "Oliver Branston" in line and not (
+                path.suffix == ".html" and in_json_ld and ALLOWED_ALTERNATE_NAME_RE.match(line)
+            ):
                 bad.append(f"{path.relative_to(REPO_ROOT).as_posix()}:{n}")
+            if "</script>" in line:
+                in_json_ld = False
     return Result("g", 'No "Oliver Branston" byline in data/*.json or .html', not bad, [f"{len(bad)} occurrences"] + summarise(bad) if bad else [])
 
 
@@ -262,6 +274,7 @@ class QuietHandler(http.server.SimpleHTTPRequestHandler):
 
 class ThreadingServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
     daemon_threads = True
+    request_queue_size = 64  # Chromium opens many parallel connections; the default backlog of 5 drops some
 
 
 def start_server() -> tuple[socketserver.TCPServer, str]:
