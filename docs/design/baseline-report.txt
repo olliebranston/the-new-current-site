@@ -1,0 +1,116 @@
+FAIL [a] No literal colours outside token blocks
+       70 violations
+       line 49: body { background: radial-gradient(circle at top left, rgba(36, 87, 255, 0.05), transpare }
+       line 57: [data-theme="dark"] body { background: radial-gradient(circle at top left, rgba(77, 130, 255, 0.06), transpar }
+       line 134: .site-header { background: rgba(255, 255, 255, 0.88) }
+       line 135: .site-header { border-bottom: 1px solid rgba(198, 208, 221, 0.75) }
+       line 230: .contact-button:hover { box-shadow: 0 12px 28px rgba(36, 87, 255, 0.24) }
+       line 261: .substack-cta-button { background: #ff6719 }
+       line 262: .substack-cta-button { color: #fff }
+       line 274: .substack-cta-button:hover { background: #e55a10 }
+       line 276: .substack-cta-button:hover { box-shadow: 0 12px 28px rgba(255, 103, 25, 0.3) }
+       line 280: .substack-cta-button:focus-visible { outline: 2px solid #ff6719 }
+       line 296: .home-hero-card { border: 1px solid rgba(198, 208, 221, 0.78) }
+       line 298: .home-hero-card { background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(241, 246, 255, }
+       ... and 58 more
+FAIL [b] box-shadow only none or focus-ring token
+       23 violations
+       line 230: .contact-button:hover { box-shadow: 0 12px 28px rgba(36, 87, 255, 0.24) }
+       line 276: .substack-cta-button:hover { box-shadow: 0 12px 28px rgba(255, 103, 25, 0.3) }
+       line 300: .home-hero-card { box-shadow: var(--shadow-strong) }
+       line 383: .home-hero-image { box-shadow: var(--shadow-strong) }
+       line 393: .home-hero-card:hover .home-hero-image { box-shadow: 0 32px 90px rgba(15, 23, 36, 0.2) }
+       line 491: .featured-thought-card, .data-preview-card, .about-preview-c { box-shadow: var(--shadow-soft) }
+       line 513: .featured-thought-card:hover, .data-preview-card:hover, .abo { box-shadow: var(--shadow-medium) }
+       line 719: .data-page-updated, .last-updated-pill { box-shadow: 0 12px 32px rgba(36, 87, 255, 0.1) }
+       line 734: .data-page-updated::before, .last-updated-pill::before { box-shadow: 0 0 0 4px rgba(36, 87, 255, 0.12) }
+       line 753: .data-gateway-card { box-shadow: var(--shadow-soft) }
+       line 763: .data-gateway-card:hover { box-shadow: var(--shadow-medium) }
+       line 895: .data-chart-row { box-shadow: var(--shadow-soft) }
+       ... and 11 more
+FAIL [c] No gradients
+       17 violations
+       line 49: body { background: radial-gradient(circle at top left, rgba(36, 87, 255, 0.05), transpare }
+       line 57: [data-theme="dark"] body { background: radial-gradient(circle at top left, rgba(77, 130, 255, 0.06), transpar }
+       line 298: .home-hero-card { background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(241, 246, 255, }
+       line 314: .home-hero-card::before { background: radial-gradient(circle, rgba(36, 87, 255, 0.18), rgba(36, 87, 255, 0.0 }
+       line 323: .home-hero-card::after { background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.28) 32%, }
+       line 370: .home-hero-media::before { background: radial-gradient(circle at center, rgba(36, 87, 255, 0.12), transparent }
+       line 673: .data-preview-chart { background: linear-gradient(to bottom, #fbfcff, #f3f7fd) }
+       line 718: .data-page-updated, .last-updated-pill { background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 246, 255, }
+       line 797: .data-gateway-visual { background: linear-gradient(180deg, rgba(247, 250, 255, 0.95), rgba(241, 246, 255, }
+       line 958: .data-chart-row-takeaway { background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 246, 255, }
+       line 1058: .grid-metric-card { background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 249, 255, }
+       line 1075: .grid-metric-card-fallback { background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 253, }
+       ... and 5 more
+FAIL [d] border-radius only var(--radius), 0 or 50%
+       70 violations
+       line 206: .nav-link.active::after { border-radius: 999px }
+       line 219: .contact-button { border-radius: 999px }
+       line 240: .substack-cta { border-radius: var(--radius-lg) }
+       line 266: .substack-cta-button { border-radius: 999px }
+       line 297: .home-hero-card { border-radius: var(--radius-xl) }
+       line 369: .home-hero-media::before { border-radius: 28px }
+       line 381: .home-hero-image { border-radius: 26px }
+       line 549: .featured-thought-content h3 a:focus-visible, .compact-thoug { border-radius: 4px }
+       line 559: .featured-thought-card { border-radius: var(--radius-md) }
+       line 584: .featured-thought-image img { border-radius: 18px }
+       line 594: .compact-thought-card { border-radius: 18px }
+       line 618: .brain-dump-preview-card { border-radius: 18px }
+       ... and 58 more
+FAIL [e] font-size via var(--fs-…) and at most 8 size tokens
+       0 --fs- tokens defined: none
+       102 font-size violations
+       line 98: h2 { font-size: 2.4rem }
+       line 103: h3 { font-size: 1.45rem }
+       line 108: h4 { font-size: 1.08rem }
+       line 159: .site-brand { font-size: 1.38rem }
+       line 185: .nav-link { font-size: 0.97rem }
+       line 342: .home-hero-text h1 { font-size: 4.6rem }
+       line 350: .home-hero-text p { font-size: 1.04rem }
+       line 400: .eyebrow, .card-kicker, .article-kicker { font-size: 0.8rem }
+       line 447: .subsection-label { font-size: 1rem }
+       line 564: .featured-thought-content h3 { font-size: 1.9rem }
+       line 684: .data-preview-updated { font-size: 0.95rem }
+       line 721: .data-page-updated, .last-updated-pill { font-size: 0.92rem }
+       ... and 90 more
+FAIL [f] font-family only var(--font-serif) / var(--font-sans)
+       1 violations
+       line 46: body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif }
+FAIL [g] No "Oliver Branston" byline in data/*.json or .html
+       19 occurrences
+       data/thought-pieces.json:5
+       data/thought-pieces.json:16
+       data/thought-pieces.json:27
+       data/thought-pieces.json:38
+       data/thought-pieces.json:49
+       data/thought-pieces.json:60
+       data/thought-pieces.json:71
+       data/thought-pieces.json:82
+       data/thought-pieces.json:93
+       data/thought-pieces.json:104
+       data/thought-pieces.json:115
+       data/thought-pieces.json:126
+       ... and 7 more
+FAIL [h] No raw ISO dates in rendered text
+       index.html: 3 ISO dates e.g. 2026-04-09, 2026-05-13, 2026-06-18
+       brain-dumps.html: 5 ISO dates e.g. 2026-03-26, 2026-04-02, 2026-04-09, 2026-05-13
+       data.html: 1 ISO dates e.g. 2026-10-12
+       reporting.html: 1 ISO dates e.g. 2026-10-12
+PASS [i1] No console errors (42 page/width/theme combos)
+PASS [i2] No horizontal overflow
+PASS [i3] Chart integrity (canvas count vs baseline, non-zero, not blank)
+FAIL [i4] No text overlapping a canvas
+       8 overlaps
+       index.html 768px light: gatewayConsumptionPerPersonChart <- "The UK’s production emissions have falle" (p)
+       index.html 768px light: gatewayPowerPriceChart <- "Low-carbon generation can cut wholesale " (p)
+       index.html 768px dark: gatewayConsumptionPerPersonChart <- "The UK’s production emissions have falle" (p)
+       index.html 768px dark: gatewayPowerPriceChart <- "Low-carbon generation can cut wholesale " (p)
+       data.html 768px light: gatewayConsumptionPerPersonChart <- "The UK’s production emissions have falle" (p)
+       data.html 768px light: gatewayPowerPriceChart <- "Low-carbon generation can cut wholesale " (p)
+       data.html 768px dark: gatewayConsumptionPerPersonChart <- "The UK’s production emissions have falle" (p)
+       data.html 768px dark: gatewayPowerPriceChart <- "Low-carbon generation can cut wholesale " (p)
+PASS [j] smoke_test_site.py passes
+PASS [k] render_static_layout.py produces no diff
+
+SUMMARY: 5/14 checks passed; failed: a, b, c, d, e, f, g, h, i4
