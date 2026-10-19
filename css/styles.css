@@ -116,7 +116,7 @@ strong {
 main {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 36px 24px 80px;
+  padding: var(--space-32) var(--gutter) var(--space-64);
 }
 
 section {
@@ -308,6 +308,34 @@ li {
   display: flex;
   flex-direction: column;
   gap: var(--space-64);
+}
+
+.homepage-main > section,
+.homepage-main > .home-columns > section {
+  margin-bottom: 0;
+}
+
+/* Phones: tighter vertical rhythm, 40px tap targets in the header */
+@media (max-width: 600px) {
+  main {
+    padding: var(--space-24) var(--gutter) var(--space-48);
+  }
+
+  .homepage-main {
+    gap: var(--space-48);
+  }
+
+  .section-landing-page {
+    gap: var(--space-32);
+  }
+
+  .cmd-search-trigger,
+  .history-btn,
+  .theme-toggle,
+  .nav-hamburger {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .sr-only {
@@ -630,7 +658,7 @@ li {
 /* ─── Newsletter band (dark ink, full width) ────────────────────── */
 
 .newsletter-band {
-  margin-top: var(--space-64);
+  margin-top: 0;
   background: var(--band);
   color: var(--band-ink);
 }

@@ -19,5 +19,5 @@ One per iteration, in this order.
 - [x] Topic consolidation in thought-pieces.json + check filters still work
 - [x] Article title consistency
 - [x] Dark mode pass across all pages
-- [ ] Mobile pass (390px) across all pages
+- [x] Mobile pass (390px) across all pages
 - [ ] Final: all checks pass; write docs/design/CHANGELOG.md summarising every change
