@@ -9,7 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Redesign in progress (editorial redesign, Oct 2026)
 
 - Work lives ONLY on branch `redesign-editorial`. `main` is live (GitHub Pages deploys from it): never touch, merge into or push main.
-- Source of truth is `docs/design/`: DESIGN_SPEC.md (what), TASKS.md (order), RALPH.md (per-iteration loop instructions), reference/ (approved mock-up PNGs), PROGRESS.md and LATER.md (logs).
+- Source of truth is `docs/design/`: DESIGN_SPEC.md (what), TASKS.md (order), RALPH.md (per-iteration loop instructions), PROGRESS.md, LATER.md, NEXT.md and CHANGELOG.md. The approved mock-up PNGs live outside the repo in ~/tnc-design-reference/ (kept out of main's history).
 - `scripts/check_design.py` is the referee and must never be edited by the loop. A check that's hard to pass gets fixed in the site or logged in LATER.md, never weakened.
 - Charts must keep working: in `js/main.js` only card/list HTML strings and date formatting may change, never Chart.js config, datasets, colours or data loading.
 - Out of scope: RSS/news feed filtering, Python data scripts, `.github/` workflows, image compression, Chart.js styling.

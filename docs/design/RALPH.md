@@ -2,8 +2,8 @@
 
 You are in an iterative loop. Each iteration:
 1. Read docs/design/DESIGN_SPEC.md, docs/design/TASKS.md, docs/design/PROGRESS.md
-   (create it if missing), and look at docs/design/reference/*.png if present
-   (home.png = homepage, article.png = article page, style-sheet.png = type/colour sheet).
+   (create it if missing). The reference mock-ups are kept outside the repo in
+   ~/tnc-design-reference/ (home.png, article.png, style-sheet.png).
 2. Pick the FIRST unticked task. Do only that task.
 3. Do not start a server; check_design.py runs its own.
 4. Implement the task following the spec and hard rules.
