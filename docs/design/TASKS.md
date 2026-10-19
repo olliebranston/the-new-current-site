@@ -20,4 +20,4 @@ One per iteration, in this order.
 - [x] Article title consistency
 - [x] Dark mode pass across all pages
 - [x] Mobile pass (390px) across all pages
-- [ ] Final: all checks pass; write docs/design/CHANGELOG.md summarising every change
+- [x] Final: all checks pass; write docs/design/CHANGELOG.md summarising every change

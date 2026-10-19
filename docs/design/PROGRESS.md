@@ -83,3 +83,6 @@
 ## Iteration 18 — Mobile pass (390px)
 - Reviewed all 7 pages at 390 in light and dark (tops and lower sections). Layouts already collapse cleanly from earlier iterations: lead story stacks, story grid is one column, brain dumps/data/about are single columns, the figure row is 2×2, newswire rows stack, and the footer uses three short columns.
 - Fixed vertical rhythm: the global `section` margin and main's 80px bottom padding stacked on top of the flex gaps (about 110–200px of blank space around homepage sections and the newsletter band). Homepage sections no longer add their own margin; main padding is now 32/64 (24/48 on phones), the band has no extra top margin, and the section gap is 48px on the homepage and 32px on section pages. Header icon buttons are 40×40 on phones (36 on desktop) for easier tapping, and the header still fits at 390. All 14 checks pass.
+
+## Iteration 19 — Final
+- Fresh full run of check_design.py: 14/14 PASS. Confirmed the hard rules held vs main: only scripts/check_design.py was added (not edited since setup) in scripts/, nothing in .github/, data/ changes limited to thought-pieces.json, and no Chart.js/fetch lines touched in main.js. Wrote docs/design/CHANGELOG.md.
