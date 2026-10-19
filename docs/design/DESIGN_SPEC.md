@@ -30,6 +30,7 @@ Dark theme: derive equivalents (paper ~#111215, ink ~#ECEAE4, rule ~#2A2C31,
 accent ~#7C9BFF); every pair must meet WCAG AA contrast.
 Accent is used ONLY for links, the primary data line and active states — never for
 kickers, headings or decoration.
+The blue lightbulb image is the brand mark. Keep it, and keep the blue accent that ties to it.
 
 Fuel palette (define as tokens for later; do not wire into charts in this loop):
 gas #8C8F96 · wind #2E6BD9 · nuclear #7B5CC4 · biomass #4E9A63 · solar #E2B33C ·

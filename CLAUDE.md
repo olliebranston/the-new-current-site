@@ -13,6 +13,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `scripts/check_design.py` is the referee and must never be edited by the loop. A check that's hard to pass gets fixed in the site or logged in LATER.md, never weakened.
 - Charts must keep working: in `js/main.js` only card/list HTML strings and date formatting may change, never Chart.js config, datasets, colours or data loading.
 - Out of scope: RSS/news feed filtering, Python data scripts, `.github/` workflows, image compression, Chart.js styling.
+- The blue lightbulb image is the brand mark. Keep it, and keep the blue accent that ties to it.
 - Dev-only dependency: `pip install -r requirements-dev.txt && python -m playwright install chromium` (never add Playwright to requirements.txt).
 
 ## Running scripts locally
