@@ -54,8 +54,9 @@ def build_feed(articles: list[dict]) -> str:
         ET.SubElement(item, "link").text = full_url
         ET.SubElement(item, "guid", isPermaLink="true").text = full_url
         ET.SubElement(item, "description").text = article.get("summary", "")
-        ET.SubElement(item, "author").text = article.get("author", "Oliver Branston")
-        ET.SubElement(item, "category").text = article.get("topic", "Energy")
+        ET.SubElement(item, "author").text = article.get("author") or "Ollie Branston"
+        category = article.get("topic") or ("Archive" if article.get("section") == "archive" else "Energy")
+        ET.SubElement(item, "category").text = category
 
         date_str = article.get("date")
         if date_str:
