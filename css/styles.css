@@ -378,7 +378,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  column-gap: var(--space-32);
+  column-gap: var(--space-24);
   row-gap: var(--space-4);
   max-width: var(--page-width);
   margin: 0 auto;
@@ -437,8 +437,13 @@ li {
   text-decoration: underline;
 }
 
+@media (max-width: 1100px) {
+  .grid-ticker-optional {
+    display: none;
+  }
+}
+
 @media (max-width: 700px) {
-  .grid-ticker-optional,
   .grid-ticker-mix {
     display: none;
   }
@@ -827,6 +832,8 @@ li {
 
   .home-lead-media {
     margin-top: var(--space-24);
+    padding-top: 0;
+    border-top: none;
   }
 
   .home-lead-title {
