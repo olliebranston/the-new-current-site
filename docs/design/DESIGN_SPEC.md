@@ -25,9 +25,10 @@ Kicker: sans 12px, 600, uppercase, letter-spacing .06em, colour --ink-muted (NOT
 
 Colour tokens (light):
 --paper #FBFAF7 · --surface #F3F1EC · --ink #16181D · --ink-2 #4A4E55 ·
---ink-muted #5C6068 · --ink-faint #6B6F76 · --rule #E4E1DA · --accent #1F45D1
+--ink-muted #5C6068 · --ink-faint #6B6F76 · --rule #E4E1DA · --accent #0053BD
+(accent changed from #1F45D1 to match the lightbulb brand mark's azure; hover #00449C)
 Dark theme: derive equivalents (paper ~#111215, ink ~#ECEAE4, rule ~#2A2C31,
-accent ~#7C9BFF); every pair must meet WCAG AA contrast.
+accent #5AA9F7, hover #8CC4FA); every pair must meet WCAG AA contrast.
 Accent is used ONLY for links, the primary data line and active states — never for
 kickers, headings or decoration.
 The blue lightbulb image is the brand mark. Keep it, and keep the blue accent that ties to it.

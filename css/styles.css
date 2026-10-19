@@ -9,10 +9,10 @@
   --ink-muted: #5C6068;
   --ink-faint: #6B6F76;
   --rule: #E4E1DA;
-  --accent: #1F45D1;
-  --accent-hover: #1838AE;
-  --accent-soft: rgba(31, 69, 209, 0.08);
-  --accent-glow: rgba(31, 69, 209, 0.18);
+  --accent: #0053BD;
+  --accent-hover: #00449C;
+  --accent-soft: rgba(0, 83, 189, 0.08);
+  --accent-glow: rgba(0, 83, 189, 0.18);
 
   /* Fuel palette — defined for later; not wired into charts yet */
   --fuel-gas: #8C8F96;
@@ -1579,10 +1579,10 @@ th {
   --ink-muted: #A3A29D;
   --ink-faint: #8E8D89;
   --rule: #2A2C31;
-  --accent: #7C9BFF;
-  --accent-hover: #A3B9FF;
-  --accent-soft: rgba(124, 155, 255, 0.12);
-  --accent-glow: rgba(124, 155, 255, 0.24);
+  --accent: #5AA9F7;
+  --accent-hover: #8CC4FA;
+  --accent-soft: rgba(90, 169, 247, 0.12);
+  --accent-glow: rgba(90, 169, 247, 0.24);
   --overlay: rgba(0, 0, 0, 0.6);
   --band: #1A1B1F;
   --band-ink: #ECEAE4;
