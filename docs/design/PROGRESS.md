@@ -13,3 +13,8 @@
 ## Iteration 3 — Shadows, gradients, radii
 - All 23 box-shadows → none (focus states → var(--focus-ring)); all 15 gradient backgrounds → var(--paper), decorative glow/sheen pseudo-elements → none; all 70 radii → var(--radius), with status dots → 50% and the nav underline/progress bar → 0. Removed the --shadow-* and --radius-sm/md/lg/xl tokens. Checks b, c, d now pass.
 - Compromise: the page-hero photo scrim became a flat var(--scrim) (rgba token) so overlaid titles stay readable until the page-header tasks move titles below photos. Floating panels (cmd palette, history, mobile nav) rely on their existing 1px borders.
+
+## Iteration 4 — Header + footer
+- Header template: ink serif wordmark, centred sans nav in sentence case (accent underline on the active page), plain borderless icon buttons (search, library, theme; ⌘K hint removed; sun icon now stroked so it renders in dark mode), outlined "Subscribe" → Substack replaces the blue "Contact" pill. Below 560px the Subscribe button moves into the hamburger menu (fixes 390px overflow).
+- Footer template follows the reference: wordmark + one-line description, Read / Track / Elsewhere columns (Contact, RSS feed and About kept under Elsewhere), single "Built by Ollie Branston. © year" line. Removed the dark-mode header/footer overrides (tokens handle it). Re-rendered all pages.
+- Not done: the reference's live grid strip under the header needs new data-loading JS → logged in LATER.md.
