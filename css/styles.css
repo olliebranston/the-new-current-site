@@ -38,6 +38,9 @@
   --radius: 2px;
   --focus-ring: 0 0 0 3px var(--accent-glow);
   --overlay: rgba(22, 24, 29, 0.45);
+  --substack: #FF6719;
+  --on-substack: #16181D;
+  --substack-text: #C2410C;
   --band: #16181D;
   --band-ink: #FBFAF7;
   --band-muted: #C4C2BC;
@@ -295,11 +298,6 @@ li {
   white-space: nowrap;
   flex-shrink: 0;
   transition: background var(--transition-fast), color var(--transition-fast);
-}
-
-.subscribe-button:hover {
-  background: var(--ink);
-  color: var(--paper);
 }
 
 .subscribe-button:focus-visible {
@@ -681,8 +679,18 @@ li {
   text-decoration: none;
 }
 
-.newsletter-band-button:hover {
-  background: var(--band-muted);
+.newsletter-band-button:hover,
+.substack-cta-button:hover,
+.article-newsletter-cta-btn:hover,
+.subscribe-button:hover {
+  border-color: var(--substack);
+  background: var(--substack);
+  color: var(--on-substack);
+}
+
+.footer-social a[href*="substack.com"]:hover,
+.about-social-links .substack-link:hover {
+  color: var(--substack-text);
 }
 
 .newsletter-band + .site-footer {
@@ -973,10 +981,6 @@ li {
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.substack-cta-button:hover {
-  background: var(--ink-2);
 }
 
 .substack-cta-button:focus-visible {
@@ -1566,6 +1570,7 @@ th {
   --accent-soft: rgba(90, 169, 247, 0.12);
   --accent-glow: rgba(90, 169, 247, 0.24);
   --overlay: rgba(0, 0, 0, 0.6);
+  --substack-text: #FF6719;
   --band: #1A1B1F;
   --band-ink: #ECEAE4;
   --band-muted: #A3A29D;
@@ -3445,10 +3450,6 @@ th {
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
-}
-
-.article-newsletter-cta-btn:hover {
-  background: var(--ink-2);
 }
 
 @media (max-width: 1000px) {
