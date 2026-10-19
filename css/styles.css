@@ -984,6 +984,15 @@ li {
   font-size: var(--fs-52);
 }
 
+/* Desktop: a 2:1 frame (phones keep the shorter strip) */
+@media (min-width: 701px) {
+  .page-hero-image {
+    height: auto;
+    aspect-ratio: 2 / 1;
+    max-height: 70vh;
+  }
+}
+
 /* ─── Newsletter prompt (section pages) ─────────────────────────── */
 
 .substack-cta {
