@@ -8,7 +8,7 @@ One per iteration, in this order.
 - [x] Header + footer templates (then run render_static_layout.py)
 - [x] Remove floating back-to-top button
 - [x] Homepage: intro copy + lead story layout
-- [ ] Homepage: thought pieces grid, brain dumps list, data preview, reporting list, newsletter band
+- [x] Homepage: thought pieces grid, brain dumps list, data preview, reporting list, newsletter band
 - [ ] Thought pieces page: photo header, underline topic tabs, story grid
 - [ ] Article pages: header, byline row, photo, 680px serif body, contents, prev/next
 - [ ] Brain dumps page: ruled list, drop "PREVIEW"

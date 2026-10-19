@@ -116,38 +116,23 @@
     </div>
   </section>
 
-  <section class="homepage-section">
-    <div class="homepage-section-heading">
-      <p class="eyebrow">Original Thoughts</p>
-      <h2>Thought Pieces and Brain Dumps</h2>
-    </div>
-
-    <div class="homepage-subsection">
-      <div class="subsection-header">
-        <div>
-          <p class="subsection-label">Brain Dumps</p>
-        </div>
-        <a href="brain-dumps.html" class="subsection-link">View all Brain Dumps</a>
+  <div class="home-columns">
+    <section class="home-brain-dumps" aria-labelledby="homeBrainDumpsHeading">
+      <div class="section-header">
+        <h2 id="homeBrainDumpsHeading">Brain dumps</h2>
+        <a href="brain-dumps.html" class="section-header-link">All <span aria-hidden="true">→</span></a>
       </div>
+      <p class="section-dek">Shorter, quicker takes.</p>
 
-      <div id="homepageBrainDumps" class="brain-dump-preview-grid">
-        <p class="loading-placeholder">Loading Brain Dumps preview...</p>
+      <div id="homepageBrainDumps" class="ruled-list">
+        <p class="loading-placeholder">Loading brain dumps...</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="homepage-section">
-    <div class="homepage-section-heading">
-      <p class="eyebrow">Live Intelligence</p>
-      <h2>Data and Reporting</h2>
-    </div>
-
-    <div class="homepage-subsection">
-      <div class="subsection-header">
-        <div>
-          <p class="subsection-label">Data</p>
-        </div>
-        <a href="data.html" class="subsection-link">Go to Data</a>
+    <section class="home-data" aria-labelledby="homeDataHeading">
+      <div class="section-header">
+        <h2 id="homeDataHeading">From the data</h2>
+        <a href="data.html" class="section-header-link">Explore the data <span aria-hidden="true">→</span></a>
       </div>
 
       <div class="data-gateway-grid">
@@ -187,32 +172,27 @@
           </p>
         </a>
       </div>
+    </section>
+  </div>
+
+  <section class="home-reporting" aria-labelledby="homeReportingHeading">
+    <div class="section-header">
+      <h2 id="homeReportingHeading">Reporting</h2>
+      <a href="reporting.html" class="section-header-link">News radar <span aria-hidden="true">→</span></a>
     </div>
 
-    <div class="homepage-subsection">
-      <div class="subsection-header">
-        <div>
-          <p class="subsection-label">Reporting</p>
-        </div>
-        <a href="reporting.html" class="subsection-link">Go to Reporting</a>
-      </div>
-
-      <div id="homepageReportingPreview" class="reporting-preview-grid">
-        <p class="loading-placeholder">Loading reporting preview...</p>
-      </div>
+    <div id="homepageReportingPreview" class="newswire-list">
+      <p class="loading-placeholder">Loading reporting...</p>
     </div>
   </section>
 
-  <section class="homepage-section">
-    <div class="subsection-header">
-      <div>
-        <p class="eyebrow">About</p>
-        <h2>Why this site exists</h2>
-      </div>
-      <a href="about.html" class="subsection-link">Go to About</a>
+  <section class="home-about" aria-labelledby="homeAboutHeading">
+    <div class="section-header">
+      <h2 id="homeAboutHeading">Why this site exists</h2>
+      <a href="about.html" class="section-header-link">About <span aria-hidden="true">→</span></a>
     </div>
 
-    <article class="about-preview-card">
+    <div class="home-about-text">
       <p>
         The New Current is a free website about the energy transition, built in public
         as both a publication and a coding project. It brings together thought pieces,
@@ -231,9 +211,19 @@
         Over time, it will continue to grow into a more useful resource for curious
         newcomers, informed generalists, and people already embedded in the space.
       </p>
-    </article>
+    </div>
   </section>
 </main>
+
+<section class="newsletter-band" aria-labelledby="newsletterBandHeading">
+  <div class="newsletter-band-inner">
+    <div>
+      <h2 id="newsletterBandHeading">A new thought piece every fortnight</h2>
+      <p>UK energy transition analysis, written with the people building it. Free, in your inbox.</p>
+    </div>
+    <a href="https://substack.com/@olliebranston" class="newsletter-band-button" target="_blank" rel="noopener noreferrer">Subscribe on Substack</a>
+  </div>
+</section>
 <!-- site-footer:start -->
 <footer class="site-footer">
   <div class="site-footer-inner">

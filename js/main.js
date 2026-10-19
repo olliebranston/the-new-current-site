@@ -1704,19 +1704,13 @@ function renderHomepageBrainDumps(container, notes) {
 
   container.innerHTML = "";
 
-  sortedNotes.slice(0, 3).forEach((note) => {
+  sortedNotes.slice(0, 4).forEach((note) => {
     const wrapper = document.createElement("article");
-    wrapper.className = "brain-dump-preview-card";
-
-    const previewText = Array.isArray(note.content)
-      ? note.content[0]
-      : note.content;
+    wrapper.className = "ruled-item";
 
     wrapper.innerHTML = `
-  <p class="card-kicker">Preview</p>
-  <h4>${note.title}</h4>
-  <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
-  <p class="brain-dump-preview-text">${previewText}</p>
+  <h3 class="ruled-item-title"><a href="brain-dumps.html">${note.title}</a></h3>
+  <p class="ruled-item-meta">${note.date} · ${note.tag}</p>
 `;
 
     container.appendChild(wrapper);
@@ -1728,40 +1722,37 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
   }
 
   const cards = [];
+  const newsMeta = (item) => [item.source, item.display_date].filter(Boolean).join(" · ");
 
-  if (recommendations && recommendations.recommended_read) {
+  if (newsData && newsData.policy && newsData.policy.length > 0) {
     cards.push({
-      kicker: "Recommended",
-      title: "Read",
-      link: recommendations.recommended_read.link,
-      text: recommendations.recommended_read.title
-    });
-  }
-
-  if (recommendations && recommendations.recommended_listen) {
-    cards.push({
-      kicker: "Recommended",
-      title: "Listen",
-      link: recommendations.recommended_listen.link,
-      text: recommendations.recommended_listen.title
+      meta: newsMeta(newsData.policy[0]),
+      link: newsData.policy[0].link,
+      text: newsData.policy[0].headline
     });
   }
 
   if (newsData && newsData.r_and_d && newsData.r_and_d.length > 0) {
     cards.push({
-      kicker: "Latest",
-      title: "R&D",
+      meta: newsMeta(newsData.r_and_d[0]),
       link: newsData.r_and_d[0].link,
       text: newsData.r_and_d[0].headline
     });
   }
 
-  if (newsData && newsData.policy && newsData.policy.length > 0) {
+  if (recommendations && recommendations.recommended_listen) {
     cards.push({
-      kicker: "Latest",
-      title: "Policy",
-      link: newsData.policy[0].link,
-      text: newsData.policy[0].headline
+      meta: ["Recommended listen", recommendations.recommended_listen.source].filter(Boolean).join(" · "),
+      link: recommendations.recommended_listen.link,
+      text: recommendations.recommended_listen.title
+    });
+  }
+
+  if (recommendations && recommendations.recommended_read) {
+    cards.push({
+      meta: ["Recommended read", recommendations.recommended_read.source].filter(Boolean).join(" · "),
+      link: recommendations.recommended_read.link,
+      text: recommendations.recommended_read.title
     });
   }
 
@@ -1774,14 +1765,14 @@ function renderHomepageReportingPreview(container, recommendations, newsData) {
 
   cards.forEach((cardData) => {
     const card = document.createElement("article");
-    card.className = "reporting-preview-card";
+    card.className = "newswire-item";
 
-    const kicker = createTextElement("p", "card-kicker", cardData.kicker);
-    const title = document.createElement("h4");
-    title.appendChild(createSafeExternalLink(cardData.link, cardData.title));
-    const text = createTextElement("p", "reporting-preview-text", cardData.text);
+    const meta = createTextElement("p", "newswire-meta", cardData.meta);
+    const title = document.createElement("h3");
+    title.className = "newswire-title";
+    title.appendChild(createSafeExternalLink(cardData.link, cardData.text));
 
-    card.append(kicker, title, text);
+    card.append(meta, title);
     container.appendChild(card);
   });
 }
@@ -1955,7 +1946,8 @@ function renderHomepageThoughtPieces(container, articles) {
 
   const sortedArticles = sortItemsByDate(articles);
   const featuredArticle = sortedArticles[0];
-  const secondaryArticles = sortedArticles.slice(1, 3);
+  const secondaryArticles = sortedArticles.slice(1, 4);
+  const coAuthors = (article) => (article.author || "").replace(/^Oliver Branston\s*/, "");
 
   container.innerHTML = `
     <article class="home-lead-article">
@@ -1970,17 +1962,20 @@ function renderHomepageThoughtPieces(container, articles) {
       </a>
     </article>
 
-    <div class="subsection-header">
-      <p class="subsection-label">Thought Pieces</p>
-      <a href="thought-pieces.html" class="subsection-link">View all Thought Pieces</a>
+    <div class="section-header home-story-header">
+      <h2>Thought pieces</h2>
+      <a href="thought-pieces.html" class="section-header-link">All thought pieces <span aria-hidden="true">→</span></a>
     </div>
 
-    <div class="thought-list">
+    <div class="story-grid">
       ${secondaryArticles.map((article) => `
-        <article class="compact-thought-card">
-          <p class="card-kicker">Recent</p>
-          <h4><a href="${article.link}">${article.title}</a></h4>
-          <p class="article-meta">${formatArticleDate(article.date)} · ${article.author || "Oliver Branston"}</p>
+        <article class="story-card">
+          <a class="story-card-media" href="${article.link}" tabindex="-1" aria-hidden="true">
+            <img src="${article.image}" alt="" loading="lazy">
+          </a>
+          ${article.topic ? `<p class="card-kicker">${article.topic}</p>` : ""}
+          <h3 class="story-card-title"><a href="${article.link}">${article.title}</a></h3>
+          <p class="story-card-meta">${formatArticleDate(article.date)}${coAuthors(article) ? ` · ${coAuthors(article)}` : ""}</p>
         </article>
       `).join("")}
     </div>
