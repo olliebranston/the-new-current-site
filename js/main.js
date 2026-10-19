@@ -1664,13 +1664,15 @@ function renderBrainDumps(container, notes) {
     const paragraphs = contentArr.map((p) => `<p>${escapeHtml(p)}</p>`).join("");
 
     wrapper.innerHTML = `
-      <div class="brain-dump-card-inner">
-        <p class="card-kicker">Brain Dump</p>
+      <div class="brain-dump-aside">
+        <p class="brain-dump-date">${note.date}</p>
+        <p class="brain-dump-tag">${escapeHtml(note.tag)}</p>
+      </div>
+      <div class="brain-dump-body">
         <div class="brain-dump-card-header">
-          <h3>${escapeHtml(note.title)}</h3>
+          <h2 class="brain-dump-title">${escapeHtml(note.title)}</h2>
           <button class="brain-dump-copy-btn" type="button" aria-label="Copy note">${COPY_ICON_SVG} Copy</button>
         </div>
-        <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
         <div class="brain-dump-content">
           ${paragraphs}
         </div>
@@ -2487,10 +2489,12 @@ function initBrainDumpsPage(container, notes) {
         ? note.content.map((p) => `<p>${escapeHtml(p)}</p>`).join("")
         : `<p>${escapeHtml(note.content)}</p>`;
       wrapper.innerHTML = `
-        <div class="brain-dump-card-inner">
-          <p class="card-kicker">Brain Dump</p>
-          <h3>${escapeHtml(note.title)}</h3>
-          <p class="brain-dump-meta">${note.date} · ${note.tag}</p>
+        <div class="brain-dump-aside">
+          <p class="brain-dump-date">${note.date}</p>
+          <p class="brain-dump-tag">${escapeHtml(note.tag)}</p>
+        </div>
+        <div class="brain-dump-body">
+          <h2 class="brain-dump-title">${escapeHtml(note.title)}</h2>
           <div class="brain-dump-content">${paragraphs}</div>
         </div>
       `;

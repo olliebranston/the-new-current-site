@@ -11,7 +11,7 @@ One per iteration, in this order.
 - [x] Homepage: thought pieces grid, brain dumps list, data preview, reporting list, newsletter band
 - [x] Thought pieces page: photo header, underline topic tabs, story grid
 - [x] Article pages: header, byline row, photo, 680px serif body, contents, prev/next
-- [ ] Brain dumps page: ruled list, drop "PREVIEW"
+- [x] Brain dumps page: ruled list, drop "PREVIEW"
 - [ ] Data page: flatten chart cards, figure row for live numbers (no chart code changes)
 - [ ] Reporting page: ruled newswire list
 - [ ] About page
