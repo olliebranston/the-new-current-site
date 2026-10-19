@@ -6,14 +6,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **The New Current** is a static website (GitHub Pages) publishing energy transition analysis. It has no build step for the frontend — pages are pre-rendered HTML with vanilla JS + Chart.js. Data is fetched by Python scripts run on schedule via GitHub Actions and committed back to the repo as JSON/CSV files that the frontend reads directly.
 
-## Redesign in progress (editorial redesign, Oct 2026)
+## Design system (editorial redesign, merged Oct 2026)
 
-- Work lives ONLY on branch `redesign-editorial`. `main` is live (GitHub Pages deploys from it): never touch, merge into or push main.
-- Source of truth is `docs/design/`: DESIGN_SPEC.md (what), TASKS.md (order), RALPH.md (per-iteration loop instructions), PROGRESS.md, LATER.md, NEXT.md and CHANGELOG.md. The approved mock-up PNGs live outside the repo in ~/tnc-design-reference/ (kept out of main's history).
-- `scripts/check_design.py` is the referee and must never be edited by the loop. A check that's hard to pass gets fixed in the site or logged in LATER.md, never weakened.
-- Charts must keep working: in `js/main.js` only card/list HTML strings and date formatting may change, never Chart.js config, datasets, colours or data loading.
-- Out of scope: RSS/news feed filtering, Python data scripts, `.github/` workflows, image compression, Chart.js styling.
-- The blue lightbulb image is the brand mark. Keep it, and keep the blue accent that ties to it.
+- The editorial redesign is live on `main` (PR #15). `main` deploys straight to GitHub Pages, so do design work on a branch and squash-merge it.
+- `docs/design/` is the reference: DESIGN_SPEC.md (rules and tokens), CHANGELOG.md (what changed), LATER.md (open items, in priority order). TASKS.md, RALPH.md and PROGRESS.md are the record of the redesign loop. The mock-up PNGs are kept outside the repo in ~/tnc-design-reference/.
+- Before committing UI changes, run `python scripts/check_design.py` (14 checks: design tokens, byline, dates, rendering, chart integrity, smoke test, template sync). Fix the site, not the check. The one allowed exception is the JSON-LD `alternateName` in check g.
+- Styles use the tokens in `css/styles.css` (`--paper`, `--ink*`, `--rule`, `--accent`, `--fs-*`, `--radius`, `--fuel-*`): no literal colours, shadows or gradients outside the token blocks.
+- The blue lightbulb image is the brand mark. Keep it, and keep the blue accent that ties to it (#0053BD light, #5AA9F7 dark).
+- Next design work is in LATER.md; Chart.js styling (colours, gridlines, legends via the fuel tokens) is first.
 - Dev-only dependency: `pip install -r requirements-dev.txt && python -m playwright install chromium` (never add Playwright to requirements.txt).
 
 ## Running scripts locally
