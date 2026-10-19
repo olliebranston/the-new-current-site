@@ -365,6 +365,89 @@ li {
   border: 0;
 }
 
+/* ─── Homepage live grid ticker ─────────────────────────────────── */
+
+.grid-ticker {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-2);
+  font-size: var(--fs-14);
+}
+
+.grid-ticker-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--space-32);
+  row-gap: var(--space-4);
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 10px var(--gutter);
+}
+
+.grid-ticker strong {
+  margin-left: var(--space-4);
+  color: var(--ink);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.grid-ticker-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.grid-ticker-updated {
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.grid-ticker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--fuel-biomass);
+}
+
+.grid-ticker-mix {
+  display: inline-flex;
+  width: 120px;
+  height: 8px;
+  margin-left: var(--space-8);
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.grid-ticker-mix span {
+  display: block;
+  height: 100%;
+}
+
+.grid-ticker-link {
+  margin-left: auto;
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.grid-ticker-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .grid-ticker-optional,
+  .grid-ticker-mix {
+    display: none;
+  }
+
+  .grid-ticker-inner {
+    column-gap: var(--space-16);
+  }
+}
+
 /* ─── Homepage lead story ───────────────────────────────────────── */
 
 .home-lead {

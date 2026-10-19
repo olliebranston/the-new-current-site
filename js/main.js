@@ -3092,3 +3092,40 @@ function refreshLiveSnapshot() {
 if (snapshotDemand || snapshotGeneration || snapshotCarbonIntensity || generationMixVisual || gatewayGenerationMixVisual) {
   setInterval(refreshLiveSnapshot, 5 * 60 * 1000);
 }
+
+/* ─── Homepage live grid ticker ─────────────────────────────────── */
+
+// Reads the same snapshot file as the Data page dashboard and fills the strip under
+// the header. Stays hidden if the file can't be loaded.
+function initGridTicker() {
+  const ticker = document.getElementById("gridTicker");
+  if (!ticker) return;
+
+  const FUEL_TOKENS = ["gas", "wind", "nuclear", "biomass", "solar", "imports"];
+  const setText = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+
+  fetch("data/live-grid-snapshot.json")
+    .then((response) => response.json())
+    .then((snapshot) => {
+      const mix = snapshot.generation_mix || {};
+      setText("tickerUpdated", `· ${formatUpdatedStamp(snapshot.last_updated)}`);
+      setText("tickerLowCarbon", `${mix.low_carbon_percentage}%`);
+      setText("tickerCarbon", `${snapshot.carbon_intensity.value}`);
+      setText("tickerPrice", `£${Math.round(snapshot.power_price.value)}`);
+      setText("tickerDemand", (snapshot.demand.value / 1000).toFixed(1));
+
+      const bar = document.getElementById("tickerMix");
+      const segments = (mix.segments || []).filter((s) => s.percentage > 0);
+      bar.setAttribute("role", "img");
+      bar.setAttribute("aria-label", `Generation mix: ${segments.map((s) => `${s.label} ${s.percentage}%`).join(", ")}`);
+      bar.innerHTML = segments.map((s) => {
+        const colour = FUEL_TOKENS.includes(s.key) ? `var(--fuel-${s.key})` : "var(--ink-faint)";
+        return `<span style="width:${s.percentage}%;background:${colour}" title="${escapeHtml(s.label)} ${s.percentage}%"></span>`;
+      }).join("");
+
+      ticker.hidden = false;
+    })
+    .catch(() => { /* leave the ticker hidden */ });
+}
+
+initGridTicker();

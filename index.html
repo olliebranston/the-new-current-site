@@ -102,6 +102,16 @@
   </div>
 </header>
 <!-- site-header:end -->
+<aside class="grid-ticker" id="gridTicker" aria-label="Live GB grid snapshot" hidden>
+  <div class="grid-ticker-inner">
+    <span class="grid-ticker-label"><span class="grid-ticker-dot" aria-hidden="true"></span>GB grid <span class="grid-ticker-updated" id="tickerUpdated"></span></span>
+    <span class="grid-ticker-item">Low-carbon <strong id="tickerLowCarbon"></strong><span class="grid-ticker-mix" id="tickerMix"></span></span>
+    <span class="grid-ticker-item">Carbon intensity <strong id="tickerCarbon"></strong> gCO₂/kWh</span>
+    <span class="grid-ticker-item grid-ticker-optional">Price <strong id="tickerPrice"></strong>/MWh</span>
+    <span class="grid-ticker-item grid-ticker-optional">Demand <strong id="tickerDemand"></strong> GW</span>
+    <a href="data.html#live-gb-dashboard" class="grid-ticker-link">Live data <span aria-hidden="true">→</span></a>
+  </div>
+</aside>
 
 <main class="homepage-main">
   <section class="home-lead" aria-labelledby="homeLeadHeading">
