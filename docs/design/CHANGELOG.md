@@ -37,6 +37,14 @@ Final state: `python scripts/check_design.py` passes 14/14 (style rules a–f, b
 - **Topics** consolidated in `thought-pieces.json`: Markets and policy (5), Grids and operations (4), Technology (3), Demand (2). The 3 archive pieces have an empty topic and live only in the Archive section. Article `data-topic` attributes were updated to match, and related links re-rendered.
 - **Titles:** article-8 and article-14 H1s now match the JSON (they had "1:/2:" series numbering).
 
+## Review round (after the loop)
+
+- Accent changed to match the lightbulb brand mark: #0053BD (light), #5AA9F7 (dark), with matching hover and tints. The lightbulb is recorded as the brand mark in CLAUDE.md and DESIGN_SPEC.md and now sits beside the newsletter band text on the homepage.
+- Homepage: the intro line is removed; a single ink rule runs above the lead headline and its 4:3 photo; brain dumps (two-column list) and "From the data" (3-up with source lines) are full-width sections; "Why this site exists" runs in two columns; a live grid ticker sits under the header (live-grid-snapshot.json).
+- Section heroes are 2:1 on desktop with a focal point per photo; in-page links stop below the sticky header; article topic links scroll to the filtered list; nav is 16px ink; article byline and actions read as one ruled band; topic tabs wrap on phones; subscribe buttons and Substack links turn Substack orange on hover.
+- Fixes: the "Saved" tab now works; RSS author and archive category; JSON-LD alternateName restored (with a narrow check g exception); "(Part 1)/(Part 2)" series titles; check_design.py's local server backlog raised to stop flaky page loads.
+- Reference PNGs removed from the branch (kept locally in ~/tnc-design-reference/) so they don't enter main's history; merge with a squash.
+
 ## What did not change (hard rules)
 
 - No Chart.js configuration, dataset, colour, data-loading or fetch code in `js/main.js`. Only card/list HTML templates and date formatting changed. Canvas counts match the pre-redesign baseline (`chart-baseline.json`).
