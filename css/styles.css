@@ -3074,6 +3074,10 @@ th {
   flex-basis: auto;
 }
 
+.article-header > .article-topic-chip {
+  margin-left: 0.3em;
+}
+
 .article-header > .article-meta {
   order: 1;
   margin-bottom: var(--space-16);
