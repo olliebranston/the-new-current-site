@@ -1857,33 +1857,30 @@ function buildThoughtPieceCard(article) {
   const safeTitle = escapeHtml(article.title);
   const safeSummary = escapeHtml(article.summary);
   const isBookmarked = getBookmarks().has(article.link);
+  const isRead = getReadArticles().has(article.link);
+  const coAuthors = escapeHtml((article.author || "").replace(/^Oliver Branston\s*/, ""));
+  const kicker = [article.featured ? "Featured" : "", escapeHtml(article.topic || "")].filter(Boolean).join(" · ");
 
   const imageMarkup = article.image
     ? `
-      <div class="thought-piece-card-image">
-        <img src="${article.image}" alt="${safeTitle}" loading="lazy">
-      </div>
+      <a class="story-card-media" href="${article.link}" tabindex="-1" aria-hidden="true">
+        <img src="${article.image}" alt="" loading="lazy">
+      </a>
     `
     : "";
 
-  const noImageClass = article.image ? "" : " thought-piece-card-no-image";
-
-  const isRead = getReadArticles().has(article.link);
-  const featuredBadge = article.featured ? '<span class="card-featured-badge">Featured</span>' : "";
-  const readBadge = isRead ? '<span class="card-read-badge" title="Read">✓</span>' : "";
+  const readBadge = isRead ? '<span class="card-read-badge" title="Read">✓ Read</span>' : "";
 
   return `
-    <article class="thought-piece-card${noImageClass}" data-article-link="${article.link}">
-      <div class="thought-piece-card-text">
-        <div class="card-kicker-row">
-          <p class="card-kicker">${article.author || "Oliver Branston"}</p>
-          <div class="card-badges">${featuredBadge}${readBadge}<button class="bookmark-btn${isBookmarked ? " active" : ""}" data-link="${article.link}" type="button" aria-label="${isBookmarked ? "Remove bookmark" : "Save article"}">${BOOKMARK_ICON_SVG}</button></div>
-        </div>
-        <h3><a href="${article.link}">${safeTitle}</a></h3>
-        <p class="article-meta">${formatArticleDate(article.date)}</p>
-        <p>${safeSummary}</p>
-      </div>
+    <article class="story-card thought-piece-card" data-article-link="${article.link}">
       ${imageMarkup}
+      <div class="story-card-kicker-row">
+        <p class="card-kicker">${kicker}</p>
+        <div class="card-badges">${readBadge}<button class="bookmark-btn${isBookmarked ? " active" : ""}" data-link="${article.link}" type="button" aria-label="${isBookmarked ? "Remove bookmark" : "Save article"}">${BOOKMARK_ICON_SVG}</button></div>
+      </div>
+      <h3 class="story-card-title"><a href="${article.link}">${safeTitle}</a></h3>
+      <p class="story-card-summary">${safeSummary}</p>
+      <p class="story-card-meta">${formatArticleDate(article.date)}${coAuthors ? ` · ${coAuthors}` : ""}</p>
     </article>
   `;
 }
@@ -1906,28 +1903,28 @@ function renderThoughtPieces(container, articles) {
 
   container.innerHTML = `
   <section class="thought-piece-section">
-    <div class="thought-piece-section-heading">
-      <p class="eyebrow">Series Two</p>
+    <div class="section-header">
+      <h2>Series two</h2>
     </div>
-    <div class="thought-piece-card-list">
+    <div class="story-grid">
       ${seriesTwoArticles.map(buildThoughtPieceCard).join("")}
     </div>
   </section>
 
   <section class="thought-piece-section">
-    <div class="thought-piece-section-heading">
-      <p class="eyebrow">Series One</p>
+    <div class="section-header">
+      <h2>Series one</h2>
     </div>
-    <div class="thought-piece-card-list">
+    <div class="story-grid">
       ${seriesOneArticles.map(buildThoughtPieceCard).join("")}
     </div>
   </section>
 
   <section class="thought-piece-section">
-    <div class="thought-piece-section-heading">
-      <p class="eyebrow">Archive</p>
+    <div class="section-header">
+      <h2>Archive</h2>
     </div>
-    <div class="thought-piece-card-list">
+    <div class="story-grid">
       ${archiveArticles.map(buildThoughtPieceCard).join("")}
     </div>
   </section>
@@ -2200,17 +2197,17 @@ function initThoughtPiecesPage(container, articles) {
     const archiveArticles = filtered.filter((a) => a.section === "archive");
 
     const sections = [
-      { label: "Series Two", items: seriesTwoArticles },
-      { label: "Series One", items: seriesOneArticles },
+      { label: "Series two", items: seriesTwoArticles },
+      { label: "Series one", items: seriesOneArticles },
       { label: "Archive", items: archiveArticles }
     ].filter((s) => s.items.length > 0);
 
     container.innerHTML = sections.map((s) => `
       <section class="thought-piece-section">
-        <div class="thought-piece-section-heading">
-          <p class="eyebrow">${s.label}</p>
+        <div class="section-header">
+          <h2>${s.label}</h2>
         </div>
-        <div class="thought-piece-card-list">
+        <div class="story-grid">
           ${s.items.map(buildThoughtPieceCard).join("")}
         </div>
       </section>
