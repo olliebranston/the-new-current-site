@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-20 05:02 UTC",
+  "last_updated": "2026-10-20 17:21 UTC",
   "r_and_d": [
     {
       "headline": "Europe expands access, sharing and use of research data and digital services through first 13 Open Science Cloud hubs",
@@ -39,6 +39,20 @@
   ],
   "policy": [
     {
+      "headline": "Codes Grid Code - Panel Papers Published to\u2026 21 October 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-21-october-2026",
+      "published_at": "2026-10-20T00:00:00Z",
+      "display_date": "20 October 2026"
+    },
+    {
+      "headline": "Codes GC0186: Proposed Grid Code Changes - Post\u2026 23 October 2026 10am to 1pm GC0186 - Workgroup 5 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/gc0186-proposed-grid-code-changes-post-electricity-system-restoration-standard-esrs-workgroup-5",
+      "published_at": "2026-10-20T00:00:00Z",
+      "display_date": "20 October 2026"
+    },
+    {
       "headline": "In focus: Renewable energy \u2013 building trust and sharing benefits",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/focus-renewable-energy-building-trust-and-sharing-benefits-2026-10-19_en",
@@ -58,20 +72,6 @@
       "link": "https://acer.europa.eu#",
       "published_at": "2026-10-18T00:00:00Z",
       "display_date": "18 October 2026"
-    },
-    {
-      "headline": "About Electricity",
-      "source": "ACER",
-      "link": "https://acer.europa.eu/electricity/about-electricity",
-      "published_at": "2026-10-18T00:00:00Z",
-      "display_date": "18 October 2026"
-    },
-    {
-      "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 17 September 2026 to 19 October 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/2026-grid-code-review-panel-elections-nominations",
-      "published_at": "2026-09-17T00:00:00Z",
-      "display_date": "17 September 2026"
     }
   ]
 }
