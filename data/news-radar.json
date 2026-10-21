@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-21 05:02 UTC",
+  "last_updated": "2026-10-21 17:24 UTC",
   "r_and_d": [
     {
       "headline": "Europe expands access, sharing and use of research data and digital services through first 13 Open Science Cloud hubs",
@@ -16,62 +16,62 @@
       "display_date": "16 October 2026"
     },
     {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-10-16T00:00:00Z",
-      "display_date": "16 October 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-10-16T00:00:00Z",
-      "display_date": "16 October 2026"
-    },
-    {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
       "published_at": "2026-10-15T00:00:00Z",
       "display_date": "15 October 2026"
+    },
+    {
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-10-15T00:00:00Z",
+      "display_date": "15 October 2026"
+    },
+    {
+      "headline": "DOE Alternative Fuels and Feedstocks Office Announces Intent to Award Up to $60 Million for Innovative Chemical, Fuel, and Fertilizer Technologies",
+      "source": "DOE Hydrogen & Fuel Cells",
+      "link": "https://www.energy.gov/cmei/articles/doe-alternative-fuels-and-feedstocks-office-announces-intent-award-60-million",
+      "published_at": "2026-10-14T10:03:19Z",
+      "display_date": "14 October 2026"
     }
   ],
   "policy": [
     {
+      "headline": "Commissioner J\u00f8rgensen in Slovakia to discuss energy prices and security with Visegrad Energy Ministers and continue his Affordable Housing Tour",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-slovakia-discuss-energy-prices-and-security-visegrad-energy-ministers-and-2026-10-16_en",
+      "published_at": "2026-10-21T10:24:37Z",
+      "display_date": "21 October 2026"
+    },
+    {
+      "headline": "Commissioner J\u00f8rgensen in Hungary to address high energy prices, energy security and housing",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-hungary-address-high-energy-prices-energy-security-and-housing-2026-10-21_en",
+      "published_at": "2026-10-21T10:20:06Z",
+      "display_date": "21 October 2026"
+    },
+    {
       "headline": "Codes Grid Code - Panel Papers Published to\u2026 21 October 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-21-october-2026",
-      "published_at": "2026-10-20T00:00:00Z",
-      "display_date": "20 October 2026"
+      "published_at": "2026-10-21T00:00:00Z",
+      "display_date": "21 October 2026"
     },
     {
       "headline": "Codes GC0186: Proposed Grid Code Changes - Post\u2026 23 October 2026 10am to 1pm GC0186 - Workgroup 5 Meetings",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/gc0186-proposed-grid-code-changes-post-electricity-system-restoration-standard-esrs-workgroup-5",
-      "published_at": "2026-10-20T00:00:00Z",
-      "display_date": "20 October 2026"
+      "published_at": "2026-10-21T00:00:00Z",
+      "display_date": "21 October 2026"
     },
     {
-      "headline": "In focus: Renewable energy \u2013 building trust and sharing benefits",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/focus-renewable-energy-building-trust-and-sharing-benefits-2026-10-19_en",
-      "published_at": "2026-10-19T13:43:23Z",
-      "display_date": "19 October 2026"
-    },
-    {
-      "headline": "Statement by President von der Leyen at the joint press conference with President Costa following the meeting of the European Council of October 2026",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_2190",
-      "published_at": "2026-10-19T12:36:18Z",
-      "display_date": "19 October 2026"
-    },
-    {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-10-18T00:00:00Z",
-      "display_date": "18 October 2026"
+      "headline": "Great British Grid to speed up connections and cut bills",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/great-british-grid-to-speed-up-connections-and-cut-bills",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
