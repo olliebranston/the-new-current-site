@@ -1,18 +1,18 @@
 {
-  "last_updated": "2026-10-22 05:04 UTC",
+  "last_updated": "2026-10-22 17:21 UTC",
   "r_and_d": [
+    {
+      "headline": "EU and Western Balkan partners deepen research and innovation cooperation to support EU integration",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eu-and-western-balkan-partners-deepen-research-and-innovation-cooperation-support-eu-integration-2026-10-22_en",
+      "published_at": "2026-10-22T13:07:11Z",
+      "display_date": "22 October 2026"
+    },
     {
       "headline": "Europe expands access, sharing and use of research data and digital services through first 13 Open Science Cloud hubs",
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/europe-expands-access-sharing-and-use-research-data-and-digital-services-through-first-13-open-2026-10-16_en",
       "published_at": "2026-10-16T14:59:29Z",
-      "display_date": "16 October 2026"
-    },
-    {
-      "headline": "ERA Living Guidelines on the responsible use of Generative AI in research updated",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/era-living-guidelines-responsible-use-generative-ai-research-updated-2026-10-16_en",
-      "published_at": "2026-10-16T11:26:19Z",
       "display_date": "16 October 2026"
     },
     {
@@ -39,39 +39,39 @@
   ],
   "policy": [
     {
-      "headline": "Offshore transmission: next steps for participation in tender round 14 (TR14) Enhanced Pre-qualification",
+      "headline": "ELECTRICITY",
+      "source": "ACER",
+      "link": "https://acer.europa.eu#",
+      "published_at": "2026-11-05T00:00:00Z",
+      "display_date": "05 November 2026"
+    },
+    {
+      "headline": "About Electricity",
+      "source": "ACER",
+      "link": "https://acer.europa.eu/electricity/about-electricity",
+      "published_at": "2026-11-05T00:00:00Z",
+      "display_date": "05 November 2026"
+    },
+    {
+      "headline": "Gas interconnector import capability: proposed modifications to National Gas Transmission's licence",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/offshore-transmission-next-steps-participation-tender-round-14-tr14-enhanced-pre-qualification",
-      "published_at": "2026-10-21T12:00:00Z",
-      "display_date": "21 October 2026"
+      "link": "https://www.ofgem.gov.uk/consultation/gas-interconnector-import-capability-proposed-modifications-national-gas-transmissions-licence",
+      "published_at": "2026-10-22T12:00:00Z",
+      "display_date": "22 October 2026"
     },
     {
-      "headline": "Offshore transmission: generic licence and guidance for tender round 14 (TR14)",
+      "headline": "Ofgem consults on proposals to reinforce gas import capability",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/offshore-transmission-generic-licence-and-guidance-tender-round-14-tr14",
-      "published_at": "2026-10-21T12:00:00Z",
-      "display_date": "21 October 2026"
+      "link": "https://www.ofgem.gov.uk/press-release/ofgem-consults-proposals-reinforce-gas-import-capability",
+      "published_at": "2026-10-22T12:00:00Z",
+      "display_date": "22 October 2026"
     },
     {
-      "headline": "Commissioner J\u00f8rgensen in Slovakia to discuss energy prices and security with Visegrad Energy Ministers and continue his Affordable Housing Tour",
+      "headline": "Oil Coordination Group discusses EU fuel market developments",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-slovakia-discuss-energy-prices-and-security-visegrad-energy-ministers-and-2026-10-16_en",
-      "published_at": "2026-10-21T10:24:37Z",
-      "display_date": "21 October 2026"
-    },
-    {
-      "headline": "Commissioner J\u00f8rgensen in Hungary to address high energy prices, energy security and housing",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-hungary-address-high-energy-prices-energy-security-and-housing-2026-10-21_en",
-      "published_at": "2026-10-21T10:20:06Z",
-      "display_date": "21 October 2026"
-    },
-    {
-      "headline": "Codes Grid Code - Panel Papers Published to\u2026 21 October 2026 12am to 11:59pm The Grid Code Review Panel (GCRP) meets every month, its function is to evaluate and administer amendments to the code, review any\u2026 Publications",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/grid-code-panel-papers-published-industry-21-october-2026",
-      "published_at": "2026-10-21T00:00:00Z",
-      "display_date": "21 October 2026"
+      "link": "https://energy.ec.europa.eu/news/oil-coordination-group-discusses-eu-fuel-market-developments-2026-10-22_en",
+      "published_at": "2026-10-22T08:18:20Z",
+      "display_date": "22 October 2026"
     }
   ]
 }
