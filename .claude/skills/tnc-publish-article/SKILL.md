@@ -67,11 +67,11 @@ Append to `articles` in `data/thought-pieces.json`, matching existing fields exa
   "link": "articles/article-N.html",
   "image": "content/article-N.jpg",
   "section": "series-two",
-  "featured": false
+  "featured": true
 }
 ```
 
-`featured` only adds a "Featured" badge on the card. The hero slot is always the newest article. Ask Ollie whether this one gets the badge.
+The "Featured" badge and the homepage hero both go to the newest article automatically (`js/main.js` works it out by date). Keep the `featured` flag in step with that: `true` on the new entry, `false` on the one before it. Only one article should have `true`.
 
 ## 5. New series only
 

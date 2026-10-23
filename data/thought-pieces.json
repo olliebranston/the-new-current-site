@@ -42,7 +42,7 @@
       "link": "articles/article-4.html",
       "image": "content/article-4.jpg",
       "section": "series-one",
-      "featured": true
+      "featured": false
     },
     {
       "title": "Declan O’Donahue on the changing role of energy system operators",
@@ -141,7 +141,7 @@
       "link": "articles/article-13.html",
       "image": "content/article-13.jpg",
       "section": "series-two",
-      "featured": true
+      "featured": false
     },
     {
       "title": "Gillian O’Boyle on agentic AI for grid operators: achieving growth (Part 2)",
@@ -151,6 +151,17 @@
       "summary": "Agentic AI as a growth lever for grid operators – how forecasting, real-time dispatch and network planning can lift decision throughput, and why data, governance and operating models decide who wins.",
       "link": "articles/article-14.html",
       "image": "content/article-14.jpg",
+      "section": "series-two",
+      "featured": false
+    },
+    {
+      "title": "ESG regulation and the climate transition",
+      "author": "Ollie Branston",
+      "date": "2026-10-23",
+      "topic": "Markets and policy",
+      "summary": "Why ESG regulation is becoming market infrastructure, where disclosure tips into prescription, and why consistency around ISSB standards matters more than another round of national rewrites.",
+      "link": "articles/article-15.html",
+      "image": "content/article-15.jpg",
       "section": "series-two",
       "featured": true
     },

@@ -1875,13 +1875,14 @@ function estimateReadingTime(text) {
 
 const BOOKMARK_ICON_SVG = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
 
-function buildThoughtPieceCard(article) {
+// The "Featured" badge always goes to the newest article, so publishing never needs a flag change.
+function buildThoughtPieceCard(article, latestLink) {
   const safeTitle = escapeHtml(article.title);
   const safeSummary = escapeHtml(article.summary);
   const isBookmarked = getBookmarks().has(article.link);
   const isRead = getReadArticles().has(article.link);
   const coAuthors = escapeHtml((article.author || "").replace(/^(Ollie|Oliver) Branston\s*/, ""));
-  const kicker = [article.featured ? "Featured" : "", escapeHtml(article.topic || "")].filter(Boolean).join(" · ");
+  const kicker = [article.link === latestLink ? "Featured" : "", escapeHtml(article.topic || "")].filter(Boolean).join(" · ");
 
   const imageMarkup = article.image
     ? `
@@ -1929,7 +1930,7 @@ function renderThoughtPieces(container, articles) {
       <h2>Series two</h2>
     </div>
     <div class="story-grid">
-      ${seriesTwoArticles.map(buildThoughtPieceCard).join("")}
+      ${seriesTwoArticles.map((article) => buildThoughtPieceCard(article, sortedArticles[0].link)).join("")}
     </div>
   </section>
 
@@ -1938,7 +1939,7 @@ function renderThoughtPieces(container, articles) {
       <h2>Series one</h2>
     </div>
     <div class="story-grid">
-      ${seriesOneArticles.map(buildThoughtPieceCard).join("")}
+      ${seriesOneArticles.map((article) => buildThoughtPieceCard(article, sortedArticles[0].link)).join("")}
     </div>
   </section>
 
@@ -1947,7 +1948,7 @@ function renderThoughtPieces(container, articles) {
       <h2>Archive</h2>
     </div>
     <div class="story-grid">
-      ${archiveArticles.map(buildThoughtPieceCard).join("")}
+      ${archiveArticles.map((article) => buildThoughtPieceCard(article, sortedArticles[0].link)).join("")}
     </div>
   </section>
 `;
@@ -2229,7 +2230,7 @@ function initThoughtPiecesPage(container, articles) {
           <h2>${s.label}</h2>
         </div>
         <div class="story-grid">
-          ${s.items.map(buildThoughtPieceCard).join("")}
+          ${s.items.map((article) => buildThoughtPieceCard(article, sortedArticles[0].link)).join("")}
         </div>
       </section>
     `).join("");
