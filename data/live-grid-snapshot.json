@@ -1,74 +1,53 @@
 {
-  "last_updated": "2026-10-26 23:55 UTC",
+  "last_updated": "2026-10-27 05:09 UTC",
   "power_price": {
-    "value": 34.93,
+    "value": 0.0,
     "unit": "GBP/MWh",
-    "display": "35 GBP/MWh"
+    "display": "0 GBP/MWh"
   },
   "carbon_intensity": {
-    "value": 69,
+    "value": 61,
     "unit": "gCO2/kWh",
-    "display": "69 gCO2/kWh (actual)"
+    "display": "61 gCO2/kWh (actual)"
   },
   "demand": {
-    "value": 33572,
+    "value": 26320,
     "unit": "MW",
-    "display": "33,572 MW"
+    "display": "26,320 MW"
   },
   "generation": {
-    "value": 34963,
+    "value": 33138,
     "unit": "MW",
-    "display": "34,963 MW"
+    "display": "33,138 MW"
   },
   "generation_mix": {
-    "low_carbon_percentage": 83,
+    "low_carbon_percentage": 86,
     "segments": [
       {
         "key": "biomass",
         "label": "Biomass",
-        "percentage": 4.6,
+        "percentage": 5.3,
         "color": "#8b5cf6",
         "is_low_carbon": true
       },
       {
-        "key": "imports",
-        "label": "Imports",
-        "percentage": 0.6,
-        "color": "#ec4899",
-        "is_low_carbon": false
-      },
-      {
         "key": "gas",
         "label": "Gas",
-        "percentage": 13.3,
+        "percentage": 13.4,
         "color": "#f97316",
         "is_low_carbon": false
       },
       {
         "key": "nuclear",
         "label": "Nuclear",
-        "percentage": 15.7,
+        "percentage": 16.8,
         "color": "#16a34a",
-        "is_low_carbon": true
-      },
-      {
-        "key": "other",
-        "label": "Other",
-        "percentage": 2.9,
-        "color": "#94a3b8",
-        "is_low_carbon": false
-      },
-      {
-        "key": "hydro",
-        "label": "Hydro",
-        "percentage": 2.1,
-        "color": "#0ea5e9",
         "is_low_carbon": true
       },
       {
         "key": "wind",
         "label": "Wind",
-        "percentage": 60.8,
+        "percentage": 64.4,
         "color": "#2457ff",
         "is_low_carbon": true
       }
