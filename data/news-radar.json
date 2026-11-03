@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-11-03 07:00 UTC",
+  "last_updated": "2026-11-03 19:39 UTC",
   "r_and_d": [
+    {
+      "headline": "Eligibility to publish in Open Research Europe without fees expands to researchers in 11 countries",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/eligibility-publish-open-research-europe-without-fees-expands-researchers-11-countries-2026-11-03_en",
+      "published_at": "2026-11-03T10:52:02Z",
+      "display_date": "03 November 2026"
+    },
     {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
@@ -28,13 +35,6 @@
       "link": "https://www.energy.gov/cmei/articles/does-office-critical-minerals-and-energy-innovation-launches-prospect-implementation",
       "published_at": "2026-10-30T08:05:07Z",
       "display_date": "30 October 2026"
-    },
-    {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-10-30T00:00:00Z",
-      "display_date": "30 October 2026"
     }
   ],
   "policy": [
@@ -53,6 +53,13 @@
       "display_date": "05 November 2026"
     },
     {
+      "headline": "Flexibility market arrangements: long-term goal and engagement",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/policy/flexibility-market-arrangements-long-term-goal-and-engagement",
+      "published_at": "2026-11-03T12:00:00Z",
+      "display_date": "03 November 2026"
+    },
+    {
       "headline": "Energy Transition Investment Council - Call for applications",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/energy-transition-investment-council-call-applications-2026-10-30_en",
@@ -65,13 +72,6 @@
       "link": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261030-2",
       "published_at": "2026-10-30T15:14:42Z",
       "display_date": "30 October 2026"
-    },
-    {
-      "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 26 October 2026 to 26 November 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for voting on\u2026 Consultations",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/2026-grid-code-review-panel-elections-voting",
-      "published_at": "2026-10-26T00:00:00Z",
-      "display_date": "26 October 2026"
     }
   ]
 }
