@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-11-06 07:03 UTC",
+  "last_updated": "2026-11-06 19:33 UTC",
   "r_and_d": [
+    {
+      "headline": "Fourth EU/EURATOM (European Atomic Energy Community) and Ukraine Research and Innovation Committee meeting",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/fourth-eueuratom-european-atomic-energy-community-and-ukraine-research-and-innovation-committee-2026-11-06_en",
+      "published_at": "2026-11-05T23:00:00Z",
+      "display_date": "05 November 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
@@ -28,41 +35,34 @@
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
       "published_at": "2026-11-04T00:00:00Z",
       "display_date": "04 November 2026"
-    },
-    {
-      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
-      "source": "CORDIS Energy",
-      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
-      "published_at": "2026-11-04T00:00:00Z",
-      "display_date": "04 November 2026"
     }
   ],
   "policy": [
     {
-      "headline": "ELECTRICITY",
-      "source": "ACER",
-      "link": "https://acer.europa.eu#",
-      "published_at": "2026-11-05T00:00:00Z",
-      "display_date": "05 November 2026"
+      "headline": "Energy code reform: statutory consultation on modifications to the Balancing and Settlement Code and affected licences",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/energy-code-reform-statutory-consultation-modifications-balancing-and-settlement-code-and-affected-licences",
+      "published_at": "2026-11-06T12:00:00Z",
+      "display_date": "06 November 2026"
     },
     {
-      "headline": "About Electricity",
-      "source": "ACER",
-      "link": "https://acer.europa.eu/electricity/about-electricity",
-      "published_at": "2026-11-05T00:00:00Z",
+      "headline": "NNG OFTO Limited: certification under the ownership unbundling requirements of the Electricity Act 1989.",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/decision/nng-ofto-limited-certification-under-ownership-unbundling-requirements-electricity-act-1989",
+      "published_at": "2026-11-06T12:00:00Z",
+      "display_date": "06 November 2026"
+    },
+    {
+      "headline": "CESEC Ministerial takes stock of cross-border energy infrastructure and prices and welcomes Czechia and Poland to the group",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/cesec-ministerial-takes-stock-cross-border-energy-infrastructure-and-prices-and-welcomes-czechia-and-2026-11-06_en",
+      "published_at": "2026-11-05T23:00:00Z",
       "display_date": "05 November 2026"
     },
     {
       "headline": "Eurostat: Annual fall in non-household gas prices: -6.7%",
       "source": "DG Energy",
       "link": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261104-2",
-      "published_at": "2026-11-03T23:00:00Z",
-      "display_date": "03 November 2026"
-    },
-    {
-      "headline": "Eurostat: Non-household electricity prices fall further in 2026",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/eurostat/en/web/products-eurostat-news/w/ddn-20261104-1",
       "published_at": "2026-11-03T23:00:00Z",
       "display_date": "03 November 2026"
     },
