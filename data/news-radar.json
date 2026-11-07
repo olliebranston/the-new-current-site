@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-06 19:33 UTC",
+  "last_updated": "2026-11-07 06:15 UTC",
   "r_and_d": [
     {
       "headline": "Fourth EU/EURATOM (European Atomic Energy Community) and Ukraine Research and Innovation Committee meeting",
@@ -39,20 +39,6 @@
   ],
   "policy": [
     {
-      "headline": "Energy code reform: statutory consultation on modifications to the Balancing and Settlement Code and affected licences",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/energy-code-reform-statutory-consultation-modifications-balancing-and-settlement-code-and-affected-licences",
-      "published_at": "2026-11-06T12:00:00Z",
-      "display_date": "06 November 2026"
-    },
-    {
-      "headline": "NNG OFTO Limited: certification under the ownership unbundling requirements of the Electricity Act 1989.",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/nng-ofto-limited-certification-under-ownership-unbundling-requirements-electricity-act-1989",
-      "published_at": "2026-11-06T12:00:00Z",
-      "display_date": "06 November 2026"
-    },
-    {
       "headline": "CESEC Ministerial takes stock of cross-border energy infrastructure and prices and welcomes Czechia and Poland to the group",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/cesec-ministerial-takes-stock-cross-border-energy-infrastructure-and-prices-and-welcomes-czechia-and-2026-11-06_en",
@@ -72,6 +58,20 @@
       "link": "https://www.neso.energy/calendar/2026-grid-code-review-panel-elections-voting",
       "published_at": "2026-10-26T00:00:00Z",
       "display_date": "26 October 2026"
+    },
+    {
+      "headline": "Codes GC0192 Code Administrator Consultation 3 November 2026 to 3 December 2026 12am to 11:59pm This modification proposes to align the unique identifier range in the Grid Code definition of Load Block with the Electricity Supply\u2026 Consultations",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/gc0192-code-administrator-consultation",
+      "published_at": "2026-10-26T00:00:00Z",
+      "display_date": "26 October 2026"
+    },
+    {
+      "headline": "Energy reforms to cut bills and put power back in people's hands",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/energy-reforms-to-cut-bills-and-put-power-back-in-peoples-hands",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
