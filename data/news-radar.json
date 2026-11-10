@@ -1,19 +1,26 @@
 {
-  "last_updated": "2026-11-10 07:31 UTC",
+  "last_updated": "2026-11-10 19:52 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-11-07T00:00:00Z",
-      "display_date": "07 November 2026"
+      "published_at": "2026-11-10T00:00:00Z",
+      "display_date": "10 November 2026"
     },
     {
       "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
       "source": "Hydrogen Program",
       "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-11-07T00:00:00Z",
-      "display_date": "07 November 2026"
+      "published_at": "2026-11-10T00:00:00Z",
+      "display_date": "10 November 2026"
+    },
+    {
+      "headline": "Ten citizen-led energy communities win the first EU Prize for Governance Innovations in Energy Communities",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/ten-citizen-led-energy-communities-win-first-eu-prize-governance-innovations-energy-communities-2026-11-10_en",
+      "published_at": "2026-11-09T23:00:00Z",
+      "display_date": "09 November 2026"
     },
     {
       "headline": "Fourth EU/EURATOM (European Atomic Energy Community) and Ukraine Research and Innovation Committee meeting",
@@ -21,13 +28,6 @@
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/fourth-eueuratom-european-atomic-energy-community-and-ukraine-research-and-innovation-committee-2026-11-06_en",
       "published_at": "2026-11-05T23:00:00Z",
       "display_date": "05 November 2026"
-    },
-    {
-      "headline": "European Innovation Council launches \u20ac1.8 billion in funding for 2027",
-      "source": "EU Research & Innovation",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2352",
-      "published_at": "2026-11-04T23:00:00Z",
-      "display_date": "04 November 2026"
     },
     {
       "headline": "Fundamental Research",
@@ -39,18 +39,32 @@
   ],
   "policy": [
     {
-      "headline": "EU emissions continue to fall as clean energy gains ground",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2343",
-      "published_at": "2026-11-08T23:00:00Z",
-      "display_date": "08 November 2026"
+      "headline": "Heat networks regulation: service standards",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/heat-networks-regulation-service-standards",
+      "published_at": "2026-11-10T12:00:00Z",
+      "display_date": "10 November 2026"
     },
     {
-      "headline": "CESEC Ministerial takes stock of cross-border energy infrastructure and prices and welcomes Czechia and Poland to the group",
+      "headline": "Heat networks regulation: future standards of performance",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/heat-networks-regulation-future-standards-performance",
+      "published_at": "2026-11-10T12:00:00Z",
+      "display_date": "10 November 2026"
+    },
+    {
+      "headline": "EU signs up to Global Geothermal Pledge at COP31",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/cesec-ministerial-takes-stock-cross-border-energy-infrastructure-and-prices-and-welcomes-czechia-and-2026-11-06_en",
-      "published_at": "2026-11-05T23:00:00Z",
-      "display_date": "05 November 2026"
+      "link": "https://energy.ec.europa.eu/news/eu-signs-global-geothermal-pledge-cop31-2026-11-10_en",
+      "published_at": "2026-11-09T23:00:00Z",
+      "display_date": "09 November 2026"
+    },
+    {
+      "headline": "Commission approves \u20ac2 billion Belgian State aid to support offshore wind energy",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2373",
+      "published_at": "2026-11-09T23:00:00Z",
+      "display_date": "09 November 2026"
     },
     {
       "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 26 October 2026 to 26 November 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for voting on\u2026 Consultations",
@@ -58,20 +72,6 @@
       "link": "https://www.neso.energy/calendar/2026-grid-code-review-panel-elections-voting",
       "published_at": "2026-10-26T00:00:00Z",
       "display_date": "26 October 2026"
-    },
-    {
-      "headline": "Codes GC0192 Code Administrator Consultation 3 November 2026 to 3 December 2026 12am to 11:59pm This modification proposes to align the unique identifier range in the Grid Code definition of Load Block with the Electricity Supply\u2026 Consultations",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/gc0192-code-administrator-consultation",
-      "published_at": "2026-10-26T00:00:00Z",
-      "display_date": "26 October 2026"
-    },
-    {
-      "headline": "Energy reforms to cut bills and put power back in people's hands",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/energy-reforms-to-cut-bills-and-put-power-back-in-peoples-hands",
-      "published_at": null,
-      "display_date": null
     }
   ]
 }
