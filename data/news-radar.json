@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-11-11 06:48 UTC",
+  "last_updated": "2026-11-11 19:44 UTC",
   "r_and_d": [
+    {
+      "headline": "The European Commission explores implementation challenges and reflects on the state of EU-level support on Research Security",
+      "source": "EU Research & Innovation",
+      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/european-commission-explores-implementation-challenges-and-reflects-state-eu-level-support-research-2026-11-11_en",
+      "published_at": "2026-11-10T23:00:00Z",
+      "display_date": "10 November 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
@@ -23,13 +30,6 @@
       "display_date": "09 November 2026"
     },
     {
-      "headline": "Fourth EU/EURATOM (European Atomic Energy Community) and Ukraine Research and Innovation Committee meeting",
-      "source": "EU Research & Innovation",
-      "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/fourth-eueuratom-european-atomic-energy-community-and-ukraine-research-and-innovation-committee-2026-11-06_en",
-      "published_at": "2026-11-05T23:00:00Z",
-      "display_date": "05 November 2026"
-    },
-    {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
@@ -39,18 +39,18 @@
   ],
   "policy": [
     {
-      "headline": "Heat networks regulation: service standards",
+      "headline": "Public version of GB REMIT registration database",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/heat-networks-regulation-service-standards",
-      "published_at": "2026-11-10T12:00:00Z",
-      "display_date": "10 November 2026"
+      "link": "https://www.ofgem.gov.uk/data/public-version-gb-remit-registration-database",
+      "published_at": "2026-11-11T12:00:00Z",
+      "display_date": "11 November 2026"
     },
     {
-      "headline": "Heat networks regulation: future standards of performance",
+      "headline": "Redress provision in the supply and energy intermediary sectors",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/heat-networks-regulation-future-standards-performance",
-      "published_at": "2026-11-10T12:00:00Z",
-      "display_date": "10 November 2026"
+      "link": "https://www.ofgem.gov.uk/consultation/redress-provision-supply-and-energy-intermediary-sectors",
+      "published_at": "2026-11-11T12:00:00Z",
+      "display_date": "11 November 2026"
     },
     {
       "headline": "EU signs up to Global Geothermal Pledge at COP31",
