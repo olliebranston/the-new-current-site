@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-16 22:22 UTC",
+  "last_updated": "2026-11-17 08:09 UTC",
   "r_and_d": [
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
@@ -39,13 +39,6 @@
   ],
   "policy": [
     {
-      "headline": "Energy price cap: proposed update to the unidentified gas allowance",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/energy-price-cap-proposed-update-unidentified-gas-allowance",
-      "published_at": "2026-11-16T12:00:00Z",
-      "display_date": "16 November 2026"
-    },
-    {
       "headline": "Electricity Coordination Group considers EU electricity market prepared for the winter",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/electricity-coordination-group-considers-eu-electricity-market-prepared-winter-2026-11-16_en",
@@ -72,6 +65,13 @@
       "link": "https://www.neso.energy/calendar/gc0192-code-administrator-consultation",
       "published_at": "2026-10-26T00:00:00Z",
       "display_date": "26 October 2026"
+    },
+    {
+      "headline": "Energy reforms to cut bills and put power back in people's hands",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/energy-reforms-to-cut-bills-and-put-power-back-in-peoples-hands",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
