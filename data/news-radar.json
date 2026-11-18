@@ -1,6 +1,13 @@
 {
-  "last_updated": "2026-11-18 07:44 UTC",
+  "last_updated": "2026-11-18 20:44 UTC",
   "r_and_d": [
+    {
+      "headline": "Commission proposes to boost advanced materials for Europe's innovation and industrial leadership",
+      "source": "EU Research & Innovation",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2475",
+      "published_at": "2026-11-17T23:00:00Z",
+      "display_date": "17 November 2026"
+    },
     {
       "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
       "source": "Hydrogen Program",
@@ -23,34 +30,34 @@
       "display_date": "12 November 2026"
     },
     {
-      "headline": "EU and Australia deepen science and innovation ties with Horizon Europe Agreement",
-      "source": "EU Research & Innovation",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2418",
-      "published_at": "2026-11-11T23:00:00Z",
-      "display_date": "11 November 2026"
-    },
-    {
-      "headline": "Fundamental Research",
-      "source": "CORDIS Energy",
-      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
-      "published_at": "2026-11-04T00:00:00Z",
-      "display_date": "04 November 2026"
+      "headline": "Register Today: National Laboratory Gasification Consortium Webinar",
+      "source": "DOE Hydrogen & Fuel Cells",
+      "link": "https://www.energy.gov/cmei/fuels/articles/register-today-national-laboratory-gasification-consortium-webinar",
+      "published_at": "2026-10-30T15:48:43Z",
+      "display_date": "30 October 2026"
     }
   ],
   "policy": [
     {
-      "headline": "In focus: Industrial carbon management \u2013 how it works and why we need it",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/focus-industrial-carbon-management-how-it-works-and-why-we-need-it-2026-11-17_en",
-      "published_at": "2026-11-16T23:00:00Z",
-      "display_date": "16 November 2026"
+      "headline": "Approach to AI assurance in the energy sector",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/consultation/approach-ai-assurance-energy-sector",
+      "published_at": "2026-11-18T12:00:00Z",
+      "display_date": "18 November 2026"
     },
     {
-      "headline": "Commission approves amended German State aid schemes for energy-intensive companies",
+      "headline": "Commissioner J\u00f8rgensen in Poland to discuss energy and housing priorities",
       "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2456",
-      "published_at": "2026-11-16T23:00:00Z",
-      "display_date": "16 November 2026"
+      "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-poland-discuss-energy-and-housing-priorities-2026-11-18_en",
+      "published_at": "2026-11-17T23:00:00Z",
+      "display_date": "17 November 2026"
+    },
+    {
+      "headline": "Commission welcomes political agreement on faster and simpler permitting for grids, clean energy projects",
+      "source": "DG Energy",
+      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2450",
+      "published_at": "2026-11-17T23:00:00Z",
+      "display_date": "17 November 2026"
     },
     {
       "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 26 October 2026 to 26 November 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for voting on\u2026 Consultations",
@@ -65,13 +72,6 @@
       "link": "https://www.neso.energy/calendar/gc0192-code-administrator-consultation",
       "published_at": "2026-10-26T00:00:00Z",
       "display_date": "26 October 2026"
-    },
-    {
-      "headline": "Energy reforms to cut bills and put power back in people's hands",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/energy-reforms-to-cut-bills-and-put-power-back-in-peoples-hands",
-      "published_at": null,
-      "display_date": null
     }
   ]
 }
