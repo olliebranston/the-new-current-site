@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-19 07:40 UTC",
+  "last_updated": "2026-11-19 20:49 UTC",
   "r_and_d": [
     {
       "headline": "NLR Researcher Gregg Beckham Receives U.S. Department of Energy Ernest Orlando Lawrence Award",
@@ -39,25 +39,25 @@
   ],
   "policy": [
     {
-      "headline": "Approach to AI assurance in the energy sector",
+      "headline": "Grid connections delays: inquiry into phase 1 projects to drive delivery and accountability",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/approach-ai-assurance-energy-sector",
-      "published_at": "2026-11-18T12:00:00Z",
+      "link": "https://www.ofgem.gov.uk/news/grid-connections-delays-inquiry-phase-1-projects-drive-delivery-and-accountability",
+      "published_at": "2026-11-19T12:00:00Z",
+      "display_date": "19 November 2026"
+    },
+    {
+      "headline": "November infringements package: key decisions on energy",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/november-infringements-package-key-decisions-energy-2026-11-19_en",
+      "published_at": "2026-11-18T23:00:00Z",
       "display_date": "18 November 2026"
     },
     {
-      "headline": "Commissioner J\u00f8rgensen in Poland to discuss energy and housing priorities",
+      "headline": "EU spending on electricity support measures reached \u20ac12 billion, as reliance grows",
       "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-poland-discuss-energy-and-housing-priorities-2026-11-18_en",
-      "published_at": "2026-11-17T23:00:00Z",
-      "display_date": "17 November 2026"
-    },
-    {
-      "headline": "Commission welcomes political agreement on faster and simpler permitting for grids, clean energy projects",
-      "source": "DG Energy",
-      "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_2450",
-      "published_at": "2026-11-17T23:00:00Z",
-      "display_date": "17 November 2026"
+      "link": "https://www.acer.europa.eu/news/eu-spending-electricity-support-measures-reaches-eur12-billion-2025-reliance-grows",
+      "published_at": "2026-11-18T23:00:00Z",
+      "display_date": "18 November 2026"
     },
     {
       "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 26 October 2026 to 26 November 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for voting on\u2026 Consultations",
