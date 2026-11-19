@@ -1,6 +1,27 @@
 {
-  "last_updated": "2026-11-18 20:44 UTC",
+  "last_updated": "2026-11-19 07:40 UTC",
   "r_and_d": [
+    {
+      "headline": "NLR Researcher Gregg Beckham Receives U.S. Department of Energy Ernest Orlando Lawrence Award",
+      "source": "DOE Hydrogen & Fuel Cells",
+      "link": "https://www.energy.gov/cmei/fuels/articles/nlr-researcher-gregg-beckham-receives-us-department-energy-ernest-orlando",
+      "published_at": "2026-11-18T16:18:37Z",
+      "display_date": "18 November 2026"
+    },
+    {
+      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/energy-innovation",
+      "published_at": "2026-11-18T00:00:00Z",
+      "display_date": "18 November 2026"
+    },
+    {
+      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
+      "source": "Hydrogen Program",
+      "link": "https://www.energy.gov/topics/nuclear-energy",
+      "published_at": "2026-11-18T00:00:00Z",
+      "display_date": "18 November 2026"
+    },
     {
       "headline": "Commission proposes to boost advanced materials for Europe's innovation and industrial leadership",
       "source": "EU Research & Innovation",
@@ -9,32 +30,11 @@
       "display_date": "17 November 2026"
     },
     {
-      "headline": "Energy Innovation Driving research and development to shape the future of energy systems and technologies.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/energy-innovation",
-      "published_at": "2026-11-13T00:00:00Z",
-      "display_date": "13 November 2026"
-    },
-    {
-      "headline": "Nuclear Energy Advancing nuclear technologies to support energy, security, and innovation goals.",
-      "source": "Hydrogen Program",
-      "link": "https://www.energy.gov/topics/nuclear-energy",
-      "published_at": "2026-11-13T00:00:00Z",
-      "display_date": "13 November 2026"
-    },
-    {
       "headline": "Commission launches first global alliance on climate and health research funding at COP31",
       "source": "EU Research & Innovation",
       "link": "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/commission-launches-first-global-alliance-climate-and-health-research-funding-cop31-2026-11-13_en",
       "published_at": "2026-11-12T23:00:00Z",
       "display_date": "12 November 2026"
-    },
-    {
-      "headline": "Register Today: National Laboratory Gasification Consortium Webinar",
-      "source": "DOE Hydrogen & Fuel Cells",
-      "link": "https://www.energy.gov/cmei/fuels/articles/register-today-national-laboratory-gasification-consortium-webinar",
-      "published_at": "2026-10-30T15:48:43Z",
-      "display_date": "30 October 2026"
     }
   ],
   "policy": [
