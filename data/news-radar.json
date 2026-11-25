@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24 22:37 UTC",
+  "last_updated": "2026-11-25 08:53 UTC",
   "r_and_d": [
     {
       "headline": "Fifth EU-Armenia Horizon Europe Joint Research and Innovation Committee meeting",
@@ -39,11 +39,18 @@
   ],
   "policy": [
     {
-      "headline": "Supply chain security guidance",
+      "headline": "Changes to energy price cap between 1 January and 31 March 2027",
       "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/guidance/supply-chain-security-guidance",
-      "published_at": "2026-11-24T12:00:00Z",
-      "display_date": "24 November 2026"
+      "link": "https://www.ofgem.gov.uk/news/changes-energy-price-cap-between-1-january-and-31-march-2027",
+      "published_at": "2026-11-25T12:00:00Z",
+      "display_date": "25 November 2026"
+    },
+    {
+      "headline": "Preparing for winter: support for households and businesses",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/transparency-document/preparing-winter-support-households-and-businesses",
+      "published_at": "2026-11-25T12:00:00Z",
+      "display_date": "25 November 2026"
     },
     {
       "headline": "Commissioner J\u00f8rgensen in Ireland to advance work on energy and housing affordability",
@@ -63,13 +70,6 @@
       "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 26 October 2026 to 26 November 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for voting on\u2026 Consultations",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/2026-grid-code-review-panel-elections-voting",
-      "published_at": "2026-10-26T00:00:00Z",
-      "display_date": "26 October 2026"
-    },
-    {
-      "headline": "Codes GC0192 Code Administrator Consultation 3 November 2026 to 3 December 2026 12am to 11:59pm This modification proposes to align the unique identifier range in the Grid Code definition of Load Block with the Electricity Supply\u2026 Consultations",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/gc0192-code-administrator-consultation",
       "published_at": "2026-10-26T00:00:00Z",
       "display_date": "26 October 2026"
     }
