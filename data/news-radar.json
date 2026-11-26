@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-26 08:38 UTC",
+  "last_updated": "2026-11-26 21:44 UTC",
   "r_and_d": [
     {
       "headline": "African Union and European Union publish their renewed Roadmap for research and innovation on food and nutrition security and sustainable agriculture",
@@ -39,18 +39,25 @@
   ],
   "policy": [
     {
+      "headline": "Open letter on information quality, transparency and consumer outcomes in the wholesale electricity market",
+      "source": "Ofgem",
+      "link": "https://www.ofgem.gov.uk/transparency-document/open-letter-information-quality-transparency-and-consumer-outcomes-wholesale-electricity-market",
+      "published_at": "2026-11-26T12:00:00Z",
+      "display_date": "26 November 2026"
+    },
+    {
+      "headline": "Mark your calendars: European Sustainable Energy Week 23-25 June 2027",
+      "source": "DG Energy",
+      "link": "https://energy.ec.europa.eu/news/mark-your-calendars-european-sustainable-energy-week-23-25-june-2027-2026-11-26_en",
+      "published_at": "2026-11-25T23:00:00Z",
+      "display_date": "25 November 2026"
+    },
+    {
       "headline": "Commissioner J\u00f8rgensen in Ireland to advance work on energy and housing affordability",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/commissioner-jorgensen-ireland-advance-work-energy-and-housing-affordability-2026-11-24_en",
       "published_at": "2026-11-23T23:00:00Z",
       "display_date": "23 November 2026"
-    },
-    {
-      "headline": "EU backs global compact to cut energy bills and emissions from buildings",
-      "source": "DG Energy",
-      "link": "https://energy.ec.europa.eu/news/eu-backs-global-compact-cut-energy-bills-and-emissions-buildings-2026-11-20_en",
-      "published_at": "2026-11-19T23:00:00Z",
-      "display_date": "19 November 2026"
     },
     {
       "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 26 October 2026 to 26 November 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for voting on\u2026 Consultations",
@@ -65,13 +72,6 @@
       "link": "https://www.neso.energy/calendar/gc0192-code-administrator-consultation",
       "published_at": "2026-10-26T00:00:00Z",
       "display_date": "26 October 2026"
-    },
-    {
-      "headline": "Energy reforms to cut bills and put power back in people's hands",
-      "source": "DESNZ",
-      "link": "https://www.gov.uk/government/news/energy-reforms-to-cut-bills-and-put-power-back-in-peoples-hands",
-      "published_at": null,
-      "display_date": null
     }
   ]
 }
