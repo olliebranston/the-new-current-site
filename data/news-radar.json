@@ -1,6 +1,20 @@
 {
-  "last_updated": "2026-11-26 21:44 UTC",
+  "last_updated": "2026-11-27 08:49 UTC",
   "r_and_d": [
+    {
+      "headline": "Fundamental Research",
+      "source": "CORDIS Energy",
+      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
+      "published_at": "2026-11-26T00:00:00Z",
+      "display_date": "26 November 2026"
+    },
+    {
+      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
+      "source": "CORDIS Energy",
+      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
+      "published_at": "2026-11-26T00:00:00Z",
+      "display_date": "26 November 2026"
+    },
     {
       "headline": "African Union and European Union publish their renewed Roadmap for research and innovation on food and nutrition security and sustainable agriculture",
       "source": "EU Research & Innovation",
@@ -16,20 +30,6 @@
       "display_date": "19 November 2026"
     },
     {
-      "headline": "Fundamental Research",
-      "source": "CORDIS Energy",
-      "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
-      "published_at": "2026-11-19T00:00:00Z",
-      "display_date": "19 November 2026"
-    },
-    {
-      "headline": "scientific research efforts to improve the efficiency of the renewable energy",
-      "source": "CORDIS Energy",
-      "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
-      "published_at": "2026-11-19T00:00:00Z",
-      "display_date": "19 November 2026"
-    },
-    {
       "headline": "NLR Researcher Gregg Beckham Receives U.S. Department of Energy Ernest Orlando Lawrence Award",
       "source": "DOE Hydrogen & Fuel Cells",
       "link": "https://www.energy.gov/cmei/fuels/articles/nlr-researcher-gregg-beckham-receives-us-department-energy-ernest-orlando",
@@ -38,13 +38,6 @@
     }
   ],
   "policy": [
-    {
-      "headline": "Open letter on information quality, transparency and consumer outcomes in the wholesale electricity market",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/transparency-document/open-letter-information-quality-transparency-and-consumer-outcomes-wholesale-electricity-market",
-      "published_at": "2026-11-26T12:00:00Z",
-      "display_date": "26 November 2026"
-    },
     {
       "headline": "Mark your calendars: European Sustainable Energy Week 23-25 June 2027",
       "source": "DG Energy",
@@ -60,18 +53,25 @@
       "display_date": "23 November 2026"
     },
     {
-      "headline": "Codes 2026 Grid Code Review Panel Elections -\u2026 26 October 2026 to 26 November 2026 12am to 11:59pm This election process for Grid Code Panel Members and Alternates for the period 01 January 2027 - 31 December 2028 opens for voting on\u2026 Consultations",
-      "source": "NESO",
-      "link": "https://www.neso.energy/calendar/2026-grid-code-review-panel-elections-voting",
-      "published_at": "2026-10-26T00:00:00Z",
-      "display_date": "26 October 2026"
-    },
-    {
       "headline": "Codes GC0192 Code Administrator Consultation 3 November 2026 to 3 December 2026 12am to 11:59pm This modification proposes to align the unique identifier range in the Grid Code definition of Load Block with the Electricity Supply\u2026 Consultations",
       "source": "NESO",
       "link": "https://www.neso.energy/calendar/gc0192-code-administrator-consultation",
-      "published_at": "2026-10-26T00:00:00Z",
-      "display_date": "26 October 2026"
+      "published_at": "2026-11-03T00:00:00Z",
+      "display_date": "03 November 2026"
+    },
+    {
+      "headline": "Codes Grid Code Development Forum (GCDF) - 2\u2026 2 December 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-2-december-2026",
+      "published_at": "2026-11-03T00:00:00Z",
+      "display_date": "03 November 2026"
+    },
+    {
+      "headline": "Energy reforms to cut bills and put power back in people's hands",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/energy-reforms-to-cut-bills-and-put-power-back-in-peoples-hands",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
