@@ -1,19 +1,19 @@
 {
-  "last_updated": "2026-11-27 21:29 UTC",
+  "last_updated": "2026-11-28 08:08 UTC",
   "r_and_d": [
     {
       "headline": "Fundamental Research",
       "source": "CORDIS Energy",
       "link": "https://cordis.europa.eu/domain-of-application/fundamental-research",
-      "published_at": "2026-11-26T00:00:00Z",
-      "display_date": "26 November 2026"
+      "published_at": "2026-11-27T00:00:00Z",
+      "display_date": "27 November 2026"
     },
     {
       "headline": "scientific research efforts to improve the efficiency of the renewable energy",
       "source": "CORDIS Energy",
       "link": "https://research-and-innovation.ec.europa.eu/research-area/energy_en",
-      "published_at": "2026-11-26T00:00:00Z",
-      "display_date": "26 November 2026"
+      "published_at": "2026-11-27T00:00:00Z",
+      "display_date": "27 November 2026"
     },
     {
       "headline": "African Union and European Union publish their renewed Roadmap for research and innovation on food and nutrition security and sustainable agriculture",
@@ -39,20 +39,6 @@
   ],
   "policy": [
     {
-      "headline": "Market-wide Half Hourly Settlement change request CR067",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/decision/market-wide-half-hourly-settlement-change-request-cr067",
-      "published_at": "2026-11-27T12:00:00Z",
-      "display_date": "27 November 2026"
-    },
-    {
-      "headline": "Bacton terminal site redevelopment re-opener consultation",
-      "source": "Ofgem",
-      "link": "https://www.ofgem.gov.uk/consultation/bacton-terminal-site-redevelopment-re-opener-consultation",
-      "published_at": "2026-11-27T12:00:00Z",
-      "display_date": "27 November 2026"
-    },
-    {
       "headline": "Mark your calendars: European Sustainable Energy Week 23-25 June 2027",
       "source": "DG Energy",
       "link": "https://energy.ec.europa.eu/news/mark-your-calendars-european-sustainable-energy-week-23-25-june-2027-2026-11-26_en",
@@ -72,6 +58,20 @@
       "link": "https://www.neso.energy/calendar/gc0192-code-administrator-consultation",
       "published_at": "2026-11-03T00:00:00Z",
       "display_date": "03 November 2026"
+    },
+    {
+      "headline": "Codes Grid Code Development Forum (GCDF) - 2\u2026 2 December 2026 9am to 11am The Grid Code Development Forum (GCDF) facilitates technical discussion of grid code-related issues between us and interested industry\u2026 Meetings",
+      "source": "NESO",
+      "link": "https://www.neso.energy/calendar/grid-code-development-forum-gcdf-2-december-2026",
+      "published_at": "2026-11-03T00:00:00Z",
+      "display_date": "03 November 2026"
+    },
+    {
+      "headline": "Energy reforms to cut bills and put power back in people's hands",
+      "source": "DESNZ",
+      "link": "https://www.gov.uk/government/news/energy-reforms-to-cut-bills-and-put-power-back-in-peoples-hands",
+      "published_at": null,
+      "display_date": null
     }
   ]
 }
